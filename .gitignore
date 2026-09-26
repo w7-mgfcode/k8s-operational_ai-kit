@@ -1,0 +1,13 @@
+# Un-anonymized source kit. Never a source for a card, a skeleton, or a commit.
+# See .claude/rules/anonymization.md
+.legacy-assets/
+
+# Vendored virtual environments. Two exist under the excalidraw skill
+# (~136 MB / 641 files each); `git add .` would otherwise commit both.
+**/.venv/
+__pycache__/
+*.pyc
+
+# Never publishable. This repository is intended to be public.
+.env
+.env.*
