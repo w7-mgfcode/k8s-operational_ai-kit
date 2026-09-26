@@ -9,6 +9,7 @@ instances:
   - 19-scope-lock-and-checkpoint-delivery
 related:
   - 01-infrastructure-issue-investigator
+  - 04-symptom-diagnostic-playbook
 ---
 
 # Investigation Safety Rules

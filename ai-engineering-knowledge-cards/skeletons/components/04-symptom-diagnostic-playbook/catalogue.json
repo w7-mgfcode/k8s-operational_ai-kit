@@ -1,0 +1,43 @@
+{
+  "_comment": "A fabricated four-class diagnostic catalogue, written for this skeleton. It is shaped like the source playbook — a baseline that always runs, one command block per symptom class — and carries the same kinds of defect on purpose, so that --lint has something real to find. {ctx}, {ns}, {pod}, {pvc}, {release}, {svc} are filled in at render time.",
+  "declared_tools": ["kubectl", "helm", "grep", "head", "tail", "wc"],
+  "baseline": [
+    "kubectl --context {ctx} -n {ns} get events --sort-by=.lastTimestamp | tail -50",
+    "kubectl --context {ctx} -n {ns} get pods",
+    "kubectl --context {ctx} -n {ns} get deploy,sts,ds,job,cronjob"
+  ],
+  "classes": {
+    "pod-lifecycle": {
+      "keywords": ["crashloop", "crashloopbackoff", "oomkilled", "pending", "imagepull", "restart"],
+      "commands": [
+        "kubectl -n {ns} describe pod {pod}",
+        "kubectl -n {ns} logs {pod} --previous --tail=200",
+        "kubectl -n {ns} get pod {pod} -o jsonpath='{.status.containerStatuses}' | jq ."
+      ]
+    },
+    "storage": {
+      "keywords": ["pvc", "pv", "volume", "mount", "storage"],
+      "commands": [
+        "kubectl -n {ns} get pvc",
+        "kubectl get pv | grep {ns}",
+        "kubectl -n {ns} describe pvc {pvc}"
+      ]
+    },
+    "certificates": {
+      "keywords": ["certificate", "tls", "x509", "cert"],
+      "commands": [
+        "kubectl -n {ns} get certificate,certificaterequest",
+        "kubectl -n {ns} describe certificate {svc}",
+        "kubectl -n {ns} run tls-probe --rm -i --image=curl -- curl -vI https://{svc}"
+      ]
+    },
+    "helm-release": {
+      "keywords": ["helm", "release", "chart", "upgrade"],
+      "commands": [
+        "helm -n {ns} status {release}",
+        "helm -n {ns} history {release}",
+        "helm -n {ns} get values {release}"
+      ]
+    }
+  }
+}

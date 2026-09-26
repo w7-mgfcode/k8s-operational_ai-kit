@@ -13,6 +13,7 @@ instances:
 related:
   - 02-remediation-ranking-rubric
   - 03-investigation-safety-rules
+  - 04-symptom-diagnostic-playbook
 ---
 
 # Infrastructure Issue Investigator
@@ -72,7 +73,7 @@ Seven phases, each ending at a gate ([card 19](../../cards/19-scope-lock-and-che
 1. **Intake.** Ask for cluster and namespace. Resolve the context; if it is not the
    development cluster, trip the **prod guard** — warn, require an explicit typed
    confirmation, stay read-only regardless. *Gate: cluster and namespace known.*
-2. **Diagnose.** Run a fixed baseline (events, pods, workloads), then the command
+2. **Diagnose** ([component 04](../reference/04-symptom-diagnostic-playbook.md)). Run a fixed baseline (events, pods, workloads), then the command
    block for the symptom class — one of ten: pod lifecycle, networking, storage,
    RBAC, resource pressure, admission policy, certificates, Helm release state,
    operator health, jobs. Pipe every output through the redactor. *Gate: at least
