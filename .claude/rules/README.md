@@ -13,7 +13,7 @@ rule missing from it is invisible to every agent except Claude Code.
 
 | File | Auto-loads when touching | Covers |
 | --- | --- | --- |
-| `anonymization.md` | `ai-engineering-knowledge-cards/**`, `.gitignore` | The masking rule; `.legacy-assets/` is never a source; what must never enter the repo |
+| `anonymization.md` | `ai-engineering-knowledge-cards/**`, `.gitignore` | The masking rule; `.legacy-assets/` is never a source, except for component-card extraction; what must never enter the repo |
 | `cards.md` | `cards/**`, `templates/**`, `docs/**` | Six frontmatter keys, thirteen sections, what `maturity: partial` means, provenance |
 | `skeletons.md` | `skeletons/**` | Stdlib-only, offline, runnable as committed, deliberate gaps stated |
 | `component-cards.md` | `component-cards/**`, `templates/COMPONENT_CARD_TEMPLATE.md`, `skeletons/components/**` | Five frontmatter keys, eleven sections, one artifact per card, stricter anonymization, legacy extraction only by named authorization |

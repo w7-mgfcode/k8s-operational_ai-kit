@@ -18,7 +18,7 @@
 
 | Dependency | Interface | Change process |
 | --- | --- | --- |
-| `.legacy-assets/` | Read-only, gitignored, **never a source for published output** | Frozen. Excluded from the repository by `.gitignore`; see SECURITY.md |
+| `.legacy-assets/` | Read-only, gitignored, **never a source for published output**, except component-card extraction under `.claude/rules/anonymization.md` | Frozen. Excluded from the repository by `.gitignore`; see SECURITY.md |
 | Python 3 standard library | `python3` on PATH | None — no pinned version, no dependency file |
 | GitHub Actions | `.github/workflows/` | Edit the workflow; `ci.yml` runs the same gate as local |
 

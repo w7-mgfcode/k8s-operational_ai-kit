@@ -24,7 +24,7 @@ Violating any of these is a defect, not a judgment call.
 
 | # | Constraint | Enforced by |
 | --- | --- | --- |
-| 1 | `.legacy-assets/` is never a source for published output | Human discipline only |
+| 1 | `.legacy-assets/` is never a source for published output, except component-card extraction under `.claude/rules/anonymization.md` | Human discipline only |
 | 2 | No masked identifier in any published file | `check.py` (shapes) + human review (names) |
 | 3 | A card has exactly 13 `##` sections and 6 frontmatter keys in order | `check.py` |
 | 4 | A card's number matches its filename; `layer` and `maturity` are from the closed sets | `check.py` |

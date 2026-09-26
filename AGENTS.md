@@ -100,7 +100,9 @@ Exit codes inside skeletons: **0** = ran, **1** = ran and demonstrated a failure
 
 - **`.legacy-assets/` is never a source.** It holds the un-anonymized kit. Never read it into a
   card, a skeleton, a commit message, or a report; never quote, summarize or paraphrase it. You
-  may state that it exists and is excluded. That is all.
+  may state that it exists and is excluded. The one exception is component-card extraction,
+  and only under the conditions in `.claude/rules/anonymization.md` — a directory the user names
+  and a masking table the user approves before anything is written.
 - **Never reintroduce a masked identifier** — organization names, operator usernames, absolute
   paths from the source system, internal domains, hostnames and their naming scheme, internal
   IPs and CIDRs, the source repository name, project codenames, named personal tooling, the
