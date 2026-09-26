@@ -15,6 +15,7 @@ related:
   - 03-investigation-safety-rules
   - 04-symptom-diagnostic-playbook
   - 05-keyword-narrowed-repo-search
+  - 06-remediation-plan-template
 ---
 
 # Infrastructure Issue Investigator
@@ -91,7 +92,7 @@ Seven phases, each ending at a gate ([card 19](../../cards/19-scope-lock-and-che
    conventions ×1, no new dependencies ×1, clean promotion up the environment
    ladder ×1. Ties break in that order. Render one fixed table shape. *Gate: the
    user acknowledges #1 or picks another.*
-6. **Plan.** Fill a fixed template: root cause marked **hypothesis or confirmed**,
+6. **Plan.** Fill a fixed template ([component 06](../reference/06-remediation-plan-template.md)): root cause marked **hypothesis or confirmed**,
    chosen option and why, rejected options, ordered steps with dry-run steps
    flagged, rollback, verification, blast radius, per-environment progression, and
    a **redaction review** block. Up to three rework rounds, then force-save with

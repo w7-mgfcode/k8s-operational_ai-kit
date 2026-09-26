@@ -103,6 +103,7 @@ into practice. Each ships its own prototype under
 | 03 | [Investigation Safety Rules](component-cards/reference/03-investigation-safety-rules.md) | reference | 16 17 18 19 | Six rule sets keep an investigation read-only; three denied verbs are the only ones enforced |
 | 04 | [Symptom-Class Diagnostic Playbook](component-cards/reference/04-symptom-diagnostic-playbook.md) | reference | 02 06 16 18 | Exact read-only commands per symptom class — and every flaw in them repeated on every run |
 | 05 | [Keyword-Narrowed Repository Search](component-cards/reference/05-keyword-narrowed-repo-search.md) | reference | 02 05 14 18 | A keyword-to-path map narrows the search — until a role is renamed and it quietly finds nothing |
+| 06 | [Remediation Plan Template](component-cards/reference/06-remediation-plan-template.md) | reference | 06 17 18 19 | A fixed shape makes a plan complete on paper — and nothing checks the paper |
 
 ## Compound pipelines
 

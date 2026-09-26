@@ -1,0 +1,45 @@
+{
+  "_comment": "A fabricated investigation result — what the earlier phases hand the plan phase. Same incident as component 01's skeleton: a cache larger than the memory limit. Here the reviewer picked option D at the rank gate, overriding the rubric's A.",
+  "title": "Checkout OOM from cache exceeding memory limit",
+  "cluster": "dev",
+  "namespace": "shop",
+  "date": "2026-01-12",
+  "workstream": "feat/shop-stability",
+  "prod_guard": "not-triggered",
+  "symptom": "checkout pods crash-looping since the cache warm-up change",
+  "status": "confirmed",
+  "root_cause": "The product cache is sized at 512 MB inside a 256 Mi memory limit. The container is killed as the cache warms, fourteen times in 47 minutes.",
+  "evidence": [
+    "`describe pod`: last state OOMKilled, exit 137, 14 restarts",
+    "`describe pod`: memory limit 256Mi, CACHE_SIZE 512MB",
+    "`logs --previous`: cache warm reaches 247MB used before the kill"
+  ],
+  "option_id": "D",
+  "option_title": "Cap the cache below the limit via a new task file",
+  "rejected": [
+    "A: raise the memory limit — ranked first by the rubric; buys headroom, leaves the cause",
+    "E: move the cache to a sidecar — larger change for the same effect"
+  ],
+  "steps": [
+    "(dry run) run the shop playbook in check mode with diff against dev — expect CACHE_SIZE 192MB in one task",
+    "run the shop playbook against dev — expect one changed task",
+    "watch pods in shop for ten minutes — expect no new restarts"
+  ],
+  "rollback": [
+    "revert the commit that added the cache-size task",
+    "re-run the shop playbook against dev",
+    "confirm CACHE_SIZE is back to 512MB with `describe pod`"
+  ],
+  "verification": [
+    "no OOMKilled events in shop for 30 minutes",
+    "cache warm completes and the service reports ready",
+    "cart and other shop workloads unchanged"
+  ],
+  "blast_radius": "Namespace-scoped: the checkout Deployment only. No shared state. Rollback under five minutes.",
+  "progression": [
+    ["dev", "none", "playbook against dev", "30 min without OOM"],
+    ["staging", "dev green 24h", "playbook against staging", "load test at twice normal traffic"],
+    ["prod", "staging green; change window; approver named", "playbook against prod", "error-rate and restart alerts quiet for 2h"]
+  ],
+  "redaction": ["password in `describe pod` (DB_PASSWORD)", "token in `logs --previous`"]
+}
