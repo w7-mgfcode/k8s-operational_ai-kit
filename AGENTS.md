@@ -24,7 +24,7 @@ here passes an anonymization boundary that is enforced at edit time, not at revi
 - **Validation** — `check.py` at the repository root. Standard library, no network, no cost.
 - **CI** — GitHub Actions. `ci.yml` runs the same `check.py`; three agent workflows
   (`claude-create`, `claude-review`, `codex-create-deterministic`) assume npm and secrets that
-  do not exist, and fail when they run — `claude-review` on every new PR. See
+  do not exist, and fail when they run. All three run only on a trusted comment. See
   `docs/_base/RULES.md` § Known Open Items.
 - **Deliberately absent** — no `Makefile`, no `package.json`, no `pyproject.toml`, no linter,
   no formatter, no test framework. Do not add one without being asked.

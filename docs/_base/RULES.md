@@ -75,8 +75,9 @@ Carried forward rather than hidden.
    (its own card 15).
 4. **Three agent workflows are broken, not inert.** They assume npm and secrets that do not
    exist here, and each fails as soon as it runs:
-   - `claude-review` runs on **every** pull request opened or marked ready, with no comment
-     gate. `setup-node` with `cache: npm` fails without a lockfile, so the first PR goes red.
+   - `claude-review` runs only on a trusted `@claude-review` PR comment — its automatic
+     `pull_request` trigger is commented out until the job is rebuilt. When it runs,
+     `setup-node` with `cache: npm` fails without a lockfile.
    - `claude-create` runs only on a trusted `@claude` comment, then fails at the same
      `setup-node` cache step or at `npm ci`.
    - `codex-create-deterministic` runs only on a trusted `@codex-create` comment; the global

@@ -1,0 +1,76 @@
+# Claude review — read-only. Runs this repo's own review contract against the PR
+# diff and posts the review as a PR comment. Claude reads code and comments; it
+# never writes to the branch (contents: read).
+#
+# Fires on demand when a trusted contributor comments `@claude-review`.
+#
+# The automatic pull_request trigger is disabled: the job still sets up an npm
+# toolchain this repository does not have, so it failed on every new PR. Restore
+# the two commented lines below once the job runs `python3 check.py` instead.
+# The job's `if:` keeps its pull_request branch so re-enabling is one step.
+#
+# Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret, and fails without it.
+name: Claude Review
+
+on:
+  # pull_request:
+  #   types: [opened, ready_for_review]
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  claude-review:
+    if: |
+      github.event_name == 'pull_request' || (
+        github.event_name == 'issue_comment'
+        && github.event.issue.pull_request
+        && contains(github.event.comment.body, '@claude-review')
+        && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read         # read-only — the reviewer never edits the branch
+      pull-requests: write   # post the review as a comment
+      issues: write
+      id-token: write
+      actions: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: npm
+
+      - name: Run the review contract
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          trigger_phrase: "@claude-review"
+          track_progress: true
+          prompt: |
+            Read AGENTS.md at the repository root, then read
+            commands/piv-review-pr.md and follow that contract for this pull
+            request. AGENTS.md is the single source of truth for this repo's
+            rules — CLAUDE.md is only an adapter.
+
+            Two adjustments for CI:
+            - Post your findings as a SINGLE pull-request comment. Do not submit
+              a formal approve or request-changes review; a human does that.
+            - Do not modify any files. This is a read-only review.
+
+            The gate chain is `npm run verify` (setup, sync, test:sync,
+            test:coverage, build). There is no TypeScript and no linter in this
+            project — do not run `tsc`, `npm run lint`, or `npm test`, and do not
+            report their absence as a finding.
+          claude_args: |
+            --max-turns 20
