@@ -9,15 +9,16 @@ paths:
 
 A pattern card (`cards/`, see [`cards.md`](cards.md)) describes an idea. A
 component card describes **one concrete artifact** — a skill, command, rule,
-subagent or hook — and shows which patterns it puts into practice. The two are
-separate contracts; do not force one shape onto the other.
+subagent, hook, or a reference file a skill loads — and shows which patterns it
+puts into practice. The two are separate contracts; do not force one shape onto
+the other.
 
 `../templates/COMPONENT_CARD_TEMPLATE.md` is the shape. `check.py` enforces it.
 
 ## Layout
 
 ```text
-component-cards/<type>/NN-<slug>.md        type ∈ skill command rule subagent hook
+component-cards/<type>/NN-<slug>.md        type ∈ skill command rule subagent hook reference
 skeletons/components/NN-<slug>/            one prototype per component card
 ```
 
@@ -32,7 +33,7 @@ Five keys, always, in this order:
 | --- | --- |
 | `component` | Two digits, matching the filename prefix. |
 | `title` | A generic name. **Never the source component's own name** — named personal tooling is a masked class. |
-| `type` | One of `skill` `command` `rule` `subagent` `hook`, and equal to the parent directory name. |
+| `type` | One of `skill` `command` `rule` `subagent` `hook` `reference`, and equal to the parent directory name. A `reference` is a document a skill loads on demand — a rubric, a catalogue, a template; its card names the skill that loads it in `related:`. |
 | `instances` | Pattern-card slugs from `cards/`. At least one — a component that instances no pattern does not belong here. |
 | `related` | Other component-card slugs, or `[]`. |
 

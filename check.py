@@ -37,7 +37,7 @@ MATURITIES = {"proven", "partial", "abandoned"}
 # --- component-card contract (.claude/rules/component-cards.md) ------------
 COMPONENT_KEYS = ["component", "title", "type", "instances", "related"]
 COMPONENT_HEADING_COUNT = 11
-COMPONENT_TYPES = {"skill", "command", "rule", "subagent", "hook"}
+COMPONENT_TYPES = {"skill", "command", "rule", "subagent", "hook", "reference"}
 
 # --- anonymization boundary (.claude/rules/anonymization.md) ---------------
 # Generic shapes, not the masked strings themselves — this file is public too.

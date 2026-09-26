@@ -91,7 +91,7 @@ and flattening it would make every other claim here less believable.
 ## Component cards
 
 A pattern card describes an idea; a component card describes one concrete
-artifact — a skill, command, rule, subagent or hook — and which patterns it puts
+artifact — a skill, command, rule, subagent, hook or reference file — and which patterns it puts
 into practice. Each ships its own prototype under
 [`skeletons/components/`](skeletons/components/). Contract:
 `.claude/rules/component-cards.md`.

@@ -1,7 +1,7 @@
 ---
 component: NN
 title: <Component name — generic, never the source system's own name>
-type: skill | command | rule | subagent | hook
+type: skill | command | rule | subagent | hook | reference
 instances:
   - <NN-pattern-card-slug>
 related:
@@ -22,7 +22,8 @@ artifact that puts several of them into practice.
 
 How the agent decides to use it: the description text, trigger phrases, and the
 explicit "do not use for" list with the sibling that fits better. For a rule, the
-path glob; for a hook, the lifecycle event; for a command, the invocation.
+path glob; for a hook, the lifecycle event; for a command, the invocation; for a
+reference, the skill and the phase that load it.
 
 ## Inputs
 
