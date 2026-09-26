@@ -10,7 +10,8 @@ instances:
   - 17-blast-radius-gating
   - 18-the-redaction-boundary
   - 19-scope-lock-and-checkpoint-delivery
-related: []
+related:
+  - 02-remediation-ranking-rubric
 ---
 
 # Infrastructure Issue Investigator
@@ -81,7 +82,7 @@ Seven phases, each ending at a gate ([card 19](../../cards/19-scope-lock-and-che
    fixes, never open restricted files — record the path, advise a manual check.
 4. **Brainstorm** three to six distinct candidates, each with mechanism, scope,
    reversibility and the repo artifact it would reuse. *Gate: at least three.*
-5. **Rank** on seven criteria scored 0–2 and weighted: reuse of an existing role
+5. **Rank** with a separate rubric file ([component 02](../reference/02-remediation-ranking-rubric.md)): seven criteria scored 0–2 and weighted: reuse of an existing role
    ×3, fit with the current workstream ×2, blast radius ×2, reversibility ×2,
    conventions ×1, no new dependencies ×1, clean promotion up the environment
    ladder ×1. Ties break in that order. Render one fixed table shape. *Gate: the

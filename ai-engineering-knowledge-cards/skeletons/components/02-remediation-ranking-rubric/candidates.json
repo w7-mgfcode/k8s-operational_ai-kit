@@ -1,0 +1,15 @@
+{
+  "_comment": "Fabricated. A service crash-loops on OOMKilled because a 512 MB cache sits inside a 256 Mi memory limit (the same incident as component 01's skeleton). Scores are what a model would assign. root_cause is NOT a rubric criterion: it records whether the option addresses the evidence, and is used only by --stress.",
+  "candidates": [
+    {"id": "A", "title": "Raise the memory limit in the existing app role",
+     "scores": {"reuse": 2, "workstream": 1, "blast": 2, "reversible": 2, "conventions": 2, "deps": 2, "envs": 1}, "root_cause": 0},
+    {"id": "B", "title": "Install a vertical pod autoscaler",
+     "scores": {"reuse": 0, "workstream": 1, "blast": 0, "reversible": 1, "conventions": 1, "deps": 0, "envs": 1}, "root_cause": 1},
+    {"id": "C", "title": "Patch the live Deployment's limit",
+     "scores": {"reuse": 0, "workstream": 1, "blast": 2, "reversible": 1, "conventions": 0, "deps": 2, "envs": 0}, "root_cause": 0},
+    {"id": "D", "title": "Cap the cache below the limit via a new task file",
+     "scores": {"reuse": 1, "workstream": 2, "blast": 2, "reversible": 2, "conventions": 2, "deps": 2, "envs": 2}, "root_cause": 2},
+    {"id": "E", "title": "Move the cache to a sidecar with its own limit",
+     "scores": {"reuse": 1, "workstream": 2, "blast": 2, "reversible": 2, "conventions": 1, "deps": 2, "envs": 2}, "root_cause": 2}
+  ]
+}

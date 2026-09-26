@@ -1,0 +1,12 @@
+{
+  "_comment": "Seven criteria, each scored 0 (fail), 1 (partial) or 2 (pass) against written anchors, multiplied by its weight. Criterion order is the tie-break order. Maximum 24.",
+  "criteria": [
+    {"key": "reuse",       "weight": 3, "anchors": ["net-new role or bespoke workflow", "an adjacent role can be extended", "an existing role does it with values changes only"]},
+    {"key": "workstream",  "weight": 2, "anchors": ["unrelated to the current branch", "fixes a side-effect of the branch", "on-theme with the current branch"]},
+    {"key": "blast",       "weight": 2, "anchors": ["cluster-wide: webhook, CRD, global RBAC, node", "several namespaces or a shared controller", "namespace-scoped, target workload only"]},
+    {"key": "reversible",  "weight": 2, "anchors": ["destructive without a state restore", "reversible, but no meaningful dry run", "documented rollback and a meaningful dry run"]},
+    {"key": "conventions", "weight": 1, "anchors": ["two or more rule exceptions", "one small accommodation", "no rule needs an exception"]},
+    {"key": "deps",        "weight": 1, "anchors": ["new niche or unmaintained dependency", "new but well-maintained dependency", "only what is already installed"]},
+    {"key": "envs",        "weight": 1, "anchors": ["safe in one environment only", "needs a per-environment caveat", "promotes with values changes only"]}
+  ]
+}
