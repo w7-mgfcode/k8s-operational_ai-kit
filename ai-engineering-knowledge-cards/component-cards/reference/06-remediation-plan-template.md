@@ -18,6 +18,10 @@ related:
 > The one artifact the investigator skill produces: a fixed shape that makes a plan
 > complete on paper — and nothing that checks the paper.
 
+![Remediation Plan Template: five phases fill one form, and a sound plan and a defective one pass the same shape to disk unchecked](06-remediation-plan-template.png)
+
+<sub>Source: [`06-remediation-plan-template.excalidraw`](06-remediation-plan-template.excalidraw).</sub>
+
 ## What it is
 
 A Markdown template with YAML frontmatter, rendered by the investigator skill
