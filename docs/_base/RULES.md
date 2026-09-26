@@ -73,5 +73,11 @@ Carried forward rather than hidden.
    the agent-instruction layer and CI gates (both owed), hooks and permissions, and the parts of
    structural lint `check.py` does not yet apply to itself
    (its own card 15).
-4. **Three agent workflows** reference npm and secrets that do not exist here. Inert, not
-   broken, but they will fail on first run if triggered.
+4. **Three agent workflows are broken, not inert.** They assume npm and secrets that do not
+   exist here, and each fails as soon as it runs:
+   - `claude-review` runs on **every** pull request opened or marked ready, with no comment
+     gate. `setup-node` with `cache: npm` fails without a lockfile, so the first PR goes red.
+   - `claude-create` runs only on a trusted `@claude` comment, then fails at the same
+     `setup-node` cache step or at `npm ci`.
+   - `codex-create-deterministic` runs only on a trusted `@codex-create` comment; the global
+     Codex install works, and the run fails without `OPENAI_API_KEY`.
