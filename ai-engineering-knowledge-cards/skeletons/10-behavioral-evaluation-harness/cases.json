@@ -1,0 +1,16 @@
+{
+  "note": "Harvested from real requests, never invented from the descriptions. A case written by reading the description re-tests the description and always passes.",
+  "cases": [
+    {"id": "pos-1", "prompt": "what is broken in namespace payments",
+     "expect": "log-investigator", "signals": ["investigat", "plan"], "kind": "positive"},
+    {"id": "pos-2", "prompt": "apply the fix and restart the deployment",
+     "expect": "cluster-doctor", "signals": ["confirm", "execut"], "kind": "positive"},
+    {"id": "neg-1", "prompt": "what does this yaml file do",
+     "expect": null, "signals": [], "kind": "negative"},
+    {"id": "neg-2", "prompt": "write me a haiku about pods",
+     "expect": null, "signals": [], "kind": "negative"},
+    {"id": "amb-1", "prompt": "figure out why the pods are crashing and then fix them",
+     "expect": "log-investigator", "signals": ["investigat"], "kind": "ambiguous",
+     "why": "Sits between two capabilities. Re-run after ANY description edit."}
+  ]
+}

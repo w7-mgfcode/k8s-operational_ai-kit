@@ -1,0 +1,25 @@
+{
+  "sections": ["identity", "triggers", "workflow", "complexity", "tools", "outputs", "safety", "references"],
+  "tiers": {
+    "simple":   {"score": "1-3", "required": ["identity", "triggers"],
+                 "defaulted": ["workflow", "complexity", "tools", "outputs", "safety"],
+                 "optional": ["references"]},
+    "moderate": {"score": "4-6", "required": ["identity", "triggers", "workflow", "complexity"],
+                 "defaulted": [], "optional": ["tools", "outputs", "safety", "references"]},
+    "complex":  {"score": "7-10", "required": ["identity", "triggers", "workflow", "complexity", "tools", "outputs", "safety"],
+                 "defaulted": [], "optional": ["references"]}
+  },
+  "defaults": {
+    "workflow": "three linear steps",
+    "complexity": "no branching, no state",
+    "tools": "standard read/write set",
+    "outputs": "a single instruction file",
+    "safety": "standard restricted-path rules"
+  },
+  "personas": {
+    "identity": "domain analyst", "triggers": "domain analyst",
+    "workflow": "workflow architect", "complexity": "workflow architect",
+    "tools": "workflow architect", "outputs": "workflow architect",
+    "safety": "safety auditor", "references": "domain analyst"
+  }
+}

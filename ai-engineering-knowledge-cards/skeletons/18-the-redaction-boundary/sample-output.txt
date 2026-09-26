@@ -1,0 +1,36 @@
+$ kubectl -n app describe deployment api
+Name:     api
+Image:    registry.internal/api:1.4.2
+Env:
+  DB_PASSWORD=hunter2correcthorse
+  API_KEY=ak_live_9f3c2b1a7e5d
+Conditions:
+  Available   True
+
+$ kubectl -n app get secret api-creds -o yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-creds
+data:
+  username: YWRtaW5pc3RyYXRvcg==
+  password: c3VwZXJzZWNyZXR2YWx1ZQ==
+type: Opaque
+
+$ kubectl -n app exec api-0 -- env | grep -i dsn
+DSN=postgres://admin:s3cr3tvalue@db.internal:5432/app
+
+$ curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" https://api/health
+{"status":"ok"}
+
+$ cat ~/.kube/config
+apiVersion: v1
+kind: Config
+clusters:
+- cluster:
+    server: https://10.0.0.1:6443
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJU
+users:
+- name: admin
+  user:
+    token: abc123def456ghi789

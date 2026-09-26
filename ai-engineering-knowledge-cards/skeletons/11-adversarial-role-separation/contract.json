@@ -1,0 +1,14 @@
+{
+  "sprint": "auth-module-1",
+  "frozen_at": "before implementation — this is the point",
+  "axes": {
+    "correctness": {"threshold": 3},
+    "test_coverage": {"threshold": 3},
+    "security": {"threshold": 4}
+  },
+  "scale": "1-5",
+  "out_of_scope": [
+    "rate limiting", "password reset flow", "audit logging",
+    "performance optimization"
+  ]
+}

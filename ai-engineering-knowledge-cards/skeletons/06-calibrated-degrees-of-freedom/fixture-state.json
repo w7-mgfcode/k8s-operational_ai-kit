@@ -1,0 +1,16 @@
+{
+  "components": {
+    "api": {
+      "previous_revision": 41,
+      "migrated_since": false,
+      "dependents_deploying": false,
+      "dependents": ["web", "worker"]
+    },
+    "billing": {
+      "previous_revision": 7,
+      "migrated_since": true,
+      "dependents_deploying": true,
+      "dependents": ["api", "web", "reconciler"]
+    }
+  }
+}

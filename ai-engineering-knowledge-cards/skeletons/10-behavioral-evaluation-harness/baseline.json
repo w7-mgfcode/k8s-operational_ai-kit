@@ -1,0 +1,7 @@
+{
+  "runs": [
+    {"date": "2026-01-05", "accuracy": 0.60, "note": "before exclusion lists were added"},
+    {"date": "2026-01-09", "accuracy": 1.00, "note": "after adding mutual exclusions"},
+    {"date": "2026-01-14", "accuracy": 0.80, "note": "REGRESSION: amb-1 flipped after editing cluster-doctor's triggers"}
+  ]
+}

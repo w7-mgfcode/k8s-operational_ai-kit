@@ -1,0 +1,36 @@
+# Frozen before work starts. Amending this is a decision, not drift.
+sprint: hardening-pass-1
+approved_by: operator
+approved_at: 2026-01-05
+
+mode: hybrid            # hybrid = generate commands for manual execution
+                        # offline = analysis only, flag cluster-dependent items
+
+environment: staging
+protected_environments: [prod]      # permanently out of scope, not a per-change call
+
+ownership_boundary:
+  may_modify: ["roles/app-*", "roles/gateway"]
+  never_modify: ["charts/vendor/**", "roles/third-party-*"]
+
+in_scope:
+  - workstream: A
+    goal: enable TLS on the secret store
+    blocked_by: null
+  - workstream: B
+    goal: remediate policy violations in owned roles
+    blocked_by: null
+  - workstream: C
+    goal: triage the benchmark report
+    blocked_by: "no report found at the expected path"
+
+out_of_scope:
+  - upgrading component versions
+  - writing new policies from scratch
+  - anything in a protected environment
+  - performance work
+
+checkpoints:
+  - id: A
+    after: [A, B]
+    gates: [lint, syntax-check, dry-run-reviewed]

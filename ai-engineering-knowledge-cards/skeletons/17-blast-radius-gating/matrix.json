@@ -1,0 +1,25 @@
+{
+  "_comment": "Ranked by DEPENDENT COUNT, not by prominence. The rankings are meant to be counter-intuitive.",
+  "tiers": {
+    "critical": {"impact": "cluster-wide failure", "confirm": "typed-phrase"},
+    "high":     {"impact": "major subsystem failure", "confirm": "explicit"},
+    "medium":   {"impact": "service degradation", "confirm": "note"},
+    "low":      {"impact": "isolated", "confirm": "note"}
+  },
+  "components": {
+    "network-layer":   {"tier": "critical", "dependents": ["everything"]},
+    "storage-layer":   {"tier": "critical", "dependents": ["secret-store", "database", "registry"]},
+    "cert-issuer":     {"tier": "critical", "dependents": ["secret-store", "identity", "registry", "gateway"]},
+    "secret-store":    {"tier": "high", "dependents": ["~24 workloads", "metrics-store"]},
+    "identity":        {"tier": "high", "dependents": ["dashboards", "registry", "api-auth"]},
+    "database":        {"tier": "high", "dependents": ["identity", "registry"]},
+    "metrics-store":   {"tier": "medium", "dependents": []},
+    "log-store":       {"tier": "medium", "dependents": []},
+    "gateway":         {"tier": "low", "dependents": [], "note": "services remain reachable directly"},
+    "registry":        {"tier": "low", "dependents": [], "note": "cached images keep working"}
+  },
+  "shared_spof": {
+    "object-store": "backs every telemetry backend AND every backup — crosses tier boundaries",
+    "directory-service": "new authentication blocked when unavailable"
+  }
+}

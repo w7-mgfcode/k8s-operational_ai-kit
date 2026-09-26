@@ -1,0 +1,13 @@
+{
+  "_comment": "Uncommitted. Nobody reviews this, including its owner. Watch it grow.",
+  "allow": [
+    "Bash(gh api:*)",
+    "Bash(curl -s \"https://api.example.org/repos/x/issues/3000\")",
+    "Bash(curl -s \"https://api.example.org/repos/x/pulls/6724\")",
+    "Bash(curl -s \"https://api.example.org/search?q=blocklist+poll\")",
+    "Bash(wc *)",
+    "Bash(kubectl:*)"
+  ],
+  "ask": [],
+  "deny": []
+}

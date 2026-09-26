@@ -1,0 +1,13 @@
+{
+  "_comment": "Checked in. Reviewed. What every operator gets.",
+  "allow": [
+    "Bash(kubectl get:*)", "Bash(kubectl describe:*)", "Bash(kubectl logs:*)",
+    "Bash(helm list:*)", "Bash(helm diff:*)",
+    "Bash(ansible-lint:*)", "Bash(ansible-playbook:* --check)",
+    "Bash(git status)", "Bash(git diff:*)", "Bash(git log:*)"
+  ],
+  "ask": ["Bash(git push:*)"],
+  "deny": [
+    "Bash(kubectl delete:*)", "Bash(helm uninstall:*)", "Bash(helm rollback:*)"
+  ]
+}

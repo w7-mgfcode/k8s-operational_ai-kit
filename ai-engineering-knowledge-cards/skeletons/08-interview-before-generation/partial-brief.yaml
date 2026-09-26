@@ -1,0 +1,10 @@
+# A brief that arrives half-filled. The fast path must detect this and ask
+# only about the gaps — re-asking answered questions is how you lose a user.
+identity: "cluster-cert-auditor — reports certificates expiring within N days"
+triggers: "'check cert expiry', 'what certs are expiring', 'audit certificates'"
+workflow: "1. resolve scope  2. enumerate certificates  3. sort by expiry  4. report"
+complexity: "multi-phase, one validation gate, no loop-back"
+tools: TBD
+outputs: TBD
+safety: TBD
+references: TBD
