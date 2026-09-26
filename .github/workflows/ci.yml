@@ -1,0 +1,48 @@
+# The repository's single gate, run in CI exactly as it runs locally.
+#
+# There is no build, no dependency install and no test framework — check.py is
+# standard library only, so this workflow needs nothing beyond a Python runtime.
+# If you find yourself adding an install step here, check AGENTS.md first: the
+# absence of a toolchain is a decision, not an oversight.
+name: CI
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The same command AGENTS.md tells every contributor to run. --run also
+      # executes every skeleton, which is what makes "runnable as committed" a
+      # checked promise rather than a claim in a README.
+      - name: Validate contracts, links, imports, anonymization and skeletons
+        run: python3 check.py --run
+
+      # The skeletons clean up after themselves; if one does not, the contract
+      # in .claude/rules/skeletons.md has been broken and CI should say so.
+      - name: Confirm the gate left the tree clean
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::check.py --run left the working tree dirty:"
+            git status --short
+            exit 1
+          fi
+          echo "tree clean"
