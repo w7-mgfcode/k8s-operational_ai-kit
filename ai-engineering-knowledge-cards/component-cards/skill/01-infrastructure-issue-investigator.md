@@ -18,6 +18,10 @@ related: []
 > A skill that investigates a cluster problem read-only, ranks the possible fixes against
 > the team's own repository, and writes a plan — and never applies any of it.
 
+![Infrastructure Issue Investigator: routing, the permission walls, seven gated phases, and the execution boundary](01-infrastructure-issue-investigator.png)
+
+<sub>Source: [`01-infrastructure-issue-investigator.excalidraw`](01-infrastructure-issue-investigator.excalidraw).</sub>
+
 ## What it is
 
 A model-invoked skill for infrastructure incidents on Kubernetes. Given a cluster, a
