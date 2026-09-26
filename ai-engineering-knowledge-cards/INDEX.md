@@ -100,6 +100,7 @@ into practice. Each ships its own prototype under
 | --- | --- | --- | --- | --- |
 | 01 | [Infrastructure Issue Investigator](component-cards/skill/01-infrastructure-issue-investigator.md) | skill | 02 03 06 16 17 18 19 | Investigate read-only, rank fixes against the team's repo, write a plan — never apply it |
 | 02 | [Remediation Ranking Rubric](component-cards/reference/02-remediation-ranking-rubric.md) | reference | 06 17 19 | Seven weighted criteria turn a choice into arithmetic — exact sums over unaudited judgement |
+| 03 | [Investigation Safety Rules](component-cards/reference/03-investigation-safety-rules.md) | reference | 16 17 18 19 | Six rule sets keep an investigation read-only; three denied verbs are the only ones enforced |
 
 ## Compound pipelines
 

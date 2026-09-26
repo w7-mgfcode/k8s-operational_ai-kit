@@ -1,0 +1,55 @@
+{
+  "_comment": "Fabricated inputs for each safety rule. 'cases' are what the rules handle; 'probes' are the gaps --audit demonstrates. Every name, path and credential-shaped value is invented; the base64 strings encode fixture text.",
+  "installation_names": ["shop", "checkout", "east"],
+
+  "contexts": {
+    "cases": [
+      {"context": "dev-east",   "kubeconfig": "~/.kube/dev-east",   "actually": "dev"},
+      {"context": "staging",    "kubeconfig": "~/.kube/staging",    "actually": "staging"},
+      {"context": "prod-east",  "kubeconfig": "~/.kube/prod-east",  "actually": "prod"},
+      {"context": "cluster-a",  "kubeconfig": "~/.kube/config",     "actually": "prod"}
+    ],
+    "probes": [
+      {"context": "dev-restore", "kubeconfig": "~/.kube/dev-restore", "actually": "prod",
+       "why": "a restore context kept its dev name after being repointed at production"}
+    ]
+  },
+
+  "commands": {
+    "cases": ["get pods", "describe pod checkout-0", "logs checkout-0 --previous",
+              "delete pod checkout-0", "helm upgrade shop ./chart", "drain node-a"],
+    "probes": ["run curl --rm -i --image=curl -- curl -vI https://checkout",
+               "exec -it checkout-0 -- sh",
+               "label namespace shop team=payments",
+               "rollout restart deployment/checkout",
+               "create job manual-run --from=cronjob/nightly",
+               "set image deployment/checkout app=checkout:debug"]
+  },
+
+  "queries": {
+    "cases": ["checkout pod OOMKilled in shop namespace on east cluster"],
+    "probes": ["checkout pod OOMKilled in shop namespace Mimir ingester"]
+  },
+
+  "search_hits": {
+    "cases": [
+      {"path": "roles/shop-app/defaults/main.yml", "line": "shop_memory_limit: 256Mi"},
+      {"path": "inventories/staging/group_vars/shop.yml", "line": "shop_replicas: 2"}
+    ],
+    "probes": [
+      {"path": "inventories/staging/group_vars/shop-vault.yml", "line": "shop_db_password: fixture-not-a-real-password"}
+    ]
+  },
+
+  "output": {
+    "cases": [
+      {"line": "db_password: fixture-not-a-real-password", "secret": true},
+      {"line": "secret: fixture-not-a-real-secret", "secret": true},
+      {"line": "image: checkout:1.4.2", "secret": false}
+    ],
+    "probes": [
+      {"line": "checksum: a34SR3evUUFWIqYHBtC3mCaj4qFkeUNiURW8oTbXFPhwYWRkaW5n", "secret": false},
+      {"line": "dsn_b64: cG9zdGdyZXMtZml4dHVyZS11c2VyOmZpeHR1cmUtbm90LWEtcmVhbC1wYXNzd29yZA==", "secret": true}
+    ]
+  }
+}

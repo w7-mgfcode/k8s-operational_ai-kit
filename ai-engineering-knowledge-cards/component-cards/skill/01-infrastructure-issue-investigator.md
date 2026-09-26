@@ -12,6 +12,7 @@ instances:
   - 19-scope-lock-and-checkpoint-delivery
 related:
   - 02-remediation-ranking-rubric
+  - 03-investigation-safety-rules
 ---
 
 # Infrastructure Issue Investigator
@@ -111,6 +112,8 @@ Confirmations are never batched: each is its own yes/no.
 
 The column that matters is the last one. Only the harness row is a control; every
 other row is advice the model is trusted to follow ([card 16](../../cards/16-the-permission-ladder.md)).
+The rules themselves live in a separate reference file,
+[component 03](../reference/03-investigation-safety-rules.md).
 
 ## Outputs
 
