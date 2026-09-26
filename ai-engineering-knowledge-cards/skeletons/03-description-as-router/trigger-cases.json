@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "prompt": "what is broken in namespace payments",
+      "expect_skill": "log-investigator",
+      "signals": ["investigat", "plan"]
+    },
+    {
+      "prompt": "apply the fix we agreed on and restart the deployment",
+      "expect_skill": "cluster-doctor",
+      "signals": ["confirm", "execut"]
+    },
+    {
+      "prompt": "figure out why the pods are crashing and then fix them",
+      "expect_skill": "log-investigator",
+      "note": "Ambiguous by design. The exclusion lists resolve it: investigation precedes execution, and cluster-doctor requires an approved plan."
+    }
+  ]
+}
