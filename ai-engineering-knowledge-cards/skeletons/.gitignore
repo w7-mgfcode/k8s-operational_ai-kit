@@ -1,0 +1,12 @@
+# Artifacts the skeletons generate when you run them. Every Try-it block
+# recreates what it needs, so none of this belongs in the repository — and a
+# skeleton that leaves the tree dirty is a bug in the skeleton.
+20-repository-projection-pipeline/pack.json
+15-structural-lint/lint-state.json
+14-index-guided-retrieval/state.json
+12-lifecycle-hooks-as-capture-points/hooks.log
+12-lifecycle-hooks-as-capture-points/last-flush.json
+12-lifecycle-hooks-as-capture-points/daily/*.md
+
+# Plans the component skeleton writes when you answer y to --save.
+components/01-infrastructure-issue-investigator/plans/

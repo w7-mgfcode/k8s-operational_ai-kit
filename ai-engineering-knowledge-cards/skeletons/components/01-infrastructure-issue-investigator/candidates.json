@@ -1,0 +1,17 @@
+{
+  "_comment": "What the brainstorm step's model call would return for the fabricated OOM symptom: candidate fixes with per-criterion scores. The script weights, sums and ranks them; it does not invent them. A and D tie on total, so the tie-break is visible.",
+  "candidates": [
+    {"id": "A", "title": "Raise the memory limit in the existing app role's defaults",
+     "mechanism": "role defaults", "scope": "namespace", "reversible": "yes", "artifact": "roles/shop-app/defaults/main.yml",
+     "scores": {"reuse": 2, "workstream": 1, "blast": 2, "reversible": 2, "conventions": 2, "deps": 2, "envs": 1}},
+    {"id": "B", "title": "Install a vertical pod autoscaler for the namespace",
+     "mechanism": "new role + chart", "scope": "cluster", "reversible": "partial", "artifact": "new",
+     "scores": {"reuse": 0, "workstream": 1, "blast": 0, "reversible": 1, "conventions": 1, "deps": 0, "envs": 1}},
+    {"id": "C", "title": "Patch the Deployment's limit directly on the cluster",
+     "mechanism": "live patch", "scope": "namespace", "reversible": "partial", "artifact": "new",
+     "scores": {"reuse": 0, "workstream": 1, "blast": 2, "reversible": 1, "conventions": 0, "deps": 2, "envs": 0}},
+    {"id": "D", "title": "Cap the product cache below the limit via a new task file",
+     "mechanism": "role extension", "scope": "namespace", "reversible": "yes", "artifact": "roles/shop-app/tasks/",
+     "scores": {"reuse": 1, "workstream": 2, "blast": 2, "reversible": 2, "conventions": 2, "deps": 2, "envs": 2}}
+  ]
+}

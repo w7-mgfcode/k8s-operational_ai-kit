@@ -1,0 +1,12 @@
+{
+  "_comment": "Seven criteria, each scored 0 (fail), 1 (partial) or 2 (pass), multiplied by its weight. Criterion order is also the tie-break order.",
+  "criteria": [
+    {"key": "reuse",       "weight": 3, "pass": "an existing role does this with values changes only"},
+    {"key": "workstream",  "weight": 2, "pass": "on-theme with the current branch"},
+    {"key": "blast",       "weight": 2, "pass": "namespace-scoped; only the target workload"},
+    {"key": "reversible",  "weight": 2, "pass": "documented rollback and a meaningful dry run"},
+    {"key": "conventions", "weight": 1, "pass": "no rule needs an exception"},
+    {"key": "deps",        "weight": 1, "pass": "no new collection or chart dependency"},
+    {"key": "envs",        "weight": 1, "pass": "promotes up the environment ladder with values only"}
+  ]
+}

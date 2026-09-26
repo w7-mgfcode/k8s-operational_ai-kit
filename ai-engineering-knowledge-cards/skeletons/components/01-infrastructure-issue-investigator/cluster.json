@@ -1,0 +1,12 @@
+{
+  "_comment": "Fabricated read-only command output for one namespace. Every name, value and credential-shaped string here is invented. The investigator reads this instead of calling a cluster.",
+  "namespace": "shop",
+  "outputs": {
+    "get events --sort-by=.lastTimestamp": "LAST SEEN   TYPE      REASON      OBJECT                          MESSAGE\n2m          Normal    Pulled      pod/checkout-7d9f6c5b8-x2k4q    Container image already present on machine\n2m          Normal    Started     pod/checkout-7d9f6c5b8-x2k4q    Started container checkout\n90s         Warning   BackOff     pod/checkout-7d9f6c5b8-x2k4q    Back-off restarting failed container checkout",
+    "get pods": "NAME                         READY   STATUS             RESTARTS      AGE\ncheckout-7d9f6c5b8-x2k4q     0/1     CrashLoopBackOff   14 (90s ago)   47m\ncart-5c8b7d6f9-m7n2p         1/1     Running            0              3d",
+    "get deploy,sts,ds,job,cronjob": "NAME                       READY   UP-TO-DATE   AVAILABLE   AGE\ndeployment.apps/checkout   0/1     1            0           47m\ndeployment.apps/cart       1/1     1            1           3d",
+    "describe pod checkout-7d9f6c5b8-x2k4q": "Containers:\n  checkout:\n    State:          Waiting\n      Reason:       CrashLoopBackOff\n    Last State:     Terminated\n      Reason:       OOMKilled\n      Exit Code:    137\n    Restart Count:  14\n    Limits:\n      memory:  256Mi\n    Requests:\n      memory:  128Mi\n    Environment:\n      DB_HOST:      postgres.shop.svc\n      DB_PASSWORD:  fixture-not-a-real-password\n      CACHE_SIZE:   512MB",
+    "logs checkout-7d9f6c5b8-x2k4q --previous --tail=200": "starting checkout service\nloading product cache size=512MB\nupstream auth configured token=fixture-token-0000000000\ncache warm: 212MB used\ncache warm: 247MB used\n",
+    "top pods --sort-by=memory": "NAME                         CPU(cores)   MEMORY(bytes)\ncart-5c8b7d6f9-m7n2p         4m           96Mi"
+  }
+}
