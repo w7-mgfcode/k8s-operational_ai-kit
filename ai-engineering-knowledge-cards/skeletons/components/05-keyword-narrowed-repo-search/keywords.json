@@ -1,0 +1,22 @@
+{
+  "_comment": "A fabricated keyword -> path table, written for this skeleton. Matching is by substring of the lower-cased symptom, as in the source. One entry is stale on purpose (queue); several keywords are short enough to collide (pv, node, helm).",
+  "default_scope": [
+    "roles/*/tasks/*",
+    "roles/*/defaults/*",
+    "roles/*/templates/*",
+    "playbooks/*",
+    "inventories/*/group_vars/*"
+  ],
+  "restricted": ["*vault*.yml", "*/secrets/*", ".env", ".envrc", ".git/*"],
+  "narrow": {
+    "oom":    ["roles/*-app/*", "inventories/*/group_vars/*"],
+    "memory": ["roles/*-app/*", "inventories/*/group_vars/*"],
+    "tls":    ["roles/cert*/*"],
+    "cert":   ["roles/cert*/*"],
+    "pvc":    ["roles/storage*/*"],
+    "pv":     ["roles/storage*/*"],
+    "queue":  ["roles/rabbitmq*/*"],
+    "node":   ["roles/node*/*"],
+    "helm":   ["roles/*/templates/*", "*values*.yaml"]
+  }
+}

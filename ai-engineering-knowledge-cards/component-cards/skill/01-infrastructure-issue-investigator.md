@@ -14,6 +14,7 @@ related:
   - 02-remediation-ranking-rubric
   - 03-investigation-safety-rules
   - 04-symptom-diagnostic-playbook
+  - 05-keyword-narrowed-repo-search
 ---
 
 # Infrastructure Issue Investigator
@@ -79,7 +80,8 @@ Seven phases, each ending at a gate ([card 19](../../cards/19-scope-lock-and-che
    operator health, jobs. Pipe every output through the redactor. *Gate: at least
    one signal, or the user says to proceed on a hypothesis.*
 3. **Research, in parallel.** Web: search with every installation-specific name
-   stripped — keep versions, error strings and upstream component names. Repo:
+   stripped — keep versions, error strings and upstream component names. Repo
+   ([component 05](../reference/05-keyword-narrowed-repo-search.md)):
    narrow by symptom keyword to likely role paths, read recent history for prior
    fixes, never open restricted files — record the path, advise a manual check.
 4. **Brainstorm** three to six distinct candidates, each with mechanism, scope,

@@ -10,6 +10,7 @@ instances:
 related:
   - 01-infrastructure-issue-investigator
   - 04-symptom-diagnostic-playbook
+  - 05-keyword-narrowed-repo-search
 ---
 
 # Investigation Safety Rules

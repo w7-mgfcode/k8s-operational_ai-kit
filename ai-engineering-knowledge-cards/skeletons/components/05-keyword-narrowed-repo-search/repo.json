@@ -1,0 +1,27 @@
+{
+  "_comment": "A fabricated infrastructure-as-code repository, reduced to what the search reads: branch, file paths, recent commits. The queue role was renamed from 'rabbitmq' to 'message-broker' in commit 5e6f7a8 — the keyword table in keywords.json was never updated.",
+  "branch": "feat/shop-stability",
+  "files": [
+    "roles/shop-app/tasks/main.yml",
+    "roles/shop-app/defaults/main.yml",
+    "roles/shop-app/templates/deployment.yaml.j2",
+    "roles/cart-app/defaults/main.yml",
+    "roles/cert-issuer/tasks/main.yml",
+    "roles/storage-class/tasks/main.yml",
+    "roles/message-broker/tasks/main.yml",
+    "roles/message-broker/defaults/main.yml",
+    "roles/node-tuning/tasks/main.yml",
+    "playbooks/shop.yml",
+    "playbooks/platform.yml",
+    "inventories/staging/group_vars/shop.yml",
+    "inventories/staging/group_vars/shop-vault.yml",
+    "inventories/prod/group_vars/shop.yml",
+    "inventories/prod/group_vars/shop-vault.yml"
+  ],
+  "commits": [
+    {"hash": "a1b2c3d", "path": "roles/shop-app/defaults/main.yml", "subject": "fix(shop): raise cart memory limit after OOM"},
+    {"hash": "e4f5a6b", "path": "roles/shop-app/tasks/main.yml", "subject": "feat(shop): add product cache warm-up"},
+    {"hash": "5e6f7a8", "path": "roles/message-broker/tasks/main.yml", "subject": "refactor(queue): rename rabbitmq role to message-broker"},
+    {"hash": "9c0d1e2", "path": "roles/cert-issuer/tasks/main.yml", "subject": "fix(certs): rotate issuer before expiry"}
+  ]
+}

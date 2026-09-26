@@ -102,6 +102,7 @@ into practice. Each ships its own prototype under
 | 02 | [Remediation Ranking Rubric](component-cards/reference/02-remediation-ranking-rubric.md) | reference | 06 17 19 | Seven weighted criteria turn a choice into arithmetic — exact sums over unaudited judgement |
 | 03 | [Investigation Safety Rules](component-cards/reference/03-investigation-safety-rules.md) | reference | 16 17 18 19 | Six rule sets keep an investigation read-only; three denied verbs are the only ones enforced |
 | 04 | [Symptom-Class Diagnostic Playbook](component-cards/reference/04-symptom-diagnostic-playbook.md) | reference | 02 06 16 18 | Exact read-only commands per symptom class — and every flaw in them repeated on every run |
+| 05 | [Keyword-Narrowed Repository Search](component-cards/reference/05-keyword-narrowed-repo-search.md) | reference | 02 05 14 18 | A keyword-to-path map narrows the search — until a role is renamed and it quietly finds nothing |
 
 ## Compound pipelines
 
