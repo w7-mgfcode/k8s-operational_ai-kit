@@ -16,6 +16,7 @@ rule missing from it is invisible to every agent except Claude Code.
 | `anonymization.md` | `ai-engineering-knowledge-cards/**`, `.gitignore` | The masking rule; `.legacy-assets/` is never a source; what must never enter the repo |
 | `cards.md` | `cards/**`, `templates/**`, `docs/**` | Six frontmatter keys, thirteen sections, what `maturity: partial` means, provenance |
 | `skeletons.md` | `skeletons/**` | Stdlib-only, offline, runnable as committed, deliberate gaps stated |
+| `component-cards.md` | `component-cards/**`, `templates/COMPONENT_CARD_TEMPLATE.md`, `skeletons/components/**` | Five frontmatter keys, eleven sections, one artifact per card, stricter anonymization, legacy extraction only by named authorization |
 | `subagents.md` | `.claude/agents/**` | Three distinct roles; `tools:` is a narrowing; cite or admit; this repo's real shape |
 | `skills.md` | `.claude/skills/**`, `.agents/**` | Vendored not managed; the three broken assets; `allowed-tools`; routing descriptions |
 | `git-workflow.md` | `.claude/**`, `.github/**`, `ai-engineering-knowledge-cards/**` | Types, the one scope taxonomy, the `Context:` trailer, prohibitions |
