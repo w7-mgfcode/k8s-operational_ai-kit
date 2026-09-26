@@ -18,6 +18,10 @@ related:
 > diagnosis is a lookup, not an improvisation, and every flaw in the catalogue is
 > repeated on every run.
 
+![Symptom-Class Diagnostic Playbook: symptom lookup, the context pinned only for the baseline, sixteen lint defects, and output through the redactor](04-symptom-diagnostic-playbook.png)
+
+<sub>Source: [`04-symptom-diagnostic-playbook.excalidraw`](04-symptom-diagnostic-playbook.excalidraw).</sub>
+
 ## What it is
 
 A reference file loaded by the investigator skill
