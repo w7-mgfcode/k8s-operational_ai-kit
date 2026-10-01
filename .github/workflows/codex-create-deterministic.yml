@@ -67,6 +67,9 @@ jobs:
       # (not the agent) do every git operation.
       - name: Run Codex (writes code only)
         env:
+          # codex exec authenticates non-interactive runs from CODEX_API_KEY;
+          # OPENAI_API_KEY is kept for older CLI releases that read only it.
+          CODEX_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           cat > "$RUNNER_TEMP/prompt.txt" <<'CODEX_PROMPT'
@@ -118,7 +121,18 @@ jobs:
           fi
 
           git add -A
-          git commit -m "chore(agents): address issue #${{ github.event.issue.number }}"
+          MSG="chore(agents): address issue #${{ github.event.issue.number }}"
+          # .claude/rules/git-workflow.md requires a Context: trailer for any
+          # agent-context asset. The workflow cannot say what an agent will now
+          # see differently, so it names the files and leaves that to review.
+          CTX=$(git diff --cached --name-only \
+            | grep -E '^(\.claude/|\.agents/|AGENTS\.md$|CLAUDE\.md$|\.github/copilot-instructions\.md$)' \
+            | paste -sd ' ' -) || true
+          if [ -n "$CTX" ]; then
+            git commit -m "$MSG" -m "Context: Codex changed agent-context assets ($CTX); the reviewer replaces this line with what an agent will now see differently."
+          else
+            git commit -m "$MSG"
+          fi
           git push -u origin "${{ steps.branch.outputs.name }}"
 
           PR_URL=$(gh pr create \

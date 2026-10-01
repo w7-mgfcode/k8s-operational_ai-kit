@@ -67,9 +67,10 @@ jobs:
             2. Implement the smallest correct change that satisfies the request.
             3. Run `python3 check.py --run` and fix what fails. It must exit 0 and
                leave `git status` clean.
-            4. Commit on a new branch named per .claude/rules/git-workflow.md,
-               with a Conventional Commit message and a `Context:` trailer if you
-               touched agent-context assets, and open a DRAFT pull request.
+            4. Commit on the working branch the action checked out, with a
+               Conventional Commit message per .claude/rules/git-workflow.md and a
+               `Context:` trailer if you touched agent-context assets, push it, and
+               open a DRAFT pull request with `gh pr create --draft`.
 
             Non-negotiables for this repository:
             - The repository is public. Never read anything under `.legacy-assets/`
@@ -84,5 +85,9 @@ jobs:
 
             Stop at the draft PR. A human reviews and merges — that final step
             is intentionally not yours.
+          # Bash is disabled by default in the action. Tag mode (forced by
+          # track_progress) already grants git add/commit/push; these are the only
+          # other commands the prompt needs — the gate, read-only git, the draft PR.
           claude_args: |
             --max-turns 30
+            --allowedTools "Bash(python3 check.py:*),Bash(git status:*),Bash(git diff:*),Bash(gh pr create:*)"

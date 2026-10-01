@@ -65,9 +65,11 @@ jobs:
               a formal approve or request-changes review; a human does that.
             - Do not modify any files. This is a read-only review.
 
-            The only gate is `python3 check.py --run` (standard library, no
-            install). There is no build, no npm, no linter and no test framework
-            in this project — do not run or suggest them, and do not report their
-            absence as a finding.
+            The only gate is `python3 check.py --run`. Do NOT run it here: the
+            checkout is PR-controlled code, and this job holds a secret and write
+            permissions. ci.yml's `verify` job runs it read-only with no secrets —
+            read that result with the CI status tool and report it. There is no
+            build, no npm, no linter and no test framework in this project — do
+            not run or suggest them, and do not report their absence as a finding.
           claude_args: |
             --max-turns 20
