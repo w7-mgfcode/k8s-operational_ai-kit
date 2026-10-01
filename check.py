@@ -8,6 +8,8 @@ every commit; CI runs the same command.
 
 Usage:
     python3 check.py              # contracts + links + imports + anonymization
+                                  # (anonymization scans every file git would
+                                  # publish, not only the cards tree)
     python3 check.py --run        # also execute every skeleton (slower)
     python3 check.py --quiet      # failures only
 """
@@ -16,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import os
 import re
 import subprocess
 import sys
@@ -59,6 +62,8 @@ ANON_EXEMPT = {
     "skeletons/16-the-permission-ladder/policy-personal.json",
     "skeletons/20-repository-projection-pipeline/map.py",
 }
+# Directory names never scanned when git is unavailable (an exported tree).
+NOT_PUBLISHED = {".git", ".legacy-assets", ".venv", "__pycache__"}
 
 STDLIB_OK = {
     "argparse", "ast", "collections", "dataclasses", "datetime", "fnmatch",
@@ -125,7 +130,7 @@ def check_cards(r: Report) -> None:
         if not mat or mat.group(1) not in MATURITIES:
             r.fail(str(rel), f"maturity must be one of {sorted(MATURITIES)}")
 
-        if "## Provenance" not in body:
+        if not re.search(r"^## Provenance\s*$", body, re.M):
             r.fail(str(rel), "missing Provenance section")
 
     r.ok(f"{len(files)} cards, contract satisfied")
@@ -176,9 +181,9 @@ def check_component_cards(r: Report) -> None:
             r.fail(rel, f"no skeletons/components/{f.stem}/README.md")
             continue
         rtext = readme.read_text(encoding="utf-8")
-        if "## Try it" not in rtext:
+        if not re.search(r"^## Try it\s*$", rtext, re.M):
             r.fail(f"skeletons/components/{f.stem}", "README has no '## Try it' section")
-        if "deliberately missing" not in rtext:
+        if not re.search(r"^## What is deliberately missing", rtext, re.M):
             r.fail(f"skeletons/components/{f.stem}",
                    "README has no 'What is deliberately missing' section")
     r.ok(f"{len(files)} component cards, contract satisfied")
@@ -216,9 +221,9 @@ def check_skeletons(r: Report) -> None:
             r.fail(f"skeletons/{card.stem}", "no README.md")
             continue
         text = readme.read_text(encoding="utf-8")
-        if "## Try it" not in text:
+        if not re.search(r"^## Try it\s*$", text, re.M):
             r.fail(f"skeletons/{card.stem}", "README has no '## Try it' section")
-        if "deliberately missing" not in text:
+        if not re.search(r"^## What is deliberately missing", text, re.M):
             r.fail(f"skeletons/{card.stem}",
                    "README has no 'What is deliberately missing' section")
     r.ok(f"{len(list(CARDS.glob('*.md'))) - missing} skeletons with a conforming README")
@@ -247,14 +252,29 @@ def check_imports(r: Report) -> None:
     r.ok(f"{len(scripts)} scripts, standard library only")
 
 
+def publishable_files() -> list[Path]:
+    """Every file git would publish: tracked, plus untracked and not ignored."""
+    try:
+        out = subprocess.run(["git", "ls-files", "-co", "--exclude-standard", "-z"],
+                             cwd=ROOT, capture_output=True, text=True, check=True).stdout
+        paths = [ROOT / p for p in out.split("\0") if p]
+    except (OSError, subprocess.CalledProcessError):
+        paths = [p for p in ROOT.rglob("*")
+                 if not NOT_PUBLISHED & set(p.relative_to(ROOT).parts)]
+    return sorted(p for p in paths
+                  if p.is_file() and p.relative_to(ROOT).parts[0] != ".legacy-assets")
+
+
 def check_anonymization(r: Report) -> None:
     r.section("anonymization")
     hits = 0
-    for f in sorted(PROJECT.rglob("*")):
-        if not f.is_file() or f.suffix in {".png", ".excalidraw"}:
+    exempt = {f"{PROJECT.name}/{p}" for p in ANON_EXEMPT}
+    files = publishable_files()
+    for f in files:
+        if f.suffix == ".png":
             continue
-        rel = f.relative_to(PROJECT).as_posix()
-        if rel in ANON_EXEMPT:
+        rel = f.relative_to(ROOT).as_posix()
+        if rel in exempt:
             continue
         try:
             text = f.read_text(encoding="utf-8")
@@ -266,7 +286,7 @@ def check_anonymization(r: Report) -> None:
                 r.fail(f"{rel}:{line}", f"{label} — see .claude/rules/anonymization.md")
                 hits += 1
     if not hits:
-        r.ok("no identifier of a masked class found")
+        r.ok(f"{len(files)} publishable files, no identifier of a masked class found")
 
 
 # Artifacts the skeletons write when run with defaults. The gate must not
@@ -294,7 +314,8 @@ def run_skeletons(r: Report) -> None:
                 # block forever waiting on a terminal that is not there.
                 p = subprocess.run([sys.executable, str(script)],
                                    stdin=subprocess.DEVNULL, capture_output=True,
-                                   text=True, cwd=d, timeout=30)
+                                   text=True, cwd=d, timeout=30,
+                                   env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
             except subprocess.TimeoutExpired:
                 r.fail(f"{d.relative_to(PROJECT)}/{script.name}", "timed out after 30s")
                 continue
