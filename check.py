@@ -8,6 +8,8 @@ every commit; CI runs the same command.
 
 Usage:
     python3 check.py              # contracts + links + imports + anonymization
+                                  # (anonymization scans every file git would
+                                  # publish, not only the cards tree)
     python3 check.py --run        # also execute every skeleton (slower)
     python3 check.py --quiet      # failures only
 """
@@ -16,6 +18,8 @@ from __future__ import annotations
 
 import argparse
 import ast
+import fnmatch
+import os
 import re
 import subprocess
 import sys
@@ -59,6 +63,8 @@ ANON_EXEMPT = {
     "skeletons/16-the-permission-ladder/policy-personal.json",
     "skeletons/20-repository-projection-pipeline/map.py",
 }
+# Directory names never scanned when git is unavailable (an exported tree).
+NOT_PUBLISHED = {".git", ".legacy-assets", ".venv", "__pycache__"}
 
 STDLIB_OK = {
     "argparse", "ast", "collections", "dataclasses", "datetime", "fnmatch",
@@ -95,16 +101,51 @@ def frontmatter(text: str) -> tuple[list[str], str]:
     return keys, parts[2]
 
 
+def related_slugs(text: str) -> set[str] | None:
+    """The card's related: slugs, read from frontmatter only.
+
+    `related: []` and a block list of `  - <slug>` lines are the two supported
+    forms. Anything else returns None, so a malformed value fails the gate
+    instead of silently reading as "no edges" and skipping the graph checks.
+    """
+    if not text.startswith("---"):
+        return None
+    fm = text.split("---", 2)[1]
+    m = re.search(r"^related:[ \t]*(.*)$", fm, re.M)
+    if not m:
+        return None
+    if m.group(1).strip() == "[]":
+        return set()
+    if m.group(1).strip():
+        return None
+    slugs = set()
+    for line in fm[m.end():].split("\n")[1:]:
+        if not line.strip():
+            continue
+        if not line[0].isspace():
+            break
+        item = re.fullmatch(r"\s+- (\S+)\s*", line)
+        if not item:
+            return None
+        slugs.add(item.group(1))
+    return slugs or None
+
+
 def check_cards(r: Report) -> None:
     r.section("cards")
     files = sorted(CARDS.glob("*.md"))
     if not files:
         r.fail("cards", "no cards found")
         return
+    related: dict[str, set[str]] = {}
     for f in files:
         text = f.read_text(encoding="utf-8")
         keys, body = frontmatter(text)
         rel = f.relative_to(PROJECT)
+        slugs = related_slugs(text)
+        if slugs is None:
+            r.fail(str(rel), "related: must be [] or a block list of '  - <card-slug>' lines")
+        related[f.stem] = slugs or set()
 
         if keys[: len(FRONTMATTER_KEYS)] != FRONTMATTER_KEYS:
             r.fail(str(rel), f"frontmatter keys {keys[:6]} != {FRONTMATTER_KEYS}")
@@ -125,10 +166,19 @@ def check_cards(r: Report) -> None:
         if not mat or mat.group(1) not in MATURITIES:
             r.fail(str(rel), f"maturity must be one of {sorted(MATURITIES)}")
 
-        if "## Provenance" not in body:
+        if not re.search(r"^## Provenance\s*$", body, re.M):
             r.fail(str(rel), "missing Provenance section")
 
-    r.ok(f"{len(files)} cards, contract satisfied")
+    # related: is a graph, not a list of mentions — every edge resolves and
+    # runs both ways (docs/_base/DEV_GUIDE.md, Adding a Card, step 6).
+    for stem, targets in sorted(related.items()):
+        for t in sorted(targets):
+            if t not in related:
+                r.fail(f"cards/{stem}.md", f"related '{t}' is not a card in cards/")
+            elif stem not in related[t]:
+                r.fail(f"cards/{stem}.md", f"related '{t}' does not list this card back")
+
+    r.ok(f"{len(files)} cards, contract satisfied, related: edges symmetric")
 
 
 def check_component_cards(r: Report) -> None:
@@ -176,9 +226,9 @@ def check_component_cards(r: Report) -> None:
             r.fail(rel, f"no skeletons/components/{f.stem}/README.md")
             continue
         rtext = readme.read_text(encoding="utf-8")
-        if "## Try it" not in rtext:
+        if not re.search(r"^## Try it\s*$", rtext, re.M):
             r.fail(f"skeletons/components/{f.stem}", "README has no '## Try it' section")
-        if "deliberately missing" not in rtext:
+        if not re.search(r"^## What is deliberately missing", rtext, re.M):
             r.fail(f"skeletons/components/{f.stem}",
                    "README has no 'What is deliberately missing' section")
     r.ok(f"{len(files)} component cards, contract satisfied")
@@ -216,9 +266,9 @@ def check_skeletons(r: Report) -> None:
             r.fail(f"skeletons/{card.stem}", "no README.md")
             continue
         text = readme.read_text(encoding="utf-8")
-        if "## Try it" not in text:
+        if not re.search(r"^## Try it\s*$", text, re.M):
             r.fail(f"skeletons/{card.stem}", "README has no '## Try it' section")
-        if "deliberately missing" not in text:
+        if not re.search(r"^## What is deliberately missing", text, re.M):
             r.fail(f"skeletons/{card.stem}",
                    "README has no 'What is deliberately missing' section")
     r.ok(f"{len(list(CARDS.glob('*.md'))) - missing} skeletons with a conforming README")
@@ -247,14 +297,58 @@ def check_imports(r: Report) -> None:
     r.ok(f"{len(scripts)} scripts, standard library only")
 
 
+def gitignored(rel: str, rules: list[tuple[bool, str, bool]]) -> bool:
+    """Root .gitignore semantics for the pattern shapes this repo uses: last
+    match wins, `!` re-includes, a trailing `/` matches directories only, a
+    pattern with an inner `/` is anchored at the root, `**/` matches any depth."""
+    parts = rel.split("/")
+    prefixes = ["/".join(parts[: i + 1]) for i in range(len(parts))]
+    ignored = False
+    for negate, pattern, dir_only in rules:
+        any_depth = pattern.startswith("**/")
+        pat = pattern[3:] if any_depth else pattern.lstrip("/")
+        anchored = "/" in pat and not any_depth
+        for c in prefixes[:-1] if dir_only else prefixes:
+            if fnmatch.fnmatchcase(c if anchored else c.rsplit("/", 1)[-1], pat):
+                ignored = not negate
+                break
+    return ignored
+
+
+def publishable_files() -> list[Path]:
+    """Every file git would publish: tracked, plus untracked and not ignored."""
+    try:
+        out = subprocess.run(["git", "ls-files", "-co", "--exclude-standard", "-z"],
+                             cwd=ROOT, capture_output=True, text=True, check=True).stdout
+        paths = [ROOT / p for p in out.split("\0") if p]
+    except (OSError, subprocess.CalledProcessError):
+        # No git (an exported tree): honour the root .gitignore so the fallback
+        # scans the same boundary — not vendored tooling, .env files or handoffs.
+        rules = []
+        gi = ROOT / ".gitignore"
+        for line in (gi.read_text(encoding="utf-8").splitlines() if gi.exists() else []):
+            line = line.strip()
+            if line and not line.startswith("#"):
+                negate = line.startswith("!")
+                line = line.lstrip("!")
+                rules.append((negate, line.rstrip("/"), line.endswith("/")))
+        paths = [p for p in ROOT.rglob("*")
+                 if not NOT_PUBLISHED & set(p.relative_to(ROOT).parts)
+                 and not gitignored(p.relative_to(ROOT).as_posix(), rules)]
+    return sorted(p for p in paths
+                  if p.is_file() and p.relative_to(ROOT).parts[0] != ".legacy-assets")
+
+
 def check_anonymization(r: Report) -> None:
     r.section("anonymization")
     hits = 0
-    for f in sorted(PROJECT.rglob("*")):
-        if not f.is_file() or f.suffix in {".png", ".excalidraw"}:
+    exempt = {f"{PROJECT.name}/{p}" for p in ANON_EXEMPT}
+    files = publishable_files()
+    for f in files:
+        if f.suffix == ".png":
             continue
-        rel = f.relative_to(PROJECT).as_posix()
-        if rel in ANON_EXEMPT:
+        rel = f.relative_to(ROOT).as_posix()
+        if rel in exempt:
             continue
         try:
             text = f.read_text(encoding="utf-8")
@@ -266,7 +360,7 @@ def check_anonymization(r: Report) -> None:
                 r.fail(f"{rel}:{line}", f"{label} — see .claude/rules/anonymization.md")
                 hits += 1
     if not hits:
-        r.ok("no identifier of a masked class found")
+        r.ok(f"{len(files)} publishable files, no identifier of a masked class found")
 
 
 # Artifacts the skeletons write when run with defaults. The gate must not
@@ -294,7 +388,8 @@ def run_skeletons(r: Report) -> None:
                 # block forever waiting on a terminal that is not there.
                 p = subprocess.run([sys.executable, str(script)],
                                    stdin=subprocess.DEVNULL, capture_output=True,
-                                   text=True, cwd=d, timeout=30)
+                                   text=True, cwd=d, timeout=30,
+                                   env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
             except subprocess.TimeoutExpired:
                 r.fail(f"{d.relative_to(PROJECT)}/{script.name}", "timed out after 30s")
                 continue

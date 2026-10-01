@@ -1,8 +1,14 @@
 ---
 paths:
   - ".claude/**"
+  - ".agents/**"
   - ".github/**"
   - "ai-engineering-knowledge-cards/**"
+  - "AGENTS.md"
+  - "CLAUDE.md"
+  - "check.py"
+  - "docs/_base/**"
+  - ".gitignore"
 ---
 
 # Git Workflow
@@ -26,11 +32,11 @@ Branch scope and commit scope are the same word. One taxonomy, defined once here
 
 | Scope | Covers |
 | --- | --- |
-| `cards` | `ai-engineering-knowledge-cards/cards/**`, `templates/**` |
-| `skeletons` | `ai-engineering-knowledge-cards/skeletons/**` |
-| `docs` | `ai-engineering-knowledge-cards/docs/**`, README, INDEX |
-| `agents` | `.claude/**`, `.agents/**`, root `AGENTS.md` and `CLAUDE.md` |
-| `ci` | `.github/**` |
+| `cards` | `ai-engineering-knowledge-cards/cards/**`, `ai-engineering-knowledge-cards/component-cards/**`, `ai-engineering-knowledge-cards/templates/**` |
+| `skeletons` | `ai-engineering-knowledge-cards/skeletons/**`, including `skeletons/components/` and `skeletons/pipelines/` |
+| `docs` | `ai-engineering-knowledge-cards/docs/**`, `ai-engineering-knowledge-cards/README.md` and `INDEX.md`, root `docs/_base/**` |
+| `agents` | `.claude/**`, `.agents/**`, root `AGENTS.md` and `CLAUDE.md`, `.gitignore` |
+| `ci` | `.github/**`, root `check.py` |
 
 Pick the scope that owns the **blast radius**, not the file count. A one-line
 edit to `templates/CARD_TEMPLATE.md` is `cards`, because it changes the contract
@@ -42,19 +48,19 @@ Examples:
 feat(cards): add card 14 index-guided retrieval
 fix(skeletons): make compile.py idempotent on repeated runs (#3)
 docs(docs): record the anonymization rule for .legacy-assets
-chore(agents): delete the three imported intentguard-docs rules
+chore(agents): delete three imported rules whose globs matched nothing
 ```
 
 ## The `Context:` trailer
 
 **Required when a commit changes agent-context assets** — anything under
-`.claude/rules/`, `.claude/agents/`, `.claude/skills/`, `.agents/`, or a root
-`AGENTS.md`. It records what an agent reading this repo later will now see
+`.claude/` or `.agents/`, a root `AGENTS.md` or `CLAUDE.md`, or
+`.github/copilot-instructions.md`. It records what an agent reading this repo later will now see
 differently. It names the change in the agent's terms, not the diff's.
 
 ```text
 Context: deleted components.md and generated-docs.md (imported from
-intentguard-docs; 0/6 globs matched). Added anonymization.md (paths:
+another repository; 0/6 globs matched). Added anonymization.md (paths:
 ai-engineering-knowledge-cards/**) and indexed it in README.md.
 ```
 
@@ -67,5 +73,5 @@ ai-engineering-knowledge-cards/**) and indexed it in README.md.
 - Committing anything [`anonymization.md`](anonymization.md) excludes. Check the
   staged diff, not the working tree.
 
-Note: the branch is currently `master` while `main` is the intended default.
-`ci.yml` triggers on both; renaming is the user's call. Either way, branch first.
+The default branch is `main`, and `ci.yml` runs the gate on every push and pull
+request to it. Work reaches `main` by pull request.

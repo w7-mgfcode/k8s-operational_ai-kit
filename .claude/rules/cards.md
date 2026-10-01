@@ -1,14 +1,14 @@
 ---
 paths:
   - "ai-engineering-knowledge-cards/cards/**"
-  - "ai-engineering-knowledge-cards/templates/**"
+  - "ai-engineering-knowledge-cards/templates/CARD_TEMPLATE.md"
   - "ai-engineering-knowledge-cards/docs/**"
 ---
 
 # The Card Contract
 
 A card is one pattern, thirteen fixed sections, every claim traceable to
-something that actually ran. `../templates/CARD_TEMPLATE.md` is the contract; all
+something that actually ran. [`CARD_TEMPLATE.md`](../../ai-engineering-knowledge-cards/templates/CARD_TEMPLATE.md) is the contract; all
 twenty cards conform exactly, and `check.py` keeps that true.
 
 ## Frontmatter

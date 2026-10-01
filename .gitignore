@@ -11,3 +11,17 @@ __pycache__/
 # Never publishable. This repository is intended to be public.
 .env
 .env.*
+
+# Vendored agent tooling — imported from other repositories, not governed by a
+# card or skeleton contract, and not scanned for this repo's anonymization
+# boundary. Local use only. The one project-authored skill stays committable.
+# See .claude/rules/skills.md.
+.agents/
+.claude/commands/
+.claude/.mcp.json
+.claude/skills/*
+!.claude/skills/knowledge-card-summarizer/
+
+# Session handoffs: local working notes, not repository content.
+HANDOFF.md
+.handoffs/

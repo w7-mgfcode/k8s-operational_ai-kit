@@ -1,14 +1,15 @@
 # Copilot instructions
 
 **Read `AGENTS.md` in the repository root. It is the single source of truth for
-this repository's rules.** This file adds Copilot-specific mechanics and repeats
-nothing from it.
+this repository's rules.** This file adds Copilot-specific mechanics, and repeats
+only the five essentials below in case the pointer is not followed.
 
 ## The essentials, so you have them inline
 
-- **This is a documentation and prototype repository.** Twenty Markdown cards in
-  `ai-engineering-knowledge-cards/cards/`, one Python skeleton per card in
-  `skeletons/`. There is no application, no `package.json`, no build, no linter
+- **This is a documentation and prototype repository.** Markdown pattern cards in
+  `ai-engineering-knowledge-cards/cards/` and component cards in
+  `ai-engineering-knowledge-cards/component-cards/`, one Python skeleton per card in
+  `ai-engineering-knowledge-cards/skeletons/`. There is no application, no `package.json`, no build, no linter
   and no test framework. Do not suggest adding one.
 - **Verify with `python3 check.py --run`.** It must exit 0 and leave the tree
   clean. This is exactly what `.github/workflows/ci.yml` runs.

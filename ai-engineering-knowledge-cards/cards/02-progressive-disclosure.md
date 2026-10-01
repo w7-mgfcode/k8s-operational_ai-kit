@@ -11,6 +11,8 @@ related:
   - 03-description-as-router
   - 04-path-scoped-rule-loading
   - 06-calibrated-degrees-of-freedom
+  - 07-capability-taxonomy
+  - 14-index-guided-retrieval
 ---
 
 # Progressive Disclosure
@@ -117,6 +119,8 @@ instinct — write more, emphasize harder — makes it worse.
 | [04 Path-Scoped Rule Loading](04-path-scoped-rule-loading.md) | The same principle applied to rules, triggered by file path instead of by request |
 | [06 Calibrated Degrees of Freedom](06-calibrated-degrees-of-freedom.md) | Decides whether a given piece of level 3 should be prose, pseudocode, or a script |
 | [09 Scaffold, Validate, Package](09-scaffold-validate-package.md) | The validator enforces the level boundaries mechanically |
+| [07 Capability Taxonomy](07-capability-taxonomy.md) | Applies this three-level structure to all three containers; only skills pay the always-resident cost |
+| [14 Index-Guided Retrieval](14-index-guided-retrieval.md) | The same load-what-is-needed principle, applied to a knowledge corpus |
 
 ## Constraints and trade-offs
 

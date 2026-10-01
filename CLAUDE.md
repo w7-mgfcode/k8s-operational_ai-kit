@@ -8,13 +8,14 @@
 
 ## Deep-Dive References
 
-Pulled in on demand — load only what the task touches.
+Read on demand — load only what the task touches. Deliberately plain paths, not `@` imports:
+an import would load all five into every session.
 
-- Layer structure & blast radius:  @docs/_base/ARCHITECTURE.md
-- Constraint matrix & rule paths:  @docs/_base/RULES.md
-- Anonymization & publishability:  @docs/_base/SECURITY.md
-- Adding a card or skeleton:       @docs/_base/DEV_GUIDE.md
-- Repository navigation map:       @docs/_base/REPO_MAP_INDEX.md
+- Layer structure & blast radius:  `docs/_base/ARCHITECTURE.md`
+- Constraint matrix & rule paths:  `docs/_base/RULES.md`
+- Anonymization & publishability:  `docs/_base/SECURITY.md`
+- Adding a card or skeleton:       `docs/_base/DEV_GUIDE.md`
+- Repository navigation map:       `docs/_base/REPO_MAP_INDEX.md`
 
 ## Path-Scoped Rules
 
@@ -46,7 +47,7 @@ wc -l CLAUDE.md            # must stay ≤ 150 lines
 
 ## Workflow
 
-1. Branch — never commit to `master` directly (`.claude/rules/git-workflow.md`).
+1. Branch — never commit to `main` directly (`.claude/rules/git-workflow.md`).
 2. Read the card or skeleton you are changing, and the rule that governs its path.
 3. Make the change. If it touches a contract, expect every artifact under it to need review.
 4. `python3 check.py --run` until it exits 0 and the tree is clean.
@@ -54,9 +55,9 @@ wc -l CLAUDE.md            # must stay ≤ 150 lines
 
 ## Learnings
 
-- `check.py --run` classifies exit 2 as "needs arguments", not failure; several skeletons exit 1
-  on purpose to demonstrate a failure mode. Only a crash is a real failure.
-- Skeleton READMEs under `skeletons/pipelines/` sit one directory deeper — card links need
-  `../../../cards/`, and the link check will catch it if you get this wrong.
-- The `docs/_kB/repo-map/` KB does not exist; `REPO_MAP_INDEX.md` here was written by hand, not
-  generated, because its generator's only input would have been the excluded legacy tree.
+- Skeleton READMEs under `skeletons/pipelines/` and `skeletons/components/` sit one directory
+  deeper — card links need `../../../cards/`, and the link check will catch it if you get this wrong.
+- `check.py` reads the working tree, not the commit. To prove what is committed passes, run it on
+  `git archive HEAD | tar -x -C <dir>`.
+- Never `cd` into `.legacy-assets/`: Claude Code auto-loads any `.claude/rules/` it finds under the
+  working directory, including the excluded tree's.

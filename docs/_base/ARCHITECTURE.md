@@ -1,25 +1,26 @@
 # Architecture
 
 > Layer structure, ownership boundaries, and what a change to each layer breaks.
-> Heuristic mode: written from the tree, not from a structured KB. Last generated: 2026-09-21.
+> Heuristic mode: written from the tree, not from a structured KB. Last reviewed: 2026-10-01.
 
 ## System Boundaries
 
 ### What this repository owns
 
-- The twenty knowledge cards and the contract they obey.
+- The twenty knowledge cards, the six component cards, and the contracts they obey.
 - One runnable skeleton per card, plus one compound pipeline walkthrough.
 - The anonymization policy and its audit record.
-- The agent-context layer: `.claude/rules/`, `.claude/agents/`, `.claude/skills/`, `AGENTS.md`,
-  `CLAUDE.md`.
-- The validation gate, `check.py`.
+- The agent-context layer: `.claude/rules/`, `.claude/agents/`, the one project-authored skill
+  (`.claude/skills/knowledge-card-summarizer/`), `AGENTS.md`, `CLAUDE.md`,
+  `.github/copilot-instructions.md`. Other skills and commands are vendored and gitignored.
+- The validation gate, `check.py`, and the CI that runs it (`.github/workflows/ci.yml`).
 
 ### What it consumes
 
 | Dependency | Interface | Change process |
 | --- | --- | --- |
 | `.legacy-assets/` | Read-only, gitignored, **never a source for published output**, except component-card extraction under `.claude/rules/anonymization.md` | Frozen. Excluded from the repository by `.gitignore`; see SECURITY.md |
-| Python 3 standard library | `python3` on PATH | None — no pinned version, no dependency file |
+| Python 3 standard library | `python3` on PATH | None — no dependency file; CI pins 3.12, no minimum is enforced |
 | GitHub Actions | `.github/workflows/` | Edit the workflow; `ci.yml` runs the same gate as local |
 
 ### What depends on this repository
@@ -44,6 +45,7 @@ k8s-operational_ai-kit/
     ├── component-cards/ one artifact per card, by type — 11 sections each
     ├── skeletons/       20 prototypes + pipelines/ + components/
     ├── templates/       CARD_TEMPLATE.md, COMPONENT_CARD_TEMPLATE.md
+    ├── teaching/        condensed teaching cards — untracked, no contract yet
     └── docs/            ANONYMIZATION.md, README-OUTLINE.md
 ```
 
@@ -55,7 +57,7 @@ k8s-operational_ai-kit/
 | Skeletons | Python 3 stdlib + README | `skeletons/<card-slug>/` | `.claude/rules/skeletons.md` |
 | Component cards | Markdown, fixed schema | `component-cards/<type>/*.md` | `.claude/rules/component-cards.md` |
 | Component skeletons | Python 3 stdlib + README | `skeletons/components/<card-stem>/` | `.claude/rules/component-cards.md` + `skeletons.md` |
-| Pipeline walkthrough | Bash orchestrator | `skeletons/pipelines/session-memory-loop/` | Same, plus idempotency |
+| Pipeline walkthrough | Bash orchestrator | `skeletons/pipelines/session-memory-loop/` | Same, plus idempotency — not executed by `check.py --run` |
 | Rules | Markdown with `paths:` frontmatter | `.claude/rules/*.md` | Indexed in its own README |
 | Gate | Python 3 stdlib | `check.py` | Exits 0, cleans up after `--run` |
 
@@ -76,14 +78,14 @@ infrastructure.
 | A single skeleton | **low** | Self-contained, unless the pipeline walkthrough calls it |
 | `README.md` / `INDEX.md` | **low** | Navigation only — but `INDEX.md` restates each card's maturity, which drifts |
 
-**The one non-obvious coupling:** `INDEX.md` carries a maturity column and a maturity count.
-Changing a card's `maturity` front matter without updating `INDEX.md` leaves the two disagreeing,
-and `check.py` does not catch it.
+**The one non-obvious coupling:** `INDEX.md` carries a maturity column, a maturity count, and each
+component card's `instances:`. Changing that front matter without updating `INDEX.md` leaves the
+two disagreeing, and `check.py` does not catch it.
 
 ## Change Flow
 
 ```
-edit → python3 check.py --run → exit 0 and clean tree → branch → commit (+ Context: trailer
+branch → edit → python3 check.py --run → exit 0 and clean tree → commit (+ Context: trailer
 if agent assets changed) → PR → ci.yml runs the same gate → merge
 ```
 

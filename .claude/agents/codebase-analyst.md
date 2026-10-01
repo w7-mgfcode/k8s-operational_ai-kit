@@ -47,6 +47,11 @@ ai-engineering-knowledge-cards/cards/NN-<slug>.md  20 patterns, 13 sections, 6 f
         ▼
 ai-engineering-knowledge-cards/skeletons/NN-<slug>/ stdlib-only Python + README
 skeletons/pipelines/session-memory-loop/           cards 12→13→14→15 chained by walkthrough.sh
+
+ai-engineering-knowledge-cards/component-cards/<type>/NN-<slug>.md   6 artifacts, 11 sections,
+        │  instances: → the pattern cards above        contract: .claude/rules/component-cards.md
+        ▼
+ai-engineering-knowledge-cards/skeletons/components/NN-<slug>/       one prototype per component
 ```
 
 Any analysis of a card that ignores its contract has missed why it is shaped that way. Any analysis
@@ -82,7 +87,8 @@ rule and the template it points at.
 
 ### 3. Trace the enforcement
 For the subsystem in scope, find the function in `check.py` that checks it (`check_cards`,
-`check_links`, `check_skeletons`, `check_imports`, `check_anonymization`, `run_skeletons`) and state,
+`check_component_cards`, `check_links`, `check_skeletons`, `check_imports`, `check_anonymization`,
+`run_skeletons`) and state,
 precisely, what it asserts and what it does not. Note `ANON_EXEMPT` and `RUN_ARTIFACTS` where relevant.
 
 ### 4. Catalog conventions and dependencies

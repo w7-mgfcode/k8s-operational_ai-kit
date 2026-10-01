@@ -11,8 +11,8 @@ reader and is checkable — keep it true.
 ## Four constraints
 
 1. **Standard library only.** No pip install, no requirements file, no venv.
-   Current imports across all skeletons: `argparse hashlib json sys time`,
-   `datetime`, `pathlib`. Adding a dependency breaks the promise.
+   The allow-list is `STDLIB_OK` in `check.py`; a skeleton may also import its
+   own sibling modules. Adding a dependency breaks the promise.
 2. **Offline.** No network, no API key, no billing. Model calls are stubbed
    behind a named function that prints instead — see `compile_one()` in
    `13-log-as-source-compilation/compile.py`. Replace the stub and the rest of

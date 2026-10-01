@@ -11,6 +11,7 @@ related:
   - 02-progressive-disclosure
   - 09-scaffold-validate-package
   - 17-blast-radius-gating
+  - 08-interview-before-generation
 ---
 
 # Calibrated Degrees of Freedom
@@ -110,6 +111,7 @@ rigidly, and both look correct from inside the session.
 | [09 Scaffold, Validate, Package](09-scaffold-validate-package.md) | The clearest instance: creation is medium, validation and packaging are low and scripted |
 | [17 Blast-Radius Gating](17-blast-radius-gating.md) | The same cost-of-failure reasoning applied to infrastructure changes |
 | [11 Adversarial Role Separation](11-adversarial-role-separation.md) | Evaluation is deliberately low-freedom — a fixed rubric — precisely because judgment there is unreliable |
+| [08 Interview Before Generation](08-interview-before-generation.md) | One workflow at two settings: the interview is high-freedom, its completeness check is a script |
 
 ## Constraints and trade-offs
 

@@ -11,6 +11,7 @@ related:
   - 03-description-as-router
   - 09-scaffold-validate-package
   - 15-structural-lint
+  - 11-adversarial-role-separation
 ---
 
 # Behavioral Evaluation Harness
