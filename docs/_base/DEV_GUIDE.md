@@ -55,11 +55,20 @@ Exiting 1 is fine. Crashing is not.
 **Clean up.** If your skeleton writes state, make it idempotent or remove it. Add generated
 artifacts to `skeletons/.gitignore` and to `RUN_ARTIFACTS` in `check.py`.
 
+## Adding a Component Card
+
+A component card describes one concrete artifact that instances a pattern. Its contract is
+`.claude/rules/component-cards.md` and its shape is `templates/COMPONENT_CARD_TEMPLATE.md` —
+eleven sections, five frontmatter keys. It lives at `component-cards/<type>/NN-<slug>.md`, and
+its prototype at `skeletons/components/NN-<slug>/`, whose README links cards as `../../../cards/`.
+If the artifact comes from `.legacy-assets/`, the extraction conditions in
+`.claude/rules/anonymization.md` apply before anything is written.
+
 ## Running the Gate
 
 ```bash
 python3 check.py           # ~1s   contracts, links, imports, anonymization
-python3 check.py --run     # ~20s  the above, plus executing every skeleton
+python3 check.py --run     # ~20s  the above, plus every top-level skeleton script
 python3 check.py --quiet   # failures only
 ```
 
@@ -77,6 +86,10 @@ failure.
 | `README has no '## Try it' section` | Heading text must match exactly |
 | `non-stdlib import` | A dependency crept into a skeleton |
 | `broken link -> ../../cards/...` | Under `skeletons/pipelines/` you are one level deeper — use `../../../cards/` |
+| `component number already used by …` | Component numbers are unique across all types |
+| `type '…' does not match directory '…'` | A component card's `type` must equal its parent directory |
+| `instances '…' is not a card in cards/` | An `instances:` slug must be a pattern card's filename stem |
+| `no skeletons/components/<stem>/README.md` | Every component card needs its prototype directory |
 | An anonymization hit in a new file | Either genuinely wrong, or teaching material that needs an `ANON_EXEMPT` entry — prefer fixing the file |
 
 ## Committing

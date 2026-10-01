@@ -2,7 +2,7 @@
 
 > What may be published, what may never be, and how it is enforced.
 > This repository holds no credentials and runs no service. Its entire security surface is
-> **disclosure**. Last generated: 2026-09-21.
+> **disclosure**. Last reviewed: 2026-10-01.
 
 ## Threat Model
 
@@ -29,9 +29,8 @@ tooling, the operator's timezone.
 
 ## `.legacy-assets/` — the excluded tree
 
-It contains the un-anonymized kit: the organization name, two environment domains, 11 node
-hostnames, three internal subnets, 16 raw session transcripts (one with credential-shaped
-lines), runtime flush state, and 64 compiled articles about a specific installation.
+It contains the un-anonymized kit. Nothing further about its contents is stated here, by the
+same rule that excludes it.
 
 - Gitignored. That single line is currently the only mechanical control on it.
 - Never read into a card, a skeleton, a commit message, or a report.
@@ -45,8 +44,8 @@ claims unverifiable by the author. It is excluded, not destroyed.
 
 | Control | Catches | Does not catch |
 | --- | --- | --- |
-| `.gitignore` | `.legacy-assets/`, `**/.venv/`, `__pycache__/`, `*.pyc`, `.env*` | A file deliberately force-added |
-| `check.py` anonymization pass | home-directory paths, IP addresses, internal domains, credential shapes | **A name.** An organization or person written in prose passes clean |
+| `.gitignore` | `.legacy-assets/`, `**/.venv/`, `__pycache__/`, `*.pyc`, `.env*`, vendored agent tooling, session handoffs | A file deliberately force-added |
+| `check.py` anonymization pass | home-directory paths, IP addresses, `.local`/`.internal`/`.corp`/`.lan` domains, credential shapes — in every file git would publish (tracked, or untracked and not ignored) | **A name.** An organization or person written in prose passes clean. Also any other domain shape, and `.png` content |
 | Human review of the staged diff | names, paraphrase, anything contextual | Whatever the reviewer skims |
 
 The gap is deliberate and must stay understood: **mechanical checks catch shapes, not
@@ -62,8 +61,9 @@ deliberate act: it removes a file from the only automated control there is.
 ## Repository Hygiene
 
 - **Two 136 MB virtualenvs** exist under `.claude/skills/excalidraw-diagram/references/.venv`
-  and `.agents/skills/excalidraw-diagram/references/.venv`. Both are gitignored; before the
-  first commit, confirm `git status` does not list them.
+  and `.agents/skills/excalidraw-diagram/references/.venv`. Both are gitignored, as is all
+  vendored agent tooling (`.agents/`, `.claude/commands/`, `.claude/skills/*` except the
+  project-authored summarizer). Before every `git add`, confirm `git status` lists none of it.
 - **No secrets are required** to work in this repository. The three agent workflows reference
   `CLAUDE_CODE_OAUTH_TOKEN` and `OPENAI_API_KEY`; none is configured, which is the correct
   default. Their absence does not make the workflows inert — they still run and fail (see
