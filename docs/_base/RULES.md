@@ -74,14 +74,14 @@ Carried forward rather than hidden.
    the agent-instruction layer and CI gates (both owed), hooks and permissions, and the parts of
    structural lint `check.py` does not yet apply to itself
    (its own card 15).
-4. **The agent workflows are broken, not inert.** They assume npm and secrets that do not
-   exist here, and each fails as soon as it runs. Only `claude-review` is committed; the other two
-   exist locally, untracked:
+4. **The agent workflows are unconfigured, not inert.** All three are committed and written for
+   this repository — no npm toolchain, `check.py` as the gate — but none of their secrets is set,
+   so each fails as soon as it runs:
    - `claude-review` runs only on a trusted `@claude-review` PR comment — its automatic
-     `pull_request` trigger is commented out while the secret is unset. Its npm step is gone and
-     its prompt uses `check.py`; it now fails only for want of `CLAUDE_CODE_OAUTH_TOKEN`.
+     `pull_request` trigger is commented out while the secret is unset. Needs
+     `CLAUDE_CODE_OAUTH_TOKEN`.
    - `claude-create` runs on a trusted `@claude` comment or an issue opened with `@claude` in
-     its body, then fails at the same
-     `setup-node` cache step or at `npm ci`.
-   - `codex-create-deterministic` runs only on a trusted `@codex-create` comment; the global
-     Codex install works, and the run fails without `OPENAI_API_KEY`.
+     its body (never on `@claude-review`), and opens a draft PR. Needs `CLAUDE_CODE_OAUTH_TOKEN`.
+   - `codex-create-deterministic` runs only on a trusted `@codex-create` issue comment, runs
+     `check.py --run` before pushing, and opens a draft PR. Needs `OPENAI_API_KEY`. PRs it opens
+     do not trigger `ci.yml` (GitHub skips `pull_request` workflows for `GITHUB_TOKEN` PRs).

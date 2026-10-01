@@ -52,8 +52,7 @@ the same change that creates its target — not before.
   lands. Revisit the `allowed-tools` decision in `skills.md` at the same time.
 - **CI gates** — `.github/workflows/ci.yml` runs `python3 check.py --run` plus a
   clean-tree check on push and pull request to `main`. The rule is **owed, not
-  yet written**. The agent workflows fail without their secrets; only
-  `claude-review` is committed.
+  yet written**. The three agent workflows fail without their secrets.
 - **Structural lint** — card 15, applied to this repository. `check.py` now
   covers frontmatter and link resolution for cards. It does not check index
   coverage, orphans, or that `INDEX.md`'s maturity column matches the cards.

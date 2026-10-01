@@ -1,0 +1,132 @@
+# Codex deterministic trust pattern — the most constrained of the three.
+# The workflow YAML owns every git operation: identity, branch, commit,
+# push, and PR creation. The agent's ONLY job is to edit files. Nothing
+# the agent does can change git history or open a PR on its own.
+#
+# The YAML also owns validation: it runs `python3 check.py --run` before
+# committing and refuses to push a change that fails it. ci.yml will NOT run
+# on the resulting PR on its own — GitHub does not trigger pull_request
+# workflows for PRs opened with GITHUB_TOKEN. Push to the branch once, or
+# re-run CI by hand, before merging.
+#
+# Trigger: a trusted contributor comments `@codex-create <request>` on an issue.
+# Requires the OPENAI_API_KEY repository secret, and fails without it.
+name: Codex Create (Deterministic)
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  codex-create:
+    if: |
+      github.event_name == 'issue_comment'
+      && !github.event.issue.pull_request
+      && contains(github.event.comment.body, '@codex-create')
+      && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # --- The YAML owns git. Step 1: identity. ---
+      - name: Configure git identity
+        run: |
+          git config user.name "codex-bot"
+          git config user.email "codex-bot@users.noreply.github.com"
+
+      # --- The YAML owns git. Step 2: the branch. ---
+      - name: Create working branch
+        id: branch
+        run: |
+          BRANCH="codex/agents-${{ github.event.issue.number }}-$(date +%s)"
+          git checkout -b "$BRANCH"
+          echo "name=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      # The comment text never passes through a ${{ }} expression inside a
+      # script: it arrives as an environment variable and is written to a
+      # file, so no line of it can be parsed as shell or as a heredoc end.
+      - name: Write the request to a file
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: printf '%s\n' "${COMMENT_BODY#*@codex-create}" > "$RUNNER_TEMP/request.txt"
+
+      - name: Install Codex CLI
+        run: npm install -g @openai/codex
+
+      # --- The agent runs here. It ONLY edits files. ---
+      # No git, no gh, no PR. The prompt says so and the steps below
+      # (not the agent) do every git operation.
+      - name: Run Codex (writes code only)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cat > "$RUNNER_TEMP/prompt.txt" <<'CODEX_PROMPT'
+          Implement the request at the end of this prompt by editing files in
+          this repository.
+
+          Rules:
+          - Read AGENTS.md at the repository root before editing. It is the single
+            source of truth for this repo's rules. Then consult
+            .claude/rules/README.md and read the rule matching the files you touch.
+          - The repository is public. Never read anything under `.legacy-assets/`
+            and never write an organization name, hostname, internal domain, IP
+            or credential into any file.
+          - Skeletons are Python standard library only. Never add a dependency,
+            a build system, a linter or a test framework.
+          - Do not delete or rewrite a card, change a card's `maturity`, or edit
+            `.claude/rules/` — those need the owner's approval.
+          - Run `python3 check.py --run` and make it exit 0.
+          - Edit files ONLY. Do NOT run git, do NOT commit, do NOT push, do NOT
+            open a pull request — this workflow handles all of that.
+          - Make the smallest correct change that satisfies the request.
+
+          Request:
+          CODEX_PROMPT
+          cat "$RUNNER_TEMP/request.txt" >> "$RUNNER_TEMP/prompt.txt"
+          codex exec --full-auto "$(cat "$RUNNER_TEMP/prompt.txt")"
+
+      # --- The YAML owns validation. Nothing that fails the gate is pushed. ---
+      - name: Validate with the repository gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! python3 check.py --run; then
+            gh issue comment "${{ github.event.issue.number }}" \
+              --body "Codex produced a change that fails \`python3 check.py --run\`; nothing was pushed. See the workflow log."
+            exit 1
+          fi
+
+      # --- The YAML owns git. Step 3: commit, push, PR. ---
+      - name: Commit, push, and open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Codex made no changes — nothing to commit."
+            gh issue comment "${{ github.event.issue.number }}" \
+              --body "Codex ran but produced no file changes for this request."
+            exit 0
+          fi
+
+          git add -A
+          git commit -m "chore(agents): address issue #${{ github.event.issue.number }}"
+          git push -u origin "${{ steps.branch.outputs.name }}"
+
+          PR_URL=$(gh pr create \
+            --base "${{ github.event.repository.default_branch }}" \
+            --head "${{ steps.branch.outputs.name }}" \
+            --title "Codex: issue #${{ github.event.issue.number }}" \
+            --body "Generated by Codex (deterministic pattern) for #${{ github.event.issue.number }}. The agent wrote the change; this workflow ran \`check.py --run\`, committed and opened the PR. Retitle per .claude/rules/git-workflow.md before merging, and trigger CI by hand — PRs opened with GITHUB_TOKEN do not start ci.yml. Closes #${{ github.event.issue.number }}" \
+            --draft)
+
+          gh issue comment "${{ github.event.issue.number }}" \
+            --body "Codex opened a draft PR: $PR_URL"

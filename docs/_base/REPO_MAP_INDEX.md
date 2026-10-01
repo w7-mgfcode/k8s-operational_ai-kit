@@ -15,7 +15,7 @@
 | `.claude/rules/README.md` | Which rule governs which path | Adding a rule; working as a non-Claude agent |
 | `.claude/rules/*.md` | The normative contracts | When your path matches the glob |
 | `.claude/agents/*.md` | The three subagents: codebase-analyst, research-agent, code-reviewer | Delegating analysis or review |
-| `.github/` | `ci.yml` (the gate in CI), `claude-review.yml` (broken), `copilot-instructions.md` | Changing CI or the Copilot adapter |
+| `.github/` | `ci.yml` (the gate in CI), three agent workflows (secrets unset), `copilot-instructions.md` | Changing CI or the Copilot adapter |
 | `docs/_base/ARCHITECTURE.md` | Layer structure, ownership, blast radius | Changing a contract or the structure |
 | `docs/_base/RULES.md` | Full constraint matrix, what is deliberately absent, open items | Needing the whole picture |
 | `docs/_base/SECURITY.md` | What may be published; how the boundary is enforced and where it leaks | Anything publishable |
