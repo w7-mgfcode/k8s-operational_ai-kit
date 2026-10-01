@@ -1,8 +1,14 @@
 ---
 paths:
   - ".claude/**"
+  - ".agents/**"
   - ".github/**"
   - "ai-engineering-knowledge-cards/**"
+  - "AGENTS.md"
+  - "CLAUDE.md"
+  - "check.py"
+  - "docs/_base/**"
+  - ".gitignore"
 ---
 
 # Git Workflow
@@ -26,9 +32,9 @@ Branch scope and commit scope are the same word. One taxonomy, defined once here
 
 | Scope | Covers |
 | --- | --- |
-| `cards` | `ai-engineering-knowledge-cards/cards/**`, `component-cards/**`, `templates/**` |
-| `skeletons` | `ai-engineering-knowledge-cards/skeletons/**`, including `components/` and `pipelines/` |
-| `docs` | `ai-engineering-knowledge-cards/docs/**`, README, INDEX, root `docs/_base/**` |
+| `cards` | `ai-engineering-knowledge-cards/cards/**`, `ai-engineering-knowledge-cards/component-cards/**`, `ai-engineering-knowledge-cards/templates/**` |
+| `skeletons` | `ai-engineering-knowledge-cards/skeletons/**`, including `skeletons/components/` and `skeletons/pipelines/` |
+| `docs` | `ai-engineering-knowledge-cards/docs/**`, `ai-engineering-knowledge-cards/README.md` and `INDEX.md`, root `docs/_base/**` |
 | `agents` | `.claude/**`, `.agents/**`, root `AGENTS.md` and `CLAUDE.md`, `.gitignore` |
 | `ci` | `.github/**`, root `check.py` |
 

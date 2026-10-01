@@ -19,7 +19,7 @@ rule missing from it is invisible to every agent except Claude Code.
 | `component-cards.md` | `ai-engineering-knowledge-cards/component-cards/**`, `ai-engineering-knowledge-cards/templates/COMPONENT_CARD_TEMPLATE.md`, `ai-engineering-knowledge-cards/skeletons/components/**` | Five frontmatter keys, eleven sections, one artifact per card, stricter anonymization, legacy extraction only by named authorization |
 | `subagents.md` | `.claude/agents/**` | Three distinct roles; `tools:` is a narrowing; cite or admit; this repo's real shape |
 | `skills.md` | `.claude/skills/**`, `.agents/**` | Vendored not managed, and gitignored; the broken MCP config; one place per skill; `allowed-tools`; routing descriptions |
-| `git-workflow.md` | `.claude/**`, `.github/**`, `ai-engineering-knowledge-cards/**` | Types, the one scope taxonomy, the `Context:` trailer, prohibitions |
+| `git-workflow.md` | `.claude/**`, `.agents/**`, `.github/**`, `ai-engineering-knowledge-cards/**`, `AGENTS.md`, `CLAUDE.md`, `check.py`, `docs/_base/**`, `.gitignore` | Types, the one scope taxonomy, the `Context:` trailer, prohibitions |
 
 ## Adding a rule
 

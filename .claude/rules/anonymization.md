@@ -64,7 +64,8 @@ unchanged.
 - Any vendored virtual environment or agent tooling. A ~140 MB venv exists under
   the excalidraw skill; `**/.venv/`, `__pycache__/`, `*.pyc` and the
   vendored trees are gitignored. Confirm `git status` lists none of it before
-  staging. `check.py` scans every file git would publish for identifier shapes —
+  staging. `check.py` scans every readable text file git would publish for
+  identifier shapes, except `.png` files and the `ANON_EXEMPT` teaching files —
   a name still passes it.
 - Any `.env`, token, or credential. This repository is public.
 

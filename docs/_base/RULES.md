@@ -15,7 +15,7 @@ other agents consult `.claude/rules/README.md` and read the matching rule by han
 | `cards.md` | `ai-engineering-knowledge-cards/{cards,templates,docs}/**` | Authoring or editing a card, or changing the template |
 | `component-cards.md` | `ai-engineering-knowledge-cards/component-cards/**`, `…/templates/COMPONENT_CARD_TEMPLATE.md`, `…/skeletons/components/**` | Authoring a component card or its prototype |
 | `skeletons.md` | `ai-engineering-knowledge-cards/skeletons/**` | Writing or changing a prototype |
-| `git-workflow.md` | `.claude/**`, `.github/**`, `ai-engineering-knowledge-cards/**` | Committing anything |
+| `git-workflow.md` | `.claude/**`, `.agents/**`, `.github/**`, `ai-engineering-knowledge-cards/**`, `AGENTS.md`, `CLAUDE.md`, `check.py`, `docs/_base/**`, `.gitignore` | Committing anything |
 | `subagents.md` | `.claude/agents/**` | Changing a subagent definition |
 | `skills.md` | `.claude/skills/**`, `.agents/**` | Changing an installed skill |
 

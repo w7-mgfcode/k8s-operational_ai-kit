@@ -45,7 +45,7 @@ claims unverifiable by the author. It is excluded, not destroyed.
 | Control | Catches | Does not catch |
 | --- | --- | --- |
 | `.gitignore` | `.legacy-assets/`, `**/.venv/`, `__pycache__/`, `*.pyc`, `.env*`, vendored agent tooling, session handoffs | A file deliberately force-added |
-| `check.py` anonymization pass | home-directory paths, IP addresses, `.local`/`.internal`/`.corp`/`.lan` domains, credential shapes — in every file git would publish (tracked, or untracked and not ignored) | **A name.** An organization or person written in prose passes clean. Also any other domain shape, and `.png` content |
+| `check.py` anonymization pass | home-directory paths, IP addresses, `.local`/`.internal`/`.corp`/`.lan` domains, credential shapes — in every file git would publish (tracked, or untracked and not ignored) | **A name.** An organization or person written in prose passes clean. Also any other domain shape, `.png` content, files that are not UTF-8 text, and the `ANON_EXEMPT` teaching files below |
 | Human review of the staged diff | names, paraphrase, anything contextual | Whatever the reviewer skims |
 
 The gap is deliberate and must stay understood: **mechanical checks catch shapes, not

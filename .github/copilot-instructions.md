@@ -7,8 +7,9 @@ only the five essentials below in case the pointer is not followed.
 ## The essentials, so you have them inline
 
 - **This is a documentation and prototype repository.** Markdown pattern cards in
-  `ai-engineering-knowledge-cards/cards/` and component cards in `component-cards/`,
-  one Python skeleton per card in `skeletons/`. There is no application, no `package.json`, no build, no linter
+  `ai-engineering-knowledge-cards/cards/` and component cards in
+  `ai-engineering-knowledge-cards/component-cards/`, one Python skeleton per card in
+  `ai-engineering-knowledge-cards/skeletons/`. There is no application, no `package.json`, no build, no linter
   and no test framework. Do not suggest adding one.
 - **Verify with `python3 check.py --run`.** It must exit 0 and leave the tree
   clean. This is exactly what `.github/workflows/ci.yml` runs.
