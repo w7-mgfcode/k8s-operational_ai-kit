@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import fnmatch
 import os
 import re
 import subprocess
@@ -100,6 +101,36 @@ def frontmatter(text: str) -> tuple[list[str], str]:
     return keys, parts[2]
 
 
+def related_slugs(text: str) -> set[str] | None:
+    """The card's related: slugs, read from frontmatter only.
+
+    `related: []` and a block list of `  - <slug>` lines are the two supported
+    forms. Anything else returns None, so a malformed value fails the gate
+    instead of silently reading as "no edges" and skipping the graph checks.
+    """
+    if not text.startswith("---"):
+        return None
+    fm = text.split("---", 2)[1]
+    m = re.search(r"^related:[ \t]*(.*)$", fm, re.M)
+    if not m:
+        return None
+    if m.group(1).strip() == "[]":
+        return set()
+    if m.group(1).strip():
+        return None
+    slugs = set()
+    for line in fm[m.end():].split("\n")[1:]:
+        if not line.strip():
+            continue
+        if not line[0].isspace():
+            break
+        item = re.fullmatch(r"\s+- (\S+)\s*", line)
+        if not item:
+            return None
+        slugs.add(item.group(1))
+    return slugs or None
+
+
 def check_cards(r: Report) -> None:
     r.section("cards")
     files = sorted(CARDS.glob("*.md"))
@@ -111,8 +142,10 @@ def check_cards(r: Report) -> None:
         text = f.read_text(encoding="utf-8")
         keys, body = frontmatter(text)
         rel = f.relative_to(PROJECT)
-        block = re.search(r"^related:\n((?:\s+- .*\n?)*)", text, re.M)
-        related[f.stem] = set(re.findall(r"- (\S+)", block.group(1))) if block else set()
+        slugs = related_slugs(text)
+        if slugs is None:
+            r.fail(str(rel), "related: must be [] or a block list of '  - <card-slug>' lines")
+        related[f.stem] = slugs or set()
 
         if keys[: len(FRONTMATTER_KEYS)] != FRONTMATTER_KEYS:
             r.fail(str(rel), f"frontmatter keys {keys[:6]} != {FRONTMATTER_KEYS}")
@@ -264,6 +297,24 @@ def check_imports(r: Report) -> None:
     r.ok(f"{len(scripts)} scripts, standard library only")
 
 
+def gitignored(rel: str, rules: list[tuple[bool, str, bool]]) -> bool:
+    """Root .gitignore semantics for the pattern shapes this repo uses: last
+    match wins, `!` re-includes, a trailing `/` matches directories only, a
+    pattern with an inner `/` is anchored at the root, `**/` matches any depth."""
+    parts = rel.split("/")
+    prefixes = ["/".join(parts[: i + 1]) for i in range(len(parts))]
+    ignored = False
+    for negate, pattern, dir_only in rules:
+        any_depth = pattern.startswith("**/")
+        pat = pattern[3:] if any_depth else pattern.lstrip("/")
+        anchored = "/" in pat and not any_depth
+        for c in prefixes[:-1] if dir_only else prefixes:
+            if fnmatch.fnmatchcase(c if anchored else c.rsplit("/", 1)[-1], pat):
+                ignored = not negate
+                break
+    return ignored
+
+
 def publishable_files() -> list[Path]:
     """Every file git would publish: tracked, plus untracked and not ignored."""
     try:
@@ -271,8 +322,19 @@ def publishable_files() -> list[Path]:
                              cwd=ROOT, capture_output=True, text=True, check=True).stdout
         paths = [ROOT / p for p in out.split("\0") if p]
     except (OSError, subprocess.CalledProcessError):
+        # No git (an exported tree): honour the root .gitignore so the fallback
+        # scans the same boundary — not vendored tooling, .env files or handoffs.
+        rules = []
+        gi = ROOT / ".gitignore"
+        for line in (gi.read_text(encoding="utf-8").splitlines() if gi.exists() else []):
+            line = line.strip()
+            if line and not line.startswith("#"):
+                negate = line.startswith("!")
+                line = line.lstrip("!")
+                rules.append((negate, line.rstrip("/"), line.endswith("/")))
         paths = [p for p in ROOT.rglob("*")
-                 if not NOT_PUBLISHED & set(p.relative_to(ROOT).parts)]
+                 if not NOT_PUBLISHED & set(p.relative_to(ROOT).parts)
+                 and not gitignored(p.relative_to(ROOT).as_posix(), rules)]
     return sorted(p for p in paths
                   if p.is_file() and p.relative_to(ROOT).parts[0] != ".legacy-assets")
 
