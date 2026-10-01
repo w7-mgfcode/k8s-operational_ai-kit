@@ -68,7 +68,8 @@ deliberate act: it removes a file from the only automated control there is.
   `CLAUDE_CODE_OAUTH_TOKEN` and `OPENAI_API_KEY`; none is configured, which is the correct
   default. Their absence does not make the workflows inert — they still run and fail (see
   `RULES.md` § Known Open Items).
-- **The repository is intended to be public.** Treat every file as though it already is.
+- **The repository is public** — it has been since it was created on GitHub. Every pushed commit
+  is already published.
 
 ## Before Publishing
 

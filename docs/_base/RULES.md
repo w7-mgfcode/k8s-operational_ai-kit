@@ -65,13 +65,16 @@ Do not add these without being asked. Their absence is a decision.
 
 Carried forward rather than hidden.
 
-1. **`INDEX.md` drift.** It restates each card's `maturity`, a maturity count, and each component
+1. **Name review of the published history.** The repository has been public since it was
+   created, before the human name check in `SECURITY.md` § Before Publishing was ever run over
+   `git log -p`. `check.py` passes, but it catches shapes, not names. Owed by the owner.
+2. **`INDEX.md` drift.** It restates each card's `maturity`, a maturity count, and each component
    card's `instances:`. Nothing checks those against the frontmatter.
-2. **Deferred rules.** `.claude/rules/README.md` lists concerns not yet governed by a rule —
+3. **Deferred rules.** `.claude/rules/README.md` lists concerns not yet governed by a rule —
    the agent-instruction layer and CI gates (both owed), hooks and permissions, and the parts of
    structural lint `check.py` does not yet apply to itself
    (its own card 15).
-3. **The agent workflows are broken, not inert.** They assume npm and secrets that do not
+4. **The agent workflows are broken, not inert.** They assume npm and secrets that do not
    exist here, and each fails as soon as it runs. Only `claude-review` is committed; the other two
    exist locally, untracked:
    - `claude-review` runs only on a trusted `@claude-review` PR comment — its automatic

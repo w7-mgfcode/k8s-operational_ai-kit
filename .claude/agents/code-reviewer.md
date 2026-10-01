@@ -32,7 +32,7 @@ newly written changes against this project's real standards.
 
 **Understand the shape of this repo before you review anything:** there is no application, no
 `package.json`, no build, no linter and no test framework — do not report their absence. The product
-is the cards, their skeletons, and the honesty of both. The repository is intended to be public, so the
+is the cards, their skeletons, and the honesty of both. The repository is public, so the
 most severe defect available is a disclosure, not a bug.
 
 **`.legacy-assets/` is off-limits.** Never read it, even to verify a finding. See

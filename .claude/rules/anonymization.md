@@ -66,7 +66,7 @@ unchanged.
   vendored trees are gitignored. Confirm `git status` lists none of it before
   staging. `check.py` scans every file git would publish for identifier shapes —
   a name still passes it.
-- Any `.env`, token, or credential. This repository is intended to be public.
+- Any `.env`, token, or credential. This repository is public.
 
 ## Before publishing
 
