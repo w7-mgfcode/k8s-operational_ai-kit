@@ -75,8 +75,8 @@ Carried forward rather than hidden.
    exist here, and each fails as soon as it runs. Only `claude-review` is committed; the other two
    exist locally, untracked:
    - `claude-review` runs only on a trusted `@claude-review` PR comment — its automatic
-     `pull_request` trigger is commented out until the job is rebuilt. When it runs,
-     `setup-node` with `cache: npm` fails without a lockfile.
+     `pull_request` trigger is commented out while the secret is unset. Its npm step is gone and
+     its prompt uses `check.py`; it now fails only for want of `CLAUDE_CODE_OAUTH_TOKEN`.
    - `claude-create` runs on a trusted `@claude` comment or an issue opened with `@claude` in
      its body, then fails at the same
      `setup-node` cache step or at `npm ci`.

@@ -1,13 +1,12 @@
-# Claude review — read-only. Runs this repo's own review contract against the PR
-# diff and posts the review as a PR comment. Claude reads code and comments; it
-# never writes to the branch (contents: read).
+# Claude review. Runs this repo's own review rubric (.claude/agents/code-reviewer.md)
+# against the PR diff and posts the review as a PR comment. It never writes to the
+# branch (contents: read); it does write comments (pull-requests, issues).
 #
 # Fires on demand when a trusted contributor comments `@claude-review`.
 #
-# The automatic pull_request trigger is disabled: the job still sets up an npm
-# toolchain this repository does not have, so it failed on every new PR. Restore
-# the two commented lines below once the job runs `python3 check.py` instead.
-# The job's `if:` keeps its pull_request branch so re-enabling is one step.
+# The automatic pull_request trigger stays disabled while the secret below is
+# unset — enabled, it would fail on every PR. Restore the two commented lines once
+# the secret exists; the job's `if:` keeps its pull_request branch for that.
 #
 # Requires the CLAUDE_CODE_OAUTH_TOKEN repository secret, and fails without it.
 name: Claude Review
@@ -18,12 +17,13 @@ on:
   issue_comment:
     types: [created]
 
-concurrency:
-  group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
-  cancel-in-progress: true
-
 jobs:
   claude-review:
+    # Job-level, not workflow-level: every PR comment starts this workflow, and
+    # a workflow-level group would let an unrelated comment cancel a live review.
+    concurrency:
+      group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
+      cancel-in-progress: true
     if: |
       github.event_name == 'pull_request' || (
         github.event_name == 'issue_comment'
@@ -46,31 +46,28 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22.x"
-          cache: npm
-
       - name: Run the review contract
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@12dd8d74c712f5f3669365b2369b558c495b1104 # v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           trigger_phrase: "@claude-review"
           track_progress: true
           prompt: |
             Read AGENTS.md at the repository root, then read
-            commands/piv-review-pr.md and follow that contract for this pull
-            request. AGENTS.md is the single source of truth for this repo's
-            rules — CLAUDE.md is only an adapter.
+            .claude/agents/code-reviewer.md and follow that rubric for this pull
+            request, with the .claude/rules/*.md files whose globs match the
+            changed paths (index: .claude/rules/README.md). AGENTS.md is the
+            single source of truth for this repo's rules — CLAUDE.md is only an
+            adapter. Never read anything under .legacy-assets/.
 
             Two adjustments for CI:
             - Post your findings as a SINGLE pull-request comment. Do not submit
               a formal approve or request-changes review; a human does that.
             - Do not modify any files. This is a read-only review.
 
-            The gate chain is `npm run verify` (setup, sync, test:sync,
-            test:coverage, build). There is no TypeScript and no linter in this
-            project — do not run `tsc`, `npm run lint`, or `npm test`, and do not
-            report their absence as a finding.
+            The only gate is `python3 check.py --run` (standard library, no
+            install). There is no build, no npm, no linter and no test framework
+            in this project — do not run or suggest them, and do not report their
+            absence as a finding.
           claude_args: |
             --max-turns 20

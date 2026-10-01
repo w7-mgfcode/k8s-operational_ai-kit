@@ -24,8 +24,8 @@ here passes an anonymization boundary that is enforced at edit time, not at revi
 - **Prototypes** — Python 3, **standard library only**. No dependencies, no virtualenv, no
   package manager. `python3 --version` ≥ 3.9; developed against 3.14.
 - **Validation** — `check.py` at the repository root. Standard library, no network, no cost.
-- **CI** — GitHub Actions. `ci.yml` runs the same `check.py`. The agent workflows assume npm
-  and secrets that do not exist, and fail when they run; only `claude-review` is committed. See
+- **CI** — GitHub Actions. `ci.yml` runs the same `check.py`. The agent workflows need secrets
+  that are not configured, and fail when they run; only `claude-review` is committed. See
   `docs/_base/RULES.md` § Known Open Items.
 - **Deliberately absent** — no `Makefile`, no `package.json`, no `pyproject.toml`, no linter,
   no formatter, no test framework. Do not add one without being asked.
