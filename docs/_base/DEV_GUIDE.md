@@ -24,7 +24,8 @@ python3 check.py     # confirms your clone is sound
 5. **Write Failure modes from observation.** Every row is something that happened or is
    structurally inevitable. A table of hypotheticals fails the card's purpose, not just its
    contract.
-6. **Add `related:` edges both ways.** If card 07 relates to yours, add yours to card 07.
+6. **Add `related:` edges both ways.** If card 07 relates to yours, add yours to card 07, and
+   give each side a row in "How it interacts with other patterns". `check.py` fails a one-way edge.
 7. **Create the skeleton** (below). `check.py` fails a card without one.
 8. **Update `INDEX.md`** — the by-card table, the by-question table if it fits, and the maturity
    counts. Nothing checks this for you.
@@ -86,6 +87,7 @@ failure.
 | `README has no '## Try it' section` | Heading text must match exactly |
 | `non-stdlib import` | A dependency crept into a skeleton |
 | `broken link -> ../../cards/...` | Under `skeletons/pipelines/` you are one level deeper — use `../../../cards/` |
+| `related '…' does not list this card back` | A one-way `related:` edge — add the reverse edge to the other card |
 | `component number already used by …` | Component numbers are unique across all types |
 | `type '…' does not match directory '…'` | A component card's `type` must equal its parent directory |
 | `instances '…' is not a card in cards/` | An `instances:` slug must be a pattern card's filename stem |

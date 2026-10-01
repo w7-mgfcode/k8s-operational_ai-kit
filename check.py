@@ -106,10 +106,13 @@ def check_cards(r: Report) -> None:
     if not files:
         r.fail("cards", "no cards found")
         return
+    related: dict[str, set[str]] = {}
     for f in files:
         text = f.read_text(encoding="utf-8")
         keys, body = frontmatter(text)
         rel = f.relative_to(PROJECT)
+        block = re.search(r"^related:\n((?:\s+- .*\n?)*)", text, re.M)
+        related[f.stem] = set(re.findall(r"- (\S+)", block.group(1))) if block else set()
 
         if keys[: len(FRONTMATTER_KEYS)] != FRONTMATTER_KEYS:
             r.fail(str(rel), f"frontmatter keys {keys[:6]} != {FRONTMATTER_KEYS}")
@@ -133,7 +136,16 @@ def check_cards(r: Report) -> None:
         if not re.search(r"^## Provenance\s*$", body, re.M):
             r.fail(str(rel), "missing Provenance section")
 
-    r.ok(f"{len(files)} cards, contract satisfied")
+    # related: is a graph, not a list of mentions — every edge resolves and
+    # runs both ways (docs/_base/DEV_GUIDE.md, Adding a Card, step 6).
+    for stem, targets in sorted(related.items()):
+        for t in sorted(targets):
+            if t not in related:
+                r.fail(f"cards/{stem}.md", f"related '{t}' is not a card in cards/")
+            elif stem not in related[t]:
+                r.fail(f"cards/{stem}.md", f"related '{t}' does not list this card back")
+
+    r.ok(f"{len(files)} cards, contract satisfied, related: edges symmetric")
 
 
 def check_component_cards(r: Report) -> None:

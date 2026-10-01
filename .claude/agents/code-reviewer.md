@@ -59,7 +59,8 @@ most severe defect available is a disclosure, not a bug.
 - **`maturity` is honest.** A `partial` upgraded to `proven` to read better is a defect. A `partial`
   card must say exactly which part is missing, in Provenance.
 - Failure-modes rows are observed or structurally inevitable. A table of hypotheticals is a defect.
-- `related:` edges exist in both directions.
+- `related:` edges exist in both directions (`check.py` enforces this), and the target card's
+  "How it interacts" section explains each one — a frontmatter edge with no row is a defect.
 - If `maturity` changed, `INDEX.md`'s row and count changed with it — `check.py` does not catch this.
 
 ### 3. Component-card contract (CRITICAL, when `component-cards/` or `skeletons/components/` changed)

@@ -28,7 +28,7 @@ Violating any of these is a defect, not a judgment call.
 | 1 | `.legacy-assets/` is never a source for published output, except component-card extraction under `.claude/rules/anonymization.md` | Human discipline only |
 | 2 | No masked identifier in any published file | `check.py` (shapes, every file git would publish) + human review (names) |
 | 3 | A card has exactly 13 `##` sections and 6 frontmatter keys in order | `check.py` |
-| 4 | A card's number matches its filename; `layer` and `maturity` are from the closed sets | `check.py` |
+| 4 | A card's number matches its filename; `layer` and `maturity` are from the closed sets; `related:` edges resolve and run both ways | `check.py` |
 | 5 | Every card has a skeleton directory with a conforming README | `check.py` |
 | 6 | Skeleton scripts import standard library only | `check.py` |
 | 7 | Every relative Markdown link resolves | `check.py` |
