@@ -63,17 +63,13 @@ Do not add these without being asked. Their absence is a decision.
 
 Carried forward rather than hidden.
 
-1. **Branch name.** The working branch is `master`; `main` is the intended default.
-   `ci.yml` triggers on push and pull request to both, and the three agent workflows are
-   event-triggered, so no workflow is blocked by the name. Unresolved by design — renaming a
-   branch is the user's call.
-2. **`INDEX.md` drift.** It restates each card's `maturity` and a maturity count. Nothing checks
+1. **`INDEX.md` drift.** It restates each card's `maturity` and a maturity count. Nothing checks
    that against the cards' frontmatter.
-3. **Deferred rules.** `.claude/rules/README.md` lists concerns not yet governed by a rule —
+2. **Deferred rules.** `.claude/rules/README.md` lists concerns not yet governed by a rule —
    the agent-instruction layer and CI gates (both owed), hooks and permissions, and the parts of
    structural lint `check.py` does not yet apply to itself
    (its own card 15).
-4. **Three agent workflows are broken, not inert.** They assume npm and secrets that do not
+3. **Three agent workflows are broken, not inert.** They assume npm and secrets that do not
    exist here, and each fails as soon as it runs:
    - `claude-review` runs only on a trusted `@claude-review` PR comment — its automatic
      `pull_request` trigger is commented out until the job is rebuilt. When it runs,

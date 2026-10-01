@@ -112,7 +112,7 @@ Exit codes inside skeletons: **0** = ran, **1** = ran and demonstrated a failure
   gitignored — verify before staging.
 - **Never add a dependency to a skeleton.** Standard library only is the contract, not a
   preference.
-- **Never commit directly to `main`/`master`** unless explicitly asked. Branch first.
+- **Never commit directly to `main`** unless explicitly asked. Branch first.
 
 **Stop and ask before:**
 
@@ -126,9 +126,8 @@ Conventional Commits, one logical unit per commit. Types, the single scope taxon
 (`cards` `skeletons` `docs` `agents` `ci`), branch naming, and the required `Context:` trailer
 are defined once in **`.claude/rules/git-workflow.md`** — read it rather than guessing.
 
-Two standing issues, unresolved: the working branch is `master` while `main` is the intended
-default (`ci.yml` triggers on both, so the gate fires either way), and the repository has no
-commits yet.
+`main` is the default branch, locally and on GitHub; `ci.yml` runs the gate on every push and
+pull request to it. Work happens on a `<type>/<scope>-<slug>` branch and reaches `main` by PR.
 
 ## Deep-Dive Docs
 
