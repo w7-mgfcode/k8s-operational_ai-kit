@@ -3,8 +3,9 @@ name: code-reviewer
 description: |
   Use this agent to review a finished change before it is committed. It checks the diff against this
   repository's actual standards — the anonymization boundary, the card contract (13 sections, 6
-  frontmatter keys, honest maturity), the skeleton contract (stdlib only, offline, runnable as
-  committed, clean tree, deliberate gaps stated), link and cross-reference integrity, and the rule-index
+  frontmatter keys, honest maturity), the component-card contract (11 sections, 5 frontmatter keys,
+  `instances:` targets), the skeleton contract (stdlib only, offline, runnable as committed, clean
+  tree, deliberate gaps stated), link and cross-reference integrity, and the rule-index
   discipline in the agent layer. Trigger it after finishing a logical chunk of work.
 
   Its value is fresh eyes: it reviews in a clean context, not the context that wrote the change, so it
@@ -61,7 +62,19 @@ most severe defect available is a disclosure, not a bug.
 - `related:` edges exist in both directions.
 - If `maturity` changed, `INDEX.md`'s row and count changed with it — `check.py` does not catch this.
 
-### 3. Skeleton contract (CRITICAL)
+### 3. Component-card contract (CRITICAL, when `component-cards/` or `skeletons/components/` changed)
+
+The rubric is `.claude/rules/component-cards.md`; `check.py` (`check_component_cards`) enforces its
+shape. Beyond what the gate asserts:
+
+- One concrete artifact per card, described generically — a component card has a stricter
+  anonymization bar than a pattern card, because it is closer to a real file.
+- If the card was extracted from `.legacy-assets/`, the user named that one directory and approved a
+  masking table first. A component card with no such record is a defect, not a style issue.
+- The prototype uses fabricated fixtures, never copies of the source artifact.
+- `INDEX.md`'s component table restates each card's `instances:` — `check.py` does not compare them.
+
+### 4. Skeleton contract (CRITICAL)
 
 - Standard library only. Offline — model calls stubbed behind a named function that prints.
 - Example data ships with it; every command in the README's `## Try it` block runs from a fresh clone.
@@ -71,14 +84,14 @@ most severe defect available is a disclosure, not a bug.
 - Exit codes: 0 ran, 1 demonstrated a failure on purpose, 2 needs arguments. A crash is the defect,
   not an exit 1.
 
-### 4. Correctness
+### 5. Correctness
 
 - Relative Markdown links resolve — skeletons under `skeletons/pipelines/` need `../../../cards/`.
 - Skeleton logic does what its README and card claim; off-by-one errors, wrong conditionals, missing
   error handling.
 - A card's claims match what its skeleton actually demonstrates.
 
-### 5. Agent-layer discipline (when `.claude/`, `.agents/`, `.github/`, `AGENTS.md` or `CLAUDE.md` changed)
+### 6. Agent-layer discipline (when `.claude/`, `.agents/`, `.github/`, `AGENTS.md` or `CLAUDE.md` changed)
 
 - `AGENTS.md` is the single source of truth; `CLAUDE.md` and `.github/copilot-instructions.md` are thin
   adapters. A rule restated in an adapter is the defect.
@@ -88,7 +101,7 @@ most severe defect available is a disclosure, not a bug.
 - `CLAUDE.md` stays at or under 150 lines.
 - The commit touching agent-context assets needs a `Context:` trailer (`.claude/rules/git-workflow.md`).
 
-### 6. Quality
+### 7. Quality
 
 Duplication — facts are cross-referenced, not restated. Skeletons stay minimal. KISS and YAGNI.
 
