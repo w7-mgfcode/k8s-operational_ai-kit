@@ -11,6 +11,7 @@ related:
   - 03-description-as-router
   - 02-progressive-disclosure
   - 11-adversarial-role-separation
+  - 16-the-permission-ladder
 ---
 
 # Capability Taxonomy — Skill, Command, Subagent
@@ -121,6 +122,7 @@ while poisoning the context they run in.
 | [02 Progressive Disclosure](02-progressive-disclosure.md) | All three containers use the three-level structure; only skills pay the always-resident cost |
 | [11 Adversarial Role Separation](11-adversarial-role-separation.md) | The strongest use of subagents: isolation is what makes the evaluator independent |
 | [19 Scope Lock](19-scope-lock-and-checkpoint-delivery.md) | Commands are the natural home for procedures with a defined start and end |
+| [16 The Permission Ladder](16-the-permission-ladder.md) | Tool narrowing is the same idea at a different granularity: it limits capability, not instruction |
 
 ## Constraints and trade-offs
 

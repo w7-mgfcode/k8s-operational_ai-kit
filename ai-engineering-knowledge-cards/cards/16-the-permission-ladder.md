@@ -11,6 +11,7 @@ related:
   - 17-blast-radius-gating
   - 12-lifecycle-hooks-as-capture-points
   - 07-capability-taxonomy
+  - 18-the-redaction-boundary
 ---
 
 # The Permission Ladder

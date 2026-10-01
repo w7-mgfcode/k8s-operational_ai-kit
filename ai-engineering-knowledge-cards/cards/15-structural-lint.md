@@ -11,6 +11,7 @@ related:
   - 13-log-as-source-compilation
   - 14-index-guided-retrieval
   - 05-instruction-provenance-and-drift
+  - 10-behavioral-evaluation-harness
 ---
 
 # Structural Lint for Knowledge Bases
@@ -128,6 +129,7 @@ still reads correctly, and retrieval quality declines with no attributable cause
 | [14 Index-Guided Retrieval](14-index-guided-retrieval.md) | Depends on exactly what lint protects — index accuracy and link integrity |
 | [05 Instruction Provenance and Drift](05-instruction-provenance-and-drift.md) | Same philosophy applied to instructions: mechanical resolution beats reading for plausibility |
 | [09 Scaffold, Validate, Package](09-scaffold-validate-package.md) | The same error/warning split and the same insistence on decidable checks |
+| [10 Behavioral Evaluation Harness](10-behavioral-evaluation-harness.md) | The same philosophy — cheap mechanical checks — applied to a capability instead of a knowledge base |
 
 ## Constraints and trade-offs
 

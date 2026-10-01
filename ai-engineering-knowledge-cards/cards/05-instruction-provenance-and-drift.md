@@ -11,6 +11,7 @@ related:
   - 01-one-contract-many-routers
   - 04-path-scoped-rule-loading
   - 15-structural-lint
+  - 20-repository-projection-pipeline
 ---
 
 # Instruction Provenance and Drift
@@ -117,6 +118,7 @@ The corrective, applied positively:
 | [04 Path-Scoped Rule Loading](04-path-scoped-rule-loading.md) | Provides the mechanical check — glob resolution — that detects this failure |
 | [15 Structural Lint](15-structural-lint.md) | The same class of cheap mechanical validation, applied to a knowledge base |
 | [10 Behavioral Evaluation Harness](10-behavioral-evaluation-harness.md) | Imported skills arrive with routing contracts written against a different sibling set; only behavioral testing catches it |
+| [20 Repository Projection Pipeline](20-repository-projection-pipeline.md) | Its third stage exists to prevent the failure this card documents |
 
 ## Constraints and trade-offs
 

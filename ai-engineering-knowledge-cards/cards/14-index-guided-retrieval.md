@@ -11,6 +11,7 @@ related:
   - 13-log-as-source-compilation
   - 15-structural-lint
   - 02-progressive-disclosure
+  - 20-repository-projection-pipeline
 ---
 
 # Index-Guided Retrieval

@@ -13,6 +13,7 @@ related:
   - 13-log-as-source-compilation
   - 14-index-guided-retrieval
   - 05-instruction-provenance-and-drift
+  - 01-one-contract-many-routers
 ---
 
 # Repository Projection Pipeline
@@ -134,6 +135,7 @@ a document that describes what it looked like months ago.
 | [14 Index-Guided Retrieval](14-index-guided-retrieval.md) | The pack's index and chunk manifest are built for exactly that retrieval strategy |
 | [05 Instruction Provenance and Drift](05-instruction-provenance-and-drift.md) | The failure this pattern's third stage exists to prevent |
 | [17 Blast-Radius Gating](17-blast-radius-gating.md) | Consumes the dependency map; projection is how that matrix stops being hand-maintained |
+| [01 One Contract, Many Routers](01-one-contract-many-routers.md) | Consumes the reference documents this pipeline generates; the contract points at them |
 
 ## Constraints and trade-offs
 

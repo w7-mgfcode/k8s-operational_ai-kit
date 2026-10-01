@@ -13,6 +13,7 @@ related:
   - 14-index-guided-retrieval
   - 15-structural-lint
   - 18-the-redaction-boundary
+  - 20-repository-projection-pipeline
 ---
 
 # Log-as-Source Knowledge Compilation
@@ -141,6 +142,7 @@ than the first.
 | [15 Structural Lint](15-structural-lint.md) | Validates the output: broken cross-links, orphans, size outliers |
 | [18 The Redaction Boundary](18-the-redaction-boundary.md) | Must sit between capture and compilation; in the source system it does not, which is this card's most serious gap |
 | [16 The Permission Ladder](16-the-permission-ladder.md) | The headless compiler needs a permission posture the interactive agent must never have |
+| [20 Repository Projection Pipeline](20-repository-projection-pipeline.md) | Same source-compiler-output shape, with the repository as source instead of transcripts |
 
 ## Constraints and trade-offs
 
