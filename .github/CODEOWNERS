@@ -1,0 +1,21 @@
+# CODEOWNERS — auto-requests a reviewer on every pull request.
+# Matched owners are requested for review when a PR touches matching paths.
+# Owners must have push access to the repository.
+# Docs: https://docs.github.com/articles/about-code-owners
+
+# Default owner for everything in the repo.
+* @w7-mgfcode
+
+# Agent-instruction layer — same owner today; split out here so future
+# co-maintainers can take specific surfaces without touching the global rule.
+# These paths change agent behavior, so they warrant explicit review.
+/AGENTS.md                                  @w7-mgfcode
+/CLAUDE.md                                  @w7-mgfcode
+/.claude/                                   @w7-mgfcode
+/.github/                                   @w7-mgfcode
+
+# Contracts and the gate — a change here re-scopes every card and skeleton
+# (docs/_base/ARCHITECTURE.md § Blast Radius).
+/check.py                                   @w7-mgfcode
+/docs/_base/                                @w7-mgfcode
+/ai-engineering-knowledge-cards/templates/  @w7-mgfcode
