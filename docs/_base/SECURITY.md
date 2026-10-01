@@ -60,8 +60,8 @@ deliberate act: it removes a file from the only automated control there is.
 
 ## Repository Hygiene
 
-- **Two 136 MB virtualenvs** exist under `.claude/skills/excalidraw-diagram/references/.venv`
-  and `.agents/skills/excalidraw-diagram/references/.venv`. Both are gitignored, as is all
+- **A ~140 MB virtualenv** exists under `.claude/skills/excalidraw-diagram/references/.venv`
+  (`.agents/skills/excalidraw-diagram` is a symlink to that skill). It is gitignored, as is all
   vendored agent tooling (`.agents/`, `.claude/commands/`, `.claude/skills/*` except the
   project-authored summarizer). Before every `git add`, confirm `git status` lists none of it.
 - **No secrets are required** to work in this repository. The three agent workflows reference

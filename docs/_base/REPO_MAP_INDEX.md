@@ -57,6 +57,6 @@
 | Path | Why |
 | --- | --- |
 | `.legacy-assets/` | Un-anonymized source. Gitignored. Never a source for published output |
-| `**/.venv/` | Two 136 MB vendored virtualenvs under the excalidraw skill |
+| `**/.venv/` | A ~140 MB vendored virtualenv under the excalidraw skill |
 | `.agents/`, `.claude/commands/`, `.claude/skills/*` | Vendored agent tooling, gitignored; only `knowledge-card-summarizer` is project-authored |
 | `docs/_kB/` | Read-only KB input by convention; only an unrelated note exists here |

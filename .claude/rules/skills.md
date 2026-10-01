@@ -19,11 +19,11 @@ Consequences that will bite:
 - **`.claude/.mcp.json` points at `tooling/mcp/codebase_search.py`**, which
   exists in the course repo and not here. The `codebase-search` MCP server cannot
   start. Fix the path or drop the entry — do not debug it as a runtime problem.
-- **A 136 MB virtualenv exists twice.**
-  `.claude/skills/excalidraw-diagram/references/.venv` and, since 2026-09-21,
-  `.agents/skills/excalidraw-diagram/` — a full copy of the same skill, not a
-  symlink. That is ~272 MB on disk, gitignored by `**/.venv/`. See
-  [`anonymization.md`](anonymization.md) — never commit either.
+- **The excalidraw skill carries a ~140 MB virtualenv** at
+  `.claude/skills/excalidraw-diagram/references/.venv`, gitignored by `**/.venv/`.
+  `.agents/skills/excalidraw-diagram` was a second full copy until 2026-10-01; it
+  is now a symlink to the `.claude/` one. See [`anonymization.md`](anonymization.md)
+  — never commit the venv.
 - **A skill belongs in one place.** If a bundle must be visible to both Claude
   Code and other tools, symlink `.claude/skills/<name>` at
   `.agents/skills/<name>`; do not duplicate the tree. Two real copies drift, and

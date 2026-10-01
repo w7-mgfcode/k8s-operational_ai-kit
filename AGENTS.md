@@ -111,7 +111,7 @@ Exit codes inside skeletons: **0** = ran, **1** = ran and demonstrated a failure
   IPs and CIDRs, the source repository name, project codenames, named personal tooling, the
   operator's timezone. `check.py` catches the mechanical shapes; it cannot catch a name.
 - **Never commit a virtualenv, `__pycache__`, `.env`, a token or a credential.** This repository
-  is public. Two 136 MB virtualenvs exist under the excalidraw skill and are
+  is public. A ~140 MB virtualenv exists under the excalidraw skill and is
   gitignored — verify before staging.
 - **Never add a dependency to a skeleton.** Standard library only is the contract, not a
   preference.
