@@ -30,10 +30,8 @@ timezone.
 
 ## `.legacy-assets/` is never a source
 
-It holds the un-anonymized kit: the organization name, two environment domains,
-11 node hostnames, three internal subnets, 16 raw session transcripts (one with
-credential-shaped lines), runtime flush state, and 64 compiled articles about a
-specific installation.
+It holds the un-anonymized kit. Nothing more about its contents is written here,
+by the rule below.
 
 - **Never read it into a card, a skeleton, a commit message, or a report.**
 - Never quote it, summarize it, or paraphrase it. Describing the *mechanism* that
@@ -63,12 +61,11 @@ unchanged.
 ## What must never enter the repository
 
 - `.legacy-assets/` — gitignored. That one line is currently the only control.
-- Any vendored virtual environment. The same 136 MB / 641-file venv currently
-  exists **twice** — under `.claude/skills/excalidraw-diagram/references/.venv`
-  and under `.agents/skills/excalidraw-diagram/`. Both `.claude/` and `.agents/`
-  are untracked but not ignored, so `git add .` would commit ~272 MB of
-  third-party packages. Add `**/.venv/`, `__pycache__/` and `*.pyc` to
-  `.gitignore` before the first commit.
+- Any vendored virtual environment or agent tooling. Two copies of a 136 MB venv
+  exist under the excalidraw skill; `**/.venv/`, `__pycache__/`, `*.pyc` and the
+  vendored trees are gitignored. Confirm `git status` lists none of it before
+  staging. `check.py` scans every file git would publish for identifier shapes —
+  a name still passes it.
 - Any `.env`, token, or credential. This repository is intended to be public.
 
 ## Before publishing

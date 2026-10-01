@@ -46,8 +46,9 @@ one of them is redundant.
 
 ## Registering one
 
-Adding an agent means adding a row to the table above **and** to
-`.claude/rules/README.md`. An agent nothing references will never be dispatched.
+Adding an agent means adding a row to the table above, and naming it in its
+siblings' descriptions. The `.claude/rules/README.md` row for this rule changes
+only if its Covers text does. An agent nothing references will never be dispatched.
 
 Subagents are Claude Code-only. No other tool in this repo has an equivalent, so
 never make a procedure *depend* on one — name a subagent as an optimization

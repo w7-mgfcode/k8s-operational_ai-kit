@@ -13,7 +13,7 @@ subagent, hook, or a reference file a skill loads — and shows which patterns i
 puts into practice. The two are separate contracts; do not force one shape onto
 the other.
 
-`../templates/COMPONENT_CARD_TEMPLATE.md` is the shape. `check.py` enforces it.
+[`COMPONENT_CARD_TEMPLATE.md`](../../ai-engineering-knowledge-cards/templates/COMPONENT_CARD_TEMPLATE.md) is the shape. `check.py` enforces it.
 
 ## Layout
 

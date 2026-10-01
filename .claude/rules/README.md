@@ -14,11 +14,11 @@ rule missing from it is invisible to every agent except Claude Code.
 | File | Auto-loads when touching | Covers |
 | --- | --- | --- |
 | `anonymization.md` | `ai-engineering-knowledge-cards/**`, `.gitignore` | The masking rule; `.legacy-assets/` is never a source, except for component-card extraction; what must never enter the repo |
-| `cards.md` | `cards/**`, `templates/**`, `docs/**` | Six frontmatter keys, thirteen sections, what `maturity: partial` means, provenance |
-| `skeletons.md` | `skeletons/**` | Stdlib-only, offline, runnable as committed, deliberate gaps stated |
-| `component-cards.md` | `component-cards/**`, `templates/COMPONENT_CARD_TEMPLATE.md`, `skeletons/components/**` | Five frontmatter keys, eleven sections, one artifact per card, stricter anonymization, legacy extraction only by named authorization |
+| `cards.md` | `ai-engineering-knowledge-cards/cards/**`, `ai-engineering-knowledge-cards/templates/CARD_TEMPLATE.md`, `ai-engineering-knowledge-cards/docs/**` | Six frontmatter keys, thirteen sections, what `maturity: partial` means, provenance |
+| `skeletons.md` | `ai-engineering-knowledge-cards/skeletons/**` | Stdlib-only, offline, runnable as committed, deliberate gaps stated |
+| `component-cards.md` | `ai-engineering-knowledge-cards/component-cards/**`, `ai-engineering-knowledge-cards/templates/COMPONENT_CARD_TEMPLATE.md`, `ai-engineering-knowledge-cards/skeletons/components/**` | Five frontmatter keys, eleven sections, one artifact per card, stricter anonymization, legacy extraction only by named authorization |
 | `subagents.md` | `.claude/agents/**` | Three distinct roles; `tools:` is a narrowing; cite or admit; this repo's real shape |
-| `skills.md` | `.claude/skills/**`, `.agents/**` | Vendored not managed; the three broken assets; `allowed-tools`; routing descriptions |
+| `skills.md` | `.claude/skills/**`, `.agents/**` | Vendored not managed, and gitignored; the broken MCP config; one place per skill; `allowed-tools`; routing descriptions |
 | `git-workflow.md` | `.claude/**`, `.github/**`, `ai-engineering-knowledge-cards/**` | Types, the one scope taxonomy, the `Context:` trailer, prohibitions |
 
 ## Adding a rule
@@ -46,14 +46,14 @@ the same change that creates its target — not before.
 - **Agent-instruction layer** — the one-rulebook / thin-adapter doctrine. Its
   target now exists: root `AGENTS.md`, with `CLAUDE.md` and
   `.github/copilot-instructions.md` as adapters. The rule is **owed, not yet
-  written**. There is still no `commands/`, no `.gemini/` and no `.codex/`.
+  written**. `.claude/commands/` exists but is vendored and gitignored; there is
+  still no `.gemini/` and no `.codex/`.
 - **Hooks and permissions** — once `.claude/hooks/` or `.claude/settings.json`
   lands. Revisit the `allowed-tools` decision in `skills.md` at the same time.
-- **CI gates** — `.github/workflows/ci.yml` has been rebuilt and runs
-  `python3 check.py --run` plus a clean-tree check on push and pull request to
-  `main` and `master`. The rule is **owed, not yet written**. The three agent
-  workflows (`claude-create`, `claude-review`, `codex-create-deterministic`)
-  still invoke `npm` and will fail if triggered.
+- **CI gates** — `.github/workflows/ci.yml` runs `python3 check.py --run` plus a
+  clean-tree check on push and pull request to `main`. The rule is **owed, not
+  yet written**. The agent workflows fail without their secrets; only
+  `claude-review` is committed.
 - **Structural lint** — card 15, applied to this repository. `check.py` now
   covers frontmatter and link resolution for cards. It does not check index
   coverage, orphans, or that `INDEX.md`'s maturity column matches the cards.
