@@ -67,5 +67,16 @@ then force-saved it with the open concerns listed. There is no loop here.
 and the formats it cannot recognize, are [card 18](../../../cards/18-the-redaction-boundary.md)'s
 skeleton.
 
+**One copy of each file.** The source skill loaded one rubric, one search table and
+one plan template. Here `rubric.json`, `candidates.json`, `repo.json` and
+`plan-template.md` are this skeleton's own, cut to what the end-to-end run needs. The
+skeletons that go deep on each part carry their own, richer copies:
+[02](../02-remediation-ranking-rubric/) adds scoring anchors and a `--stress` mode,
+[05](../05-keyword-narrowed-repo-search/) a renamed role that the keyword table misses,
+and [06](../06-remediation-plan-template/) a stricter template with a checker. They
+are not kept in sync, on purpose: each skeleton runs on its own, and editing one
+fixture should not change what another demonstrates. The cost is that the copies can
+drift apart, and nothing checks them.
+
 **Execution.** Neither this prototype nor the component it models changes anything.
 The plan is the output; applying it happens elsewhere, under a permission ladder.
