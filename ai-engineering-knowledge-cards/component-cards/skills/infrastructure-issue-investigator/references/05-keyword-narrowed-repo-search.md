@@ -18,9 +18,9 @@ related:
 > the fix — cheap, predictable retrieval that goes quietly wrong the day a role is
 > renamed.
 
-![Keyword-Narrowed Repository Search: the index picks where to look, the day a role is renamed, colliding keywords, and thin signals](05-keyword-narrowed-repo-search.png)
+![Keyword-Narrowed Repository Search: the index picks where to look, the day a role is renamed, colliding keywords, and thin signals](../../../../diagrams/component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.png)
 
-<sub>Source: [`05-keyword-narrowed-repo-search.excalidraw`](05-keyword-narrowed-repo-search.excalidraw).</sub>
+<sub>Source: [`05-keyword-narrowed-repo-search.excalidraw`](../../../../diagrams/component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.excalidraw).</sub>
 
 ## What it is
 

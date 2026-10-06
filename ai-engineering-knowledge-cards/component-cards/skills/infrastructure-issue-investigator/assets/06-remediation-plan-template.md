@@ -19,9 +19,9 @@ related:
 > The one artifact the investigator skill produces: a fixed shape that makes a plan
 > complete on paper — and nothing that checks the paper.
 
-![Remediation Plan Template: five phases fill one form, and a sound plan and a defective one pass the same shape to disk unchecked](06-remediation-plan-template.png)
+![Remediation Plan Template: five phases fill one form, and a sound plan and a defective one pass the same shape to disk unchecked](../../../../diagrams/component-cards/infrastructure-issue-investigator/06-remediation-plan-template.png)
 
-<sub>Source: [`06-remediation-plan-template.excalidraw`](06-remediation-plan-template.excalidraw).</sub>
+<sub>Source: [`06-remediation-plan-template.excalidraw`](../../../../diagrams/component-cards/infrastructure-issue-investigator/06-remediation-plan-template.excalidraw).</sub>
 
 ## What it is
 

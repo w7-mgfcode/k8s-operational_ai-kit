@@ -24,9 +24,9 @@ related:
 > A skill that investigates a cluster problem read-only, ranks the possible fixes against
 > the team's own repository, and writes a plan — and never applies any of it.
 
-![Infrastructure Issue Investigator: routing, the permission walls, seven gated phases, and the execution boundary](01-infrastructure-issue-investigator.png)
+![Infrastructure Issue Investigator: routing, the permission walls, seven gated phases, and the execution boundary](../../../diagrams/component-cards/infrastructure-issue-investigator/01-infrastructure-issue-investigator.png)
 
-<sub>Source: [`01-infrastructure-issue-investigator.excalidraw`](01-infrastructure-issue-investigator.excalidraw).</sub>
+<sub>Source: [`01-infrastructure-issue-investigator.excalidraw`](../../../diagrams/component-cards/infrastructure-issue-investigator/01-infrastructure-issue-investigator.excalidraw).</sub>
 
 ## What it is
 
