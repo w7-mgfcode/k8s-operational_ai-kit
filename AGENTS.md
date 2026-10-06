@@ -9,7 +9,7 @@ here loads on every request, so it carries only what an agent would get wrong wi
 This repository publishes **AI Engineering Knowledge Cards**: twenty engineering patterns
 extracted from a private agent kit that operated a production Kubernetes platform, rewritten so
 they teach the pattern and identify nothing. Each card ships a minimal runnable prototype.
-Six **component cards** (`ai-engineering-knowledge-cards/component-cards/`) each describe one concrete artifact that instances
+Seven **component cards** (`ai-engineering-knowledge-cards/component-cards/`) each describe one concrete artifact that instances
 those patterns, under their own contract, `.claude/rules/component-cards.md`.
 
 It is a **documentation and prototype repository**. There is no application, no service, no
