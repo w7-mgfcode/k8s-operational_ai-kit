@@ -3,7 +3,7 @@
 > Where things live, and which file answers which question.
 > **Hand-written, not generated.** No generator exists in this repository; the structured KB one
 > would read (`docs/_kB/repo-map/`) was never built, because its only possible input is the
-> excluded legacy tree. Last reviewed: 2026-10-01.
+> excluded legacy tree. Last reviewed: 2026-10-07.
 
 ## Navigation
 

@@ -29,7 +29,10 @@ python3 check.py     # confirms your clone is sound
 7. **Create the skeleton** (below). `check.py` fails a card without one.
 8. **Update `INDEX.md`** — the by-card table, the by-question table if it fits, and the maturity
    counts. Nothing checks this for you.
-9. `python3 check.py --run`.
+9. **Diagram.** The card's `## Diagram` section carries a Mermaid figure. An Excalidraw companion is
+   optional; if you draw one, it goes in `diagrams/cards/` with its render beside it, and gets a
+   row in `diagrams/README.md`.
+10. `python3 check.py --run`.
 
 ## Adding a Skeleton
 
@@ -68,10 +71,21 @@ Its prototype stays flat at `skeletons/components/NN-<slug>/`, whose README link
 If the artifact comes from `.legacy-assets/`, the extraction conditions in
 `.claude/rules/anonymization.md` apply before anything is written.
 
+Then, because nothing checks these for you:
+
+- **Reverse `related:` edges** in every component card yours names. `check.py` does fail a one-way
+  edge, so this one is caught — the rest are not.
+- **`INDEX.md`** gets a row in the component-card table.
+- **The component-card count** is restated in `AGENTS.md` (Project Overview),
+  `docs/_base/ARCHITECTURE.md` (System Boundaries) and `.claude/agents/codebase-analyst.md`.
+- **A diagram**, if it has one, goes in `diagrams/component-cards/<skill>/` (or
+  `diagrams/component-cards/` for a standalone type) with its render beside it; the card embeds the
+  render and links the source with a relative path, and `diagrams/README.md` gets a row.
+
 ## Running the Gate
 
 ```bash
-python3 check.py           # ~1s   contracts, links, imports, anonymization
+python3 check.py           # ~1s   contracts, links, imports, anonymization, legacy tree
 python3 check.py --run     # ~20s  the above, plus every top-level skeleton script
 python3 check.py --quiet   # failures only
 ```
@@ -91,12 +105,15 @@ failure.
 | `non-stdlib import` | A dependency crept into a skeleton |
 | `broken link -> ../../cards/...` | Under `skeletons/pipelines/` you are one level deeper — use `../../../cards/` |
 | `related '…' does not list this card back` | A one-way `related:` edge — add the reverse edge to the other card. Applies to component cards too |
+| `related '…' is not a component card` | A component card's `related:` names a slug that is not a component card's filename stem |
+| `related: must be [] or a block list of '  - <…-slug>' lines` | `related:` is malformed — an inline list or stray text. Use `[]` or one `  - slug` per line |
 | `related must name its skill '…'` | A reference, asset or script card must list the skill card it sits under |
 | `component number already used by …` | Component numbers are unique across all types |
 | `a <type> card belongs at component-cards/…` | The card's `type` and its place in the layout disagree — move the file or fix the type |
 | `skills/<skill>/ needs exactly one skill card to own this …` | A reference, asset or script needs exactly one `type: skill` card at the root of the same `skills/<skill>/` |
 | `skills/<skill>/ holds N skill cards` | One skill directory, one skill card — split them, or retype the extra |
 | `instances '…' is not a card in cards/` | An `instances:` slug must be a pattern card's filename stem |
+| `no '.legacy-assets/' line — the tree must stay untracked` | `.gitignore` lost the line that keeps the source tree out of git. Restore it |
 | `tracked or staged by git — .legacy-assets/ must never be tracked` | Something under the source tree was force-added. `git rm -r --cached .legacy-assets` — this unstages it and leaves the files on disk |
 | `no skeletons/components/<stem>/README.md` | Every component card needs its prototype directory |
 | An anonymization hit in a new file | Either genuinely wrong, or teaching material that needs an `ANON_EXEMPT` entry — prefer fixing the file |
@@ -107,7 +124,8 @@ Conventional Commits with the scope taxonomy in `.claude/rules/git-workflow.md`
 (`cards` `skeletons` `docs` `agents` `ci`). Scope is chosen by blast radius, not file count: a
 one-line edit to `CARD_TEMPLATE.md` is `cards`, because it changes the contract every card obeys.
 
-A `Context:` trailer is required when the commit touches `.claude/` or `AGENTS.md` — it records
+A `Context:` trailer is required when the commit touches `.claude/`, `.agents/`, `AGENTS.md`,
+`CLAUDE.md` or `.github/copilot-instructions.md` — it records
 what an agent reading the repo later will now see differently, in the agent's terms rather than
 the diff's.
 
