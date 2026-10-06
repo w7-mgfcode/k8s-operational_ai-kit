@@ -45,7 +45,7 @@ k8s-operational_ai-kit/
     ├── component-cards/ one artifact per card, by type — 11 sections each
     ├── skeletons/       20 prototypes + pipelines/ + components/
     ├── templates/       CARD_TEMPLATE.md, COMPONENT_CARD_TEMPLATE.md
-    ├── teaching/        condensed teaching cards — untracked; format set by the
+    ├── teaching/        condensed teaching cards (12 of 20) — format set by the
     │                    knowledge-card-summarizer skill, not checked by check.py
     └── docs/            ANONYMIZATION.md, README-OUTLINE.md
 ```
