@@ -32,7 +32,7 @@
 | `.../cards/NN-*.md` | One pattern each, 13 sections | Studying or editing a pattern |
 | `.../skeletons/NN-*/` | One runnable prototype per card | Seeing the pattern work, or fail |
 | `.../skeletons/pipelines/session-memory-loop/` | Cards 12→13→14→15 as one engine | Understanding how the memory patterns compose |
-| `.../component-cards/<type>/NN-*.md` | One concrete artifact each, 11 sections | Studying or editing a component |
+| `.../component-cards/skills/<skill>/` | One skill's card, with its `references/` `assets/` `scripts/` nested beneath — one artifact per card, 11 sections | Studying or editing a component |
 | `.../skeletons/components/NN-*/` | One prototype per component card | Seeing a component work, or fail |
 | `.../templates/CARD_TEMPLATE.md` | The card shape | Authoring a card |
 | `.../templates/COMPONENT_CARD_TEMPLATE.md` | The component-card shape | Authoring a component card |

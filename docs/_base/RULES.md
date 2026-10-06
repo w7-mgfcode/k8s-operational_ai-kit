@@ -36,7 +36,7 @@ Violating any of these is a defect, not a judgment call.
 | 9 | No virtualenv, `__pycache__`, `.env`, token or credential is committed | `.gitignore` (venv, pycache, `.env*`) + `check.py` (credential shapes) |
 | 10 | Conventional Commits, one scope taxonomy, `Context:` trailer for agent assets | Human discipline only |
 | 11 | No direct commits to the default branch without being asked | Human discipline only |
-| 12 | A component card has exactly 11 `##` sections, 5 frontmatter keys in order, a `type` equal to its directory, `instances:` that resolve to cards, and a skeleton | `check.py` |
+| 12 | A component card has exactly 11 `##` sections, 5 frontmatter keys in order, a `type` that matches its place in the layout, `instances:` that resolve to cards, and a skeleton | `check.py` |
 
 ## Soft Constraints
 

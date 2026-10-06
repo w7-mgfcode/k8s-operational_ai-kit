@@ -42,7 +42,7 @@ k8s-operational_ai-kit/
     ├── README.md        public framing
     ├── INDEX.md         reader-facing map: by layer, by card, by question
     ├── cards/           20 patterns, 13 sections each
-    ├── component-cards/ one artifact per card, by type — 11 sections each
+    ├── component-cards/ one artifact per card, nested under the skill that owns it — 11 sections each
     ├── skeletons/       20 prototypes + pipelines/ + components/
     ├── templates/       CARD_TEMPLATE.md, COMPONENT_CARD_TEMPLATE.md
     ├── teaching/        condensed teaching cards (12 of 20) — format set by the
@@ -56,7 +56,7 @@ k8s-operational_ai-kit/
 | --- | --- | --- | --- |
 | Cards | Markdown, fixed schema | `cards/*.md` | `.claude/rules/cards.md` |
 | Skeletons | Python 3 stdlib + README | `skeletons/<card-slug>/` | `.claude/rules/skeletons.md` |
-| Component cards | Markdown, fixed schema | `component-cards/<type>/*.md` | `.claude/rules/component-cards.md` |
+| Component cards | Markdown, fixed schema | `component-cards/skills/<skill>/**/*.md`, `component-cards/<type>s/*.md` | `.claude/rules/component-cards.md` |
 | Component skeletons | Python 3 stdlib + README | `skeletons/components/<card-stem>/` | `.claude/rules/component-cards.md` + `skeletons.md` |
 | Pipeline walkthrough | Bash orchestrator | `skeletons/pipelines/session-memory-loop/` | Same, plus idempotency — not executed by `check.py --run` |
 | Rules | Markdown with `paths:` frontmatter | `.claude/rules/*.md` | Indexed in its own README |

@@ -60,8 +60,11 @@ artifacts to `skeletons/.gitignore` and to `RUN_ARTIFACTS` in `check.py`.
 
 A component card describes one concrete artifact that instances a pattern. Its contract is
 `.claude/rules/component-cards.md` and its shape is `templates/COMPONENT_CARD_TEMPLATE.md` —
-eleven sections, five frontmatter keys. It lives at `component-cards/<type>/NN-<slug>.md`, and
-its prototype at `skeletons/components/NN-<slug>/`, whose README links cards as `../../../cards/`.
+eleven sections, five frontmatter keys. A skill's card lives at
+`component-cards/skills/<skill>/NN-<skill>.md`, and what the skill loads sits beneath it in
+`references/`, `assets/` or `scripts/`; every other type is `component-cards/<type>s/NN-<slug>.md`.
+Its prototype stays flat at `skeletons/components/NN-<slug>/`, whose README links cards as
+`../../../cards/`.
 If the artifact comes from `.legacy-assets/`, the extraction conditions in
 `.claude/rules/anonymization.md` apply before anything is written.
 
@@ -89,7 +92,8 @@ failure.
 | `broken link -> ../../cards/...` | Under `skeletons/pipelines/` you are one level deeper — use `../../../cards/` |
 | `related '…' does not list this card back` | A one-way `related:` edge — add the reverse edge to the other card |
 | `component number already used by …` | Component numbers are unique across all types |
-| `type '…' does not match directory '…'` | A component card's `type` must equal its parent directory |
+| `a <type> card belongs at component-cards/…` | The card's `type` and its place in the layout disagree — move the file or fix the type |
+| `skills/<skill>/ has no skill card to own this …` | A reference, asset or script needs its skill's card at the root of the same `skills/<skill>/` |
 | `instances '…' is not a card in cards/` | An `instances:` slug must be a pattern card's filename stem |
 | `no skeletons/components/<stem>/README.md` | Every component card needs its prototype directory |
 | An anonymization hit in a new file | Either genuinely wrong, or teaching material that needs an `ANON_EXEMPT` entry — prefer fixing the file |
