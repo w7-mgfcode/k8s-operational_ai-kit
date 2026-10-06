@@ -1,0 +1,24 @@
+{
+  "_comment": "The lookup script's built-in copy. Maintained by hand, separately.",
+  "confirmation": {
+    "CRITICAL": "Platform-team approval and explicit sign-off",
+    "HIGH": "Team-lead approval",
+    "MEDIUM": "Confirm on first occurrence, then trust for the workstream",
+    "LOW": "Proceed with a notification"
+  },
+  "components": {
+    "mesh-net":      {"tier": "CRITICAL", "dependents": ["all pods", "gateway", "egress"]},
+    "block-store":   {"tier": "CRITICAL", "dependents": ["secrets-store", "database", "registry"]},
+    "cert-issuer":   {"tier": "CRITICAL", "dependents": ["identity", "registry", "secrets-store", "gateway", "trust-bundle"]},
+    "secrets-store": {"tier": "HIGH", "dependents": ["api", "worker", "all secret consumers"], "dependents_count": 24},
+    "identity":      {"tier": "HIGH", "dependents": ["dashboards", "registry", "cli-login"]},
+    "database":      {"tier": "HIGH", "dependents": ["identity", "registry"]},
+    "collector":     {"tier": "MEDIUM", "dependents": ["logs", "metrics", "traces"]},
+    "metrics":       {"tier": "MEDIUM", "dependents": []},
+    "dashboards":    {"tier": "MEDIUM", "dependents": []},
+    "logs":          {"tier": "MEDIUM", "dependents": []},
+    "policy-engine": {"tier": "MEDIUM", "dependents": []},
+    "registry":      {"tier": "LOW", "dependents": []},
+    "cache":         {"tier": "LOW", "dependents": []}
+  }
+}

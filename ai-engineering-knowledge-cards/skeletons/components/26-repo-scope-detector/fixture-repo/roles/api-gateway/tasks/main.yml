@@ -1,0 +1,5 @@
+# Fabricated. Installs the gateway chart.
+- name: Install the gateway
+  kubernetes.core.helm:
+    name: gateway
+    chart_ref: example/gateway

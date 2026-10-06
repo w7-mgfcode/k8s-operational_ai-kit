@@ -1,0 +1,8 @@
+# vendored from an upstream chart; the team does not own this role
+kind: Deployment
+spec:
+  template:
+    spec:
+      containers:
+        - name: controller
+          image: registry.example.test/ingress:1.0

@@ -1,0 +1,5 @@
+# Fabricated. Runs the nightly batch job.
+- name: Install the batch runner
+  kubernetes.core.helm:
+    name: batch-runner
+    chart_ref: example/batch-runner

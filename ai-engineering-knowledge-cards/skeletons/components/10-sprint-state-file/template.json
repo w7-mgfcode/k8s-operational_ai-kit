@@ -1,0 +1,37 @@
+{
+  "_usage": "create a sprint with: python3 builders.py --init  (builds from this template)",
+  "_states": {
+    "workstream": ["not_started", "in_progress", "complete", "paused", "rolled_back"],
+    "checkpoint": ["pending", "delivered", "skipped"]
+  },
+  "sprint": {"name": "", "created": "", "environment": "dev", "cluster_access": false,
+             "output_dir": "", "repo_path": "."},
+  "workstreams": {
+    "A": {"name": "secrets-store TLS", "status": "not_started", "band": "quick_win",
+          "depends_on": [], "requires_trigger": [], "notes": ""},
+    "B": {"name": "secrets-store auto-unseal", "status": "not_started", "band": "medium_effort",
+          "depends_on": ["A"], "requires_trigger": ["transit_schema", "tls_stable"], "notes": ""},
+    "C": {"name": "admission-policy remediation", "status": "not_started", "band": "quick_win",
+          "depends_on": [], "requires_trigger": [], "owned_roles": [],
+          "violations_before": 0, "violations_after": 0, "notes": ""},
+    "D": {"name": "CIS benchmark triage", "status": "not_started", "band": "quick_win",
+          "depends_on": [], "requires_trigger": [], "report_path": "", "notes": ""},
+    "E": {"name": "cluster hygiene", "status": "not_started", "band": "medium_effort",
+          "depends_on": [], "requires_trigger": [], "notes": ""}
+  },
+  "triggers": {
+    "transit_schema": {"state": "unresolved", "resolved_by": "", "resolved_on": ""},
+    "tls_stable": {"state": "pending", "evaluated_on": ""},
+    "platform_conflict": {"state": "pending", "approval_requested": false}
+  },
+  "checkpoints": {
+    "A": {"target": "<day one> end of day", "status": "pending",
+          "deliverables": ["scope locked", "TLS started or done", "policy inventory", "triage table"]},
+    "B": {"target": "<day two> midday", "status": "pending",
+          "deliverables": ["unseal status and risks", "per-role policy progress", "hygiene audit started"]},
+    "C": {"target": "<day two> end of day", "status": "pending",
+          "deliverables": ["hardening status", "open risks", "backlog", "final validation"]}
+  },
+  "open_risks": [],
+  "backlog": []
+}

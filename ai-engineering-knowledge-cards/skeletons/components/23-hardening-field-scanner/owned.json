@@ -1,0 +1,4 @@
+{
+  "_note": "Fabricated. The roles this team maintains — the boundary workstream C is scoped to.",
+  "owned": ["api-gateway", "batch-runner", "web-frontend", "report-worker", "log-shipper"]
+}

@@ -1,0 +1,18 @@
+{
+  "initial": {"schema": "unresolved", "tls": "pending", "conflict": "pending"},
+  "events": [
+    {"at": "day1 11:00", "kind": "start", "workstream": "A"},
+    {"at": "day1 11:05", "kind": "start", "workstream": "C"},
+    {"at": "day1 16:00", "kind": "complete", "workstream": "A"},
+    {"at": "day1 16:10", "kind": "set", "trigger": "tls", "state": "stable", "evidence": []},
+    {"at": "day1 16:30", "kind": "start", "workstream": "B"},
+    {"at": "day2 09:40", "kind": "set", "trigger": "schema", "state": "stable"},
+    {"at": "day2 10:05", "kind": "set", "trigger": "schema", "state": "resolved"},
+    {"at": "day2 11:00", "kind": "set", "trigger": "conflict", "state": "pending_approval"},
+    {"at": "day2 11:20", "kind": "start", "workstream": "D-control-plane"},
+    {"at": "day2 12:00", "kind": "set", "trigger": "conflict", "state": "approved"},
+    {"at": "day2 14:00", "kind": "set", "trigger": "tls", "state": "unstable",
+     "evidence": ["replica-1 readiness failing", "sync errors in two consumers"]},
+    {"at": "day2 14:30", "kind": "start", "workstream": "E"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "_comment": "A fabricated tier table. dependents_count is set by hand on one entry, as in the source.",
+  "components": {
+    "mesh-net":      {"tier": "CRITICAL", "dependents": ["every pod", "every gateway"]},
+    "block-store":   {"tier": "CRITICAL", "dependents": ["secrets-store", "database", "registry"]},
+    "cert-issuer":   {"tier": "CRITICAL", "dependents": ["identity", "registry", "secrets-store"]},
+    "secrets-store": {"tier": "HIGH", "dependents": ["config-sync", "metrics (agent)", "synced apps"],
+                      "dependents_count": 24, "special": "always confirm, whatever the operation"},
+    "identity":      {"tier": "HIGH", "dependents": ["dashboards", "registry"]},
+    "database":      {"tier": "HIGH", "dependents": ["identity", "registry"]},
+    "metrics":       {"tier": "MEDIUM", "dependents": ["dashboards"]},
+    "logs":          {"tier": "MEDIUM", "dependents": []},
+    "policy-engine": {"tier": "MEDIUM", "dependents": []},
+    "registry":      {"tier": "LOW", "dependents": []},
+    "cache":         {"tier": "LOW", "dependents": []}
+  }
+}

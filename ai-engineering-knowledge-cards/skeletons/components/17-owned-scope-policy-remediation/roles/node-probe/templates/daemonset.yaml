@@ -1,0 +1,7 @@
+kind: DaemonSet
+spec:
+  template:
+    spec:
+      containers:
+        - name: node-probe
+          image: registry.example.test/node-probe:0.3

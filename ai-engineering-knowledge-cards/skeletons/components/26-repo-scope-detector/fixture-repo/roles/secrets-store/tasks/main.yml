@@ -1,0 +1,3 @@
+# Fabricated. Installs the secrets store.
+- name: Install the secrets store
+  ansible.builtin.include_tasks: install.yml

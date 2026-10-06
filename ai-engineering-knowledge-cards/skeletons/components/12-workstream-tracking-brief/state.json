@@ -1,0 +1,26 @@
+{
+  "statuses": ["not_started", "in_progress", "complete", "paused", "rolled_back"],
+  "tiers": {
+    "secrets-store": {"tier": "HIGH", "dependents": ["api", "worker", "billing", "metrics-sidecar", "reports"]},
+    "policy-engine": {"tier": "MEDIUM", "dependents": ["policy-reports"]},
+    "node-config": {"tier": "MEDIUM", "dependents": ["scheduler", "kubelet"]},
+    "cleanup": {"tier": "LOW", "dependents": []}
+  },
+  "workstreams": {
+    "A": {"name": "Secrets-store TLS", "band": "quick_win", "status": "in_progress",
+          "component": "secrets-store", "objective": "Serve the secrets store over TLS behind a flag",
+          "rollback": "Turn the flag off, dry-run, apply, check every replica"},
+    "B": {"name": "Auto-unseal", "band": "medium_effort", "status": "paused",
+          "component": "secrets-store", "objective": "Unseal replicas after restart without an operator",
+          "rollback": "Remove the seal stanza and unseal by hand"},
+    "C": {"name": "Admission-policy remediation", "band": "quick_win", "status": "in_progress",
+          "component": "policy-engine", "objective": "Reduce policy violations in owned roles",
+          "rollback": "Revert the one role that regressed"},
+    "D": {"name": "Benchmark triage", "band": "quick_win", "status": "complete",
+          "component": "node-config", "objective": "Disposition every failed benchmark control",
+          "rollback": "Re-run the benchmark and mark the control deferred"},
+    "E": {"name": "Cluster hygiene", "band": "medium_effort", "status": "not_started",
+          "component": "cleanup", "objective": "Report stale objects with an owner and a risk",
+          "rollback": "Restore from the release history"}
+  }
+}

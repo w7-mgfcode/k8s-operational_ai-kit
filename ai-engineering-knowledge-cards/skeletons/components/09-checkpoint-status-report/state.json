@@ -1,0 +1,24 @@
+{
+  "checkpoint": "B",
+  "sprint": "hardening-2026-01-12",
+  "environment": "dev",
+  "workstreams": {
+    "A": {"name": "secrets-store TLS", "status": "complete", "validation": "passed"},
+    "B": {"name": "secrets-store auto-unseal", "status": "paused", "validation": "pending"},
+    "C": {"name": "admission-policy remediation", "status": "in_progress", "validation": "pending"},
+    "D": {"name": "CIS benchmark triage", "status": "in_progress", "validation": "pending"},
+    "E": {"name": "cluster hygiene", "status": "not_started", "validation": "pending"}
+  },
+  "triggers": {
+    "Transit schema agreed": "unresolved",
+    "TLS stable after A": "stable",
+    "Benchmark items conflict with platform": "pending_approval"
+  },
+  "trigger_vocabulary": {
+    "Transit schema agreed": ["unresolved", "resolved", "deferred"],
+    "TLS stable after A": ["pending", "stable", "unstable"],
+    "Benchmark items conflict with platform": ["pending", "no_conflict", "conflict", "pending_approval", "deferred"]
+  },
+  "evidence": {"Lint": "PASS", "Syntax check": "PASS"},
+  "secrets_store_pods": 3
+}

@@ -1,0 +1,12 @@
+# Fabricated. Hardened the way the remediation guide asks.
+gateway_values:
+  replicas: 2
+  containers:
+    - name: gateway
+      image: registry.example/gateway:1.4
+      securityContext:
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop: [ALL]

@@ -1,0 +1,18 @@
+# Fabricated. The main container is hardened; the sidecar sets nothing.
+spec:
+  template:
+    spec:
+      containers:
+        - name: web
+          image: "{{ web_image }}"
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+        - name: metrics-sidecar
+          image: "{{ exporter_image }}"
+          ports:
+            - containerPort: 9100

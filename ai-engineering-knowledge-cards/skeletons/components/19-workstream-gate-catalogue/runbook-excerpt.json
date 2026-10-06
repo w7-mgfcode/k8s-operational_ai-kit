@@ -1,0 +1,10 @@
+{
+  "_comment": "The recovery runbook set's own copy of the post-apply checks. Fabricated.",
+  "post_apply_suite": [
+    "nodes ready",
+    "no pod outside Running",
+    "no failed Helm release",
+    "no certificate not ready",
+    "node utilisation normal"
+  ]
+}

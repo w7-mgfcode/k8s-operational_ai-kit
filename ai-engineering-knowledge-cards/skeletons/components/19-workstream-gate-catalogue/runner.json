@@ -1,0 +1,20 @@
+{
+  "_comment": "The code half: the same gates as the runner's table encodes them, and the files the skill's scripts write. Fabricated.",
+  "gates": [
+    {"workstream": "A", "gate": "lint", "kind": "command", "blocking": false},
+    {"workstream": "A", "gate": "syntax", "kind": "command", "blocking": true},
+    {"workstream": "A", "gate": "replicas-unsealed", "kind": "manual", "blocking": true},
+    {"workstream": "B", "gate": "lint", "kind": "command", "blocking": false},
+    {"workstream": "B", "gate": "restart-survives", "kind": "manual", "blocking": true,
+     "wait_seconds": 30},
+    {"workstream": "C", "gate": "lint", "kind": "command", "blocking": false},
+    {"workstream": "D", "gate": "triage", "kind": "file-exists", "blocking": true,
+     "target": "triage.md"},
+    {"workstream": "E", "gate": "hygiene", "kind": "file-exists", "blocking": true,
+     "target": "hygiene.md"}
+  ],
+  "produced_by": {
+    "triage.md": "the triage table renderer",
+    "checkpoint.md": "the sprint state reporter"
+  }
+}

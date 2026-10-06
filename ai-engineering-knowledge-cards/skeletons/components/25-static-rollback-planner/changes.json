@@ -1,0 +1,14 @@
+{
+  "_note": "Fabricated. What two TLS attempts on workstream A actually touched, as git would report it. committed = the change is in HEAD; uncommitted = edits on top of HEAD in the working tree.",
+  "attempts": {
+    "first": [
+      {"path": "roles/secrets-store/tasks/tls.yml", "committed": true, "uncommitted": true},
+      {"path": "roles/secrets-store/tasks/install.yml", "committed": true, "uncommitted": false},
+      {"path": "roles/secrets-store/templates/values.yml.j2", "committed": false, "uncommitted": true},
+      {"path": "inventories/dev/group_vars/all/security.yml", "committed": true, "uncommitted": false}
+    ],
+    "second": [
+      {"path": "roles/secrets-store/templates/values.yml.j2", "committed": true, "uncommitted": false}
+    ]
+  }
+}

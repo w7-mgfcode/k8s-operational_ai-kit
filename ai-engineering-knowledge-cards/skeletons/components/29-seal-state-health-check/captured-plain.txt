@@ -1,0 +1,36 @@
+$ kubectl -n secrets exec store-0 -- vault status
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.6
+HA Enabled      true
+HA Mode         active
+
+$ kubectl -n secrets exec store-1 -- vault status
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.6
+HA Enabled      true
+HA Mode         standby
+
+$ kubectl -n secrets exec store-2 -- vault status
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.6
+HA Enabled      true
+HA Mode         standby
+

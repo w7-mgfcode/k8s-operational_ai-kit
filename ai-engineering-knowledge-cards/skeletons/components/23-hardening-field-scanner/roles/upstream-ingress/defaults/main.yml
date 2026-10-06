@@ -1,0 +1,5 @@
+# Fabricated. A thin wrapper around a third-party chart, maintained upstream.
+# The team does not own these containers; fixes belong in the chart's values.
+ingress_values:
+  controller:
+    replicas: 2

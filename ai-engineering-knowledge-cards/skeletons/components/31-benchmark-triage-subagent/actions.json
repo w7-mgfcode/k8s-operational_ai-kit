@@ -1,0 +1,7 @@
+[
+  {"step": "read the report", "tool": "Read", "target": "reports/bench-run.md", "writes": null},
+  {"step": "parse to stdout", "tool": "Bash", "target": "python3 parse.py reports/bench-run.md", "writes": null},
+  {"step": "parse to a file", "tool": "Bash", "target": "python3 parse.py reports/bench-run.md > out/findings.json", "writes": "out/findings.json"},
+  {"step": "render the table", "tool": "Bash", "target": "python3 render.py out/findings.json --output out/triage-table.md", "writes": "out/triage-table.md"},
+  {"step": "tidy the summary by hand", "tool": "Write", "target": "out/summary.md", "writes": "out/summary.md"}
+]

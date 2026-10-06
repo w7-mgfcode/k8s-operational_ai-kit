@@ -1,0 +1,6 @@
+{
+  "_note": "Fabricated. Roles allowed elevated access, as three artifacts of the same skill list them.",
+  "scanner": ["log-shipper", "node-reboot", "bench-runner"],
+  "guide": ["log-shipper", "node-reboot", "bench-runner", "secrets-store", "metrics-store"],
+  "subagent": ["log-shipper", "bench-runner"]
+}
