@@ -58,7 +58,7 @@ jobs:
             request, with the .claude/rules/*.md files whose globs match the
             changed paths (index: .claude/rules/README.md). AGENTS.md is the
             single source of truth for this repo's rules — CLAUDE.md is only an
-            adapter. Never read anything under .legacy-assets/.
+            adapter. Never create or stage anything under .legacy-assets/.
 
             Two adjustments for CI:
             - Post your findings as a SINGLE pull-request comment. Do not submit

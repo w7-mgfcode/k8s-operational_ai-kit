@@ -73,7 +73,7 @@ jobs:
                open a DRAFT pull request with `gh pr create --draft`.
 
             Non-negotiables for this repository:
-            - The repository is public. Never read anything under `.legacy-assets/`
+            - The repository is public. Never create or stage anything under `.legacy-assets/`
               and never write an organization name, hostname, internal domain, IP
               or credential into any file.
             - Skeletons are Python standard library only. Never add a dependency,

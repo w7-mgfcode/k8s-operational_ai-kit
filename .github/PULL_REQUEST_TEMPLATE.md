@@ -46,4 +46,5 @@ Gates not run:
 
 - [ ] Reversible by revert
 - [ ] Touches no file outside the stated scope
-- [ ] Reads nothing from `.legacy-assets/`, or is a component-card extraction the owner authorized
+- [ ] Publishes nothing from `.legacy-assets/`, or is a component-card extraction the owner authorized
+- [ ] Writes and stages nothing under `.legacy-assets/`
