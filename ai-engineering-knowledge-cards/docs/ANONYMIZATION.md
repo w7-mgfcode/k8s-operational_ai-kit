@@ -38,6 +38,16 @@ workloads", "about three weeks of daily use").
 | Third-party upstream issue and PR numbers in a permission allowlist | 9 | Not reproduced. |
 | Secret-shaped strings in raw session logs | see below | Not reproduced. The logs are not published, quoted, or summarized. |
 
+## Component cards
+
+Component cards describe single artifacts from the source kit, so they sit closer to it
+than pattern cards and carry a stricter rule. Each is written only after the owner names
+the artifact and approves a masking table — every identifier found, with its generic
+replacement. On top of the classes above, the source component's own name and its
+siblings' names are replaced with generic titles, and its worked examples are not reused:
+every example in a component card and its skeleton is fabricated. The commit for component
+07 records its table; the earlier six do not, and are listed as an open item for review.
+
 ## Excluded from the repository entirely
 
 - **Raw session logs** (16 files, ~1.4 MB). These are unredacted transcripts. One
