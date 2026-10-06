@@ -48,7 +48,7 @@ ai-engineering-knowledge-cards/cards/NN-<slug>.md  20 patterns, 13 sections, 6 f
 ai-engineering-knowledge-cards/skeletons/NN-<slug>/ stdlib-only Python + README
 skeletons/pipelines/session-memory-loop/           cards 12→13→14→15 chained by walkthrough.sh
 
-ai-engineering-knowledge-cards/component-cards/skills/<skill>/…      7 artifacts, 11 sections,
+ai-engineering-knowledge-cards/component-cards/{skills/<skill>,subagents}/… 31 artifacts, 11 sections,
         │  instances: → the pattern cards above        contract: .claude/rules/component-cards.md
         ▼
 ai-engineering-knowledge-cards/skeletons/components/NN-<slug>/       one prototype per component
