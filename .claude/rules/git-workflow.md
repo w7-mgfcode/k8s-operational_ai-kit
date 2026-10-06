@@ -34,7 +34,7 @@ Branch scope and commit scope are the same word. One taxonomy, defined once here
 | --- | --- |
 | `cards` | `ai-engineering-knowledge-cards/cards/**`, `ai-engineering-knowledge-cards/component-cards/**`, `ai-engineering-knowledge-cards/templates/**` |
 | `skeletons` | `ai-engineering-knowledge-cards/skeletons/**`, including `skeletons/components/` and `skeletons/pipelines/` |
-| `docs` | `ai-engineering-knowledge-cards/docs/**`, `ai-engineering-knowledge-cards/README.md` and `INDEX.md`, root `docs/_base/**` |
+| `docs` | `ai-engineering-knowledge-cards/docs/**`, `ai-engineering-knowledge-cards/diagrams/**`, `ai-engineering-knowledge-cards/README.md` and `INDEX.md`, root `docs/_base/**` |
 | `agents` | `.claude/**`, `.agents/**`, root `AGENTS.md` and `CLAUDE.md`, `.gitignore` |
 | `ci` | `.github/**`, root `check.py` |
 

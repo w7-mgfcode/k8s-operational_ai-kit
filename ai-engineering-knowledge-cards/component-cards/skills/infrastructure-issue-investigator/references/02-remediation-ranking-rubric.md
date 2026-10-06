@@ -16,9 +16,9 @@ related:
 > A weighted, seven-criterion scoring sheet that turns "which fix should we do?" into
 > arithmetic — exact in its sums, and only as good as the judgement it is fed.
 
-![Remediation Ranking Rubric: judgement in and arithmetic out, the weights, a worked tie, the /12 display, weight fragility, and the gate](02-remediation-ranking-rubric.png)
+![Remediation Ranking Rubric: judgement in and arithmetic out, the weights, a worked tie, the /12 display, weight fragility, and the gate](../../../../diagrams/component-cards/infrastructure-issue-investigator/02-remediation-ranking-rubric.png)
 
-<sub>Source: [`02-remediation-ranking-rubric.excalidraw`](02-remediation-ranking-rubric.excalidraw).</sub>
+<sub>Source: [`02-remediation-ranking-rubric.excalidraw`](../../../../diagrams/component-cards/infrastructure-issue-investigator/02-remediation-ranking-rubric.excalidraw).</sub>
 
 ## What it is
 

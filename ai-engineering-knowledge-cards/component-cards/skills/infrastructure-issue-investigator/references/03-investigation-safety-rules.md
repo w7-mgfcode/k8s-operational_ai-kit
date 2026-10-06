@@ -20,9 +20,9 @@ related:
 > Six rule sets that keep a cluster investigation read-only, quiet and reviewable —
 > all of them written as instructions, three verbs of them enforced.
 
-![Investigation Safety Rules: the six rule sets, each with the case it handles, the probe that gets past it, and what actually enforces it](03-investigation-safety-rules.png)
+![Investigation Safety Rules: the six rule sets, each with the case it handles, the probe that gets past it, and what actually enforces it](../../../../diagrams/component-cards/infrastructure-issue-investigator/03-investigation-safety-rules.png)
 
-<sub>Source: [`03-investigation-safety-rules.excalidraw`](03-investigation-safety-rules.excalidraw).</sub>
+<sub>Source: [`03-investigation-safety-rules.excalidraw`](../../../../diagrams/component-cards/infrastructure-issue-investigator/03-investigation-safety-rules.excalidraw).</sub>
 
 ## What it is
 
