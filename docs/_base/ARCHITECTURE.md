@@ -1,7 +1,7 @@
 # Architecture
 
 > Layer structure, ownership boundaries, and what a change to each layer breaks.
-> Heuristic mode: written from the tree, not from a structured KB. Last reviewed: 2026-10-01.
+> Heuristic mode: written from the tree, not from a structured KB. Last reviewed: 2026-10-07.
 
 ## System Boundaries
 

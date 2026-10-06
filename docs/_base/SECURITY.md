@@ -2,7 +2,7 @@
 
 > What may be published, what may never be, and how it is enforced.
 > This repository holds no credentials and runs no service. Its entire security surface is
-> **disclosure**. Last reviewed: 2026-10-01.
+> **disclosure**. Last reviewed: 2026-10-07.
 
 ## Threat Model
 

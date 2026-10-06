@@ -2,7 +2,7 @@
 
 > The full constraint matrix, and which rule owns which path.
 > Normative text lives in `.claude/rules/`. This file is the map, not a copy.
-> Last reviewed: 2026-10-01.
+> Last reviewed: 2026-10-07.
 
 ## Rule Set
 
@@ -18,6 +18,7 @@ other agents consult `.claude/rules/README.md` and read the matching rule by han
 | `git-workflow.md` | `.claude/**`, `.agents/**`, `.github/**`, `ai-engineering-knowledge-cards/**`, `AGENTS.md`, `CLAUDE.md`, `check.py`, `docs/_base/**`, `.gitignore` | Committing anything |
 | `subagents.md` | `.claude/agents/**` | Changing a subagent definition |
 | `skills.md` | `.claude/skills/**`, `.agents/**` | Changing an installed skill |
+| `permissions.md` | `.claude/settings.json`, `.claude/hooks/**` | Changing what Claude Code may write, or the Bash guard hook |
 
 ## Hard Constraints
 
@@ -38,7 +39,7 @@ Violating any of these is a defect, not a judgment call.
 | 9 | No virtualenv, `__pycache__`, `.env`, token or credential is committed | `.gitignore` (venv, pycache, `.env*`) + `check.py` (credential shapes) |
 | 10 | Conventional Commits, one scope taxonomy, `Context:` trailer for agent assets | Human discipline only |
 | 11 | No direct commits to the default branch without being asked | Human discipline only |
-| 12 | A component card has exactly 11 `##` sections, 5 frontmatter keys in order, a `type` that matches its place in the layout, `instances:` that resolve to cards, symmetric `related:` edges that include the owning skill, and a skeleton | `check.py` |
+| 12 | A component card has exactly 11 `##` sections, 5 frontmatter keys in order, a `type` that matches its place in the layout, exactly one skill card per `skills/<skill>/` directory, `instances:` that resolve to cards, symmetric `related:` edges that include the owning skill, and a skeleton | `check.py` |
 
 ## Soft Constraints
 
@@ -69,14 +70,22 @@ Carried forward rather than hidden.
 
 1. **Name review of the published history.** The repository has been public since it was
    created, before the human name check in `SECURITY.md` § Before Publishing was ever run over
-   `git log -p`. `check.py` passes, but it catches shapes, not names. Owed by the owner.
-2. **`INDEX.md` drift.** It restates each card's `maturity`, a maturity count, and each component
+   `git log -p`. `check.py` passes, but it catches shapes, not names. Owed by the owner. Include
+   the three component-card slugs that share generic words with the source kit's file names
+   (`02-remediation-ranking-rubric`, `03-investigation-safety-rules`,
+   `04-symptom-diagnostic-playbook`): confirm them on purpose rather than by default.
+2. **No recorded masking table for component cards 01–06.** Component cards are the one route
+   from `.legacy-assets/` into the repository, and each needs an owner-approved masking table
+   before it is written. Card 07's commit records one; the commits for 01–06 (2026-09-26) do not.
+   Whether a table was approved in the session that wrote them is not in the history. The name
+   review above is where to settle it.
+3. **`INDEX.md` drift.** It restates each card's `maturity`, a maturity count, and each component
    card's `instances:`. Nothing checks those against the frontmatter.
-3. **Deferred rules.** `.claude/rules/README.md` lists concerns not yet governed by a rule —
+4. **Deferred rules.** `.claude/rules/README.md` lists concerns not yet governed by a rule —
    the agent-instruction layer and CI gates (both owed), and the parts of
    structural lint `check.py` does not yet apply to itself
    (its own card 15).
-4. **The agent workflows are unconfigured, not inert.** All three are committed and written for
+5. **The agent workflows are unconfigured, not inert.** All three are committed and written for
    this repository — no npm toolchain, `check.py` as the gate — but none of their secrets is set,
    so each fails as soon as it runs:
    - `claude-review` runs only on a trusted `@claude-review` PR comment — its automatic

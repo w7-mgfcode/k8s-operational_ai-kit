@@ -69,6 +69,7 @@ audit record — what was removed, in what quantity, under which rule — is in
 | The method at its most honest | [Card 13 — Log-as-Source Compilation](cards/13-log-as-source-compilation.md), a `partial` pattern with its four gaps named |
 | The cheapest idea to steal today | [Card 03 — Description-as-Router](cards/03-description-as-router.md) |
 | The architecture end to end | [INDEX.md](INDEX.md) |
+| Every diagram at a glance | [diagrams/](diagrams/README.md) |
 | Proof the anonymization is real | [docs/ANONYMIZATION.md](docs/ANONYMIZATION.md) |
 
 ## Skeletons

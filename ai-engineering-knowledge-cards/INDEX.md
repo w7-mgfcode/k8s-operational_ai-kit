@@ -113,3 +113,8 @@ Cards 12 → 13 → 14 → 15 are one engine, not four independent patterns. The
 sequential walkthrough is at
 [`skeletons/pipelines/session-memory-loop/`](skeletons/pipelines/session-memory-loop/);
 each card's own modular skeleton stays in its own directory.
+
+## Diagrams
+
+Every Excalidraw source, with its render where one exists, is in
+[`diagrams/`](diagrams/README.md) — one index, in subfolders that mirror the cards.
