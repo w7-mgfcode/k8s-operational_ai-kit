@@ -90,7 +90,7 @@ rule and the template it points at.
 ### 3. Trace the enforcement
 For the subsystem in scope, find the function in `check.py` that checks it (`check_cards`,
 `check_component_cards`, `check_links`, `check_skeletons`, `check_imports`, `check_anonymization`,
-`run_skeletons`) and state,
+`check_legacy`, `run_skeletons`) and state,
 precisely, what it asserts and what it does not. Note `ANON_EXEMPT` and `RUN_ARTIFACTS` where relevant.
 
 ### 4. Catalog conventions and dependencies
