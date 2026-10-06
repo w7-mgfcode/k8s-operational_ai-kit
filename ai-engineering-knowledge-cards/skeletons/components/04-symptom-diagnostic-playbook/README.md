@@ -2,7 +2,7 @@
 
 A diagnostic command catalogue, the step that picks one block of it for a symptom,
 and a linter that reads every block. The card is
-[component 04](../../../component-cards/reference/04-symptom-diagnostic-playbook.md);
+[component 04](../../../component-cards/skills/infrastructure-issue-investigator/references/04-symptom-diagnostic-playbook.md);
 the skill that loads the playbook is
 [component 01](../01-infrastructure-issue-investigator/).
 

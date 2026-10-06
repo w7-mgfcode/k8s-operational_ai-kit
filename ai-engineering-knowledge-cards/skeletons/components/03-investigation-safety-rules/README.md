@@ -3,7 +3,7 @@
 Five of the investigator skill's six safety rule sets, turned into functions and run
 against fabricated inputs — first the cases each rule was written for, then one case
 it was not. The card is
-[component 03](../../../component-cards/reference/03-investigation-safety-rules.md);
+[component 03](../../../component-cards/skills/infrastructure-issue-investigator/references/03-investigation-safety-rules.md);
 the skill that loads the rules is
 [component 01](../01-infrastructure-issue-investigator/).
 

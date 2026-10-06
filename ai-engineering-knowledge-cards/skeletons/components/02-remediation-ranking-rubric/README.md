@@ -1,7 +1,7 @@
 # Skeleton — Remediation Ranking Rubric
 
 The rubric on its own, and a stress test of how far its answer can be trusted. The
-card is [component 02](../../../component-cards/reference/02-remediation-ranking-rubric.md);
+card is [component 02](../../../component-cards/skills/infrastructure-issue-investigator/references/02-remediation-ranking-rubric.md);
 the skill that loads the rubric is
 [component 01](../01-infrastructure-issue-investigator/).
 

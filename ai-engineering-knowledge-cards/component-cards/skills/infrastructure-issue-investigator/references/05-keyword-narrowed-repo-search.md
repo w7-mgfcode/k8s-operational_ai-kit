@@ -25,7 +25,7 @@ related:
 ## What it is
 
 A reference file loaded by the investigator skill
-([component 01](../skill/01-infrastructure-issue-investigator.md)) in its repository
+([component 01](../01-infrastructure-issue-investigator.md)) in its repository
 research phase. It tells the model where in the team's infrastructure-as-code
 (Ansible) repository to look for existing automation and prior fixes: a default
 search scope, a table of fourteen symptom keywords mapped to narrower path patterns,
@@ -90,7 +90,7 @@ were not opened. These feed the rubric's reuse and workstream criteria
 | Failure | Symptom | Root cause |
 |---|---|---|
 | Machine-bound | The search runs for one operator and fails for anyone else | The repository root is an absolute home-directory path, written into the file twice. Observed |
-| Stale rows search nothing | A symptom whose keyword matches returns no paths, and no fallback runs | The keyword table hard-codes role-name patterns. When a role is renamed, its row matches nothing, and the fallback rule only covers the case where *no keyword* matched. Structurally inevitable ([card 05](../../cards/05-instruction-provenance-and-drift.md)) |
+| Stale rows search nothing | A symptom whose keyword matches returns no paths, and no fallback runs | The keyword table hard-codes role-name patterns. When a role is renamed, its row matches nothing, and the fallback rule only covers the case where *no keyword* matched. Structurally inevitable ([card 05](../../../../cards/05-instruction-provenance-and-drift.md)) |
 | Keywords collide | A storage symptom also narrows by an unrelated keyword; a symptom naming several components narrows to all of them | Matching is by substring of the symptom; short keywords sit inside longer ones, and nothing says which row wins when several match. Structural |
 | Two copies of the restricted list | The list here and the one in the safety rules can drift apart | The exclusions are restated rather than referenced; the two copies already differ by one entry, which happens not to matter for a repository search. Observed |
 | "Record only the filename" arrives too late | The matched line from a restricted file is already in context | A search tool returns the matching line with the path; the instruction applies after the leak. Same failure as [component 03](03-investigation-safety-rules.md) |
@@ -100,10 +100,10 @@ were not opened. These feed the rubric's reuse and workstream criteria
 
 | Card | Where it shows up in this component |
 |---|---|
-| [02 Progressive Disclosure](../../cards/02-progressive-disclosure.md) | Loaded only for the repository half of one phase |
-| [05 Instruction Provenance and Drift](../../cards/05-instruction-provenance-and-drift.md) | Role-name patterns that describe the repository as it was when the table was written, with nothing to detect when it stops being true |
-| [14 Index-Guided Retrieval](../../cards/14-index-guided-retrieval.md) | A small hand-kept map chooses where to look before any search runs — no embeddings, no vector store, and the index's quality is the retrieval's quality |
-| [18 The Redaction Boundary](../../cards/18-the-redaction-boundary.md) | The restricted-path list applied to repository search, with its known gap at the search result |
+| [02 Progressive Disclosure](../../../../cards/02-progressive-disclosure.md) | Loaded only for the repository half of one phase |
+| [05 Instruction Provenance and Drift](../../../../cards/05-instruction-provenance-and-drift.md) | Role-name patterns that describe the repository as it was when the table was written, with nothing to detect when it stops being true |
+| [14 Index-Guided Retrieval](../../../../cards/14-index-guided-retrieval.md) | A small hand-kept map chooses where to look before any search runs — no embeddings, no vector store, and the index's quality is the retrieval's quality |
+| [18 The Redaction Boundary](../../../../cards/18-the-redaction-boundary.md) | The restricted-path list applied to repository search, with its known gap at the search result |
 
 ## Provenance
 
@@ -116,7 +116,7 @@ checked against the repository.
 ## Prototype
 
 Minimal runnable prototype in
-[`../../skeletons/components/05-keyword-narrowed-repo-search/`](../../skeletons/components/05-keyword-narrowed-repo-search/).
+[`../../../../skeletons/components/05-keyword-narrowed-repo-search/`](../../../../skeletons/components/05-keyword-narrowed-repo-search/).
 Standard library, offline, against a fabricated file list and keyword table. It
 narrows and searches, hits a row made stale by a role rename, and with `--drift`
 audits the table: dead patterns, colliding keywords, a multi-keyword symptom, and

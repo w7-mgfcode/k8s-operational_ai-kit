@@ -41,7 +41,12 @@ MATURITIES = {"proven", "partial", "abandoned"}
 # --- component-card contract (.claude/rules/component-cards.md) ------------
 COMPONENT_KEYS = ["component", "title", "type", "instances", "related"]
 COMPONENT_HEADING_COUNT = 11
-COMPONENT_TYPES = {"skill", "command", "rule", "subagent", "hook", "reference"}
+# A skill is a directory, so its card opens one: skills/<skill>/NN-<skill>.md.
+# What the skill loads sits beneath it, so ownership is the path itself. Every
+# other type is a single file under its plural name.
+BUNDLED = {"reference": "references", "asset": "assets", "script": "scripts"}
+STANDALONE = {"command": "commands", "rule": "rules", "subagent": "subagents", "hook": "hooks"}
+COMPONENT_TYPES = {"skill", *BUNDLED, *STANDALONE}
 
 # --- anonymization boundary (.claude/rules/anonymization.md) ---------------
 # Generic shapes, not the masked strings themselves — this file is public too.
@@ -181,6 +186,23 @@ def check_cards(r: Report) -> None:
     r.ok(f"{len(files)} cards, contract satisfied, related: edges symmetric")
 
 
+def component_placement(kind: str, f: Path) -> str | None:
+    """None when a component card sits where its type belongs, else the problem."""
+    parts = f.relative_to(COMPONENT_CARDS).parts
+    if kind == "skill":
+        skill = re.sub(r"^\d+-", "", f.stem)
+        if parts != ("skills", skill, f.name):
+            return f"a skill card belongs at component-cards/skills/{skill}/{f.name}"
+    elif kind in BUNDLED:
+        if len(parts) != 4 or parts[0] != "skills" or parts[2] != BUNDLED[kind]:
+            return f"a {kind} card belongs at component-cards/skills/<skill>/{BUNDLED[kind]}/"
+        if not list((COMPONENT_CARDS / "skills" / parts[1]).glob("[0-9][0-9]-*.md")):
+            return f"skills/{parts[1]}/ has no skill card to own this {kind}"
+    elif parts != (STANDALONE[kind], f.name):
+        return f"a {kind} card belongs at component-cards/{STANDALONE[kind]}/"
+    return None
+
+
 def check_component_cards(r: Report) -> None:
     r.section("component cards")
     files = sorted(COMPONENT_CARDS.rglob("*.md"))
@@ -209,8 +231,10 @@ def check_component_cards(r: Report) -> None:
         kind = re.search(r"^type:\s*(\S+)", text, re.M)
         if not kind or kind.group(1) not in COMPONENT_TYPES:
             r.fail(rel, f"type must be one of {sorted(COMPONENT_TYPES)}")
-        elif kind.group(1) != f.parent.name:
-            r.fail(rel, f"type '{kind.group(1)}' does not match directory '{f.parent.name}'")
+        else:
+            misplaced = component_placement(kind.group(1), f)
+            if misplaced:
+                r.fail(rel, misplaced)
 
         block = re.search(r"^instances:\n((?:\s+- .*\n)+)", text, re.M)
         slugs = re.findall(r"- (\S+)", block.group(1)) if block else []

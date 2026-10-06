@@ -2,7 +2,7 @@
 
 A symptom-keyword → path table, the search it narrows, and an audit of the table
 against the repository it describes. The card is
-[component 05](../../../component-cards/reference/05-keyword-narrowed-repo-search.md);
+[component 05](../../../component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md);
 the skill that loads the search patterns is
 [component 01](../01-infrastructure-issue-investigator/).
 
@@ -49,7 +49,7 @@ downstream cannot tell.
 
 **A real search.** Paths are matched against a list; no file is opened or grepped, so
 the "search hits contain the restricted line" leak from
-[component 03](../../../component-cards/reference/03-investigation-safety-rules.md)
+[component 03](../../../component-cards/skills/infrastructure-issue-investigator/references/03-investigation-safety-rules.md)
 cannot happen here — which is also why this skeleton cannot show it.
 
 **Git.** History is four entries in `repo.json`. The source ran six kinds of `git log`

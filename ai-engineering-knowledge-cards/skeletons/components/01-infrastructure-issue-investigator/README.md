@@ -1,7 +1,7 @@
 # Skeleton — Infrastructure Issue Investigator
 
 The phases of a read-only planning skill, run end to end against fixture data. The
-card is [component 01](../../../component-cards/skill/01-infrastructure-issue-investigator.md).
+card is [component 01](../../../component-cards/skills/infrastructure-issue-investigator/01-infrastructure-issue-investigator.md).
 
 ```
 investigate.py      the seven phases; web search and the brainstorm model call are

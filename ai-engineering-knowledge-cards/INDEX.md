@@ -91,19 +91,20 @@ and flattening it would make every other claim here less believable.
 ## Component cards
 
 A pattern card describes an idea; a component card describes one concrete
-artifact — a skill, command, rule, subagent, hook or reference file — and which patterns it puts
-into practice. Each ships its own prototype under
+artifact — a skill, command, rule, subagent or hook, or a reference, asset or script a skill
+loads — and which patterns it puts into practice. A skill's parts sit beneath its card, as they
+do in the skill itself. Each ships its own prototype under
 [`skeletons/components/`](skeletons/components/). Contract:
 `.claude/rules/component-cards.md`.
 
 | # | Component | Type | Instances | The idea in one line |
 | --- | --- | --- | --- | --- |
-| 01 | [Infrastructure Issue Investigator](component-cards/skill/01-infrastructure-issue-investigator.md) | skill | 02 03 06 16 17 18 19 | Investigate read-only, rank fixes against the team's repo, write a plan — never apply it |
-| 02 | [Remediation Ranking Rubric](component-cards/reference/02-remediation-ranking-rubric.md) | reference | 06 17 19 | Seven weighted criteria turn a choice into arithmetic — exact sums over unaudited judgement |
-| 03 | [Investigation Safety Rules](component-cards/reference/03-investigation-safety-rules.md) | reference | 16 17 18 19 | Six rule sets keep an investigation read-only; three denied verbs are the only ones enforced |
-| 04 | [Symptom-Class Diagnostic Playbook](component-cards/reference/04-symptom-diagnostic-playbook.md) | reference | 02 06 16 18 | Exact read-only commands per symptom class — and every flaw in them repeated on every run |
-| 05 | [Keyword-Narrowed Repository Search](component-cards/reference/05-keyword-narrowed-repo-search.md) | reference | 02 05 14 18 | A keyword-to-path map narrows the search — until a role is renamed and it quietly finds nothing |
-| 06 | [Remediation Plan Template](component-cards/reference/06-remediation-plan-template.md) | reference | 06 17 18 19 | A fixed shape makes a plan complete on paper — and nothing checks the paper |
+| 01 | [Infrastructure Issue Investigator](component-cards/skills/infrastructure-issue-investigator/01-infrastructure-issue-investigator.md) | skill | 02 03 06 16 17 18 19 | Investigate read-only, rank fixes against the team's repo, write a plan — never apply it |
+| 02 | [Remediation Ranking Rubric](component-cards/skills/infrastructure-issue-investigator/references/02-remediation-ranking-rubric.md) | reference | 06 17 19 | Seven weighted criteria turn a choice into arithmetic — exact sums over unaudited judgement |
+| 03 | [Investigation Safety Rules](component-cards/skills/infrastructure-issue-investigator/references/03-investigation-safety-rules.md) | reference | 16 17 18 19 | Six rule sets keep an investigation read-only; three denied verbs are the only ones enforced |
+| 04 | [Symptom-Class Diagnostic Playbook](component-cards/skills/infrastructure-issue-investigator/references/04-symptom-diagnostic-playbook.md) | reference | 02 06 16 18 | Exact read-only commands per symptom class — and every flaw in them repeated on every run |
+| 05 | [Keyword-Narrowed Repository Search](component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md) | reference | 02 05 14 18 | A keyword-to-path map narrows the search — until a role is renamed and it quietly finds nothing |
+| 06 | [Remediation Plan Template](component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md) | asset | 06 17 18 19 | A fixed shape makes a plan complete on paper — and nothing checks the paper |
 
 ## Compound pipelines
 
