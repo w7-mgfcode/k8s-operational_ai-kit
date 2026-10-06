@@ -424,6 +424,30 @@ def check_anonymization(r: Report) -> None:
         r.ok(f"{len(files)} publishable files, no identifier of a masked class found")
 
 
+def check_legacy(r: Report) -> None:
+    """.legacy-assets/ is readable and never tracked (.claude/rules/anonymization.md).
+    The ignore line is the first control; the index is checked too, because a
+    force-add bypasses .gitignore."""
+    r.section("legacy tree")
+    gi = ROOT / ".gitignore"
+    lines = {l.strip() for l in gi.read_text(encoding="utf-8").splitlines()} if gi.exists() else set()
+    if not lines & {".legacy-assets/", "/.legacy-assets/"}:
+        r.fail(".gitignore", "no '.legacy-assets/' line — the tree must stay untracked")
+    try:
+        out = subprocess.run(["git", "ls-files", "-z", "--", ".legacy-assets"],
+                             cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        r.ok("no git here; checked the .gitignore line only")
+        return
+    tracked = [p for p in out.split("\0") if p]
+    for p in tracked[:5]:
+        r.fail(p, "tracked or staged by git — .legacy-assets/ must never be tracked")
+    if len(tracked) > 5:
+        r.fail(".legacy-assets/", f"{len(tracked) - 5} more tracked or staged paths")
+    if not tracked:
+        r.ok("ignored, and git tracks nothing under it")
+
+
 # Artifacts the skeletons write when run with defaults. The gate must not
 # dirty the tree — see .claude/rules/skeletons.md.
 RUN_ARTIFACTS = [
@@ -488,6 +512,7 @@ def main() -> None:
     check_skeletons(r)
     check_imports(r)
     check_anonymization(r)
+    check_legacy(r)
     if a.run:
         run_skeletons(r)
 
