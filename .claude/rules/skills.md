@@ -46,9 +46,9 @@ Six SKILL.md files here declare it in frontmatter: `analyzing-workflow-patterns`
 
 This is the documented mechanism and is fine. The rule this repo inherited
 prohibited it on the grounds that it bypasses a reviewed ladder in
-`.claude/settings.json` — there is no `settings.json` here, so the prohibition
-had no basis and was unenforced anyway. **If a permission ladder is ever added,
-this decision must be revisited in the same change, not inherited silently.**
+`.claude/settings.json`. A `settings.json` now exists, for one boundary only —
+see [`permissions.md`](permissions.md), where the decision was revisited and
+stands.
 
 ## Writing a project-local skill
 

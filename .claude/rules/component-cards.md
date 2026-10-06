@@ -78,8 +78,8 @@ Everything in [`anonymization.md`](anonymization.md) applies, and additionally:
   the public skill anatomy, not the source's, and stays.
 
 Extraction from `.legacy-assets/` for a component card requires the user to
-authorize one named directory, and a masking table reviewed by the user **before**
-any file is written. It is never a default.
+name the artifact, and a masking table reviewed by the user **before** any file is
+written. Reading the tree is free; publishing from it is never a default.
 
 ## Prototype
 

@@ -1,5 +1,5 @@
-# Un-anonymized source kit. Never a source for a card, a skeleton, or a commit.
-# See .claude/rules/anonymization.md
+# Un-anonymized source kit. Readable by agents; never written, never tracked —
+# check.py fails if this line goes. See .claude/rules/anonymization.md
 .legacy-assets/
 
 # Vendored virtual environments. Two exist under the excalidraw skill

@@ -53,8 +53,10 @@ and the contracts both obey in `.claude/rules/`. `check.py` at the root is the s
 There is no application, no `package.json`, no build, no linter and no test framework. Do not report
 the absence of any of them as a finding.
 
-**`.legacy-assets/` is off-limits.** It is the un-anonymized source kit. Exclude it from every `Glob`,
-`Grep` and `Bash` search; never read, quote or summarize it. See `.claude/rules/anonymization.md`.
+**`.legacy-assets/` is read-only.** It is the un-anonymized source kit. Exclude it from searches
+about this repository and include it only when asked about the source. Never write under it, and
+keep its identifiers out of your report unless the coordinator asked for them. See
+`.claude/rules/anonymization.md`.
 
 ## Workflow
 
@@ -88,5 +90,5 @@ the absence of any of them as a finding.
 
 - Be thorough but concise — the coordinator merges your report with others.
 - Confident-but-wrong is worse than "unverified." Flag uncertainty explicitly.
-- Never read `.legacy-assets/` or any `.venv/`.
+- Never write under `.legacy-assets/`; never read any `.venv/`.
 - Do not propose an implementation plan; surface the facts that inform one.

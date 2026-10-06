@@ -32,7 +32,7 @@ Run before writing the file. Any unchecked box means the card is not ready.
 - [ ] No conclusion appears that the source does not support.
 - [ ] Every `related:` edge survives, each with its stated relationship and no invented direction.
 - [ ] Terminology matches the source — no concept was quietly renamed.
-- [ ] Nothing identifying was introduced. Nothing was read from `.legacy-assets/`.
+- [ ] Nothing identifying was introduced. Nothing from `.legacy-assets/` entered the card.
 
 ## Mechanical checks
 
