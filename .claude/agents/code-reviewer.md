@@ -72,8 +72,8 @@ shape. Beyond what the gate asserts:
 
 - One concrete artifact per card, described generically — a component card has a stricter
   anonymization bar than a pattern card, because it is closer to a real file.
-- If the card was extracted from `.legacy-assets/`, the user named that artifact and approved a
-  masking table first. A component card with no such record is a defect, not a style issue.
+- If the card was extracted — from `.legacy-assets/` or from a project-authored skill — the user
+  named that artifact and approved a masking table first. A component card with no such record is a defect, not a style issue.
 - A `skills/<skill>/` directory is named for the card's generic slug, never the source skill's own
   directory name. `check.py` checks that the two agree, not that either is generic.
 - The prototype uses fabricated fixtures, never copies of the source artifact.

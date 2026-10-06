@@ -50,8 +50,10 @@ about its contents is written here.
   instructions, and are never quoted.
 
 **Component-card extraction** is how its content is published. A component card
-describes one artifact from the source kit. It is permitted only when all of these
-hold:
+describes one artifact — from the source kit, or a skill this repository authors
+(tracked in git under `.claude/skills/`; vendored skills are not sources). The
+conditions below hold for both, and the `extracting-component-cards` skill runs
+them. It is permitted only when all of these hold:
 
 1. The user names the artifact — one directory or file — the card describes.
    Reading around it for context is fine; the card describes only that artifact.
