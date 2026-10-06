@@ -67,7 +67,7 @@ Observed or structurally inevitable — never hypothetical.
 |---|---|
 | [NN Pattern name](<up>/cards/NN-slug.md) | … |
 
-`<up>` depends on where the card sits: `../../../` for a skill card, `../../../../` for a
+`<up>` depends on where the card sits: `../../..` for a skill card, `../../../..` for a
 reference, asset or script beneath it, `../..` for a standalone card.
 
 ## Provenance
