@@ -8,8 +8,10 @@ every commit; CI runs the same command.
 
 Usage:
     python3 check.py              # contracts + links + imports + anonymization
-                                  # (anonymization scans every file git would
-                                  # publish, not only the cards tree)
+                                  # + legacy tree (anonymization scans every
+                                  # file git would publish, not only the cards
+                                  # tree; legacy tree fails if git tracks any
+                                  # path under .legacy-assets/)
     python3 check.py --run        # also execute every skeleton (slower)
     python3 check.py --quiet      # failures only
 """
