@@ -58,7 +58,7 @@ command on every push and pull request. Seven checks:
 | Check | Enforces |
 | --- | --- |
 | cards | 13 `##` headings, the 6 frontmatter keys in order, number matches filename, valid `layer` and `maturity`, Provenance present, every `related:` edge resolves and runs both ways |
-| component cards | 11 `##` headings, the 5 frontmatter keys in order, number unique and matching filename, `type` matches its place in the layout (a skill's references, assets and scripts nest under it), every `instances:` slug is a card, a skeleton under `skeletons/components/` |
+| component cards | 11 `##` headings, the 5 frontmatter keys in order, number unique and matching filename, `type` matches its place in the layout (a skill's references, assets and scripts nest under it), every `instances:` slug is a card, every `related:` edge resolves, runs both ways and includes the owning skill, a skeleton under `skeletons/components/` |
 | links | every relative Markdown link under `ai-engineering-knowledge-cards/` resolves (`templates/` is exempt — its `NN-` placeholders are the point). Links elsewhere are not checked |
 | skeletons | every card has a skeleton directory whose README has `## Try it` and a *deliberately missing* section |
 | imports | every skeleton script imports standard library only |

@@ -208,10 +208,16 @@ def check_component_cards(r: Report) -> None:
     files = sorted(COMPONENT_CARDS.rglob("*.md"))
     pattern_cards = {c.stem for c in CARDS.glob("*.md")}
     seen: dict[int, str] = {}
+    related: dict[str, set[str]] = {}
+    owner: dict[str, str] = {}
     for f in files:
         text = f.read_text(encoding="utf-8")
         keys, body = frontmatter(text)
         rel = str(f.relative_to(PROJECT))
+        slugs = related_slugs(text)
+        if slugs is None:
+            r.fail(rel, "related: must be [] or a block list of '  - <component-slug>' lines")
+        related[f.stem] = slugs or set()
 
         if keys[: len(COMPONENT_KEYS)] != COMPONENT_KEYS:
             r.fail(rel, f"frontmatter keys {keys[:5]} != {COMPONENT_KEYS}")
@@ -235,6 +241,10 @@ def check_component_cards(r: Report) -> None:
             misplaced = component_placement(kind.group(1), f)
             if misplaced:
                 r.fail(rel, misplaced)
+            elif kind.group(1) in BUNDLED:
+                parts = f.relative_to(COMPONENT_CARDS).parts
+                skill = next((COMPONENT_CARDS / "skills" / parts[1]).glob("[0-9][0-9]-*.md"))
+                owner[f.stem] = skill.stem
 
         block = re.search(r"^instances:\n((?:\s+- .*\n)+)", text, re.M)
         slugs = re.findall(r"- (\S+)", block.group(1)) if block else []
@@ -255,7 +265,19 @@ def check_component_cards(r: Report) -> None:
         if not re.search(r"^## What is deliberately missing", rtext, re.M):
             r.fail(f"skeletons/components/{f.stem}",
                    "README has no 'What is deliberately missing' section")
-    r.ok(f"{len(files)} component cards, contract satisfied")
+
+    # Same graph rule as pattern cards: every edge resolves and runs both ways.
+    # A reference, asset or script also names the skill it sits under.
+    by_stem = {f.stem: str(f.relative_to(PROJECT)) for f in files}
+    for stem, targets in sorted(related.items()):
+        for t in sorted(targets):
+            if t not in related:
+                r.fail(by_stem[stem], f"related '{t}' is not a component card")
+            elif stem not in related[t]:
+                r.fail(by_stem[stem], f"related '{t}' does not list this card back")
+        if stem in owner and owner[stem] not in targets:
+            r.fail(by_stem[stem], f"related must name its skill '{owner[stem]}'")
+    r.ok(f"{len(files)} component cards, contract satisfied, related: edges symmetric")
 
 
 def check_links(r: Report) -> None:

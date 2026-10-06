@@ -90,7 +90,8 @@ failure.
 | `README has no '## Try it' section` | Heading text must match exactly |
 | `non-stdlib import` | A dependency crept into a skeleton |
 | `broken link -> ../../cards/...` | Under `skeletons/pipelines/` you are one level deeper — use `../../../cards/` |
-| `related '…' does not list this card back` | A one-way `related:` edge — add the reverse edge to the other card |
+| `related '…' does not list this card back` | A one-way `related:` edge — add the reverse edge to the other card. Applies to component cards too |
+| `related must name its skill '…'` | A reference, asset or script card must list the skill card it sits under |
 | `component number already used by …` | Component numbers are unique across all types |
 | `a <type> card belongs at component-cards/…` | The card's `type` and its place in the layout disagree — move the file or fix the type |
 | `skills/<skill>/ has no skill card to own this …` | A reference, asset or script needs its skill's card at the root of the same `skills/<skill>/` |

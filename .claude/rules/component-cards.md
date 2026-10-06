@@ -50,7 +50,7 @@ Five keys, always, in this order:
 | `title` | A generic name. **Never the source component's own name** — named personal tooling is a masked class. |
 | `type` | One of `skill` `reference` `asset` `script` `command` `rule` `subagent` `hook`, and consistent with where the card sits in the layout above. A `reference` is a document a skill reads on demand — a rubric, a catalogue; an `asset` is a file it fills in or copies — a template; a `script` is code it runs. All three name their skill in `related:`. |
 | `instances` | Pattern-card slugs from `cards/`. At least one — a component that instances no pattern does not belong here. |
-| `related` | Other component-card slugs, or `[]`. |
+| `related` | Other component-card slugs, or `[]`. Every edge runs both ways, and a reference, asset or script lists the skill it sits under. |
 
 Pattern cards' `related:` lists pattern-card slugs only. The edge from a pattern
 to a component is not written back; `instances:` is the one direction.
