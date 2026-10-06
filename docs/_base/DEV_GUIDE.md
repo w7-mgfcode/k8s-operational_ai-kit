@@ -94,7 +94,8 @@ failure.
 | `related must name its skill '…'` | A reference, asset or script card must list the skill card it sits under |
 | `component number already used by …` | Component numbers are unique across all types |
 | `a <type> card belongs at component-cards/…` | The card's `type` and its place in the layout disagree — move the file or fix the type |
-| `skills/<skill>/ has no skill card to own this …` | A reference, asset or script needs its skill's card at the root of the same `skills/<skill>/` |
+| `skills/<skill>/ needs exactly one skill card to own this …` | A reference, asset or script needs exactly one `type: skill` card at the root of the same `skills/<skill>/` |
+| `skills/<skill>/ holds N skill cards` | One skill directory, one skill card — split them, or retype the extra |
 | `instances '…' is not a card in cards/` | An `instances:` slug must be a pattern card's filename stem |
 | `no skeletons/components/<stem>/README.md` | Every component card needs its prototype directory |
 | An anonymization hit in a new file | Either genuinely wrong, or teaching material that needs an `ANON_EXEMPT` entry — prefer fixing the file |

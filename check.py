@@ -186,6 +186,17 @@ def check_cards(r: Report) -> None:
     r.ok(f"{len(files)} cards, contract satisfied, related: edges symmetric")
 
 
+def skill_cards(d: Path) -> list[Path]:
+    """The cards at the root of a skills/<skill>/ directory whose type is skill."""
+    found = []
+    for p in sorted(d.glob("*.md")):
+        text = p.read_text(encoding="utf-8")
+        fm = text.split("---", 2)[1] if text.startswith("---") else ""
+        if re.search(r"^type:[ \t]*skill[ \t]*$", fm, re.M):
+            found.append(p)
+    return found
+
+
 def component_placement(kind: str, f: Path) -> str | None:
     """None when a component card sits where its type belongs, else the problem."""
     parts = f.relative_to(COMPONENT_CARDS).parts
@@ -193,11 +204,16 @@ def component_placement(kind: str, f: Path) -> str | None:
         skill = re.sub(r"^\d+-", "", f.stem)
         if parts != ("skills", skill, f.name):
             return f"a skill card belongs at component-cards/skills/{skill}/{f.name}"
+        owners = skill_cards(f.parent)
+        if len(owners) > 1:
+            return f"skills/{skill}/ holds {len(owners)} skill cards; one directory owns one skill"
     elif kind in BUNDLED:
         if len(parts) != 4 or parts[0] != "skills" or parts[2] != BUNDLED[kind]:
             return f"a {kind} card belongs at component-cards/skills/<skill>/{BUNDLED[kind]}/"
-        if not list((COMPONENT_CARDS / "skills" / parts[1]).glob("[0-9][0-9]-*.md")):
-            return f"skills/{parts[1]}/ has no skill card to own this {kind}"
+        owners = skill_cards(COMPONENT_CARDS / "skills" / parts[1])
+        if len(owners) != 1:
+            return (f"skills/{parts[1]}/ needs exactly one skill card to own this {kind}, "
+                    f"found {len(owners)}")
     elif parts != (STANDALONE[kind], f.name):
         return f"a {kind} card belongs at component-cards/{STANDALONE[kind]}/"
     return None
@@ -243,8 +259,7 @@ def check_component_cards(r: Report) -> None:
                 r.fail(rel, misplaced)
             elif kind.group(1) in BUNDLED:
                 parts = f.relative_to(COMPONENT_CARDS).parts
-                skill = next((COMPONENT_CARDS / "skills" / parts[1]).glob("[0-9][0-9]-*.md"))
-                owner[f.stem] = skill.stem
+                owner[f.stem] = skill_cards(COMPONENT_CARDS / "skills" / parts[1])[0].stem
 
         block = re.search(r"^instances:\n((?:\s+- .*\n)+)", text, re.M)
         slugs = re.findall(r"- (\S+)", block.group(1)) if block else []
