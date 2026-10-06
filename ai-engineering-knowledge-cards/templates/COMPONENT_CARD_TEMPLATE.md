@@ -65,7 +65,10 @@ Observed or structurally inevitable — never hypothetical.
 
 | Card | Where it shows up in this component |
 |---|---|
-| [NN Pattern name](../../cards/NN-slug.md) | … |
+| [NN Pattern name](<up>/cards/NN-slug.md) | … |
+
+`<up>` depends on where the card sits: `../../../` for a skill card, `../../../../` for a
+reference, asset or script beneath it, `../..` for a standalone card.
 
 ## Provenance
 
@@ -76,7 +79,7 @@ anything its design inherited. Every sentence is subject to
 ## Prototype
 
 Minimal runnable prototype in
-[`../../skeletons/components/NN-<slug>/`](../../skeletons/components/NN-<slug>/).
+[`<up>/skeletons/components/NN-<slug>/`](<up>/skeletons/components/NN-<slug>/).
 Standard library, offline, fixture data only.
 
 ## What is deliberately missing
