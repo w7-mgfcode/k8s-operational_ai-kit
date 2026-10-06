@@ -14,13 +14,14 @@ __pycache__/
 
 # Vendored agent tooling — imported from other repositories, not governed by a
 # card or skeleton contract, and not scanned for this repo's anonymization
-# boundary. Local use only. The one project-authored skill stays committable.
+# boundary. Local use only. The project-authored skills stay committable.
 # See .claude/rules/skills.md.
 .agents/
 .claude/commands/
 .claude/.mcp.json
 .claude/skills/*
 !.claude/skills/knowledge-card-summarizer/
+!.claude/skills/extracting-component-cards/
 
 # Session handoffs: local working notes, not repository content.
 HANDOFF.md
