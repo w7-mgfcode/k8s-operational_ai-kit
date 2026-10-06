@@ -46,6 +46,8 @@ k8s-operational_ai-kit/
     ├── component-cards/ one artifact per card, nested under the skill that owns it — 11 sections each
     ├── skeletons/       20 prototypes + pipelines/ + components/
     ├── templates/       CARD_TEMPLATE.md, COMPONENT_CARD_TEMPLATE.md
+    ├── diagrams/        every .excalidraw source and its .png, mirroring cards/,
+    │                    component-cards/ and teaching/; README.md indexes them
     ├── teaching/        condensed teaching cards (12 of 20) — format set by the
     │                    knowledge-card-summarizer skill, not checked by check.py
     └── docs/            ANONYMIZATION.md, README-OUTLINE.md

@@ -37,6 +37,7 @@
 | `.../skeletons/components/NN-*/` | One prototype per component card | Seeing a component work, or fail |
 | `.../templates/CARD_TEMPLATE.md` | The card shape | Authoring a card |
 | `.../templates/COMPONENT_CARD_TEMPLATE.md` | The component-card shape | Authoring a component card |
+| `.../diagrams/` | Every Excalidraw source and its rendered PNG, in subfolders that mirror the cards; `README.md` is the index | Seeing all diagrams at once, or editing one |
 | `.../teaching/NN-*.md` | Condensed teaching versions of cards — 12 of 20 so far. Format: the `knowledge-card-summarizer` skill's template and quality gate; `check.py` does not check them | Preparing a seminar |
 | `.../docs/ANONYMIZATION.md` | What was masked, in what quantity, under which rule | Auditing the boundary |
 | `.../docs/README-OUTLINE.md` | The planning outline the README was built from | Historical; superseded by README.md |
