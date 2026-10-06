@@ -2,7 +2,7 @@
 
 A plan template, a renderer that fills it from an investigation, and the checks the
 source template never had. The card is
-[component 06](../../../component-cards/reference/06-remediation-plan-template.md);
+[component 06](../../../component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md);
 the skill that renders it is
 [component 01](../01-infrastructure-issue-investigator/).
 

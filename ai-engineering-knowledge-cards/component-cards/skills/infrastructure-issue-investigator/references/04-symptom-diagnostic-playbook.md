@@ -25,7 +25,7 @@ related:
 ## What it is
 
 A reference file loaded by the investigator skill
-([component 01](../skill/01-infrastructure-issue-investigator.md)) in its diagnose
+([component 01](../01-infrastructure-issue-investigator.md)) in its diagnose
 phase. It maps a symptom class to the Kubernetes and Helm commands that gather
 evidence for it: a five-command baseline that always runs, then ten class blocks of
 four to seven commands each, about fifty-five in all. A closing section says when
@@ -82,7 +82,7 @@ writes nothing.
 | Failure | Symptom | Root cause |
 |---|---|---|
 | Class blocks ignore the resolved context | A symptom-specific command runs against a different cluster than the one the prod guard classified | All five baseline commands pass `--context`; none of the roughly fifty class-block commands do, and the Helm commands never pass `--kube-context`. They run against whatever context is current. Observed in the file |
-| A write in the read-only catalogue | Diagnosing a certificate problem creates a pod | The TLS block tests reachability with `kubectl run … --rm`. Nothing checks the catalogue against a read-verb list. Observed — the source of the gap in components [01](../skill/01-infrastructure-issue-investigator.md) and [03](03-investigation-safety-rules.md) |
+| A write in the read-only catalogue | Diagnosing a certificate problem creates a pod | The TLS block tests reachability with `kubectl run … --rm`. Nothing checks the catalogue against a read-verb list. Observed — the source of the gap in components [01](../01-infrastructure-issue-investigator.md) and [03](03-investigation-safety-rules.md) |
 | Substring filters cross namespaces | Evidence from a neighbouring namespace appears in the investigation of another | Cluster-scoped lists are filtered with `grep` on the namespace name, which matches any namespace containing it. Structurally inevitable for a substring match |
 | An undeclared dependency | A block fails, or silently prints nothing useful, on a machine without `jq` | Several commands pipe to `jq`; neither the playbook nor the skill lists it. Observed |
 | Secrets in diagnostic output | Release values or secret data reach the model's context | `helm get values` and similar commands can print credentials; the only protection is the instruction to pipe through the redactor, which the model has to remember for every command. Structural |
@@ -91,10 +91,10 @@ writes nothing.
 
 | Card | Where it shows up in this component |
 |---|---|
-| [02 Progressive Disclosure](../../cards/02-progressive-disclosure.md) | Loaded only in the diagnose phase, and only one class block of ten is needed per symptom |
-| [06 Calibrated Degrees of Freedom](../../cards/06-calibrated-degrees-of-freedom.md) | Exact commands instead of "look at the pods": diagnosis is the most repeatable part of the skill because it is the least free |
-| [16 The Permission Ladder](../../cards/16-the-permission-ladder.md) | A read-only promise made entry by entry, with no allow-list check behind it — and one entry that breaks it |
-| [18 The Redaction Boundary](../../cards/18-the-redaction-boundary.md) | Every output is to pass the redactor before it goes anywhere, including commands known to print secrets |
+| [02 Progressive Disclosure](../../../../cards/02-progressive-disclosure.md) | Loaded only in the diagnose phase, and only one class block of ten is needed per symptom |
+| [06 Calibrated Degrees of Freedom](../../../../cards/06-calibrated-degrees-of-freedom.md) | Exact commands instead of "look at the pods": diagnosis is the most repeatable part of the skill because it is the least free |
+| [16 The Permission Ladder](../../../../cards/16-the-permission-ladder.md) | A read-only promise made entry by entry, with no allow-list check behind it — and one entry that breaks it |
+| [18 The Redaction Boundary](../../../../cards/18-the-redaction-boundary.md) | Every output is to pass the redactor before it goes anywhere, including commands known to print secrets |
 
 ## Provenance
 
@@ -106,7 +106,7 @@ file is specific to one installation except which components it expects to find.
 ## Prototype
 
 Minimal runnable prototype in
-[`../../skeletons/components/04-symptom-diagnostic-playbook/`](../../skeletons/components/04-symptom-diagnostic-playbook/).
+[`../../../../skeletons/components/04-symptom-diagnostic-playbook/`](../../../../skeletons/components/04-symptom-diagnostic-playbook/).
 Standard library, offline, prints commands and never runs them. It classifies a
 symptom, renders the baseline and one block, delegates when three classes match, and
 with `--lint` checks a fabricated catalogue built with the source's kinds of defect.

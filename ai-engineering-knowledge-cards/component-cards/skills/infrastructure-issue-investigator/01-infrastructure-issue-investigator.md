@@ -41,7 +41,7 @@ the first component card.
 
 ## Trigger and routing
 
-The description is the routing table ([card 03](../../cards/03-description-as-router.md)).
+The description is the routing table ([card 03](../../../cards/03-description-as-router.md)).
 It carries three things:
 
 - **What it does**, in one sentence that names the output: a saved plan.
@@ -70,29 +70,29 @@ continues only on confirmation.
 
 ## Procedure
 
-Seven phases, each ending at a gate ([card 19](../../cards/19-scope-lock-and-checkpoint-delivery.md)).
+Seven phases, each ending at a gate ([card 19](../../../cards/19-scope-lock-and-checkpoint-delivery.md)).
 
 1. **Intake.** Ask for cluster and namespace. Resolve the context; if it is not the
    development cluster, trip the **prod guard** — warn, require an explicit typed
    confirmation, stay read-only regardless. *Gate: cluster and namespace known.*
-2. **Diagnose** ([component 04](../reference/04-symptom-diagnostic-playbook.md)). Run a fixed baseline (events, pods, workloads), then the command
+2. **Diagnose** ([component 04](references/04-symptom-diagnostic-playbook.md)). Run a fixed baseline (events, pods, workloads), then the command
    block for the symptom class — one of ten: pod lifecycle, networking, storage,
    RBAC, resource pressure, admission policy, certificates, Helm release state,
    operator health, jobs. Pipe every output through the redactor. *Gate: at least
    one signal, or the user says to proceed on a hypothesis.*
 3. **Research, in parallel.** Web: search with every installation-specific name
    stripped — keep versions, error strings and upstream component names. Repo
-   ([component 05](../reference/05-keyword-narrowed-repo-search.md)):
+   ([component 05](references/05-keyword-narrowed-repo-search.md)):
    narrow by symptom keyword to likely role paths, read recent history for prior
    fixes, never open restricted files — record the path, advise a manual check.
 4. **Brainstorm** three to six distinct candidates, each with mechanism, scope,
    reversibility and the repo artifact it would reuse. *Gate: at least three.*
-5. **Rank** with a separate rubric file ([component 02](../reference/02-remediation-ranking-rubric.md)): seven criteria scored 0–2 and weighted: reuse of an existing role
+5. **Rank** with a separate rubric file ([component 02](references/02-remediation-ranking-rubric.md)): seven criteria scored 0–2 and weighted: reuse of an existing role
    ×3, fit with the current workstream ×2, blast radius ×2, reversibility ×2,
    conventions ×1, no new dependencies ×1, clean promotion up the environment
    ladder ×1. Ties break in that order. Render one fixed table shape. *Gate: the
    user acknowledges #1 or picks another.*
-6. **Plan.** Fill a fixed template ([component 06](../reference/06-remediation-plan-template.md)): root cause marked **hypothesis or confirmed**,
+6. **Plan.** Fill a fixed template ([component 06](assets/06-remediation-plan-template.md)): root cause marked **hypothesis or confirmed**,
    chosen option and why, rejected options, ordered steps with dry-run steps
    flagged, rollback, verification, blast radius, per-environment progression, and
    a **redaction review** block. Up to three rework rounds, then force-save with
@@ -115,9 +115,9 @@ Confirmations are never batched: each is its own yes/no.
 | Writing the plan | yes, after confirmation | the skill's instructions |
 
 The column that matters is the last one. Only the harness row is a control; every
-other row is advice the model is trusted to follow ([card 16](../../cards/16-the-permission-ladder.md)).
+other row is advice the model is trusted to follow ([card 16](../../../cards/16-the-permission-ladder.md)).
 The rules themselves live in a separate reference file,
-[component 03](../reference/03-investigation-safety-rules.md).
+[component 03](references/03-investigation-safety-rules.md).
 
 ## Outputs
 
@@ -135,19 +135,19 @@ only after the user confirms the location. Before that: a ranked table on screen
 | Machine-bound | The skill works for one operator and fails for anyone else who installs it | The repository location, the save paths and the dev kubeconfig were absolute paths in the skill text. Observed |
 | The prod guard trusts a name | A context whose name or kubeconfig path contains the development marker is treated as development, whatever it points at | Classification is a substring match on names. Structurally inevitable — unqualified names fall to the strictest class, but a misleading name falls to the most lenient |
 | Query hygiene is advisory | An installation name can reach a web search | Stripping names from queries is an instruction, not a filter between the model and the tool |
-| The redactor misses a format | A credential shape with no pattern passes into the plan | Pattern matching; see [card 18](../../cards/18-the-redaction-boundary.md), where this is observed |
+| The redactor misses a format | A credential shape with no pattern passes into the plan | Pattern matching; see [card 18](../../../cards/18-the-redaction-boundary.md), where this is observed |
 
 ## Patterns it instances
 
 | Card | Where it shows up in this component |
 |---|---|
-| [02 Progressive Disclosure](../../cards/02-progressive-disclosure.md) | Four reference files and a template, each loaded only by the phase that needs it — the diagnostic catalogue in phase 2, the rubric in phase 5 |
-| [03 Description-as-Router](../../cards/03-description-as-router.md) | Trigger phrases plus a do-not-use list naming each sibling; repeated inside the skill as a symptom-based redirect |
-| [06 Calibrated Degrees of Freedom](../../cards/06-calibrated-degrees-of-freedom.md) | Brainstorming is open prose; ranking is a fixed rubric with a mandated table shape; redaction is a deterministic script |
-| [16 The Permission Ladder](../../cards/16-the-permission-ladder.md) | Read-only by deny list, with the harness deny list as the only enforced rung — and the `run` gap as the proof |
-| [17 Blast-Radius Gating](../../cards/17-blast-radius-gating.md) | Blast radius is a weighted ranking criterion, and the prod guard escalates confirmation by environment |
-| [18 The Redaction Boundary](../../cards/18-the-redaction-boundary.md) | Every output passes a conservative stdlib redactor before it is carried forward, and the plan carries a review block |
-| [19 Scope Lock and Checkpoint Delivery](../../cards/19-scope-lock-and-checkpoint-delivery.md) | Seven gated phases, unbatched confirmations, a three-round cap on rework, confirm-before-write |
+| [02 Progressive Disclosure](../../../cards/02-progressive-disclosure.md) | Four reference files and a template, each loaded only by the phase that needs it — the diagnostic catalogue in phase 2, the rubric in phase 5 |
+| [03 Description-as-Router](../../../cards/03-description-as-router.md) | Trigger phrases plus a do-not-use list naming each sibling; repeated inside the skill as a symptom-based redirect |
+| [06 Calibrated Degrees of Freedom](../../../cards/06-calibrated-degrees-of-freedom.md) | Brainstorming is open prose; ranking is a fixed rubric with a mandated table shape; redaction is a deterministic script |
+| [16 The Permission Ladder](../../../cards/16-the-permission-ladder.md) | Read-only by deny list, with the harness deny list as the only enforced rung — and the `run` gap as the proof |
+| [17 Blast-Radius Gating](../../../cards/17-blast-radius-gating.md) | Blast radius is a weighted ranking criterion, and the prod guard escalates confirmation by environment |
+| [18 The Redaction Boundary](../../../cards/18-the-redaction-boundary.md) | Every output passes a conservative stdlib redactor before it is carried forward, and the plan carries a review block |
+| [19 Scope Lock and Checkpoint Delivery](../../../cards/19-scope-lock-and-checkpoint-delivery.md) | Seven gated phases, unbatched confirmations, a three-round cap on rework, confirm-before-write |
 
 ## Provenance
 
@@ -156,7 +156,7 @@ Instanced in the source system by one skill of roughly a thousand lines: a
 repository search patterns, safety rules), a plan template, and a 150-line
 standard-library redaction script. Its brainstorm-then-rank structure was borrowed
 from an adversarial build-and-grade skill in the same kit
-([card 11](../../cards/11-adversarial-role-separation.md)).
+([card 11](../../../cards/11-adversarial-role-separation.md)).
 
 The component records its design, not its history: nothing in it says how often it
 ran or what its plans led to, and this card claims neither.
@@ -164,7 +164,7 @@ ran or what its plans led to, and this card claims neither.
 ## Prototype
 
 Minimal runnable prototype in
-[`../../skeletons/components/01-infrastructure-issue-investigator/`](../../skeletons/components/01-infrastructure-issue-investigator/).
+[`../../../skeletons/components/01-infrastructure-issue-investigator/`](../../../skeletons/components/01-infrastructure-issue-investigator/).
 Standard library, offline, fixture data only. It runs all seven phases on a
 fabricated crash-looping workload, trips the prod guard, and reproduces the
 deny-list gap.

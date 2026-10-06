@@ -23,7 +23,7 @@ related:
 ## What it is
 
 A reference file loaded by one phase of a planning skill
-([component 01](../skill/01-infrastructure-issue-investigator.md)). It defines how
+([component 01](../01-infrastructure-issue-investigator.md)). It defines how
 candidate fixes for an infrastructure incident are scored: seven criteria, each
 scored 0, 1 or 2 against written anchors, multiplied by a weight and summed; a
 fixed tie-break; one mandated table layout; and a gate after the table. It is about
@@ -34,7 +34,7 @@ a hundred lines long and contains no code.
 Loaded by the investigator skill in its rank phase, after brainstorming has produced
 three to six candidates and before any plan is written. It is never routed to
 directly; the skill's reference table names it as the file for that phase and no
-other ([card 02](../../cards/02-progressive-disclosure.md) — the rubric costs nothing
+other ([card 02](../../../../cards/02-progressive-disclosure.md) — the rubric costs nothing
 until ranking starts).
 
 ## Inputs
@@ -95,9 +95,9 @@ chosen option is what the skill's plan phase receives.
 
 | Card | Where it shows up in this component |
 |---|---|
-| [06 Calibrated Degrees of Freedom](../../cards/06-calibrated-degrees-of-freedom.md) | The model's judgement is narrowed to three anchored bands per criterion, fixed weights, a fixed tie-break and one mandated output shape — freedom removed where consistency matters, left where it cannot be removed (assigning the score) |
-| [17 Blast-Radius Gating](../../cards/17-blast-radius-gating.md) | Blast radius is a weighted criterion with three named bands — namespace, shared controller, cluster-wide — applied before any change exists |
-| [19 Scope Lock and Checkpoint Delivery](../../cards/19-scope-lock-and-checkpoint-delivery.md) | The rubric ends in a checkpoint: an explicit yes, or another pick, before the plan phase starts |
+| [06 Calibrated Degrees of Freedom](../../../../cards/06-calibrated-degrees-of-freedom.md) | The model's judgement is narrowed to three anchored bands per criterion, fixed weights, a fixed tie-break and one mandated output shape — freedom removed where consistency matters, left where it cannot be removed (assigning the score) |
+| [17 Blast-Radius Gating](../../../../cards/17-blast-radius-gating.md) | Blast radius is a weighted criterion with three named bands — namespace, shared controller, cluster-wide — applied before any change exists |
+| [19 Scope Lock and Checkpoint Delivery](../../../../cards/19-scope-lock-and-checkpoint-delivery.md) | The rubric ends in a checkpoint: an explicit yes, or another pick, before the plan phase starts |
 
 ## Provenance
 
@@ -112,7 +112,7 @@ were tested against past decisions.
 ## Prototype
 
 Minimal runnable prototype in
-[`../../skeletons/components/02-remediation-ranking-rubric/`](../../skeletons/components/02-remediation-ranking-rubric/).
+[`../../../../skeletons/components/02-remediation-ranking-rubric/`](../../../../skeletons/components/02-remediation-ranking-rubric/).
 Standard library, offline. It ranks five fabricated fixes, shows what the /12 display
 does to them, and with `--stress` perturbs every weight and adds the missing
 root-cause criterion.

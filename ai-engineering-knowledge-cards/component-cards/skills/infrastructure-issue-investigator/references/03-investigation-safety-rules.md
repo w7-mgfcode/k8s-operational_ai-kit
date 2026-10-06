@@ -26,7 +26,7 @@ related:
 ## What it is
 
 A reference file loaded by the investigator skill
-([component 01](../skill/01-infrastructure-issue-investigator.md)) and applied in
+([component 01](../01-infrastructure-issue-investigator.md)) and applied in
 every phase that touches the cluster, the repository or the web. It holds six rule
 sets: a production guard, secret scrubbing, restricted paths, web-query hygiene, a
 tool deny list, and a list of confirmation points. About 125 lines, no code — the
@@ -98,21 +98,21 @@ separate questions to the user.
 
 | Failure | Symptom | Root cause |
 |---|---|---|
-| Writes that are not on the list | A diagnostic runs `kubectl run`, `exec`, `label`, `annotate`, `create`, `set` or `rollout restart` in a "read-only" investigation | Read-only is expressed as fifteen forbidden commands. Anything unnamed is allowed by default. Observed: the skill's own certificate diagnostics use `kubectl run` ([component 01](../skill/01-infrastructure-issue-investigator.md)) |
+| Writes that are not on the list | A diagnostic runs `kubectl run`, `exec`, `label`, `annotate`, `create`, `set` or `rollout restart` in a "read-only" investigation | Read-only is expressed as fifteen forbidden commands. Anything unnamed is allowed by default. Observed: the skill's own certificate diagnostics use `kubectl run` ([component 01](../01-infrastructure-issue-investigator.md)) |
 | The guard trusts a name | A context repointed at production but still carrying a development name is treated as development | Classification is by substring of names; the cluster itself is never asked what it is. Structurally inevitable |
 | Hygiene without a list | Lowercase workload and namespace names survive; capitalized error strings and component names are stripped | "Strip every proper noun that identifies your infra" gives the model no list of those names and no filter to apply. Readable off the rule |
-| Search leaks what the path rule protects | The matched line from a restricted file is already in the model's context | The rule forbids opening the file after a search matched it; the match is the leak. Observed in [card 18](../../cards/18-the-redaction-boundary.md) as well |
+| Search leaks what the path rule protects | The matched line from a restricted file is already in the model's context | The rule forbids opening the file after a search matched it; the match is the leak. Observed in [card 18](../../../../cards/18-the-redaction-boundary.md) as well |
 | Rules and script disagree | A non-secret checksum is redacted by the script; a base64 credential under an unrecognized key is left alone by the rules | The rule limits base64 redaction to known secret keys; the script beside it redacts any long base64 run. Observed by comparing the two files |
-| Only three verbs are controls | Every other rule holds exactly as long as the model follows instructions | Twelve of fifteen denied commands, and all of the other five rule sets, have no enforcement outside the model ([card 16](../../cards/16-the-permission-ladder.md)) |
+| Only three verbs are controls | Every other rule holds exactly as long as the model follows instructions | Twelve of fifteen denied commands, and all of the other five rule sets, have no enforcement outside the model ([card 16](../../../../cards/16-the-permission-ladder.md)) |
 
 ## Patterns it instances
 
 | Card | Where it shows up in this component |
 |---|---|
-| [16 The Permission Ladder](../../cards/16-the-permission-ladder.md) | A deny list where three rungs are enforced by the harness and twelve are advice — the ladder's central distinction, inside one file |
-| [17 Blast-Radius Gating](../../cards/17-blast-radius-gating.md) | The prod guard escalates by environment class, and an unqualified name falls to the strictest class |
-| [18 The Redaction Boundary](../../cards/18-the-redaction-boundary.md) | Scrub before anything is carried forward, dual-channel output, a mandatory review block, and a restricted-path list |
-| [19 Scope Lock and Checkpoint Delivery](../../cards/19-scope-lock-and-checkpoint-delivery.md) | Six named confirmation points, each its own question, never batched |
+| [16 The Permission Ladder](../../../../cards/16-the-permission-ladder.md) | A deny list where three rungs are enforced by the harness and twelve are advice — the ladder's central distinction, inside one file |
+| [17 Blast-Radius Gating](../../../../cards/17-blast-radius-gating.md) | The prod guard escalates by environment class, and an unqualified name falls to the strictest class |
+| [18 The Redaction Boundary](../../../../cards/18-the-redaction-boundary.md) | Scrub before anything is carried forward, dual-channel output, a mandatory review block, and a restricted-path list |
+| [19 Scope Lock and Checkpoint Delivery](../../../../cards/19-scope-lock-and-checkpoint-delivery.md) | Six named confirmation points, each its own question, never batched |
 
 ## Provenance
 
@@ -125,7 +125,7 @@ was ever tripped in use, and this card claims no such history.
 ## Prototype
 
 Minimal runnable prototype in
-[`../../skeletons/components/03-investigation-safety-rules/`](../../skeletons/components/03-investigation-safety-rules/).
+[`../../../../skeletons/components/03-investigation-safety-rules/`](../../../../skeletons/components/03-investigation-safety-rules/).
 Standard library, offline. Five of the six rule sets as functions, run on the cases
 they were written for, and with `--audit` on one probe per gap.
 

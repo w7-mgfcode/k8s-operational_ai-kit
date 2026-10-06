@@ -1,7 +1,7 @@
 ---
 component: 06
 title: Remediation Plan Template
-type: reference
+type: asset
 instances:
   - 06-calibrated-degrees-of-freedom
   - 17-blast-radius-gating
@@ -25,7 +25,7 @@ related:
 ## What it is
 
 A Markdown template with YAML frontmatter, rendered by the investigator skill
-([component 01](../skill/01-infrastructure-issue-investigator.md)) in its plan phase.
+([component 01](../01-infrastructure-issue-investigator.md)) in its plan phase.
 It turns the chosen fix into a document a person can execute somewhere else: context,
 root cause with a hypothesis-or-confirmed status, the chosen and rejected options,
 ordered steps, rollback, verification, blast radius, per-environment progression, a
@@ -44,9 +44,9 @@ user confirms the location.
 |---|---|---|
 | Cluster, namespace, prod-guard status | yes | intake |
 | Redacted evidence | yes | diagnose |
-| Web and repository references | yes | research ([component 05](05-keyword-narrowed-repo-search.md)) |
-| Chosen option and the rejected ones | yes | the rank gate ([component 02](02-remediation-ranking-rubric.md)) |
-| Redaction hits | yes | the redactor's stderr ([component 03](03-investigation-safety-rules.md)) |
+| Web and repository references | yes | research ([component 05](../references/05-keyword-narrowed-repo-search.md)) |
+| Chosen option and the rejected ones | yes | the rank gate ([component 02](../references/02-remediation-ranking-rubric.md)) |
+| Redaction hits | yes | the redactor's stderr ([component 03](../references/03-investigation-safety-rules.md)) |
 
 ## Procedure
 
@@ -80,7 +80,7 @@ vault password and how to run locally — and both name the operator's own setup
 One Markdown file named `<date>-<cluster>-<namespace>-<slug>.md`, saved either
 beside the infrastructure repository's documentation or into the session-log
 directory that feeds the knowledge-compilation pipeline
-([card 13](../../cards/13-log-as-source-compilation.md)).
+([card 13](../../../../cards/13-log-as-source-compilation.md)).
 
 ## Failure modes
 
@@ -96,10 +96,10 @@ directory that feeds the knowledge-compilation pipeline
 
 | Card | Where it shows up in this component |
 |---|---|
-| [06 Calibrated Degrees of Freedom](../../cards/06-calibrated-degrees-of-freedom.md) | A fixed document shape with a closed status vocabulary — the lowest-freedom output of the skill, and the only durable one |
-| [17 Blast-Radius Gating](../../cards/17-blast-radius-gating.md) | A blast-radius section with a rollback-time estimate, and per-environment prerequisites before each promotion |
-| [18 The Redaction Boundary](../../cards/18-the-redaction-boundary.md) | A mandatory review block listing what was scrubbed, so over-redaction is visible and reversible |
-| [19 Scope Lock and Checkpoint Delivery](../../cards/19-scope-lock-and-checkpoint-delivery.md) | One option, fixed in writing, delivered through named environment checkpoints |
+| [06 Calibrated Degrees of Freedom](../../../../cards/06-calibrated-degrees-of-freedom.md) | A fixed document shape with a closed status vocabulary — the lowest-freedom output of the skill, and the only durable one |
+| [17 Blast-Radius Gating](../../../../cards/17-blast-radius-gating.md) | A blast-radius section with a rollback-time estimate, and per-environment prerequisites before each promotion |
+| [18 The Redaction Boundary](../../../../cards/18-the-redaction-boundary.md) | A mandatory review block listing what was scrubbed, so over-redaction is visible and reversible |
+| [19 Scope Lock and Checkpoint Delivery](../../../../cards/19-scope-lock-and-checkpoint-delivery.md) | One option, fixed in writing, delivered through named environment checkpoints |
 
 ## Provenance
 
@@ -112,7 +112,7 @@ they were executed as written.
 ## Prototype
 
 Minimal runnable prototype in
-[`../../skeletons/components/06-remediation-plan-template/`](../../skeletons/components/06-remediation-plan-template/).
+[`../../../../skeletons/components/06-remediation-plan-template/`](../../../../skeletons/components/06-remediation-plan-template/).
 Standard library, offline. It renders a shortened template from a fabricated
 investigation, checks the result, and with `--check` finds eight planted defects in a
 plan the template's shape allows.

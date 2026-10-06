@@ -41,7 +41,12 @@ MATURITIES = {"proven", "partial", "abandoned"}
 # --- component-card contract (.claude/rules/component-cards.md) ------------
 COMPONENT_KEYS = ["component", "title", "type", "instances", "related"]
 COMPONENT_HEADING_COUNT = 11
-COMPONENT_TYPES = {"skill", "command", "rule", "subagent", "hook", "reference"}
+# A skill is a directory, so its card opens one: skills/<skill>/NN-<skill>.md.
+# What the skill loads sits beneath it, so ownership is the path itself. Every
+# other type is a single file under its plural name.
+BUNDLED = {"reference": "references", "asset": "assets", "script": "scripts"}
+STANDALONE = {"command": "commands", "rule": "rules", "subagent": "subagents", "hook": "hooks"}
+COMPONENT_TYPES = {"skill", *BUNDLED, *STANDALONE}
 
 # --- anonymization boundary (.claude/rules/anonymization.md) ---------------
 # Generic shapes, not the masked strings themselves — this file is public too.
@@ -181,15 +186,54 @@ def check_cards(r: Report) -> None:
     r.ok(f"{len(files)} cards, contract satisfied, related: edges symmetric")
 
 
+def skill_cards(d: Path) -> list[Path]:
+    """The cards at the root of a skills/<skill>/ directory whose type is skill."""
+    found = []
+    for p in sorted(d.glob("*.md")):
+        text = p.read_text(encoding="utf-8")
+        fm = text.split("---", 2)[1] if text.startswith("---") else ""
+        if re.search(r"^type:[ \t]*skill[ \t]*$", fm, re.M):
+            found.append(p)
+    return found
+
+
+def component_placement(kind: str, f: Path) -> str | None:
+    """None when a component card sits where its type belongs, else the problem."""
+    parts = f.relative_to(COMPONENT_CARDS).parts
+    if kind == "skill":
+        skill = re.sub(r"^\d+-", "", f.stem)
+        if parts != ("skills", skill, f.name):
+            return f"a skill card belongs at component-cards/skills/{skill}/{f.name}"
+        owners = skill_cards(f.parent)
+        if len(owners) > 1:
+            return f"skills/{skill}/ holds {len(owners)} skill cards; one directory owns one skill"
+    elif kind in BUNDLED:
+        if len(parts) != 4 or parts[0] != "skills" or parts[2] != BUNDLED[kind]:
+            return f"a {kind} card belongs at component-cards/skills/<skill>/{BUNDLED[kind]}/"
+        owners = skill_cards(COMPONENT_CARDS / "skills" / parts[1])
+        if len(owners) != 1:
+            return (f"skills/{parts[1]}/ needs exactly one skill card to own this {kind}, "
+                    f"found {len(owners)}")
+    elif parts != (STANDALONE[kind], f.name):
+        return f"a {kind} card belongs at component-cards/{STANDALONE[kind]}/"
+    return None
+
+
 def check_component_cards(r: Report) -> None:
     r.section("component cards")
     files = sorted(COMPONENT_CARDS.rglob("*.md"))
     pattern_cards = {c.stem for c in CARDS.glob("*.md")}
     seen: dict[int, str] = {}
+    related: dict[str, set[str]] = {}
+    owner: dict[str, str] = {}
     for f in files:
         text = f.read_text(encoding="utf-8")
         keys, body = frontmatter(text)
         rel = str(f.relative_to(PROJECT))
+        slugs = related_slugs(text)
+        if slugs is None:
+            r.fail(rel, "related: must be [] or a block list of '  - <component-slug>' lines")
+        related[f.stem] = slugs or set()
 
         if keys[: len(COMPONENT_KEYS)] != COMPONENT_KEYS:
             r.fail(rel, f"frontmatter keys {keys[:5]} != {COMPONENT_KEYS}")
@@ -209,8 +253,13 @@ def check_component_cards(r: Report) -> None:
         kind = re.search(r"^type:\s*(\S+)", text, re.M)
         if not kind or kind.group(1) not in COMPONENT_TYPES:
             r.fail(rel, f"type must be one of {sorted(COMPONENT_TYPES)}")
-        elif kind.group(1) != f.parent.name:
-            r.fail(rel, f"type '{kind.group(1)}' does not match directory '{f.parent.name}'")
+        else:
+            misplaced = component_placement(kind.group(1), f)
+            if misplaced:
+                r.fail(rel, misplaced)
+            elif kind.group(1) in BUNDLED:
+                parts = f.relative_to(COMPONENT_CARDS).parts
+                owner[f.stem] = skill_cards(COMPONENT_CARDS / "skills" / parts[1])[0].stem
 
         block = re.search(r"^instances:\n((?:\s+- .*\n)+)", text, re.M)
         slugs = re.findall(r"- (\S+)", block.group(1)) if block else []
@@ -231,7 +280,19 @@ def check_component_cards(r: Report) -> None:
         if not re.search(r"^## What is deliberately missing", rtext, re.M):
             r.fail(f"skeletons/components/{f.stem}",
                    "README has no 'What is deliberately missing' section")
-    r.ok(f"{len(files)} component cards, contract satisfied")
+
+    # Same graph rule as pattern cards: every edge resolves and runs both ways.
+    # A reference, asset or script also names the skill it sits under.
+    by_stem = {f.stem: str(f.relative_to(PROJECT)) for f in files}
+    for stem, targets in sorted(related.items()):
+        for t in sorted(targets):
+            if t not in related:
+                r.fail(by_stem[stem], f"related '{t}' is not a component card")
+            elif stem not in related[t]:
+                r.fail(by_stem[stem], f"related '{t}' does not list this card back")
+        if stem in owner and owner[stem] not in targets:
+            r.fail(by_stem[stem], f"related must name its skill '{owner[stem]}'")
+    r.ok(f"{len(files)} component cards, contract satisfied, related: edges symmetric")
 
 
 def check_links(r: Report) -> None:
