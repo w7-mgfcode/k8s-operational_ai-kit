@@ -16,6 +16,7 @@ related:
   - 04-symptom-diagnostic-playbook
   - 05-keyword-narrowed-repo-search
   - 06-remediation-plan-template
+  - 07-secret-shape-output-scrubber
 ---
 
 # Infrastructure Issue Investigator
@@ -78,7 +79,8 @@ Seven phases, each ending at a gate ([card 19](../../../cards/19-scope-lock-and-
 2. **Diagnose** ([component 04](references/04-symptom-diagnostic-playbook.md)). Run a fixed baseline (events, pods, workloads), then the command
    block for the symptom class — one of ten: pod lifecycle, networking, storage,
    RBAC, resource pressure, admission policy, certificates, Helm release state,
-   operator health, jobs. Pipe every output through the redactor. *Gate: at least
+   operator health, jobs. Pipe every output through the redactor
+   ([component 07](scripts/07-secret-shape-output-scrubber.md)). *Gate: at least
    one signal, or the user says to proceed on a hypothesis.*
 3. **Research, in parallel.** Web: search with every installation-specific name
    stripped — keep versions, error strings and upstream component names. Repo
@@ -135,7 +137,7 @@ only after the user confirms the location. Before that: a ranked table on screen
 | Machine-bound | The skill works for one operator and fails for anyone else who installs it | The repository location, the save paths and the dev kubeconfig were absolute paths in the skill text. Observed |
 | The prod guard trusts a name | A context whose name or kubeconfig path contains the development marker is treated as development, whatever it points at | Classification is a substring match on names. Structurally inevitable — unqualified names fall to the strictest class, but a misleading name falls to the most lenient |
 | Query hygiene is advisory | An installation name can reach a web search | Stripping names from queries is an instruction, not a filter between the model and the tool |
-| The redactor misses a format | A credential shape with no pattern passes into the plan | Pattern matching; see [card 18](../../../cards/18-the-redaction-boundary.md), where this is observed |
+| The redactor misses a format | A credential shape with no pattern passes into the plan | Pattern matching; [component 07](scripts/07-secret-shape-output-scrubber.md) lists the formats this one misses, and [card 18](../../../cards/18-the-redaction-boundary.md) the pattern-level failure |
 
 ## Patterns it instances
 

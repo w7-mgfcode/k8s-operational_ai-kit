@@ -11,6 +11,7 @@ related:
   - 01-infrastructure-issue-investigator
   - 02-remediation-ranking-rubric
   - 03-investigation-safety-rules
+  - 07-secret-shape-output-scrubber
 ---
 
 # Remediation Plan Template
@@ -46,7 +47,7 @@ user confirms the location.
 | Redacted evidence | yes | diagnose |
 | Web and repository references | yes | research ([component 05](../references/05-keyword-narrowed-repo-search.md)) |
 | Chosen option and the rejected ones | yes | the rank gate ([component 02](../references/02-remediation-ranking-rubric.md)) |
-| Redaction hits | yes | the redactor's stderr ([component 03](../references/03-investigation-safety-rules.md)) |
+| Redaction hits | yes | the redactor's stderr ([component 07](../scripts/07-secret-shape-output-scrubber.md)) |
 
 ## Procedure
 
