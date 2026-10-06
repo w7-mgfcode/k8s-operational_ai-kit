@@ -1,0 +1,14 @@
+{
+  "_comment": "Fabricated. What a correct scrub of raw.txt would remove, and what it must keep. The password is the same value three times: base64 in the YAML secret, base64 again in the JSON copy, and decoded inside a connection URL.",
+  "secrets": {
+    "bTB1bnRhaW4tbGFrZS03": "database password, base64",
+    "m0untain-lake-7": "database password, decoded, in a connection URL",
+    "k3stx9wq2mzp7rvb": "cache token in a prefixed env var",
+    "x9Yk2LmQ7pR4tW1z": "bearer token"
+  },
+  "evidence": {
+    "4b8e1f0c9d2a7e6b3f5c8a1d0e9f2b7c4a6d8e1f3b5c7a9d0e2f4b6c8a1d3e5f": "image digest",
+    "9a0364b9e99bb480dd25e1f0284c8555": "config checksum",
+    "3f9c2a7e1b4d8f0a6c5e9b2d7f1a3c8e4b6d0f2a": "commit hash"
+  }
+}

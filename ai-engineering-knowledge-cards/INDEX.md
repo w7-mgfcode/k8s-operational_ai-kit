@@ -105,6 +105,7 @@ do in the skill itself. Each ships its own prototype under
 | 04 | [Symptom-Class Diagnostic Playbook](component-cards/skills/infrastructure-issue-investigator/references/04-symptom-diagnostic-playbook.md) | reference | 02 06 16 18 | Exact read-only commands per symptom class — and every flaw in them repeated on every run |
 | 05 | [Keyword-Narrowed Repository Search](component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md) | reference | 02 05 14 18 | A keyword-to-path map narrows the search — until a role is renamed and it quietly finds nothing |
 | 06 | [Remediation Plan Template](component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md) | asset | 06 17 18 19 | A fixed shape makes a plan complete on paper — and nothing checks the paper |
+| 07 | [Secret-Shape Output Scrubber](component-cards/skills/infrastructure-issue-investigator/scripts/07-secret-shape-output-scrubber.md) | script | 02 06 18 | Ordered patterns between raw output and the plan — they erase the evidence and miss the JSON copy |
 
 ## Compound pipelines
 

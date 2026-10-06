@@ -1,0 +1,22 @@
+$ kubectl -n shop get secret api-db -o yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-db
+type: Opaque
+data:
+  username: YXBpLXVzZXI=
+  password: bTB1bnRhaW4tbGFrZS03
+  host: ZGItcHJpbWFyeQ==
+$ kubectl -n shop get secret api-db -o json
+{"kind": "Secret", "data": {"username": "YXBpLXVzZXI=", "password": "bTB1bnRhaW4tbGFrZS03"}}
+$ kubectl -n shop describe pod api-7c9d   # Environment:
+  DATABASE_URL:  postgres://api-user:m0untain-lake-7@db-primary:5432/shop
+  CACHE_TOKEN:   k3stx9wq2mzp7rvb
+  Authorization: Bearer x9Yk2LmQ7pR4tW1z
+$ kubectl -n shop get pod api-7c9d -o jsonpath='{..imageID}'
+registry.example/shop/api@sha256:4b8e1f0c9d2a7e6b3f5c8a1d0e9f2b7c4a6d8e1f3b5c7a9d0e2f4b6c8a1d3e5f
+$ kubectl -n shop get deploy api -o yaml | grep checksum
+    checksum/config: 9a0364b9e99bb480dd25e1f0284c8555
+$ git -C infra log -1 --format='%H %s'
+3f9c2a7e1b4d8f0a6c5e9b2d7f1a3c8e4b6d0f2a fix(api): cap the product cache below the limit

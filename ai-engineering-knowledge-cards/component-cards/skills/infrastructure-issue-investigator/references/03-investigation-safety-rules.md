@@ -12,6 +12,7 @@ related:
   - 04-symptom-diagnostic-playbook
   - 05-keyword-narrowed-repo-search
   - 06-remediation-plan-template
+  - 07-secret-shape-output-scrubber
 ---
 
 # Investigation Safety Rules
@@ -58,7 +59,8 @@ rest: when in doubt, stop and ask.
    warning, requires a typed confirmation, and stays read-only after it; the plan
    records that the guard was confirmed.
 2. **Secret scrubbing.** Every output that will be carried between phases or written
-   into the plan goes through the redaction script first. Patterns cover password,
+   into the plan goes through the redaction script
+   ([component 07](../scripts/07-secret-shape-output-scrubber.md)) first. Patterns cover password,
    token, bearer, API-key, secret and credential assignments, secret data blocks,
    whole kubeconfig documents, and long base64 strings after known secret keys.
    Redacted text goes to stdout, one `REDACTED:` line per hit to stderr, and every plan
