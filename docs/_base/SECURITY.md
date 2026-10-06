@@ -70,8 +70,8 @@ deliberate act: it removes a file from the only automated control there is.
 
 - **A ~140 MB virtualenv** exists under `.claude/skills/excalidraw-diagram/references/.venv`
   (`.agents/skills/excalidraw-diagram` is a symlink to that skill). It is gitignored, as is all
-  vendored agent tooling (`.agents/`, `.claude/commands/`, `.claude/skills/*` except the
-  project-authored summarizer). Before every `git add`, confirm `git status` lists none of it.
+  vendored agent tooling (`.agents/`, `.claude/commands/`, `.claude/skills/*` except the two
+  project-authored skills). Before every `git add`, confirm `git status` lists none of it.
 - **No secrets are required** to work in this repository. The three agent workflows reference
   `CLAUDE_CODE_OAUTH_TOKEN` and `OPENAI_API_KEY`; none is configured, which is the correct
   default. Their absence does not make the workflows inert — they still run and fail (see

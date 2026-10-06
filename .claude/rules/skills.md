@@ -32,8 +32,10 @@ Consequences that will bite:
 **All of it is gitignored except one skill.** `.agents/`, `.claude/commands/`,
 `.claude/.mcp.json` and `.claude/skills/*` are local tooling, not repository
 content — they carry other projects' text that `check.py` would otherwise have to
-police. `.claude/skills/knowledge-card-summarizer/` is the one project-authored
-skill, and stays committable through a `!` exception in `.gitignore`.
+police. Two skills are project-authored and stay committable through `!`
+exceptions in `.gitignore`: `knowledge-card-summarizer` (pattern card → teaching
+card) and `extracting-component-cards` (skill → component-card bundle). A new
+project skill needs its own exception, or it is silently untracked.
 
 When you copy a skill in from elsewhere, record where it came from. An asset with
 no provenance cannot be updated, audited, or safely deleted.

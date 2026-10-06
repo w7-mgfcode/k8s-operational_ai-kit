@@ -11,8 +11,8 @@
 - One runnable skeleton per card, plus one compound pipeline walkthrough.
 - The anonymization policy and its audit record.
 - The agent-context layer: `.claude/rules/`, `.claude/agents/`, `.claude/settings.json` and its
-  one hook, the one project-authored skill
-  (`.claude/skills/knowledge-card-summarizer/`), `AGENTS.md`, `CLAUDE.md`,
+  one hook, the two project-authored skills (`.claude/skills/knowledge-card-summarizer/`,
+  `.claude/skills/extracting-component-cards/`), `AGENTS.md`, `CLAUDE.md`,
   `.github/copilot-instructions.md`. Other skills and commands are vendored and gitignored.
 - The validation gate, `check.py`, and the CI that runs it (`.github/workflows/ci.yml`).
 
