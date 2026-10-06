@@ -14,6 +14,7 @@
 | `check.py` | What is enforced and how | Before committing; when a check fails |
 | `.claude/rules/README.md` | Which rule governs which path | Adding a rule; working as a non-Claude agent |
 | `.claude/rules/*.md` | The normative contracts | When your path matches the glob |
+| `.claude/settings.json`, `.claude/hooks/` | Claude Code's enforcement of the `.legacy-assets/` boundary | Before changing what agents may write — `.claude/rules/permissions.md` |
 | `.claude/agents/*.md` | The three subagents: codebase-analyst, research-agent, code-reviewer | Delegating analysis or review |
 | `.github/` | `ci.yml` (the gate in CI), three agent workflows (secrets unset), `copilot-instructions.md` | Changing CI or the Copilot adapter |
 | `docs/_base/ARCHITECTURE.md` | Layer structure, ownership, blast radius | Changing a contract or the structure |
@@ -50,13 +51,13 @@
 | What breaks if I edit the card template? | `docs/_base/ARCHITECTURE.md` § Blast Radius |
 | How do I name this commit? | `.claude/rules/git-workflow.md` |
 | Which card covers my problem? | `ai-engineering-knowledge-cards/INDEX.md` § By question |
-| What is `.legacy-assets/` and may I read it? | `docs/_base/SECURITY.md` — the answer is no |
+| What is `.legacy-assets/` and may I read it? | `docs/_base/SECURITY.md` — yes; never write, track or publish it |
 | What is knowingly unfinished? | `docs/_base/RULES.md` § Known Open Items |
 
 ## Excluded From the Map
 
 | Path | Why |
 | --- | --- |
-| `.legacy-assets/` | Un-anonymized source. Gitignored. Never a source for published output |
+| `.legacy-assets/` | Un-anonymized source. Gitignored and read-only. Never published |
 | `**/.venv/` | A ~140 MB vendored virtualenv under the excalidraw skill |
 | `.agents/`, `.claude/commands/`, `.claude/skills/*` | Vendored agent tooling, gitignored; only `knowledge-card-summarizer` is project-authored |

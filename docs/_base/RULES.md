@@ -25,7 +25,9 @@ Violating any of these is a defect, not a judgment call.
 
 | # | Constraint | Enforced by |
 | --- | --- | --- |
-| 1 | `.legacy-assets/` is never a source for published output, except component-card extraction under `.claude/rules/anonymization.md` | Human discipline only |
+| 1 | `.legacy-assets/` is never published, except component-card extraction under `.claude/rules/anonymization.md`. Reading it is allowed | Human discipline only |
+| 1a | Nothing under `.legacy-assets/` is created, modified, moved or deleted | Claude Code: `Edit` deny + Bash guard hook (`.claude/rules/permissions.md`). Other agents: instruction only |
+| 1b | Nothing under `.legacy-assets/` is tracked by git | `.gitignore` + `check.py` (tracked paths, and the ignore line itself) |
 | 2 | No masked identifier in any published file | `check.py` (shapes, every file git would publish) + human review (names) |
 | 3 | A card has exactly 13 `##` sections and 6 frontmatter keys in order | `check.py` |
 | 4 | A card's number matches its filename; `layer` and `maturity` are from the closed sets; `related:` edges resolve and run both ways | `check.py` |
@@ -71,7 +73,7 @@ Carried forward rather than hidden.
 2. **`INDEX.md` drift.** It restates each card's `maturity`, a maturity count, and each component
    card's `instances:`. Nothing checks those against the frontmatter.
 3. **Deferred rules.** `.claude/rules/README.md` lists concerns not yet governed by a rule —
-   the agent-instruction layer and CI gates (both owed), hooks and permissions, and the parts of
+   the agent-instruction layer and CI gates (both owed), and the parts of
    structural lint `check.py` does not yet apply to itself
    (its own card 15).
 4. **The agent workflows are unconfigured, not inert.** All three are committed and written for

@@ -10,7 +10,8 @@
 - The twenty knowledge cards, the seven component cards, and the contracts they obey.
 - One runnable skeleton per card, plus one compound pipeline walkthrough.
 - The anonymization policy and its audit record.
-- The agent-context layer: `.claude/rules/`, `.claude/agents/`, the one project-authored skill
+- The agent-context layer: `.claude/rules/`, `.claude/agents/`, `.claude/settings.json` and its
+  one hook, the one project-authored skill
   (`.claude/skills/knowledge-card-summarizer/`), `AGENTS.md`, `CLAUDE.md`,
   `.github/copilot-instructions.md`. Other skills and commands are vendored and gitignored.
 - The validation gate, `check.py`, and the CI that runs it (`.github/workflows/ci.yml`).
@@ -19,7 +20,7 @@
 
 | Dependency | Interface | Change process |
 | --- | --- | --- |
-| `.legacy-assets/` | Read-only, gitignored, **never a source for published output**, except component-card extraction under `.claude/rules/anonymization.md` | Frozen. Excluded from the repository by `.gitignore`; see SECURITY.md |
+| `.legacy-assets/` | Readable by agents; never written, never tracked, **never published** except component-card extraction under `.claude/rules/anonymization.md` | Frozen. Excluded from the repository by `.gitignore`; see SECURITY.md |
 | Python 3 standard library | `python3` on PATH | None — no dependency file; CI pins 3.12, no minimum is enforced |
 | GitHub Actions | `.github/workflows/` | Edit the workflow; `ci.yml` runs the same gate as local |
 
