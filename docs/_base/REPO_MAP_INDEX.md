@@ -21,6 +21,7 @@
 | `docs/_base/SECURITY.md` | What may be published; how the boundary is enforced and where it leaks | Anything publishable |
 | `docs/_base/DEV_GUIDE.md` | Adding a card or skeleton, end to end | Doing the work |
 | `docs/_base/REPO_MAP_INDEX.md` | This table | Lost |
+| `docs/_kB/` | A workstation note on wiring an Excalidraw MCP server into Codex — tooling context, not card content; no contract governs it | Setting up diagram tooling |
 
 ## The Published Project
 
@@ -59,4 +60,3 @@
 | `.legacy-assets/` | Un-anonymized source. Gitignored. Never a source for published output |
 | `**/.venv/` | A ~140 MB vendored virtualenv under the excalidraw skill |
 | `.agents/`, `.claude/commands/`, `.claude/skills/*` | Vendored agent tooling, gitignored; only `knowledge-card-summarizer` is project-authored |
-| `docs/_kB/` | Read-only KB input by convention; only an unrelated note exists here |
