@@ -10,8 +10,9 @@ source: ../cards/NN-<slug>.md
 
 > <One sentence a student can quote. What it does, in plain language.>
 
-**Status:** <proven | partial — and if partial, the gap in one clause, e.g.
-"partial: no redaction stage between capture and compile">
+**Status:** <proven | partial | abandoned — exactly the source's `maturity`. If
+partial, the gap in one clause, e.g. "partial: no redaction stage between capture and
+compile". If abandoned, what was given up and why, in one clause.>
 
 ## 1. Why
 
@@ -71,9 +72,12 @@ the sharpest statement of the failure.>
 - Discuss: <the main trade-off>
 <if partial:>
 - Name the gap: <what was never built, and why that is the interesting part>
+<if abandoned:>
+- Name the failure: <why the source system could not hold the pattern — that is the lesson>
 - End with: <the design principle>
 
-**Sits between:** card NN (<what it builds on>) → **this** → card NN (<what builds on it>)
+**Related:** card NN — <relationship, from the source's interacts row> · card NN — <…>
+<one entry per `related:` slug, all of them; no builds-on order unless the source states one>
 
 ---
 Source: `../cards/NN-<slug>.md` · Skeleton: `../skeletons/NN-<slug>/`

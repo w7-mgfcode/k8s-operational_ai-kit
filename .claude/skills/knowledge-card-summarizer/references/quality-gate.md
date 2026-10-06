@@ -25,20 +25,24 @@ Run before writing the file. Any unchecked box means the card is not ready.
 
 ## Integrity — the ones that matter most
 
-- [ ] **A `partial` maturity still reads as partial, and the gap is named.**
-      Check the Status line against the source's Provenance section.
+- [ ] **The Status line states the source's `maturity` exactly** — `proven`,
+      `partial` with the gap named, or `abandoned` with what was given up.
+      Check it against the source's Provenance section.
 - [ ] `maturity` was not upgraded to make the card read better.
 - [ ] No conclusion appears that the source does not support.
-- [ ] The `related:` edges survive; the card knows its neighbours.
+- [ ] Every `related:` edge survives, each with its stated relationship and no invented direction.
 - [ ] Terminology matches the source — no concept was quietly renamed.
 - [ ] Nothing identifying was introduced. Nothing was read from `.legacy-assets/`.
 
 ## Mechanical checks
 
+Run from the repository root, after the teaching card is written:
+
 ```bash
-wc -l teaching/NN-*.md                      # 80-120
-grep -c '^## ' teaching/NN-*.md             # 9
-grep '^maturity:' teaching/NN-*.md cards/NN-*.md   # must match
+K=ai-engineering-knowledge-cards
+wc -l $K/teaching/NN-*.md                              # 80-120
+grep -c '^## ' $K/teaching/NN-*.md                     # 9
+grep '^maturity:' $K/teaching/NN-*.md $K/cards/NN-*.md # must match
 ```
 
 ## If the gate fails

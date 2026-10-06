@@ -1,6 +1,6 @@
 ---
 name: knowledge-card-summarizer
-description: Compress a detailed knowledge card into a short, visually structured teaching card that serves as both a student reference and a lecturer's speaking aid. Use when asked to summarize, condense, brief, simplify, restructure, or "explain" a knowledge card, or to turn one into a seminar handout, lecture aid, teaching card, slide outline, or concept briefing. Reads from ai-engineering-knowledge-cards/cards/ and writes ai-engineering-knowledge-cards/teaching/. Do not use to author a new card, to edit a source card, or to summarize prose that is not a knowledge card.
+description: Compress a detailed knowledge card into a short, visually structured teaching card that serves as both a student reference and a lecturer's speaking aid. Use when asked to turn a knowledge card into a teaching artifact — a teaching card, seminar handout, lecture aid, slide outline or concept briefing — or to summarize, condense or restructure a card into one. Reads from ai-engineering-knowledge-cards/cards/ and writes ai-engineering-knowledge-cards/teaching/. Do not use when the user only wants a card explained in chat — answer directly, write no file. Do not use to author a new card, to edit a source card, or to summarize prose that is not a knowledge card.
 ---
 
 # Knowledge Card Summarizer
@@ -56,13 +56,16 @@ Re-anonymizing invents distance that damages the concept. The binding policy is
 defect in the card — report it, do not silently launder it.
 
 **3. Preserve the card's position in the graph.** `related:` edges and the interacts
-table are what let a lecturer say "this follows from card 02." A teaching card with no
-neighbours teaches an isolated trick instead of an architecture.
+table are what let a lecturer say "this is the same principle as card 02, applied to
+rules." Carry **every** `related:` edge, each with the relationship its interacts row
+states. `related:` is an undirected list — do not invent a builds-on order it does
+not state. A teaching card with no neighbours teaches an isolated trick instead of an
+architecture.
 
 ## Compression target
 
 Sources run roughly 200–250 lines. A teaching card lands at **80–120** — about
-**2–2.5x** compression. The nine-section structure, three tables and a diagram put a
+**2–2.5x** compression. The nine-section structure, two tables and a diagram put a
 floor near 90 lines; pushing below it starts deleting mechanism rather than noise.
 
 *Measured against card 13 (254 → 103, 2.5x). One data point — if several cards land
@@ -74,7 +77,13 @@ understanding? If no, remove it.
 ## Output
 
 Write `ai-engineering-knowledge-cards/teaching/NN-<slug>.md`, matching the source
-filename exactly. Use `assets/TEACHING_CARD_TEMPLATE.md` as the skeleton.
+filename exactly. Use `assets/TEACHING_CARD_TEMPLATE.md` as the skeleton, then run the
+mechanical checks in `references/quality-gate.md` against the written file.
+
+**If that file already exists, do not overwrite it.** Read it, tell the user it exists
+and what you would change, and write only once they confirm. A teaching card may carry
+a lecturer's edits, and the path is fixed — a second run, or two runs at once, would
+otherwise replace the first one's work without a trace.
 
 One artifact serves both readers — do not produce two documents:
 
