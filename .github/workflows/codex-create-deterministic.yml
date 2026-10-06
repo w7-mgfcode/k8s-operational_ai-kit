@@ -80,7 +80,7 @@ jobs:
           - Read AGENTS.md at the repository root before editing. It is the single
             source of truth for this repo's rules. Then consult
             .claude/rules/README.md and read the rule matching the files you touch.
-          - The repository is public. Never read anything under `.legacy-assets/`
+          - The repository is public. Never create or stage anything under `.legacy-assets/`
             and never write an organization name, hostname, internal domain, IP
             or credential into any file.
           - Skeletons are Python standard library only. Never add a dependency,

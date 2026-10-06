@@ -97,6 +97,7 @@ failure.
 | `skills/<skill>/ needs exactly one skill card to own this …` | A reference, asset or script needs exactly one `type: skill` card at the root of the same `skills/<skill>/` |
 | `skills/<skill>/ holds N skill cards` | One skill directory, one skill card — split them, or retype the extra |
 | `instances '…' is not a card in cards/` | An `instances:` slug must be a pattern card's filename stem |
+| `tracked or staged by git — .legacy-assets/ must never be tracked` | Something under the source tree was force-added. `git rm -r --cached .legacy-assets` — this unstages it and leaves the files on disk |
 | `no skeletons/components/<stem>/README.md` | Every component card needs its prototype directory |
 | An anonymization hit in a new file | Either genuinely wrong, or teaching material that needs an `ANON_EXEMPT` entry — prefer fixing the file |
 

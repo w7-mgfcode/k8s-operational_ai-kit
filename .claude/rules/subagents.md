@@ -31,8 +31,8 @@ one of them is redundant.
   AI-engineering pattern cards extracted from a private agent kit. It has no
   application code, no `package.json`, no build, and no test suite. Content is
   Markdown cards under `ai-engineering-knowledge-cards/cards/` and stdlib-only
-  Python skeletons beside them. `.legacy-assets/` is off-limits — see
-  [`anonymization.md`](anonymization.md). An agent missing this context reports
+  Python skeletons beside them. `.legacy-assets/` is readable, never written —
+  see [`anonymization.md`](anonymization.md). An agent missing this context reports
   the absence of a linter or a test runner as a finding.
 - **Cite or admit.** Every claim carries `path/to/file.ext:line`, or is explicitly
   flagged unverified. Confident-but-wrong is the failure mode that makes a

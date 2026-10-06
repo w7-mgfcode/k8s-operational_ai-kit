@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/.legacy-assets/**)"
+    ],
+    "deny": [
+      "Edit(/.legacy-assets/**)"
+    ]
+  },
+  "claudeMdExcludes": [
+    "**/.legacy-assets/**"
+  ],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard_legacy_assets.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

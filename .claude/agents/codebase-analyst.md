@@ -57,14 +57,16 @@ ai-engineering-knowledge-cards/skeletons/components/NN-<slug>/       one prototy
 Any analysis of a card that ignores its contract has missed why it is shaped that way. Any analysis
 of a contract that ignores `check.py` has missed which parts are enforced and which are discipline.
 
-**`.legacy-assets/` is off-limits.** It is the un-anonymized source kit. Never read, glob, grep,
-quote or summarize it; scope every search to exclude it. See `.claude/rules/anonymization.md`.
+**`.legacy-assets/` is read-only.** It is the un-anonymized source kit. Read it when the
+question is about the source; exclude it from searches that are about this repository. Never
+write under it, and keep its identifiers out of your report unless the caller asked for them.
+See `.claude/rules/anonymization.md`.
 
 ## Operating principles
 
 - **Trace, don't guess.** Follow the real chain: a rule in `.claude/rules/` → the check in `check.py`
   that enforces it (if any) → the cards or skeletons it constrains. When you claim "X enforces Y," you
-  verified it by reading the code. Search the whole tree (minus `.legacy-assets/`) for a destination
+  verified it by reading the code. Search the whole tree (minus `.legacy-assets/`, unless the question is about the source) for a destination
   symbol; never anchor on the folder whose name merely matches.
 - **Describe what IS, not what should be.** Report the conventions the files actually follow, including
   inconsistent ones. Shaping the target state is the planner's job later.
@@ -128,5 +130,5 @@ does not cover.
 
 - Thorough but dense. This analysis is meant to be planned against, not admired.
 - Every finding is cited or explicitly flagged as unverified. No confident guesses.
-- Never read `.legacy-assets/` or any `.venv/`.
+- Never write under `.legacy-assets/`; never read any `.venv/`.
 - You analyze and explain. You do not propose an implementation plan, and you do not modify code.

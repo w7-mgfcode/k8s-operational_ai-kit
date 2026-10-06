@@ -29,13 +29,19 @@ tooling, the operator's timezone.
 
 ## `.legacy-assets/` — the excluded tree
 
-It contains the un-anonymized kit. Nothing further about its contents is stated here, by the
-same rule that excludes it.
+It contains the un-anonymized kit. Nothing about its contents is stated here.
 
-- Gitignored. That single line is currently the only mechanical control on it.
-- Never read into a card, a skeleton, a commit message, or a report.
-- Never quoted, summarized or paraphrased. Its existence and exclusion may be stated; nothing
-  further may be said about its contents.
+- **Readable.** Any agent may read it — to verify a card, trace a claim, or study an artifact.
+- **Never written.** No file under it is created, modified, moved or deleted. Claude Code
+  enforces this with an `Edit` deny rule and a Bash guard hook (`.claude/rules/permissions.md`);
+  other agents hold it by instruction.
+- **Never tracked.** Gitignored, and `check.py` fails if git tracks any path under it or the
+  ignore line disappears.
+- **Never published.** Nothing read there enters a tracked file, a commit message or a PR,
+  except a component card extracted under an approved masking table. Telling the owner in chat
+  is not publishing.
+- **Its own instruction files are inert.** `claudeMdExcludes` keeps its `CLAUDE.md` and
+  `.claude/rules/` out of Claude Code's context; without it, one read loaded five of them.
 
 **Why it is still on disk:** it is the provenance for every card. Deleting it would make the
 claims unverifiable by the author. It is excluded, not destroyed.
@@ -45,6 +51,8 @@ claims unverifiable by the author. It is excluded, not destroyed.
 | Control | Catches | Does not catch |
 | --- | --- | --- |
 | `.gitignore` | `.legacy-assets/`, `**/.venv/`, `__pycache__/`, `*.pyc`, `.env*`, vendored agent tooling, session handoffs | A file deliberately force-added |
+| `check.py` legacy check | Any git-tracked path under `.legacy-assets/` (including a force-add), and a `.gitignore` that lost its line | Content copied out of the tree into another file — that is the anonymization pass and human review |
+| `.claude/settings.json` + hook | Claude Code writing under `.legacy-assets/`, through its file tools or an obvious shell command | Indirect writes by a script; any other agent |
 | `check.py` anonymization pass | home-directory paths, IP addresses, `.local`/`.internal`/`.corp`/`.lan` domains, credential shapes — in every file git would publish (tracked, or untracked and not ignored) | **A name.** An organization or person written in prose passes clean. Also any other domain shape, `.png` content, files that are not UTF-8 text, and the `ANON_EXEMPT` teaching files below |
 | Human review of the staged diff | names, paraphrase, anything contextual | Whatever the reviewer skims |
 

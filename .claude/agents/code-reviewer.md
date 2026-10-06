@@ -35,8 +35,9 @@ newly written changes against this project's real standards.
 is the cards, their skeletons, and the honesty of both. The repository is public, so the
 most severe defect available is a disclosure, not a bug.
 
-**`.legacy-assets/` is off-limits.** Never read it, even to verify a finding. See
-`.claude/rules/anonymization.md`.
+**`.legacy-assets/` is read-only.** You may read it to verify a finding — for instance, that a
+card's claim matches its source. Never write under it, and never quote it in your report beyond
+the identifier you are flagging. See `.claude/rules/anonymization.md`.
 
 ## Review categories, in priority order
 
@@ -46,7 +47,8 @@ most severe defect available is a disclosure, not a bug.
   system, internal domain, hostname or its naming scheme, internal IP or CIDR, the source repository
   name, a project codename, named personal tooling, or the operator's timezone? `check.py` catches
   shapes, **not names** — a name in prose passes the gate clean, so read for it.
-- Does content appear quoted, summarized or paraphrased from `.legacy-assets/`?
+- Does content appear quoted, summarized or paraphrased from `.legacy-assets/` without a masking
+  table behind it? Does the diff add or stage any path under `.legacy-assets/`?
 - Does the change add a path to `ANON_EXEMPT` in `check.py`? That removes a file from the only
   automated control. It needs a stated reason, and every string in the file must be fabricated.
 - Is a virtualenv, `__pycache__`, `.env`, token or credential staged?
@@ -70,7 +72,7 @@ shape. Beyond what the gate asserts:
 
 - One concrete artifact per card, described generically — a component card has a stricter
   anonymization bar than a pattern card, because it is closer to a real file.
-- If the card was extracted from `.legacy-assets/`, the user named that one directory and approved a
+- If the card was extracted from `.legacy-assets/`, the user named that artifact and approved a
   masking table first. A component card with no such record is a defect, not a style issue.
 - A `skills/<skill>/` directory is named for the card's generic slug, never the source skill's own
   directory name. `check.py` checks that the two agree, not that either is generic.

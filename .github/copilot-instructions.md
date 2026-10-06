@@ -15,8 +15,9 @@ only the five essentials below in case the pointer is not followed.
   clean. This is exactly what `.github/workflows/ci.yml` runs.
 - **Skeletons are standard library only.** Never suggest a `pip install` or a
   third-party import.
-- **`.legacy-assets/` is off-limits.** Never read, quote or summarize it, and
-  exclude it from every search.
+- **`.legacy-assets/` is read-only and untracked.** Reading it is allowed; never
+  suggest creating, editing, moving or deleting a file under it, or staging it.
+  Never quote it into a suggestion that will be committed.
 - This repository is **public**. Never suggest committing a token, `.env`, or a
   virtualenv.
 

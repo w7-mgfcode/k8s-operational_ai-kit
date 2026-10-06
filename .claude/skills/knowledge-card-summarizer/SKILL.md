@@ -51,8 +51,8 @@ still be true, and give the lecturer a cue to discuss it.
 **2. Anonymization is already done — do not redo it.** The source cards were written
 against `ai-engineering-knowledge-cards/docs/ANONYMIZATION.md` and are already clean.
 Re-anonymizing invents distance that damages the concept. The binding policy is
-`.claude/rules/anonymization.md`; do not restate it here and never read
-`.legacy-assets/` for context. If a card still names something identifying, that is a
+`.claude/rules/anonymization.md`; do not restate it here and never use
+`.legacy-assets/` as a source — a teaching card is derived from its published card only. If a card still names something identifying, that is a
 defect in the card — report it, do not silently launder it.
 
 **3. Preserve the card's position in the graph.** `related:` edges and the interacts
