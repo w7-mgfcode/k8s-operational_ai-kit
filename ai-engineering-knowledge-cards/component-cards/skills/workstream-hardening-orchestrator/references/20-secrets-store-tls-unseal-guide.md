@@ -19,6 +19,10 @@ related:
 > secrets store — a change that touches four places, rolled back by a tool that
 > restores one.
 
+![Secrets-Store TLS and Auto-Unseal Guide: a TLS change lands in four places while the rollback planner restores one file, with the probe, sibling-file, stability and manual-unseal failures drawn beside it](../../../../diagrams/component-cards/workstream-hardening-orchestrator/20-secrets-store-tls-unseal-guide.png)
+
+<sub>Source: [`20-secrets-store-tls-unseal-guide.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/20-secrets-store-tls-unseal-guide.excalidraw).</sub>
+
 ## What it is
 
 The implementation guide behind workstreams A and B of the hardening orchestrator
