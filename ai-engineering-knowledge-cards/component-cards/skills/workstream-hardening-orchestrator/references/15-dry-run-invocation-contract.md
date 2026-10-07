@@ -16,6 +16,10 @@ related:
 > The one command shape every change in the sprint goes through: a check run and an
 > apply run that differ by a single flag — and nothing that proves the first ran.
 
+![Dry-Run-First Invocation Contract: the check and apply commands one flag apart, with no record linking them, an unchecked tag, five enforcement rows, CI stages that skip the check, and one operator's values inline](../../../../diagrams/component-cards/workstream-hardening-orchestrator/15-dry-run-invocation-contract.png)
+
+<sub>Source: [`15-dry-run-invocation-contract.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/15-dry-run-invocation-contract.excalidraw).</sub>
+
 ## What it is
 
 A reference file the hardening orchestrator
