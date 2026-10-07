@@ -20,6 +20,10 @@ related:
 > whose first rule says "frozen", while the script that writes contracts never opens it and
 > overwrites a contract without a trace.
 
+![Sprint Contract Template: the contract filled before the build and read by generator, evaluator and validator, with its six rules held by wording alone and three places the readers disagree with the shape](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/36-sprint-contract-template.png)
+
+<sub>Source: [`36-sprint-contract-template.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/36-sprint-contract-template.excalidraw).</sub>
+
 ## What it is
 
 A plain-text template of 49 lines, shaped as Markdown, in the sprint-loop skill's templates
