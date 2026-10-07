@@ -1,0 +1,2402 @@
+{
+ "type": "excalidraw",
+ "version": 2,
+ "source": "https://excalidraw.com",
+ "elements": [
+  {
+   "type": "text",
+   "id": "title",
+   "x": 40,
+   "y": 30,
+   "width": 800,
+   "height": 45,
+   "text": "Owned-Scope Policy Remediation Guide",
+   "fontSize": 36,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#e0f2fe",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "subtitle",
+   "x": 40,
+   "y": 82,
+   "width": 1560,
+   "height": 23,
+   "text": "component card 17 \u00b7 type: reference \u00b7 an inventory that checks a word is in a file, not that a container is hardened",
+   "fontSize": 18,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#93c5fd",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "summary",
+   "x": 40,
+   "y": 122,
+   "width": 1600,
+   "height": 20,
+   "text": "component 08's workstream C:  audit-mode policy engine \u2192 inventory \u2192 owned roles \u2192 prioritise \u2192 fix one role \u2192 validate",
+   "fontSize": 16,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s1_title",
+   "x": 40,
+   "y": 170,
+   "width": 1400,
+   "height": 23,
+   "text": "\u2460 FIVE STEPS, ONE OWNED ROLE AT A TIME  [06] [17] [19]",
+   "fontSize": 18,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#e0f2fe",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s1_sub",
+   "x": 40,
+   "y": 197,
+   "width": 1560,
+   "height": 17,
+   "text": "violations are reported, not blocked; the guide says how to reduce them without touching anything the team does not own \u2014 and each fix is gated before the next role",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "ellipse",
+   "id": "trig",
+   "x": 40,
+   "y": 245,
+   "width": 200,
+   "height": 92,
+   "strokeColor": "#c2410c",
+   "backgroundColor": "#fed7aa",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "trig_t",
+   "x": 55,
+   "y": 258,
+   "width": 170,
+   "height": 65,
+   "text": "policy engine in\naudit mode:\nviolations reported,\nnot blocked",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "scope_note",
+   "x": 40,
+   "y": 352,
+   "width": 215,
+   "height": 60,
+   "text": "scope line: roles in this\nrepository, not third-party\nchart internals. Exceptions\nare documented, not fixed",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_trig_1",
+   "x": 242,
+   "y": 291,
+   "width": 26,
+   "height": 0,
+   "strokeColor": "#fed7aa",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     26,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "st1",
+   "x": 270,
+   "y": 250,
+   "width": 205,
+   "height": 82,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "st1_t",
+   "x": 270,
+   "y": 266,
+   "width": 205,
+   "height": 49,
+   "text": "1  inventory\nrole files that do not\nmention the field",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_1_2",
+   "x": 477,
+   "y": 291,
+   "width": 24,
+   "height": 0,
+   "strokeColor": "#3b82f6",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     24,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "st2",
+   "x": 503,
+   "y": 250,
+   "width": 205,
+   "height": 82,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "st2_t",
+   "x": 503,
+   "y": 255,
+   "width": 205,
+   "height": 70,
+   "text": "2  filter to owned roles\ndrop third-party chart\npods, system namespaces,\nexternal-team workloads",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_2_3",
+   "x": 710,
+   "y": 291,
+   "width": 24,
+   "height": 0,
+   "strokeColor": "#3b82f6",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     24,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "st3",
+   "x": 736,
+   "y": 250,
+   "width": 205,
+   "height": 82,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "st3_t",
+   "x": 736,
+   "y": 266,
+   "width": 205,
+   "height": 49,
+   "text": "3  prioritise\nby a fixed table\n(the order: see \u2464)",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_3_4",
+   "x": 943,
+   "y": 291,
+   "width": 24,
+   "height": 0,
+   "strokeColor": "#3b82f6",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     24,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "st4",
+   "x": 969,
+   "y": 250,
+   "width": 205,
+   "height": 82,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "st4_t",
+   "x": 969,
+   "y": 266,
+   "width": 205,
+   "height": 49,
+   "text": "4  fix role by role\nchart values first,\nthen a template override",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "st5",
+   "x": 1202,
+   "y": 250,
+   "width": 205,
+   "height": 82,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "st5_t",
+   "x": 1202,
+   "y": 255,
+   "width": 205,
+   "height": 70,
+   "text": "5  validate\noffline: the count drops\ncluster-aware: fewer\nviolations, none new",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_5_out",
+   "x": 1409,
+   "y": 291,
+   "width": 29,
+   "height": 0,
+   "strokeColor": "#3b82f6",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     29,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "ellipse",
+   "id": "out",
+   "x": 1440,
+   "y": 245,
+   "width": 200,
+   "height": 92,
+   "strokeColor": "#047857",
+   "backgroundColor": "#a7f3d0",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "out_t",
+   "x": 1455,
+   "y": 268,
+   "width": 170,
+   "height": 46,
+   "text": "violation counts,\nbefore and after, in\nthe checkpoint report",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_4_gate",
+   "x": 1025,
+   "y": 334,
+   "width": 0,
+   "height": 38,
+   "strokeColor": "#3b82f6",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     38
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "arrow",
+   "id": "a_gate_4",
+   "x": 1115,
+   "y": 374,
+   "width": 0,
+   "height": 40,
+   "strokeColor": "#b45309",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     -40
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "text",
+   "id": "next_role",
+   "x": 1123,
+   "y": 343,
+   "width": 70,
+   "height": 14,
+   "text": "next role",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "gate",
+   "x": 969,
+   "y": 376,
+   "width": 205,
+   "height": 74,
+   "strokeColor": "#b45309",
+   "backgroundColor": "#fef3c7",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "gate_t",
+   "x": 969,
+   "y": 388,
+   "width": 205,
+   "height": 50,
+   "text": "gate: lint \u00b7 syntax check \u00b7\ndry-run of that role's tag\nall three before next role",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_gate_5",
+   "x": 1176,
+   "y": 413,
+   "width": 128,
+   "height": 81,
+   "strokeColor": "#b45309",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     128,
+     0
+    ],
+    [
+     128,
+     -79
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "text",
+   "id": "gate_pass",
+   "x": 1188,
+   "y": 396,
+   "width": 100,
+   "height": 14,
+   "text": "all three pass",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "gate_note",
+   "x": 969,
+   "y": 458,
+   "width": 330,
+   "height": 28,
+   "text": "one role per change: a regression is\ntraceable to one role",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "st1_ref",
+   "x": 270,
+   "y": 344,
+   "width": 200,
+   "height": 14,
+   "text": "run by [23], in parallel by [30]",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "st1_red",
+   "x": 270,
+   "y": 364,
+   "width": 210,
+   "height": 84,
+   "text": "\u2717 a word in a file, not a\ncontainer's posture  \u2461\n\u2717 only the guide's four\nfields, not the cluster's\npolicies  \u2464",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "st2_red",
+   "x": 503,
+   "y": 344,
+   "width": 200,
+   "height": 56,
+   "text": "\u2717 \"ask the user\" when\nownership is unclear\nnever fires  \u2463",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "st3_red",
+   "x": 736,
+   "y": 344,
+   "width": 210,
+   "height": 56,
+   "text": "\u2717 frequency labels written in\nadvance, not counts from the\ninventory  \u2464",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "exc_red",
+   "x": 503,
+   "y": 410,
+   "width": 330,
+   "height": 42,
+   "text": "\u2717 exceptions: three lists, not one  \u2462",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_out_enf",
+   "x": 1540,
+   "y": 339,
+   "width": 0,
+   "height": 96,
+   "strokeColor": "#fecaca",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     96
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "enf",
+   "x": 1390,
+   "y": 438,
+   "width": 250,
+   "height": 62,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "#fecaca",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "enf_t",
+   "x": 1390,
+   "y": 448,
+   "width": 250,
+   "height": 42,
+   "text": "audit \u2192 enforce: not mentioned;\nnothing prevents a role fix being\nfollowed by one",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s2_title",
+   "x": 40,
+   "y": 540,
+   "width": 780,
+   "height": 23,
+   "text": "\u2461 PRESENCE, NOT POSTURE  (structural)",
+   "fontSize": 18,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#e0f2fe",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s2_sub",
+   "x": 40,
+   "y": 567,
+   "width": 780,
+   "height": 33,
+   "text": "one mention anywhere in a file counts for every container in it,\nand the word says nothing about its value",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "roleA",
+   "x": 40,
+   "y": 640,
+   "width": 330,
+   "height": 90,
+   "strokeColor": "#64748b",
+   "backgroundColor": "#1e293b",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "roleA_h",
+   "x": 56,
+   "y": 650,
+   "width": 300,
+   "height": 15,
+   "text": "role A \u00b7 one template",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "roleA_1",
+   "x": 56,
+   "y": 676,
+   "width": 300,
+   "height": 15,
+   "text": "container 1  <field>: <safe value>",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#22c55e",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "roleA_2",
+   "x": 56,
+   "y": 698,
+   "width": 300,
+   "height": 15,
+   "text": "container 2  (field omitted)  \u2717",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "roleB",
+   "x": 40,
+   "y": 746,
+   "width": 330,
+   "height": 70,
+   "strokeColor": "#64748b",
+   "backgroundColor": "#1e293b",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "roleB_h",
+   "x": 56,
+   "y": 756,
+   "width": 300,
+   "height": 15,
+   "text": "role B \u00b7 one template",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "roleB_1",
+   "x": 56,
+   "y": 781,
+   "width": 310,
+   "height": 15,
+   "text": "container 1  <field>: <unsafe value>  \u2717",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "rd1",
+   "x": 430,
+   "y": 670,
+   "width": 200,
+   "height": 76,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "rd1_t",
+   "x": 430,
+   "y": 683,
+   "width": 200,
+   "height": 50,
+   "text": "file-level inventory\ndoes the word appear\nin the file?",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_A_rd1",
+   "x": 372,
+   "y": 694,
+   "width": 56,
+   "height": 10,
+   "strokeColor": "#64748b",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     56,
+     10
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "arrow",
+   "id": "a_B_rd1",
+   "x": 372,
+   "y": 781,
+   "width": 56,
+   "height": 59,
+   "strokeColor": "#64748b",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     56,
+     -59
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "arrow",
+   "id": "a_rd1_res",
+   "x": 530,
+   "y": 748,
+   "width": 0,
+   "height": 22,
+   "strokeColor": "#3b82f6",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     22
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "res",
+   "x": 430,
+   "y": 772,
+   "width": 200,
+   "height": 58,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "#fecaca",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "res_t",
+   "x": 430,
+   "y": 780,
+   "width": 200,
+   "height": 45,
+   "text": "A passes, B passes:\none mention counts for\nevery container",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "rd2",
+   "x": 640,
+   "y": 670,
+   "width": 190,
+   "height": 90,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "rd2_t",
+   "x": 640,
+   "y": 685,
+   "width": 190,
+   "height": 60,
+   "text": "per-container check:\nsplit each manifest,\nread each field's value\n(deliberately missing)",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_A_rd2",
+   "x": 270,
+   "y": 640,
+   "width": 465,
+   "height": 30,
+   "strokeColor": "#fecaca",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     -18
+    ],
+    [
+     465,
+     -18
+    ],
+    [
+     465,
+     30
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "arrow",
+   "id": "a_B_rd2",
+   "x": 200,
+   "y": 816,
+   "width": 535,
+   "height": 90,
+   "strokeColor": "#fecaca",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     34
+    ],
+    [
+     535,
+     34
+    ],
+    [
+     535,
+     -56
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "text",
+   "id": "s3_title",
+   "x": 880,
+   "y": 540,
+   "width": 760,
+   "height": 23,
+   "text": "\u2462 THREE EXCEPTION LISTS, NOTHING RECONCILES THEM  [23] [30]",
+   "fontSize": 18,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#e0f2fe",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s3_sub",
+   "x": 880,
+   "y": 567,
+   "width": 760,
+   "height": 33,
+   "text": "the guide names five; the scanner hard-codes four, one of them absent here;\nthe subagent skips three and flags a fourth for special handling",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "l_guide",
+   "x": 880,
+   "y": 649,
+   "width": 120,
+   "height": 16,
+   "text": "this guide",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#93c5fd",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "g1",
+   "x": 1010,
+   "y": 640,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "g2",
+   "x": 1052,
+   "y": 640,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "g3",
+   "x": 1094,
+   "y": 640,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "g4",
+   "x": 1136,
+   "y": 640,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "g5",
+   "x": 1178,
+   "y": 640,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "g_names",
+   "x": 1010,
+   "y": 682,
+   "width": 250,
+   "height": 56,
+   "text": "reboot daemon \u00b7 node-level log\ncollector \u00b7 benchmark scanner \u00b7\nsecrets-store injector \u00b7 distroless\nmetrics component",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "l_scan",
+   "x": 880,
+   "y": 769,
+   "width": 120,
+   "height": 16,
+   "text": "scanner [23]",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#93c5fd",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "s_1",
+   "x": 1010,
+   "y": 760,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "s_2",
+   "x": 1052,
+   "y": 760,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "s_3",
+   "x": 1094,
+   "y": 760,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "s_4",
+   "x": 1136,
+   "y": 760,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "#fecaca",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "s_cap",
+   "x": 1010,
+   "y": 800,
+   "width": 250,
+   "height": 28,
+   "text": "hard-coded; one of the four\nis absent from the guide",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "l_sub",
+   "x": 880,
+   "y": 849,
+   "width": 120,
+   "height": 16,
+   "text": "subagent [30]",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#93c5fd",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "a_1",
+   "x": 1010,
+   "y": 840,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "a_2",
+   "x": 1052,
+   "y": 840,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "a_3",
+   "x": 1094,
+   "y": 840,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "rectangle",
+   "id": "a_4",
+   "x": 1136,
+   "y": 840,
+   "width": 34,
+   "height": 34,
+   "strokeColor": "#b45309",
+   "backgroundColor": "#fef3c7",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "a_cap",
+   "x": 1010,
+   "y": 880,
+   "width": 250,
+   "height": 28,
+   "text": "three skipped; a fourth flagged\nfor special handling",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "line",
+   "id": "nolink",
+   "x": 1290,
+   "y": 640,
+   "width": 0,
+   "height": 270,
+   "strokeColor": "#fecaca",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     270
+    ]
+   ]
+  },
+  {
+   "type": "rectangle",
+   "id": "s3_out",
+   "x": 1320,
+   "y": 640,
+   "width": 320,
+   "height": 104,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "#fecaca",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "s3_out_t",
+   "x": 1320,
+   "y": 654,
+   "width": 320,
+   "height": 75,
+   "text": "a role is an exception in the guide\nand a violation in the scanner, or\nskipped by the subagent and flagged\nby the guide",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s3_nolink",
+   "x": 1320,
+   "y": 764,
+   "width": 320,
+   "height": 32,
+   "text": "\u2717 nothing reconciles the three lists",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s4_title",
+   "x": 40,
+   "y": 950,
+   "width": 790,
+   "height": 23,
+   "text": "\u2463 \"ASK THE USER\" NEVER FIRES  [19] [26]",
+   "fontSize": 18,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#e0f2fe",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s4_sub",
+   "x": 40,
+   "y": 977,
+   "width": 790,
+   "height": 33,
+   "text": "the guide's boundary is a question for the user; the scope detector fills the\nowned-role list with every role it finds, so there is nothing left to ask",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "tree",
+   "x": 40,
+   "y": 1060,
+   "width": 180,
+   "height": 110,
+   "strokeColor": "#64748b",
+   "backgroundColor": "#1e293b",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "tree_h",
+   "x": 56,
+   "y": 1070,
+   "width": 150,
+   "height": 15,
+   "text": "the role tree",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "tree_1",
+   "x": 56,
+   "y": 1096,
+   "width": 150,
+   "height": 15,
+   "text": "owned role",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#22c55e",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "tree_2",
+   "x": 56,
+   "y": 1116,
+   "width": 150,
+   "height": 15,
+   "text": "owned role",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#22c55e",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "tree_3",
+   "x": 56,
+   "y": 1136,
+   "width": 150,
+   "height": 15,
+   "text": "vendored role",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_tree_det",
+   "x": 222,
+   "y": 1115,
+   "width": 46,
+   "height": 0,
+   "strokeColor": "#64748b",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     46,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "det",
+   "x": 270,
+   "y": 1080,
+   "width": 170,
+   "height": 70,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "det_t",
+   "x": 270,
+   "y": 1099,
+   "width": 170,
+   "height": 33,
+   "text": "scope detector\n[component 26]",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_det_list",
+   "x": 442,
+   "y": 1115,
+   "width": 36,
+   "height": 0,
+   "strokeColor": "#3b82f6",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     36,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "list",
+   "x": 480,
+   "y": 1070,
+   "width": 190,
+   "height": 90,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "#fecaca",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "list_t",
+   "x": 480,
+   "y": 1092,
+   "width": 190,
+   "height": 45,
+   "text": "owned-role list:\nevery role it finds,\nvendored ones too",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_list_inv",
+   "x": 672,
+   "y": 1115,
+   "width": 36,
+   "height": 0,
+   "strokeColor": "#fecaca",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     36,
+     0
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "rectangle",
+   "id": "inv",
+   "x": 710,
+   "y": 1080,
+   "width": 120,
+   "height": 70,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "inv_t",
+   "x": 710,
+   "y": 1099,
+   "width": 120,
+   "height": 33,
+   "text": "inventory\n(step 1)",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "inv_red",
+   "x": 710,
+   "y": 1160,
+   "width": 130,
+   "height": 28,
+   "text": "\u2717 vendored roles\nenter as owned",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_list_dia",
+   "x": 575,
+   "y": 1162,
+   "width": 0,
+   "height": 36,
+   "strokeColor": "#fecaca",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     36
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "text",
+   "id": "nothing_ask",
+   "x": 380,
+   "y": 1172,
+   "width": 170,
+   "height": 14,
+   "text": "\u2717 nothing left to ask",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "right",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "diamond",
+   "id": "dia",
+   "x": 480,
+   "y": 1200,
+   "width": 190,
+   "height": 100,
+   "strokeColor": "#b45309",
+   "backgroundColor": "#fef3c7",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "dia_t",
+   "x": 480,
+   "y": 1236,
+   "width": 190,
+   "height": 28,
+   "text": "ownership unclear?\nask the user",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "never",
+   "x": 682,
+   "y": 1243,
+   "width": 120,
+   "height": 14,
+   "text": "never reached",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "own",
+   "x": 270,
+   "y": 1200,
+   "width": 170,
+   "height": 84,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "own_t",
+   "x": 270,
+   "y": 1214,
+   "width": 170,
+   "height": 56,
+   "text": "an ownership source:\na file marking\nvendored roles\n(deliberately missing)",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "arrow",
+   "id": "a_own_det",
+   "x": 355,
+   "y": 1200,
+   "width": 0,
+   "height": 48,
+   "strokeColor": "#fecaca",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     -48
+    ]
+   ],
+   "endArrowhead": "arrow"
+  },
+  {
+   "type": "text",
+   "id": "s5_title",
+   "x": 880,
+   "y": 950,
+   "width": 760,
+   "height": 23,
+   "text": "\u2464 ONLY FOUR FIELDS \u00b7 FREQUENCY WRITTEN IN ADVANCE",
+   "fontSize": 18,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#e0f2fe",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "s5_sub",
+   "x": 880,
+   "y": 977,
+   "width": 760,
+   "height": 33,
+   "text": "the offline method can only check the four fields it knows; the priority table carries\nfrequency labels written in advance, not counts from the inventory",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "ellipse",
+   "id": "deployed",
+   "x": 880,
+   "y": 1050,
+   "width": 330,
+   "height": 200,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "deployed_t",
+   "x": 880,
+   "y": 1074,
+   "width": 330,
+   "height": 16,
+   "text": "deployed policies",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "deployed_t2",
+   "x": 880,
+   "y": 1093,
+   "width": 330,
+   "height": 14,
+   "text": "not defined in the repository",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "ellipse",
+   "id": "four",
+   "x": 940,
+   "y": 1130,
+   "width": 210,
+   "height": 86,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "four_t",
+   "x": 940,
+   "y": 1155,
+   "width": 210,
+   "height": 36,
+   "text": "the four fields\nthe guide lists",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "deployed_red",
+   "x": 880,
+   "y": 1260,
+   "width": 340,
+   "height": 28,
+   "text": "\u2717 a violation of a deployed policy the guide\ndoes not list is invisible offline",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "pri_h1",
+   "x": 1260,
+   "y": 1052,
+   "width": 230,
+   "height": 14,
+   "text": "fixed table, labels in advance",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "pri_h2",
+   "x": 1510,
+   "y": 1052,
+   "width": 130,
+   "height": 14,
+   "text": "inventory count",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "p1",
+   "x": 1260,
+   "y": 1074,
+   "width": 230,
+   "height": 36,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "p1_t",
+   "x": 1260,
+   "y": 1084,
+   "width": 230,
+   "height": 16,
+   "text": "1  non-root first",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "p2",
+   "x": 1260,
+   "y": 1118,
+   "width": 230,
+   "height": 36,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "p2_t",
+   "x": 1260,
+   "y": 1128,
+   "width": 230,
+   "height": 16,
+   "text": "2  privilege escalation",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "p3",
+   "x": 1260,
+   "y": 1162,
+   "width": 230,
+   "height": 36,
+   "strokeColor": "#1e3a5f",
+   "backgroundColor": "#3b82f6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "p3_t",
+   "x": 1260,
+   "y": 1172,
+   "width": 230,
+   "height": 16,
+   "text": "3  dropped capabilities",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#ffffff",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "p4",
+   "x": 1260,
+   "y": 1206,
+   "width": 230,
+   "height": 46,
+   "strokeColor": "#b45309",
+   "backgroundColor": "#fef3c7",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "p4_t",
+   "x": 1260,
+   "y": 1214,
+   "width": 230,
+   "height": 30,
+   "text": "4  read-only root filesystem\nneeds careful testing",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#374151",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "c1",
+   "x": 1510,
+   "y": 1074,
+   "width": 130,
+   "height": 36,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "c1_t",
+   "x": 1510,
+   "y": 1086,
+   "width": 130,
+   "height": 14,
+   "text": "<N>",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "c2",
+   "x": 1510,
+   "y": 1118,
+   "width": 130,
+   "height": 36,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "c2_t",
+   "x": 1510,
+   "y": 1130,
+   "width": 130,
+   "height": 14,
+   "text": "<N>",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "c3",
+   "x": 1510,
+   "y": 1162,
+   "width": 130,
+   "height": 36,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "c3_t",
+   "x": 1510,
+   "y": 1174,
+   "width": 130,
+   "height": 14,
+   "text": "<N>",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "rectangle",
+   "id": "c4",
+   "x": 1510,
+   "y": 1206,
+   "width": 130,
+   "height": 46,
+   "strokeColor": "#b91c1c",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "type": "text",
+   "id": "c4_t",
+   "x": 1510,
+   "y": 1222,
+   "width": 130,
+   "height": 14,
+   "text": "<N>",
+   "fontSize": 12,
+   "fontFamily": 3,
+   "textAlign": "center",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "pri_red",
+   "x": 1260,
+   "y": 1262,
+   "width": 380,
+   "height": 28,
+   "text": "\u2717 fixes start with the field the guide calls most\ncommon, whatever the inventory found",
+   "fontSize": 11,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "line",
+   "id": "foot_rule",
+   "x": 40,
+   "y": 1322,
+   "width": 1600,
+   "height": 0,
+   "strokeColor": "#64748b",
+   "strokeWidth": 1,
+   "strokeStyle": "dashed",
+   "roughness": 0,
+   "opacity": 100,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     1600,
+     0
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "id": "foot_1",
+   "x": 40,
+   "y": 1336,
+   "width": 1600,
+   "height": 20,
+   "text": "deliberately missing: a per-container check \u00b7 one exception list \u00b7 an ownership source",
+   "fontSize": 16,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#fecaca",
+   "roughness": 0,
+   "opacity": 100
+  },
+  {
+   "type": "text",
+   "id": "foot_2",
+   "x": 40,
+   "y": 1364,
+   "width": 1600,
+   "height": 17,
+   "text": "in the prototype: manifests are reduced to a line-based shape, no chart values are rendered, and the policy reports are absent",
+   "fontSize": 13,
+   "fontFamily": 3,
+   "textAlign": "left",
+   "strokeColor": "#94a3b8",
+   "roughness": 0,
+   "opacity": 100
+  }
+ ],
+ "appState": {
+  "viewBackgroundColor": "#0f172a",
+  "gridSize": 20
+ },
+ "files": {}
+}

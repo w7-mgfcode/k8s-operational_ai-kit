@@ -17,6 +17,10 @@ related:
 > How to fix admission-policy violations one owned role at a time — with an inventory that
 > checks whether a word appears in a file, not whether a container is hardened.
 
+![Owned-Scope Policy Remediation Guide: the five-step workflow, and where its inventory, exception lists, ownership question and priority table fail](../../../../diagrams/component-cards/workstream-hardening-orchestrator/17-owned-scope-policy-remediation.png)
+
+<sub>Source: [`17-owned-scope-policy-remediation.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/17-owned-scope-policy-remediation.excalidraw).</sub>
+
 ## What it is
 
 A reference file for the hardening orchestrator's admission-policy workstream
