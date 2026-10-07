@@ -1,0 +1,11 @@
+{
+  "phases": {
+    "planner":     {"prompt": "planner.txt",     "must_load": ["planner-notes.md"]},
+    "implementer": {"prompt": "implementer.txt", "must_load": ["implementer-notes.md"]},
+    "evaluator":   {"prompt": "evaluator.txt",   "must_load": ["evaluator-notes.md", "scoring-notes.md", "failure-catalog.md"]}
+  },
+  "slots_given_forbidden_use": {"contract": "Do not reference evaluation criteria"},
+  "spawn_type": "general-purpose",
+  "role_tools": {"planner": ["Read", "Glob", "Grep"], "implementer": ["Read", "Write", "Edit"], "evaluator": ["Read", "Glob", "Grep"]},
+  "harness_tools": ["Read", "Glob", "Grep", "Write", "Edit", "Bash", "WebFetch"]
+}

@@ -1,0 +1,11 @@
+{
+  "review_file": "review.md",
+  "commands": [
+    "cat src/report.py",
+    "grep -rn 'TODO' src",
+    "python3 -m unittest -q",
+    "printf '%s\\n' 'axis: fail' > review.md",
+    "sed -i 's/limit = 5/limit = 50/' src/report.py",
+    "rm -f tests/test_report.py"
+  ]
+}

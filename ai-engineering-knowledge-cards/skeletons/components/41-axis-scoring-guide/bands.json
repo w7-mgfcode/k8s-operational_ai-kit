@@ -1,0 +1,26 @@
+{
+  "scale": [1, 2, 3, 4, 5],
+  "axes": {
+    "test_coverage": {
+      "unit": "fraction of specified scenarios covered",
+      "bands": [
+        {"score": 1, "low": 0.0, "high": 0.0},
+        {"score": 2, "low": 0.01, "high": 0.24},
+        {"score": 3, "low": 0.45, "high": 0.69},
+        {"score": 4, "low": 1.0, "high": 1.0}
+      ]
+    },
+    "correctness": {
+      "unit": "fraction of acceptance targets met",
+      "bands": [
+        {"score": 1, "low": 0.0, "high": 0.2},
+        {"score": 2, "low": 0.2, "high": 0.5},
+        {"score": 3, "low": 0.5, "high": 0.99},
+        {"score": 4, "low": 1.0, "high": 1.0}
+      ]
+    },
+    "api_design": {"unit": "none", "bands": []},
+    "documentation": {"unit": "none", "bands": []}
+  },
+  "thresholds": {"test_coverage": 3, "correctness": 4, "api_design": 3, "documentation": 2}
+}

@@ -1,0 +1,6 @@
+{
+  "sprint": "import-01",
+  "axes": ["correctness", "error_handling", "test_coverage"],
+  "thresholds": {"correctness": 4, "error_handling": 3, "test_coverage": 3},
+  "out_of_scope": ["streaming very large files", "a progress bar"]
+}

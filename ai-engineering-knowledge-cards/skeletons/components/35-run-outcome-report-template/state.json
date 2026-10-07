@@ -1,0 +1,34 @@
+{
+  "task": "a small CSV import module",
+  "sprints": {
+    "s1": {
+      "status": "complete",
+      "iteration": 2,
+      "evaluations": [
+        {"iteration": 1, "timestamp": "2026-01-05T09:10:00+00:00", "result": "fail",
+         "scores": {"correctness": 4, "error_handling": 2, "test_coverage": 3}},
+        {"iteration": 2, "timestamp": "2026-01-05T10:05:00+00:00", "result": "pass",
+         "scores": {"correctness": 4, "error_handling": 3, "test_coverage": 3}}
+      ]
+    },
+    "s2": {
+      "status": "escalated",
+      "iteration": 3,
+      "evaluations": [
+        {"iteration": 1, "timestamp": "2026-01-05T11:00:00+00:00", "result": "fail"},
+        {"iteration": 2, "timestamp": "2026-01-05T12:20:00+00:00", "result": "fail",
+         "scores": {"correctness": 3, "error_handling": 3, "test_coverage": 2}},
+        {"iteration": 3, "timestamp": "2026-01-05T13:40:00+00:00", "result": "fail",
+         "scores": {"correctness": 3, "error_handling": 3, "test_coverage": 2}}
+      ]
+    },
+    "s3": {
+      "status": "complete",
+      "iteration": 1,
+      "evaluations": [
+        {"iteration": 1, "timestamp": "2026-01-05T15:00:00+00:00", "result": "pass",
+         "notes": "owner accepted the sprint with two blockers still open"}
+      ]
+    }
+  }
+}

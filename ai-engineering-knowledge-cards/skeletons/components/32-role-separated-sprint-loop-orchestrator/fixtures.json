@@ -1,0 +1,25 @@
+{
+  "sprint": {"id": "s1", "goal": "a small CSV import module"},
+  "contract": {"correctness": 4, "error_handling": 3, "test_coverage": 3},
+  "max_iterations": 3,
+  "iterations": [
+    {
+      "scores": {"correctness": 4, "error_handling": 2, "test_coverage": 3},
+      "blocking": ["a row with a missing column raises KeyError - importer.py:41"]
+    },
+    {
+      "scores": {"correctness": 4, "error_handling": 3, "test_coverage": 3},
+      "blocking": []
+    }
+  ],
+  "documented_commands": [
+    "--state run/state.json --phase plan --status complete",
+    "--task csv-import --workspace . --output-dir run",
+    "--state run/state.json --show-history"
+  ],
+  "harness_grants_all": ["Read", "Glob", "Grep", "Bash", "Edit", "Write"],
+  "prose_forbidden": {"planner": ["Edit", "Write"], "evaluator": ["Edit", "Write"]},
+  "on_spawn_failure": "run the role inline, in the orchestrator's own context",
+  "owner_options_at_cap": ["override and accept", "guide and restart", "abort"],
+  "sprint_status_values": ["active", "complete", "escalated"]
+}
