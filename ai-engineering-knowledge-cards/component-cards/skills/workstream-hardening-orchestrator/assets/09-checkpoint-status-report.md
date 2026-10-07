@@ -16,6 +16,10 @@ related:
 > three trigger states and the evidence behind them — with a vocabulary narrower than the
 > state file it reports on, and nothing that checks it was filled.
 
+![Checkpoint Status Report Template: five inputs fill one form with no check before delivery, the five failure modes, and the three gaps that would close them](../../../../diagrams/component-cards/workstream-hardening-orchestrator/09-checkpoint-status-report.png)
+
+<sub>Source: [`09-checkpoint-status-report.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/09-checkpoint-status-report.excalidraw).</sub>
+
 ## What it is
 
 A Markdown template of about sixty lines that the hardening skill
