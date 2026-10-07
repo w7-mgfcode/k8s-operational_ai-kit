@@ -18,6 +18,10 @@ related:
 > a legend and decision rules written beside the table, and nothing that holds a row
 > to either.
 
+![Benchmark Triage Table Template: the table's closed vocabulary beside prose rules that no column, renderer or gate reads](../../../../diagrams/component-cards/workstream-hardening-orchestrator/11-benchmark-triage-table.png)
+
+<sub>Source: [`11-benchmark-triage-table.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/11-benchmark-triage-table.excalidraw).</sub>
+
 ## What it is
 
 A Markdown template the hardening orchestrator
