@@ -5,8 +5,8 @@ layer: execution
 maturity: proven
 instanced_by:
   - script/scope-lock-detector
-  - artifact/sprint-plan
-  - artifact/checkpoint-report
+  - artifact/sprint-state-file
+  - artifact/checkpoint-status-report
   - artifact/session-handoff
 related:
   - 17-blast-radius-gating
