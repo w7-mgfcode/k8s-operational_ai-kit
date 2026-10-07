@@ -18,6 +18,10 @@ related:
 > The script that writes the contract the evaluator will be held to — and will write it
 > again, over the top, with any thresholds it is given.
 
+![Sprint Contract Writer: flags are validated, rendered and written atomically over whatever file is there, with the freeze stated in the file and enforced by nothing](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/47-sprint-contract-writer.png)
+
+<sub>Source: [`47-sprint-contract-writer.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/47-sprint-contract-writer.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script that turns a sprint id, a list of axes, a threshold for each
