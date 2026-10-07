@@ -1,0 +1,5 @@
+{
+  "harness_tools": ["Read", "Glob", "Grep", "Bash", "Edit", "Write", "WebFetch", "WebSearch"],
+  "write_tools": ["Edit", "Write"],
+  "shell_writes": ["(^|\\s)>{1,2}\\s*\\S", "\\btee\\b", "\\bsed\\s+-i\\b", "\\brm\\b", "\\bmv\\b", "\\bcp\\b"]
+}
