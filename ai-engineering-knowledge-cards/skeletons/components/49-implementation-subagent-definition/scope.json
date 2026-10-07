@@ -1,0 +1,4 @@
+{
+  "sprint_files": ["src/report.py", "tests/test_report.py"],
+  "attempted_writes": ["src/report.py", "tests/test_report.py", "src/settings.py", "docs/notes.md"]
+}

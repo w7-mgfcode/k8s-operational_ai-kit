@@ -1,0 +1,7 @@
+{
+  "harness_tools": ["Read", "Glob", "Grep", "Bash", "Edit", "Write", "WebFetch", "WebSearch"],
+  "write_tools": ["Edit", "Write"],
+  "concepts": {
+    "remarks about unfinished or improvable work": ["caveat", "could be improved", "known gaps"]
+  }
+}
