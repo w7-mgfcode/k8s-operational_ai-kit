@@ -14,6 +14,10 @@ related:
 > The script behind every checkpoint report: it prints the sprint state file as a table,
 > Markdown or JSON — and decides nothing, though the skill's own reference says it does.
 
+![Sprint State Reporter: the state file in, a report out, and the five places the script's behaviour departs from what its callers expect](../../../../diagrams/component-cards/workstream-hardening-orchestrator/27-sprint-state-reporter.png)
+
+<sub>Source: [`27-sprint-state-reporter.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/27-sprint-state-reporter.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script the hardening orchestrator
