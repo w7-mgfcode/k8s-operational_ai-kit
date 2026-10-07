@@ -16,6 +16,10 @@ related:
 > six-box checklist for the spec, no program that ticks any of the boxes, and a required
 > field its own role is told not to fill.
 
+![Planner Role Reference: a request becomes a spec through a six-box checklist no program ticks, with a required field the planner's role bans](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/40-planner-role-reference.png)
+
+<sub>Source: [`40-planner-role-reference.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/40-planner-role-reference.excalidraw).</sub>
+
 ## What it is
 
 A reference file the sprint-loop orchestrator
