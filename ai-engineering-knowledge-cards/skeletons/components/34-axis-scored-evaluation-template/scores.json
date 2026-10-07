@@ -1,0 +1,12 @@
+{
+  "sprint": "s1",
+  "iteration": 1,
+  "axes": [
+    {"id": "correctness", "title": "Correctness", "score": 4, "evidence": "importer.py:10-60 parses every specified column type",
+     "blockers": []},
+    {"id": "error_handling", "title": "Error Handling", "score": 2, "evidence": "importer.py:41 indexes a row without a guard",
+     "blockers": ["a missing column raises KeyError - importer.py:41"]},
+    {"id": "test_coverage", "title": "Test Coverage", "score": 2, "evidence": "test_importer.py holds one test, for the happy path",
+     "blockers": ["no test covers an empty file - test_importer.py:1"]}
+  ]
+}
