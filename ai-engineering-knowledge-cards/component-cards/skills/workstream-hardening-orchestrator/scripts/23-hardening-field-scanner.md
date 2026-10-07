@@ -17,6 +17,10 @@ related:
 > The orchestrator's inventory of container-hardening gaps: a word search over each
 > role's files that reports a field as present even when it is set to the insecure value.
 
+![Hardening Field Scanner: the scan from role directory to JSON and exit 0, with the six places a word search misreads or misses](../../../../diagrams/component-cards/workstream-hardening-orchestrator/23-hardening-field-scanner.png)
+
+<sub>Source: [`23-hardening-field-scanner.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/23-hardening-field-scanner.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script that the orchestrator
