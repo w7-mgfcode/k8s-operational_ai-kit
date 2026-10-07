@@ -61,6 +61,33 @@ cards are in `component-cards/workstream-hardening-orchestrator/`, the two subag
 | [Parallel Gap-Scan Subagent](../component-cards/subagents/30-parallel-gap-scan-subagent.md) | [`30-parallel-gap-scan-subagent.excalidraw`](component-cards/subagents/30-parallel-gap-scan-subagent.excalidraw) | [`30-parallel-gap-scan-subagent.png`](component-cards/subagents/30-parallel-gap-scan-subagent.png) |
 | [Benchmark Triage Subagent](../component-cards/subagents/31-benchmark-triage-subagent.md) | [`31-benchmark-triage-subagent.excalidraw`](component-cards/subagents/31-benchmark-triage-subagent.excalidraw) | [`31-benchmark-triage-subagent.png`](component-cards/subagents/31-benchmark-triage-subagent.png) |
 
+## Component cards — role-separated sprint loop orchestrator (pending)
+
+No diagram drawn yet. One row per card, so the gap is visible; sources go in
+`component-cards/role-separated-sprint-loop-orchestrator/` (subagents in `component-cards/subagents/`).
+
+| Card | Source | Render |
+|---|---|---|
+| [Role-Separated Sprint Loop Orchestrator](../component-cards/skills/role-separated-sprint-loop-orchestrator/32-role-separated-sprint-loop-orchestrator.md) | pending | — |
+| [Blocking-Items Return Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/33-blocking-items-return-template.md) | pending | — |
+| [Axis-Scored Evaluation Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/34-axis-scored-evaluation-template.md) | pending | — |
+| [Run Outcome Report Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/35-run-outcome-report-template.md) | pending | — |
+| [Sprint Contract Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/36-sprint-contract-template.md) | pending | — |
+| [Evaluator Failure-Pattern Catalog](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/37-evaluator-failure-pattern-catalog.md) | pending | — |
+| [Evaluator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/38-evaluator-role-reference.md) | pending | — |
+| [Generator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/39-generator-role-reference.md) | pending | — |
+| [Planner Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/40-planner-role-reference.md) | pending | — |
+| [Axis Scoring Guide](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/41-axis-scoring-guide.md) | pending | — |
+| [Role Spawn Prompt Set](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/42-role-spawn-prompt-set.md) | pending | — |
+| [Worked Loop Walkthroughs](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/43-worked-loop-walkthroughs.md) | pending | — |
+| [Loop Gate and History Harness](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/44-loop-gate-and-history-harness.md) | pending | — |
+| [Loop State Recorder](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/45-loop-state-recorder.md) | pending | — |
+| [Evaluation Structure Validator](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/46-evaluation-structure-validator.md) | pending | — |
+| [Sprint Contract Writer](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/47-sprint-contract-writer.md) | pending | — |
+| [Planning Subagent Definition](../component-cards/subagents/48-planning-subagent-definition.md) | pending | — |
+| [Implementation Subagent Definition](../component-cards/subagents/49-implementation-subagent-definition.md) | pending | — |
+| [Evaluation Subagent Definition](../component-cards/subagents/50-evaluation-subagent-definition.md) | pending | — |
+
 ## Teaching cards (12)
 
 Source only, no render yet. Not embedded in the teaching cards.
