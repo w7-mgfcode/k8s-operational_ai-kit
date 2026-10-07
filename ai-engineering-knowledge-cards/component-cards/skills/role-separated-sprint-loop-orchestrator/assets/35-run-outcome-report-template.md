@@ -16,6 +16,10 @@ related:
 > The document a sprint-loop run ends with — a run status, a table per sprint, metrics — in a
 > vocabulary of its own, with figures that nothing in the state records.
 
+![Run Outcome Report Template: state and notes retyped into one report, with four word lists for one fact and figures no state records](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/35-run-outcome-report-template.png)
+
+<sub>Source: [`35-run-outcome-report-template.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/35-run-outcome-report-template.excalidraw).</sub>
+
 ## What it is
 
 A Markdown template of about sixty-five lines that the sprint-loop skill
