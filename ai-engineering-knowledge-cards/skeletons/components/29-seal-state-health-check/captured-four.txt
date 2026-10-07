@@ -1,0 +1,48 @@
+=== store-0 ===
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.6
+HA Enabled      true
+HA Mode         active
+
+=== store-1 ===
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.6
+HA Enabled      true
+HA Mode         standby
+
+=== store-2 ===
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.6
+HA Enabled      true
+HA Mode         standby
+
+=== store-3 ===
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.6
+HA Enabled      true
+HA Mode         standby
+

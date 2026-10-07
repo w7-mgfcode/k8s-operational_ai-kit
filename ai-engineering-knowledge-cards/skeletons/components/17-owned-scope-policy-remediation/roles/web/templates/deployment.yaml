@@ -1,0 +1,14 @@
+kind: Deployment
+spec:
+  template:
+    spec:
+      containers:
+        - name: web
+          image: registry.example.test/web:2.1
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL

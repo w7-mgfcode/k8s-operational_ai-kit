@@ -1,0 +1,16 @@
+{
+  "_note": "Fabricated. The sprint state as the skill's own template shapes it — the second of three copies.",
+  "workstreams": {
+    "B": {"dependencies": ["A"], "requires_decision": ["unseal_schema", "tls_stability"]}
+  },
+  "decision_triggers": {
+    "unseal_schema": {"state": "unresolved", "resolved_by": "", "resolved_date": ""},
+    "tls_stability": {"state": "pending", "evaluated_date": ""},
+    "platform_conflict": {"state": "pending", "approval_requested": false, "approval_date": ""}
+  },
+  "checkpoints": {
+    "A": {"deliverables": ["Scope locked", "TLS started or complete", "Policy gap inventory", "Benchmark triage table"]},
+    "B": {"deliverables": ["Auto-unseal status and risks", "Policy remediation progress", "Hygiene audit started"]},
+    "C": {"deliverables": ["Hardening status", "Open risks", "Next-sprint backlog", "Final validation"]}
+  }
+}

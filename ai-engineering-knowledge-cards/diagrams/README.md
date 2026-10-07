@@ -28,6 +28,38 @@ Embedded in each card under `component-cards/skills/infrastructure-issue-investi
 | [Keyword-Narrowed Repository Search](../component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md) | [`05-keyword-narrowed-repo-search.excalidraw`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.excalidraw) | [`05-keyword-narrowed-repo-search.png`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.png) |
 | [Remediation Plan Template](../component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md) | [`06-remediation-plan-template.excalidraw`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.excalidraw) | [`06-remediation-plan-template.png`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.png) |
 
+## Component cards — workstream hardening orchestrator (pending)
+
+No diagram drawn yet. One row per card, so the gap is visible; sources go in
+`component-cards/workstream-hardening-orchestrator/` (subagents in `component-cards/`).
+
+| Card | Source | Render |
+|---|---|---|
+| [Workstream Hardening Orchestrator](../component-cards/skills/workstream-hardening-orchestrator/08-workstream-hardening-orchestrator.md) | pending | — |
+| [Checkpoint Status Report Template](../component-cards/skills/workstream-hardening-orchestrator/assets/09-checkpoint-status-report.md) | pending | — |
+| [Sprint State File Template](../component-cards/skills/workstream-hardening-orchestrator/assets/10-sprint-state-file.md) | pending | — |
+| [Benchmark Triage Table Template](../component-cards/skills/workstream-hardening-orchestrator/assets/11-benchmark-triage-table.md) | pending | — |
+| [Workstream Tracking Brief](../component-cards/skills/workstream-hardening-orchestrator/assets/12-workstream-tracking-brief.md) | pending | — |
+| [Component Tier Table](../component-cards/skills/workstream-hardening-orchestrator/references/13-component-tier-table.md) | pending | — |
+| [Conditional Sprint Triggers](../component-cards/skills/workstream-hardening-orchestrator/references/14-conditional-sprint-triggers.md) | pending | — |
+| [Dry-Run-First Invocation Contract](../component-cards/skills/workstream-hardening-orchestrator/references/15-dry-run-invocation-contract.md) | pending | — |
+| [Recovery Runbook Set](../component-cards/skills/workstream-hardening-orchestrator/references/16-recovery-runbook-set.md) | pending | — |
+| [Owned-Scope Policy Remediation Guide](../component-cards/skills/workstream-hardening-orchestrator/references/17-owned-scope-policy-remediation.md) | pending | — |
+| [Installation Glossary](../component-cards/skills/workstream-hardening-orchestrator/references/18-installation-glossary.md) | pending | — |
+| [Workstream Gate Catalogue](../component-cards/skills/workstream-hardening-orchestrator/references/19-workstream-gate-catalogue.md) | pending | — |
+| [Secrets-Store TLS and Auto-Unseal Guide](../component-cards/skills/workstream-hardening-orchestrator/references/20-secrets-store-tls-unseal-guide.md) | pending | — |
+| [Tier Lookup Gate](../component-cards/skills/workstream-hardening-orchestrator/scripts/21-tier-lookup-gate.md) | pending | — |
+| [Triage Table Renderer](../component-cards/skills/workstream-hardening-orchestrator/scripts/22-triage-table-renderer.md) | pending | — |
+| [Hardening Field Scanner](../component-cards/skills/workstream-hardening-orchestrator/scripts/23-hardening-field-scanner.md) | pending | — |
+| [Benchmark Report Parser](../component-cards/skills/workstream-hardening-orchestrator/scripts/24-benchmark-report-parser.md) | pending | — |
+| [Static Rollback Planner](../component-cards/skills/workstream-hardening-orchestrator/scripts/25-static-rollback-planner.md) | pending | — |
+| [Repository Scope Detector](../component-cards/skills/workstream-hardening-orchestrator/scripts/26-repo-scope-detector.md) | pending | — |
+| [Sprint State Reporter](../component-cards/skills/workstream-hardening-orchestrator/scripts/27-sprint-state-reporter.md) | pending | — |
+| [Workstream Gate Runner](../component-cards/skills/workstream-hardening-orchestrator/scripts/28-workstream-gate-runner.md) | pending | — |
+| [Seal-State Health Checker](../component-cards/skills/workstream-hardening-orchestrator/scripts/29-seal-state-health-check.md) | pending | — |
+| [Parallel Gap-Scan Subagent](../component-cards/subagents/30-parallel-gap-scan-subagent.md) | pending | — |
+| [Benchmark Triage Subagent](../component-cards/subagents/31-benchmark-triage-subagent.md) | pending | — |
+
 ## Teaching cards (12)
 
 Source only, no render yet. Not embedded in the teaching cards.

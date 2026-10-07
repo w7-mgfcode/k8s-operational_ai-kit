@@ -1,0 +1,38 @@
+{
+  "sprint": {
+    "name": "hardening-2026-01-12",
+    "environment": "dev",
+    "cluster_access": false
+  },
+  "workstreams": {
+    "A": {"name": "Secrets-store TLS", "status": "in_progress", "band": "quick_win",
+          "dependencies": [], "blockers": [], "validation": "pending"},
+    "B": {"name": "Auto-unseal", "status": "not_started", "band": "medium_effort",
+          "dependencies": ["A"], "blockers": [], "validation": "pending"},
+    "C": {"name": "Policy remediation", "status": "in_progress", "band": "quick_win",
+          "dependencies": [], "blockers": [], "validation": "pending"},
+    "D": {"name": "Benchmark triage", "status": "complete", "band": "quick_win",
+          "dependencies": [], "blockers": [], "validation": "passed"},
+    "E": {"name": "Cluster hygiene", "status": "not_started", "band": "medium_effort",
+          "dependencies": [], "blockers": [], "validation": "pending"}
+  },
+  "triggers": {
+    "unseal_schema": {"question": "Unseal-key schema agreed with the team?",
+                      "state": "unresolved", "proceed_on": "resolved", "gates": ["B"],
+                      "otherwise": "pause B, carry on with C, D and E"},
+    "tls_stable": {"question": "TLS stable after workstream A?",
+                   "state": "pending", "proceed_on": "stable", "gates": ["B"],
+                   "otherwise": "roll A back behind its flag; do not start B"},
+    "platform_conflict": {"question": "Benchmark items conflict with platform direction?",
+                          "state": "pending_approval", "proceed_on": "no_conflict", "gates": ["D"],
+                          "otherwise": "record the item as deferred, with a reason"}
+  },
+  "checkpoints": {
+    "A": {"target": "day one, end of day", "status": "delivered",
+          "deliverables": ["scope locked", "TLS started", "policy inventory", "triage table"]},
+    "B": {"target": "day two, midday", "status": "pending",
+          "deliverables": ["auto-unseal status", "per-role remediation progress", "hygiene audit started"]},
+    "C": {"target": "day two, end of day", "status": "pending",
+          "deliverables": ["status of all five workstreams", "open risks", "next-sprint backlog"]}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "note": "A fabricated sprint session: the order an operator ran things in.",
+  "events": [
+    {"run": "check", "tag": "secrets-store"},
+    {"run": "apply", "tag": "secrets-store"},
+    {"run": "apply", "tag": "policy-engine"},
+    {"run": "check", "tag": "cert-isuer"},
+    {"run": "apply", "tag": "cert-issuer"},
+    {"run": "check", "tag": "registry"},
+    {"run": "apply", "tag": "registry", "extra": ["-e", "registry_replicas=3"]}
+  ]
+}

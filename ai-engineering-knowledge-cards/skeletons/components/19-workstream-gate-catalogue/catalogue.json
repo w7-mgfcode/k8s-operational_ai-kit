@@ -1,0 +1,33 @@
+{
+  "_comment": "The document half: gates as the reference describes them. Fabricated.",
+  "gates": [
+    {"workstream": "A", "gate": "lint", "kind": "command", "blocking": true,
+     "criterion": "no lint errors in the secrets-store role"},
+    {"workstream": "A", "gate": "syntax", "kind": "command", "blocking": true,
+     "criterion": "every playbook parses"},
+    {"workstream": "A", "gate": "replicas-unsealed", "kind": "manual", "blocking": true,
+     "criterion": "every replica reports sealed=false"},
+    {"workstream": "B", "gate": "lint", "kind": "command", "blocking": true,
+     "criterion": "no lint errors"},
+    {"workstream": "B", "gate": "restart-survives", "kind": "manual", "blocking": true,
+     "wait_seconds": 60,
+     "criterion": "a deleted replica comes back unsealed with no human step"},
+    {"workstream": "C", "gate": "lint", "kind": "command", "blocking": true,
+     "criterion": "no lint errors after each role fix"},
+    {"workstream": "C", "gate": "violation-delta", "kind": "manual", "blocking": true,
+     "criterion": "fewer policy violations in owned roles than at the start"},
+    {"workstream": "D", "gate": "triage", "kind": "file-content", "blocking": true,
+     "target": "triage.md",
+     "criterion": "every failing benchmark item has a disposition a human chose"},
+    {"workstream": "E", "gate": "hygiene", "kind": "file-exists", "blocking": true,
+     "target": "hygiene.md",
+     "criterion": "a hygiene report lists stale resources with an owner each"}
+  ],
+  "post_apply_suite": [
+    "nodes ready",
+    "no pod outside Running",
+    "no failed Helm release",
+    "no certificate not ready",
+    "node utilisation normal"
+  ]
+}

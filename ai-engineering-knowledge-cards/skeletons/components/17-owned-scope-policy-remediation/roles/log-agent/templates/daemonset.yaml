@@ -1,0 +1,9 @@
+kind: DaemonSet
+spec:
+  template:
+    spec:
+      containers:
+        - name: log-agent
+          image: registry.example.test/log-agent:3.0
+          securityContext:
+            privileged: true

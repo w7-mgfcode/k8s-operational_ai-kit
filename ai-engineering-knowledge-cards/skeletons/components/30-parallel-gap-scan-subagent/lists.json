@@ -1,0 +1,5 @@
+{
+  "harness_tools": ["Read", "Glob", "Grep", "Bash", "Edit", "Write", "WebFetch", "WebSearch"],
+  "scanner_exceptions": ["reboot-daemon", "log-shipper", "node-exporter", "benchmark-runner"],
+  "guide_special_handling": ["reboot-daemon", "log-shipper", "benchmark-runner", "secrets-store", "metrics-store"]
+}

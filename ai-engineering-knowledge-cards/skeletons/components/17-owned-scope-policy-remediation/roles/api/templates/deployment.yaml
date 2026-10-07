@@ -1,0 +1,16 @@
+kind: Deployment
+spec:
+  template:
+    spec:
+      containers:
+        - name: api
+          image: registry.example.test/api:1.4
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+        - name: metrics-sidecar
+          image: registry.example.test/exporter:0.9

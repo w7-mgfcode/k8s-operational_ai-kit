@@ -1,0 +1,12 @@
+{
+  "note": "The same contract as written by one operator for themselves. Fabricated values.",
+  "playbook": "playbooks/security-phase.yml",
+  "inventory": "inventories/staging/hosts.ini",
+  "encrypted_vars": "inventories/staging/group_vars/secrets.yml",
+  "operator": {
+    "private_key": "~/.ssh/deploy_key_operator_a",
+    "kubeconfig": "~/.kube/staging-operator-a",
+    "vault_password": "<(vaultpass-operator-a)"
+  },
+  "roles": ["secrets-store", "policy-engine", "cert-issuer", "registry"]
+}

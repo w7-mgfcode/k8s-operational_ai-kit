@@ -1,0 +1,4 @@
+# Roles this team maintains (fabricated). The scope workstream C should be locked to.
+api-gateway
+secrets-store
+batch-runner

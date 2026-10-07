@@ -1,0 +1,11 @@
+# Fabricated. Every field is named — and every value is the insecure one.
+runner_values:
+  containers:
+    - name: runner
+      image: registry.example/runner:2.0
+      securityContext:
+        runAsNonRoot: false
+        allowPrivilegeEscalation: true
+        readOnlyRootFilesystem: false
+        capabilities:
+          add: [SYS_ADMIN]

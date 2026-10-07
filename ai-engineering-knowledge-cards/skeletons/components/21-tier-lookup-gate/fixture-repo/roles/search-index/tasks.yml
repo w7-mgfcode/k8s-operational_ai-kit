@@ -1,0 +1,4 @@
+# A role that exists in the repository but not in the tier table.
+- name: install search-index
+  debug:
+    msg: fabricated

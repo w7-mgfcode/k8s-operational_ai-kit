@@ -1,0 +1,54 @@
+{
+  "note": "A fabricated runbook set. Component names are generic; nothing here describes a real cluster.",
+  "runbooks": [
+    {
+      "name": "queue broker stuck on an immutable field",
+      "steps": [
+        "kubectl -n queue get pods",
+        "kubectl -n queue delete statefulset queue-broker",
+        "ansible-playbook playbooks/data.yml --tags queue --check",
+        "ansible-playbook playbooks/data.yml --tags queue"
+      ]
+    },
+    {
+      "name": "gateway certificate will not renew",
+      "steps": [
+        "kubectl -n edge describe certificate gateway-tls",
+        "kubectl -n edge delete certificate gateway-tls",
+        "kubectl -n edge get certificate gateway-tls"
+      ]
+    },
+    {
+      "name": "dashboard release broken after upgrade",
+      "steps": [
+        "helm history dashboards -n ui",
+        "helm rollback dashboards 4 -n ui",
+        "helm list -n ui"
+      ]
+    },
+    {
+      "name": "dashboard release broken, with a preview",
+      "steps": [
+        "helm history dashboards -n ui",
+        "helm get values dashboards -n ui --revision 4",
+        "helm rollback dashboards 4 -n ui --dry-run",
+        "helm rollback dashboards 4 -n ui"
+      ]
+    },
+    {
+      "name": "secrets store sealed after a restart",
+      "steps": [
+        "kubectl -n secrets exec store-0 -- store status",
+        "kubectl -n secrets exec -it store-0 -- store unseal",
+        "kubectl -n payments rollout restart deployment/payments-api"
+      ]
+    },
+    {
+      "name": "cache flush",
+      "steps": [
+        "kubectl -n cache get pods",
+        "kubectl -n cache exec cache-0 -- ./flush-all.sh"
+      ]
+    }
+  ]
+}

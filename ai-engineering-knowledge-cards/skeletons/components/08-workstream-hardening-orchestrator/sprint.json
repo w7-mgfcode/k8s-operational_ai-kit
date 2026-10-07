@@ -1,0 +1,25 @@
+{
+  "sprint": {"name": "hardening-2026-01-12", "environment": "dev", "cluster_access": true},
+  "workstreams": {
+    "A": {"name": "secrets-store TLS", "band": "quick_win", "component": "secrets-store",
+          "role": "secrets-store", "depends_on": [], "triggers": ["tls_stable"], "status": "complete"},
+    "B": {"name": "secrets-store auto-unseal", "band": "medium_effort", "component": "secrets-store",
+          "role": "secrets-store", "depends_on": ["A"], "triggers": ["transit_schema", "tls_stable"],
+          "status": "in_progress"},
+    "C": {"name": "admission-policy remediation, owned roles", "band": "quick_win", "component": "policy-engine",
+          "role": "web-frontend", "depends_on": [], "triggers": [], "status": "in_progress"},
+    "D": {"name": "CIS benchmark triage", "band": "quick_win", "component": "benchmark-scanner",
+          "role": "benchmark-scanner", "depends_on": [], "triggers": [], "status": "in_progress"},
+    "D-cp": {"name": "control-plane items from D", "band": "deep_work", "component": "benchmark-scanner",
+          "role": "control-plane", "depends_on": [], "triggers": ["platform_conflict"], "status": "not_started"},
+    "E": {"name": "cluster hygiene", "band": "medium_effort", "component": "cache",
+          "role": "cache", "depends_on": [], "triggers": [], "status": "not_started"}
+  },
+  "triggers": {
+    "transit_schema":    {"question": "transit unseal schema agreed?", "state": "unresolved", "ok": ["resolved"]},
+    "tls_stable":        {"question": "TLS stable after A?",           "state": "stable",     "ok": ["stable"]},
+    "platform_conflict": {"question": "benchmark items conflict with platform direction?",
+                          "state": "pending", "ok": ["no_conflict"]}
+  },
+  "checkpoints": {"A": "end of day one", "B": "midday day two", "C": "end of day two"}
+}

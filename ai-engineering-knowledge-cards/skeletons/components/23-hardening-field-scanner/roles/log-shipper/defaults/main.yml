@@ -1,0 +1,7 @@
+# Fabricated. A node-level collector: reads host paths, so it runs privileged.
+shipper_values:
+  containers:
+    - name: shipper
+      image: registry.example/shipper:3.1
+      securityContext:
+        privileged: true

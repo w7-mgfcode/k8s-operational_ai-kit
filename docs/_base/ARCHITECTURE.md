@@ -7,7 +7,7 @@
 
 ### What this repository owns
 
-- The twenty knowledge cards, the seven component cards, and the contracts they obey.
+- The twenty knowledge cards, the 31 component cards, and the contracts they obey.
 - One runnable skeleton per card, plus one compound pipeline walkthrough.
 - The anonymization policy and its audit record.
 - The agent-context layer: `.claude/rules/`, `.claude/agents/`, `.claude/settings.json` and its

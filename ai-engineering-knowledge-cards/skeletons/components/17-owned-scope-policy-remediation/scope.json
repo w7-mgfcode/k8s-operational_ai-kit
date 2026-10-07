@@ -1,0 +1,9 @@
+{
+  "note": "Which roles the team owns, and the three exception lists as the three source artifacts each kept them. Fabricated.",
+  "owned": ["api", "worker", "web", "log-agent", "node-probe"],
+  "exceptions": {
+    "guide":    ["log-agent", "reboot-daemon", "bench-scanner", "store-injector", "metrics-distroless"],
+    "scanner":  ["log-agent", "reboot-daemon", "bench-scanner", "node-probe"],
+    "subagent": ["log-agent", "reboot-daemon", "bench-scanner"]
+  }
+}

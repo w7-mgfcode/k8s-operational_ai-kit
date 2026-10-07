@@ -1,0 +1,8 @@
+# chart values for the worker
+worker:
+  securityContext:
+    runAsNonRoot: false
+    allowPrivilegeEscalation: true
+    readOnlyRootFilesystem: false
+    capabilities:
+      drop: []

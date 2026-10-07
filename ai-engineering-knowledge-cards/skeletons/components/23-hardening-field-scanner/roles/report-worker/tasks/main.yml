@@ -1,0 +1,8 @@
+# Fabricated. Installs a chart and overrides nothing about its containers.
+- name: Install the report worker
+  kubernetes.core.helm:
+    name: report-worker
+    chart_ref: example/report-worker
+    release_namespace: reports
+    values:
+      replicas: 1

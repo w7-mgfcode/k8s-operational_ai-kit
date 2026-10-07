@@ -1,0 +1,12 @@
+{
+  "note": "What is true today, as the repository's pins and a cluster read would say. Fabricated.",
+  "facts": {
+    "control plane": ["5 nodes", "cp.example.test:6443"],
+    "mesh-net": ["v1.11.2"],
+    "block-store": ["3 replicas"],
+    "secrets-store consumers": ["23 apps"],
+    "log collector": ["v2.3.0"],
+    "edge controller": ["Q1 2027"],
+    "benchmark scan": ["03:00"]
+  }
+}

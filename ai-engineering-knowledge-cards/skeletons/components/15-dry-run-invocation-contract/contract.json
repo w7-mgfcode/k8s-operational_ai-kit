@@ -1,0 +1,12 @@
+{
+  "note": "Operator values are ${VARIABLES}, resolved from the environment of whoever runs the command.",
+  "playbook": "playbooks/security-phase.yml",
+  "inventory": "inventories/staging/hosts.ini",
+  "encrypted_vars": "inventories/staging/group_vars/secrets.yml",
+  "operator": {
+    "private_key": "${DEPLOY_KEY}",
+    "kubeconfig": "${KUBECONFIG}",
+    "vault_password": "${VAULT_PASSWORD_CMD}"
+  },
+  "roles": ["secrets-store", "policy-engine", "cert-issuer", "registry"]
+}

@@ -1,0 +1,4 @@
+# Fabricated. Vendored wrapper around a third-party ingress chart.
+# Maintained upstream; not owned by this team.
+galaxy_info:
+  role_name: upstream-ingress

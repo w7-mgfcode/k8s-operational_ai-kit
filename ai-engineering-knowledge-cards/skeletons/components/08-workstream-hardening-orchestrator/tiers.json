@@ -1,0 +1,9 @@
+{
+  "tiers": {
+    "mesh-net": "CRITICAL", "block-store": "CRITICAL", "cert-issuer": "CRITICAL",
+    "secrets-store": "HIGH", "identity": "HIGH",
+    "policy-engine": "MEDIUM", "metrics": "MEDIUM",
+    "benchmark-scanner": "LOW", "cache": "LOW", "registry": "LOW"
+  },
+  "always_confirm": ["secrets-store"]
+}
