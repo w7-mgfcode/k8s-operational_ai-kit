@@ -1,0 +1,17 @@
+{
+  "first_try_pass": [
+    {"run": "init --state {state} --task import", "shown": {"status": "initialized"}},
+    {"run": "--state {state} --task import", "shown": {"status": "initialized"}},
+    {"run": "sprint --state {state} --id s1", "shown": {"sprint": "s1"}},
+    {"run": "gate --state {state}", "shown": {"gate": "pass"}},
+    {"run": "record --state {state} --result pass", "shown": {"recorded": "pass"}},
+    {"note": "The final report is generated.", "shown": null}
+  ],
+  "recovery": [
+    {"run": "init --state {state} --task import", "shown": {"status": "initialized"}},
+    {"run": "sprint --state {state} --id s1", "shown": {"sprint": "s1"}},
+    {"run": "record --state {state} --result fail", "shown": {"recorded": "fail"}},
+    {"note": "The delta report is generated.", "shown": null},
+    {"run": "record --state {state} --result pass", "shown": {"recorded": "pass"}}
+  ]
+}
