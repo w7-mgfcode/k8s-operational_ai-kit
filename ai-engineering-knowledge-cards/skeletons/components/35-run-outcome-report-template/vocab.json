@@ -1,0 +1,7 @@
+{
+  "report_run_status": ["all_passed", "partially_passed", "escalated"],
+  "report_sprint_status": ["passed", "escalated"],
+  "state_sprint_status": ["active", "complete", "escalated"],
+  "gate_result": ["pending", "pass", "fail", "escalate"],
+  "contract_status": ["active", "superseded", "archived"]
+}
