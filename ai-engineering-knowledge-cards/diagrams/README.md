@@ -28,18 +28,19 @@ Embedded in each card under `component-cards/skills/infrastructure-issue-investi
 | [Keyword-Narrowed Repository Search](../component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md) | [`05-keyword-narrowed-repo-search.excalidraw`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.excalidraw) | [`05-keyword-narrowed-repo-search.png`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.png) |
 | [Remediation Plan Template](../component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md) | [`06-remediation-plan-template.excalidraw`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.excalidraw) | [`06-remediation-plan-template.png`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.png) |
 
-## Component cards — workstream hardening orchestrator (pending)
+## Component cards — workstream hardening orchestrator (5 of 24 drawn)
 
-No diagram drawn yet. One row per card, so the gap is visible; sources go in
-`component-cards/workstream-hardening-orchestrator/` (subagents in `component-cards/`).
+Cards 08–12 are drawn and embedded in their cards; the rest are still pending. One row per
+card, so the gap is visible; sources go in `component-cards/workstream-hardening-orchestrator/`
+(subagents in `component-cards/`).
 
 | Card | Source | Render |
 |---|---|---|
-| [Workstream Hardening Orchestrator](../component-cards/skills/workstream-hardening-orchestrator/08-workstream-hardening-orchestrator.md) | pending | — |
-| [Checkpoint Status Report Template](../component-cards/skills/workstream-hardening-orchestrator/assets/09-checkpoint-status-report.md) | pending | — |
-| [Sprint State File Template](../component-cards/skills/workstream-hardening-orchestrator/assets/10-sprint-state-file.md) | pending | — |
-| [Benchmark Triage Table Template](../component-cards/skills/workstream-hardening-orchestrator/assets/11-benchmark-triage-table.md) | pending | — |
-| [Workstream Tracking Brief](../component-cards/skills/workstream-hardening-orchestrator/assets/12-workstream-tracking-brief.md) | pending | — |
+| [Workstream Hardening Orchestrator](../component-cards/skills/workstream-hardening-orchestrator/08-workstream-hardening-orchestrator.md) | [`08-workstream-hardening-orchestrator.excalidraw`](component-cards/workstream-hardening-orchestrator/08-workstream-hardening-orchestrator.excalidraw) | [`08-workstream-hardening-orchestrator.png`](component-cards/workstream-hardening-orchestrator/08-workstream-hardening-orchestrator.png) |
+| [Checkpoint Status Report Template](../component-cards/skills/workstream-hardening-orchestrator/assets/09-checkpoint-status-report.md) | [`09-checkpoint-status-report.excalidraw`](component-cards/workstream-hardening-orchestrator/09-checkpoint-status-report.excalidraw) | [`09-checkpoint-status-report.png`](component-cards/workstream-hardening-orchestrator/09-checkpoint-status-report.png) |
+| [Sprint State File Template](../component-cards/skills/workstream-hardening-orchestrator/assets/10-sprint-state-file.md) | [`10-sprint-state-file.excalidraw`](component-cards/workstream-hardening-orchestrator/10-sprint-state-file.excalidraw) | [`10-sprint-state-file.png`](component-cards/workstream-hardening-orchestrator/10-sprint-state-file.png) |
+| [Benchmark Triage Table Template](../component-cards/skills/workstream-hardening-orchestrator/assets/11-benchmark-triage-table.md) | [`11-benchmark-triage-table.excalidraw`](component-cards/workstream-hardening-orchestrator/11-benchmark-triage-table.excalidraw) | [`11-benchmark-triage-table.png`](component-cards/workstream-hardening-orchestrator/11-benchmark-triage-table.png) |
+| [Workstream Tracking Brief](../component-cards/skills/workstream-hardening-orchestrator/assets/12-workstream-tracking-brief.md) | [`12-workstream-tracking-brief.excalidraw`](component-cards/workstream-hardening-orchestrator/12-workstream-tracking-brief.excalidraw) | [`12-workstream-tracking-brief.png`](component-cards/workstream-hardening-orchestrator/12-workstream-tracking-brief.png) |
 | [Component Tier Table](../component-cards/skills/workstream-hardening-orchestrator/references/13-component-tier-table.md) | pending | — |
 | [Conditional Sprint Triggers](../component-cards/skills/workstream-hardening-orchestrator/references/14-conditional-sprint-triggers.md) | pending | — |
 | [Dry-Run-First Invocation Contract](../component-cards/skills/workstream-hardening-orchestrator/references/15-dry-run-invocation-contract.md) | pending | — |
