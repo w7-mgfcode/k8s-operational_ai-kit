@@ -17,6 +17,10 @@ related:
 > Turns a CIS benchmark report into findings with a class and an approval flag, and
 > files the etcd section under "other", where nothing needs approval.
 
+![Benchmark Report Parser: a report line is classed by a hand-kept prefix list, so etcd is filed under other with no approval flag, and the likely-not-applicable guess shrinks the actionable count](../../../../diagrams/component-cards/workstream-hardening-orchestrator/24-benchmark-report-parser.png)
+
+<sub>Source: [`24-benchmark-report-parser.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/24-benchmark-report-parser.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script, the first step of workstream D, CIS benchmark
