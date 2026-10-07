@@ -17,6 +17,10 @@ related:
 > The planner's role as a standalone subagent file — limited to read tools and a shell by a key no harness reads,
 > told to produce a file none of them writes, and forbidden the estimate its own output shape asks for.
 
+![Planning Subagent Definition: the planner's route from request to specification, and where its grant, its file and its estimate rule break](../../diagrams/component-cards/subagents/48-planning-subagent-definition.png)
+
+<sub>Source: [`48-planning-subagent-definition.excalidraw`](../../diagrams/component-cards/subagents/48-planning-subagent-definition.excalidraw).</sub>
+
 ## What it is
 
 A subagent definition bundled with the sprint-loop skill
