@@ -1,0 +1,7 @@
+{
+  "harness_tools": ["Read", "Glob", "Grep", "Bash", "Edit", "Write", "WebFetch", "WebSearch"],
+  "writes_files": ["Bash", "Edit", "Write"],
+  "concepts": {
+    "estimating": ["rate how hard", "how long", "size rating"]
+  }
+}
