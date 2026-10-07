@@ -18,6 +18,10 @@ related:
 > test and calibration tables — anchors for three of the six axes, bands with holes, and
 > a rule that scores an axis that does not apply as the top mark.
 
+![Axis Scoring Guide: the evaluator scores against the contract using a rubric with anchors for three of six axes, bands with holes and a not-applicable rule the validator cannot catch](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/41-axis-scoring-guide.png)
+
+<sub>Source: [`41-axis-scoring-guide.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/41-axis-scoring-guide.excalidraw).</sub>
+
 ## What it is
 
 A reference file loaded during the evaluation phase of the sprint-loop orchestrator
