@@ -17,6 +17,10 @@ related:
 > one hard rule is worded four ways, and whose required notes include a section the rule
 > bans in another form.
 
+![Generator Role Reference: inputs converge on the implementer role, which hands self-written notes to the evaluator, and four places where the one hard rule leaks](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/39-generator-role-reference.png)
+
+<sub>Source: [`39-generator-role-reference.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/39-generator-role-reference.excalidraw).</sub>
+
 ## What it is
 
 A reference of about 130 lines in the sprint-loop skill's references directory
