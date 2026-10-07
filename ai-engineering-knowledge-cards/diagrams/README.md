@@ -61,11 +61,12 @@ cards are in `component-cards/workstream-hardening-orchestrator/`, the two subag
 | [Parallel Gap-Scan Subagent](../component-cards/subagents/30-parallel-gap-scan-subagent.md) | [`30-parallel-gap-scan-subagent.excalidraw`](component-cards/subagents/30-parallel-gap-scan-subagent.excalidraw) | [`30-parallel-gap-scan-subagent.png`](component-cards/subagents/30-parallel-gap-scan-subagent.png) |
 | [Benchmark Triage Subagent](../component-cards/subagents/31-benchmark-triage-subagent.md) | [`31-benchmark-triage-subagent.excalidraw`](component-cards/subagents/31-benchmark-triage-subagent.excalidraw) | [`31-benchmark-triage-subagent.png`](component-cards/subagents/31-benchmark-triage-subagent.png) |
 
-## Component cards — role-separated sprint loop orchestrator (9 of 19 drawn)
+## Component cards — role-separated sprint loop orchestrator (19 of 19 drawn)
 
-Cards 32–40 are drawn and embedded in their cards; 41–50 are still pending. One row per card, so the gap
-is visible; sources go in `component-cards/role-separated-sprint-loop-orchestrator/` (subagents in
-`component-cards/subagents/`).
+Every card of the bundle, 32–50, is drawn and embedded in its card. Sources for the skill's own cards
+are in `component-cards/role-separated-sprint-loop-orchestrator/`, the three subagents' in
+`component-cards/subagents/`. Hungarian renders of 32–40 sit beside them in
+`component-cards/role-separated-sprint-loop-orchestrator/hu/`.
 
 | Card | Source | Render |
 |---|---|---|
@@ -78,16 +79,16 @@ is visible; sources go in `component-cards/role-separated-sprint-loop-orchestrat
 | [Evaluator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/38-evaluator-role-reference.md) | [`38-evaluator-role-reference.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/38-evaluator-role-reference.excalidraw) | [`38-evaluator-role-reference.png`](component-cards/role-separated-sprint-loop-orchestrator/38-evaluator-role-reference.png) |
 | [Generator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/39-generator-role-reference.md) | [`39-generator-role-reference.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/39-generator-role-reference.excalidraw) | [`39-generator-role-reference.png`](component-cards/role-separated-sprint-loop-orchestrator/39-generator-role-reference.png) |
 | [Planner Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/40-planner-role-reference.md) | [`40-planner-role-reference.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/40-planner-role-reference.excalidraw) | [`40-planner-role-reference.png`](component-cards/role-separated-sprint-loop-orchestrator/40-planner-role-reference.png) |
-| [Axis Scoring Guide](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/41-axis-scoring-guide.md) | pending | — |
-| [Role Spawn Prompt Set](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/42-role-spawn-prompt-set.md) | pending | — |
-| [Worked Loop Walkthroughs](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/43-worked-loop-walkthroughs.md) | pending | — |
-| [Loop Gate and History Harness](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/44-loop-gate-and-history-harness.md) | pending | — |
-| [Loop State Recorder](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/45-loop-state-recorder.md) | pending | — |
-| [Evaluation Structure Validator](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/46-evaluation-structure-validator.md) | pending | — |
-| [Sprint Contract Writer](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/47-sprint-contract-writer.md) | pending | — |
-| [Planning Subagent Definition](../component-cards/subagents/48-planning-subagent-definition.md) | pending | — |
-| [Implementation Subagent Definition](../component-cards/subagents/49-implementation-subagent-definition.md) | pending | — |
-| [Evaluation Subagent Definition](../component-cards/subagents/50-evaluation-subagent-definition.md) | pending | — |
+| [Axis Scoring Guide](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/41-axis-scoring-guide.md) | [`41-axis-scoring-guide.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/41-axis-scoring-guide.excalidraw) | [`41-axis-scoring-guide.png`](component-cards/role-separated-sprint-loop-orchestrator/41-axis-scoring-guide.png) |
+| [Role Spawn Prompt Set](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/42-role-spawn-prompt-set.md) | [`42-role-spawn-prompt-set.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/42-role-spawn-prompt-set.excalidraw) | [`42-role-spawn-prompt-set.png`](component-cards/role-separated-sprint-loop-orchestrator/42-role-spawn-prompt-set.png) |
+| [Worked Loop Walkthroughs](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/43-worked-loop-walkthroughs.md) | [`43-worked-loop-walkthroughs.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/43-worked-loop-walkthroughs.excalidraw) | [`43-worked-loop-walkthroughs.png`](component-cards/role-separated-sprint-loop-orchestrator/43-worked-loop-walkthroughs.png) |
+| [Loop Gate and History Harness](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/44-loop-gate-and-history-harness.md) | [`44-loop-gate-and-history-harness.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/44-loop-gate-and-history-harness.excalidraw) | [`44-loop-gate-and-history-harness.png`](component-cards/role-separated-sprint-loop-orchestrator/44-loop-gate-and-history-harness.png) |
+| [Loop State Recorder](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/45-loop-state-recorder.md) | [`45-loop-state-recorder.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/45-loop-state-recorder.excalidraw) | [`45-loop-state-recorder.png`](component-cards/role-separated-sprint-loop-orchestrator/45-loop-state-recorder.png) |
+| [Evaluation Structure Validator](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/46-evaluation-structure-validator.md) | [`46-evaluation-structure-validator.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/46-evaluation-structure-validator.excalidraw) | [`46-evaluation-structure-validator.png`](component-cards/role-separated-sprint-loop-orchestrator/46-evaluation-structure-validator.png) |
+| [Sprint Contract Writer](../component-cards/skills/role-separated-sprint-loop-orchestrator/scripts/47-sprint-contract-writer.md) | [`47-sprint-contract-writer.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/47-sprint-contract-writer.excalidraw) | [`47-sprint-contract-writer.png`](component-cards/role-separated-sprint-loop-orchestrator/47-sprint-contract-writer.png) |
+| [Planning Subagent Definition](../component-cards/subagents/48-planning-subagent-definition.md) | [`48-planning-subagent-definition.excalidraw`](component-cards/subagents/48-planning-subagent-definition.excalidraw) | [`48-planning-subagent-definition.png`](component-cards/subagents/48-planning-subagent-definition.png) |
+| [Implementation Subagent Definition](../component-cards/subagents/49-implementation-subagent-definition.md) | [`49-implementation-subagent-definition.excalidraw`](component-cards/subagents/49-implementation-subagent-definition.excalidraw) | [`49-implementation-subagent-definition.png`](component-cards/subagents/49-implementation-subagent-definition.png) |
+| [Evaluation Subagent Definition](../component-cards/subagents/50-evaluation-subagent-definition.md) | [`50-evaluation-subagent-definition.excalidraw`](component-cards/subagents/50-evaluation-subagent-definition.excalidraw) | [`50-evaluation-subagent-definition.png`](component-cards/subagents/50-evaluation-subagent-definition.png) |
 
 ## Teaching cards (12)
 
