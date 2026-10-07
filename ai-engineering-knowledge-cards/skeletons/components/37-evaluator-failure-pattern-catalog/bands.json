@@ -1,0 +1,11 @@
+{
+  "axis": "test_coverage",
+  "unit": "share of the specified scenarios that are tested",
+  "bands": [
+    {"score": 1, "label": "no tests at all", "min": 0.0, "max": 0.0},
+    {"score": 2, "label": "happy path only", "min": 0.01, "max": 0.29},
+    {"score": 3, "label": "some error cases", "min": 0.50, "max": 0.70},
+    {"score": 4, "label": "every specified scenario", "min": 1.0, "max": 1.0}
+  ],
+  "model_answer": {"tested": 5, "specified": 8, "score_given": 2}
+}
