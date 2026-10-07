@@ -1,0 +1,20 @@
+{
+  "phase": "gate",
+  "sprint": "s1",
+  "max_iterations": 3,
+  "task": "csv import module",
+  "sprints": {
+    "s1": {
+      "iteration": 1,
+      "status": "active",
+      "evaluations": [
+        {"iteration": 1, "result": "fail", "scores": {"correctness": 2, "error_handling": 3, "test_coverage": 1}}
+      ]
+    }
+  },
+  "history": [
+    {"action": "phase", "to": "plan"},
+    {"action": "phase", "to": "generate"},
+    {"action": "iteration", "result": "fail"}
+  ]
+}

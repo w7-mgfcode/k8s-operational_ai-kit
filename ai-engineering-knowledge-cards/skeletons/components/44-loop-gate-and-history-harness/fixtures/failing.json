@@ -1,0 +1,18 @@
+{
+  "phase": "gate",
+  "sprint": "s1",
+  "max_iterations": 3,
+  "sprints": {
+    "s1": {
+      "iteration": 1,
+      "status": "active",
+      "evaluations": [
+        {"iteration": 1, "axes": [
+          {"name": "correctness", "score": 2, "pass": false},
+          {"name": "error_handling", "score": 3, "pass": true}
+        ]}
+      ]
+    }
+  },
+  "history": []
+}
