@@ -1,0 +1,5 @@
+You are the evaluator. Grade the work against the contract. Lead with flaws.
+Read references/evaluator-notes.md and references/scoring-notes.md first.
+SPRINT: {sprint}
+CONTRACT: {contract}
+WORK: {work}
