@@ -36,6 +36,10 @@ related:
 > fixed in advance — and holds that separation with sentences, a gate that never reads the
 > verdict, and commands that do not run as documented.
 
+![Role-Separated Sprint Loop Orchestrator: six phases of the loop, with the prose-only separation, the gate that never reads the verdict, and the deliberate gaps drawn in warning colours](../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/32-role-separated-sprint-loop-orchestrator.png)
+
+<sub>Source: [`32-role-separated-sprint-loop-orchestrator.excalidraw`](../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/32-role-separated-sprint-loop-orchestrator.excalidraw).</sub>
+
 ## What it is
 
 A skill of about three hundred lines that drives a six-phase loop for multi-file work: plan,
