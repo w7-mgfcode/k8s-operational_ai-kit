@@ -1,0 +1,8 @@
+{
+  "required_elements": ["what", "where", "axis", "passing"],
+  "formats": {
+    "one-line (the role reference's output block)": "1. Decode errors are dropped - importer/rows.py:41-48 - error_handling",
+    "bold + follow-on line (the evaluation template)": "1. **Decode errors are dropped** - importer/rows.py:41-48 - Axis: error_handling\n   Passing looks like: a decode error is recorded with its line number",
+    "four labelled lines (the scoring guide)": "1. WHAT: Decode errors are dropped\n   WHERE: importer/rows.py:41-48\n   AXIS: error_handling\n   PASSING LOOKS LIKE: a decode error is recorded with its line number"
+  }
+}
