@@ -17,6 +17,10 @@ related:
 > Every gate the hardening sprint must pass, written down once — and then written again
 > in code, where four of them say something different.
 
+![Workstream Gate Catalogue: four layers of gates, four catalogue-versus-runner disagreements, and the gaps around them](../../../../diagrams/component-cards/workstream-hardening-orchestrator/19-workstream-gate-catalogue.png)
+
+<sub>Source: [`19-workstream-gate-catalogue.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/19-workstream-gate-catalogue.excalidraw).</sub>
+
 ## What it is
 
 A reference file the hardening orchestrator
