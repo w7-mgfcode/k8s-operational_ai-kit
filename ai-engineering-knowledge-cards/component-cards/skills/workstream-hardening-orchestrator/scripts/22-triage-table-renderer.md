@@ -17,6 +17,10 @@ related:
 > A script that turns parsed benchmark findings into the table a human triages — and
 > pre-fills the only decision it can make, "not applicable", from a regular expression.
 
+![Triage Table Renderer: parser findings become a table whose rows are only ever NA or TBD, passed by a gate that checks the file exists](../../../../diagrams/component-cards/workstream-hardening-orchestrator/22-triage-table-renderer.png)
+
+<sub>Source: [`22-triage-table-renderer.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/22-triage-table-renderer.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script in workstream D of the hardening orchestrator

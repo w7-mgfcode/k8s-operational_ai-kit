@@ -17,6 +17,10 @@ related:
 > Prints a fixed rollback recipe per workstream. The recipe is the same whatever was
 > changed, and its git commands restore one file while discarding uncommitted work.
 
+![Static Rollback Planner: one fixed recipe per workstream, whatever was changed, with its git step restoring one file and discarding uncommitted work, and no phase that runs it](../../../../diagrams/component-cards/workstream-hardening-orchestrator/25-static-rollback-planner.png)
+
+<sub>Source: [`25-static-rollback-planner.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/25-static-rollback-planner.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script that prints a rollback plan for one of the sprint's

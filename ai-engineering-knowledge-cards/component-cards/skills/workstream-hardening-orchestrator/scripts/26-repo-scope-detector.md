@@ -16,6 +16,10 @@ related:
 > role as owned, treating a stub file as readiness and writing "tomorrow" in place
 > of a date.
 
+![Repository Scope Detector: a repository layout in, a pre-filled sprint state out, and the six places it decides scope without asking](../../../../diagrams/component-cards/workstream-hardening-orchestrator/26-repo-scope-detector.png)
+
+<sub>Source: [`26-repo-scope-detector.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/26-repo-scope-detector.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script, the first code the orchestrator

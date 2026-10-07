@@ -16,6 +16,10 @@ related:
 > Two halves of one health check: one generates the commands an operator runs against the
 > secrets store, the other parses their output — and neither reads what the other produces.
 
+![Seal-State Health Checker: generate mode, the operator's saved output and parse mode laid out as a snake, with the break where the unmarked output meets a parser that wants marked sections, and the failure paths below](../../../../diagrams/component-cards/workstream-hardening-orchestrator/29-seal-state-health-check.png)
+
+<sub>Source: [`29-seal-state-health-check.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/29-seal-state-health-check.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script with two modes, used in the hardening orchestrator's two

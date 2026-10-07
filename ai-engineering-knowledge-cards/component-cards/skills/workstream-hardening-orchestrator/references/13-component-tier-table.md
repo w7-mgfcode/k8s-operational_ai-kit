@@ -16,6 +16,10 @@ related:
 > each with a confirmation rule — kept in two copies that disagree, and ranked by
 > judgement rather than by the dependent count it lists.
 
+![Component Tier Table: the lookup script and the file hold two copies, four tiers map to advisory confirmations, tiers follow judgement rather than dependent counts, and the external single points of failure have no lookup](../../../../diagrams/component-cards/workstream-hardening-orchestrator/13-component-tier-table.png)
+
+<sub>Source: [`13-component-tier-table.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/13-component-tier-table.excalidraw).</sub>
+
 ## What it is
 
 A reference file the hardening orchestrator

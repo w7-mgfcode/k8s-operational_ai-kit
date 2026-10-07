@@ -43,6 +43,10 @@ related:
 > blast-radius confirmations, dry-runs and named checkpoints — and hands every cluster
 > command to an operator instead of running it.
 
+![Workstream Hardening Orchestrator: six gated phases over a sprint plan, where every confirmation is prose and the one coded row is the one that runs](../../../diagrams/component-cards/workstream-hardening-orchestrator/08-workstream-hardening-orchestrator.png)
+
+<sub>Source: [`08-workstream-hardening-orchestrator.excalidraw`](../../../diagrams/component-cards/workstream-hardening-orchestrator/08-workstream-hardening-orchestrator.excalidraw).</sub>
+
 ## What it is
 
 A model-invoked skill for hardening an Ansible-managed Kubernetes cluster from its

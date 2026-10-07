@@ -15,6 +15,10 @@ related:
 > Three if-then gates that decide which workstreams may start — documented as state
 > machines, stored as free strings, and evaluated by nobody but the model reading them.
 
+![Conditional Sprint Triggers: three state machines on paper, the status script that only prints their states, stability as an operator's claim, and the report that cannot show every state](../../../../diagrams/component-cards/workstream-hardening-orchestrator/14-conditional-sprint-triggers.png)
+
+<sub>Source: [`14-conditional-sprint-triggers.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/14-conditional-sprint-triggers.excalidraw).</sub>
+
 ## What it is
 
 A reference file the hardening orchestrator

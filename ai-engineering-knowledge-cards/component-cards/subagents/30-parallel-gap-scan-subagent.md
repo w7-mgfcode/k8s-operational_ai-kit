@@ -16,6 +16,10 @@ related:
 > A small-model worker the hardening orchestrator dispatches to inventory missing container
 > hardening fields — read-only by its own description, and by nothing else.
 
+![Parallel Gap-Scan Subagent: the dispatch and its JSON inventory, the read-only limit that is prose with no tools: key, and the failure paths](../../diagrams/component-cards/subagents/30-parallel-gap-scan-subagent.png)
+
+<sub>Source: [`30-parallel-gap-scan-subagent.excalidraw`](../../diagrams/component-cards/subagents/30-parallel-gap-scan-subagent.excalidraw).</sub>
+
 ## What it is
 
 A subagent definition bundled with the hardening orchestrator

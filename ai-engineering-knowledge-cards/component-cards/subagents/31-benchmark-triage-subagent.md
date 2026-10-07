@@ -16,6 +16,10 @@ related:
 > A small-model worker that runs the benchmark parser and the triage renderer for the
 > hardening orchestrator — forbidden two write tools, and handed the one that writes anyway.
 
+![Benchmark Triage Subagent: the dispatch, its five steps, and the gap between a prose ban on Edit and Write and the Bash tool that writes the table anyway](../../diagrams/component-cards/subagents/31-benchmark-triage-subagent.png)
+
+<sub>Source: [`31-benchmark-triage-subagent.excalidraw`](../../diagrams/component-cards/subagents/31-benchmark-triage-subagent.excalidraw).</sub>
+
 ## What it is
 
 A subagent definition bundled with the hardening orchestrator

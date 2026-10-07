@@ -17,6 +17,10 @@ related:
 > Exact command sequences for the incidents a hardening sprint can cause — destructive
 > verbs included, guarded by nothing but the skill's promise never to run them.
 
+![Recovery Runbook Set: look, act, verify with destructive verbs beside read ones, uneven previews, three copies of one rollback and a parser that needs markers only one loop prints](../../../../diagrams/component-cards/workstream-hardening-orchestrator/16-recovery-runbook-set.png)
+
+<sub>Source: [`16-recovery-runbook-set.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/16-recovery-runbook-set.excalidraw).</sub>
+
 ## What it is
 
 A reference file of incident runbooks that the hardening orchestrator

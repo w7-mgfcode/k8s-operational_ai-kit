@@ -14,6 +14,10 @@ related:
 > A terminology file that tells the model to use its terms exactly — and whose terms are
 > mostly facts about one installation, frozen on the day it was written.
 
+![Installation Glossary: measurements filed as definitions, copied verbatim into every artifact, with nothing that compares them to the repository](../../../../diagrams/component-cards/workstream-hardening-orchestrator/18-installation-glossary.png)
+
+<sub>Source: [`18-installation-glossary.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/18-installation-glossary.excalidraw).</sub>
+
 ## What it is
 
 A reference file the hardening orchestrator

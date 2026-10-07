@@ -21,6 +21,10 @@ related:
 > template that says the sprint is built from it, while the two scripts that build sprints
 > each carry their own copy and never open it.
 
+![Sprint State File Template: one structure written three times, a header claim no builder honours, and the later phases that read a file whose vocabularies, deadlines and owned boundary nothing checks](../../../../diagrams/component-cards/workstream-hardening-orchestrator/10-sprint-state-file.png)
+
+<sub>Source: [`10-sprint-state-file.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/10-sprint-state-file.excalidraw).</sub>
+
 ## What it is
 
 A YAML template of about 120 lines in the hardening skill's templates directory
