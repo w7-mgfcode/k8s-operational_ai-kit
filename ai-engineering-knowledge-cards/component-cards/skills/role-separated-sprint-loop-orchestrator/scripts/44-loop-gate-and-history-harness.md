@@ -17,6 +17,10 @@ related:
 > The script that reports where a sprint loop stands — start, history, and a gate verdict
 > over one state file — and whose gate cannot tell a recorded failure from a pass.
 
+![Loop Gate and History Harness: three subcommands over one state file, with the gate reading a per-axis list the recorder never writes and every verdict exiting 0](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/44-loop-gate-and-history-harness.png)
+
+<sub>Source: [`44-loop-gate-and-history-harness.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/44-loop-gate-and-history-harness.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script with three subcommands over one JSON state file: `init`
