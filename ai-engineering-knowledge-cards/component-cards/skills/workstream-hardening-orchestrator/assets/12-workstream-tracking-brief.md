@@ -14,6 +14,10 @@ related:
 > A one-page brief per workstream — objective, scope, blast radius, rollback and
 > status — that the skill lists among its templates and no phase ever fills in.
 
+![Workstream Tracking Brief: listed in the template table but called by no phase, checkpoint or script; if filled, every block is copied by hand from five sources, and nothing reads the result](../../../../diagrams/component-cards/workstream-hardening-orchestrator/12-workstream-tracking-brief.png)
+
+<sub>Source: [`12-workstream-tracking-brief.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/12-workstream-tracking-brief.excalidraw).</sub>
+
 ## What it is
 
 A Markdown template in the hardening orchestrator's assets
