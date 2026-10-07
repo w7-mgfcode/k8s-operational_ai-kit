@@ -1,0 +1,6 @@
+{
+  "sprint": "s1",
+  "iteration": 1,
+  "thresholds": {"correctness": 4, "error_handling": 3, "test_coverage": 3},
+  "scores": {"correctness": 3, "error_handling": 2, "test_coverage": 2}
+}
