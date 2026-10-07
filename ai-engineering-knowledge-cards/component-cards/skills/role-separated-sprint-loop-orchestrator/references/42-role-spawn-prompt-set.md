@@ -19,6 +19,10 @@ related:
 > builder and the grader as separate agents — that skip the grader's most-stressed file,
 > spawn every role as a general agent with every tool, and are checked by no one.
 
+![Role Spawn Prompt Set: four prompts picked, filled and spawned as general agents, with the role's tool limit enforced by nothing](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/42-role-spawn-prompt-set.png)
+
+<sub>Source: [`42-role-spawn-prompt-set.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/42-role-spawn-prompt-set.excalidraw).</sub>
+
 ## What it is
 
 A reference file of about 170 lines holding four fenced prompts: the planner's, the
