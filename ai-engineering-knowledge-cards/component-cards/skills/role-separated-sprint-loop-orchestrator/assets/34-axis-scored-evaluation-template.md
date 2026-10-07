@@ -18,6 +18,10 @@ related:
 > The form a grader fills in — one section per contract axis, flaws first, blockers listed
 > again at the end — whose axis headings follow a naming convention the contract does not.
 
+![Axis-Scored Evaluation Template: a per-axis form of which the validator reads only the headings and the summary, and the five ways it is filled and still wrong](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/34-axis-scored-evaluation-template.png)
+
+<sub>Source: [`34-axis-scored-evaluation-template.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/34-axis-scored-evaluation-template.excalidraw).</sub>
+
 ## What it is
 
 A Markdown template of about fifty-five lines that the sprint-loop skill
