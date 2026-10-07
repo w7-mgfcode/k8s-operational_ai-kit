@@ -16,6 +16,10 @@ related:
 > Ten named ways an evaluator softens a verdict, with a self-check to run before
 > submitting — handed to the one reader whose bias it describes, to check by eye.
 
+![Evaluator Failure-Pattern Catalog: a reference read whole before evaluating, then eight heuristics and five questions run by the evaluator on its own draft, with the five failures that follow](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/37-evaluator-failure-pattern-catalog.png)
+
+<sub>Source: [`37-evaluator-failure-pattern-catalog.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/37-evaluator-failure-pattern-catalog.excalidraw).</sub>
+
 ## What it is
 
 A reference of about 200 lines in the sprint-loop skill's references directory
