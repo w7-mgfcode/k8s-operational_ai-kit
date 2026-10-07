@@ -17,6 +17,10 @@ related:
 > The script that decides whether a workstream passed: a fixed table of offline gates and
 > cluster commands — whose gates check that a file exists, not that this sprint made it.
 
+![Workstream Gate Runner: a workstream goes through a fixed gate table to one JSON verdict, with the eight observed failure paths and the three deliberate gaps drawn beside it](../../../../diagrams/component-cards/workstream-hardening-orchestrator/28-workstream-gate-runner.png)
+
+<sub>Source: [`28-workstream-gate-runner.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/28-workstream-gate-runner.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script the hardening orchestrator
