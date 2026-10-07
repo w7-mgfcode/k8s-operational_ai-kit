@@ -4,8 +4,8 @@ title: Blast-Radius Gating
 layer: execution
 maturity: proven
 instanced_by:
-  - reference/blast-radius-matrix
-  - script/blast-radius-check
+  - reference/component-tier-table
+  - script/tier-lookup-gate
   - guard/environment-class-resolver
   - gate/dry-run-before-apply
 related:
