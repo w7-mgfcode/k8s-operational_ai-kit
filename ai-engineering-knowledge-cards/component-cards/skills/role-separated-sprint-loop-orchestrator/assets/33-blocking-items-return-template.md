@@ -17,6 +17,10 @@ related:
 > and threshold — which hands the builder the numbers its own rules say not to aim at, and
 > which nothing generates or checks.
 
+![Blocking-Items Return Template: a failed evaluation is retyped by hand into a blockers-only return for the builder, with no generator, no comparison and no gate](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/33-blocking-items-return-template.png)
+
+<sub>Source: [`33-blocking-items-return-template.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/33-blocking-items-return-template.excalidraw).</sub>
+
 ## What it is
 
 A Markdown template of about forty lines that the sprint-loop skill
