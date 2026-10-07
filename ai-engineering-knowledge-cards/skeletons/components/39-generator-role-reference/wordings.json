@@ -1,0 +1,29 @@
+{
+  "question": "What may the implementer do with the contract?",
+  "wordings": [
+    {
+      "where": "the role reference",
+      "may_read": "yes",
+      "may_steer_by_it": "yes",
+      "may_self_score": "no"
+    },
+    {
+      "where": "the contract template",
+      "may_read": "yes",
+      "may_steer_by_it": "unstated",
+      "may_self_score": "no"
+    },
+    {
+      "where": "the skill's build phase",
+      "may_read": "handed it",
+      "may_steer_by_it": "no",
+      "may_self_score": "no"
+    },
+    {
+      "where": "the spawn prompt",
+      "may_read": "handed it",
+      "may_steer_by_it": "no",
+      "may_self_score": "no"
+    }
+  ]
+}
