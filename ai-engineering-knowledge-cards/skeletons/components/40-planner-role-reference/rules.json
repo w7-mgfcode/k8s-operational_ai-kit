@@ -1,0 +1,11 @@
+{
+  "required_sprint_fields": ["scope", "files", "dependencies", "acceptance targets", "estimated complexity"],
+  "forbidden_activities": ["estimate effort", "judge feasibility"],
+  "field_needs_activity": {
+    "estimated complexity": "estimate effort"
+  },
+  "sources": {
+    "required_sprint_fields": "the role reference's spec structure",
+    "forbidden_activities": "the planning subagent's definition and the planner's spawn prompt"
+  }
+}
