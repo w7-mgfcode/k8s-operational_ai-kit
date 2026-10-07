@@ -17,6 +17,10 @@ related:
 > The builder's role as a standalone subagent file — the only role in the loop listed write
 > tools, with a file scope that is a sentence and a ban on caveats that sits beside a known-gaps section.
 
+![Implementation Subagent Definition: the builder's route from four inputs through six steps to notes and changes, with the grant under the wrong key, the scope as prose and the overlapping ban drawn as failures](../../diagrams/component-cards/subagents/49-implementation-subagent-definition.png)
+
+<sub>Source: [`49-implementation-subagent-definition.excalidraw`](../../diagrams/component-cards/subagents/49-implementation-subagent-definition.excalidraw).</sub>
+
 ## What it is
 
 A subagent definition bundled with the sprint-loop skill
