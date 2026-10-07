@@ -19,6 +19,10 @@ related:
 > The grader's whole job in one document — flaw first, score low when unsure, treat missing
 > evidence as failure — written in three shapes for the one thing it asks for most.
 
+![Evaluator Role Reference: one role document whose blocking-issue shape, contract version and validator step are each defined in more than one place, with the three gaps the card names](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/38-evaluator-role-reference.png)
+
+<sub>Source: [`38-evaluator-role-reference.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/38-evaluator-role-reference.excalidraw).</sub>
+
 ## What it is
 
 A reference of about 170 lines in the sprint-loop skill's references directory
