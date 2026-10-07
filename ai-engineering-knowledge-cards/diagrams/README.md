@@ -61,22 +61,23 @@ cards are in `component-cards/workstream-hardening-orchestrator/`, the two subag
 | [Parallel Gap-Scan Subagent](../component-cards/subagents/30-parallel-gap-scan-subagent.md) | [`30-parallel-gap-scan-subagent.excalidraw`](component-cards/subagents/30-parallel-gap-scan-subagent.excalidraw) | [`30-parallel-gap-scan-subagent.png`](component-cards/subagents/30-parallel-gap-scan-subagent.png) |
 | [Benchmark Triage Subagent](../component-cards/subagents/31-benchmark-triage-subagent.md) | [`31-benchmark-triage-subagent.excalidraw`](component-cards/subagents/31-benchmark-triage-subagent.excalidraw) | [`31-benchmark-triage-subagent.png`](component-cards/subagents/31-benchmark-triage-subagent.png) |
 
-## Component cards — role-separated sprint loop orchestrator (pending)
+## Component cards — role-separated sprint loop orchestrator (9 of 19 drawn)
 
-No diagram drawn yet. One row per card, so the gap is visible; sources go in
-`component-cards/role-separated-sprint-loop-orchestrator/` (subagents in `component-cards/subagents/`).
+Cards 32–40 are drawn and embedded in their cards; 41–50 are still pending. One row per card, so the gap
+is visible; sources go in `component-cards/role-separated-sprint-loop-orchestrator/` (subagents in
+`component-cards/subagents/`).
 
 | Card | Source | Render |
 |---|---|---|
-| [Role-Separated Sprint Loop Orchestrator](../component-cards/skills/role-separated-sprint-loop-orchestrator/32-role-separated-sprint-loop-orchestrator.md) | pending | — |
-| [Blocking-Items Return Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/33-blocking-items-return-template.md) | pending | — |
-| [Axis-Scored Evaluation Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/34-axis-scored-evaluation-template.md) | pending | — |
-| [Run Outcome Report Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/35-run-outcome-report-template.md) | pending | — |
-| [Sprint Contract Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/36-sprint-contract-template.md) | pending | — |
-| [Evaluator Failure-Pattern Catalog](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/37-evaluator-failure-pattern-catalog.md) | pending | — |
-| [Evaluator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/38-evaluator-role-reference.md) | pending | — |
-| [Generator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/39-generator-role-reference.md) | pending | — |
-| [Planner Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/40-planner-role-reference.md) | pending | — |
+| [Role-Separated Sprint Loop Orchestrator](../component-cards/skills/role-separated-sprint-loop-orchestrator/32-role-separated-sprint-loop-orchestrator.md) | [`32-role-separated-sprint-loop-orchestrator.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/32-role-separated-sprint-loop-orchestrator.excalidraw) | [`32-role-separated-sprint-loop-orchestrator.png`](component-cards/role-separated-sprint-loop-orchestrator/32-role-separated-sprint-loop-orchestrator.png) |
+| [Blocking-Items Return Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/33-blocking-items-return-template.md) | [`33-blocking-items-return-template.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/33-blocking-items-return-template.excalidraw) | [`33-blocking-items-return-template.png`](component-cards/role-separated-sprint-loop-orchestrator/33-blocking-items-return-template.png) |
+| [Axis-Scored Evaluation Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/34-axis-scored-evaluation-template.md) | [`34-axis-scored-evaluation-template.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/34-axis-scored-evaluation-template.excalidraw) | [`34-axis-scored-evaluation-template.png`](component-cards/role-separated-sprint-loop-orchestrator/34-axis-scored-evaluation-template.png) |
+| [Run Outcome Report Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/35-run-outcome-report-template.md) | [`35-run-outcome-report-template.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/35-run-outcome-report-template.excalidraw) | [`35-run-outcome-report-template.png`](component-cards/role-separated-sprint-loop-orchestrator/35-run-outcome-report-template.png) |
+| [Sprint Contract Template](../component-cards/skills/role-separated-sprint-loop-orchestrator/assets/36-sprint-contract-template.md) | [`36-sprint-contract-template.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/36-sprint-contract-template.excalidraw) | [`36-sprint-contract-template.png`](component-cards/role-separated-sprint-loop-orchestrator/36-sprint-contract-template.png) |
+| [Evaluator Failure-Pattern Catalog](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/37-evaluator-failure-pattern-catalog.md) | [`37-evaluator-failure-pattern-catalog.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/37-evaluator-failure-pattern-catalog.excalidraw) | [`37-evaluator-failure-pattern-catalog.png`](component-cards/role-separated-sprint-loop-orchestrator/37-evaluator-failure-pattern-catalog.png) |
+| [Evaluator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/38-evaluator-role-reference.md) | [`38-evaluator-role-reference.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/38-evaluator-role-reference.excalidraw) | [`38-evaluator-role-reference.png`](component-cards/role-separated-sprint-loop-orchestrator/38-evaluator-role-reference.png) |
+| [Generator Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/39-generator-role-reference.md) | [`39-generator-role-reference.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/39-generator-role-reference.excalidraw) | [`39-generator-role-reference.png`](component-cards/role-separated-sprint-loop-orchestrator/39-generator-role-reference.png) |
+| [Planner Role Reference](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/40-planner-role-reference.md) | [`40-planner-role-reference.excalidraw`](component-cards/role-separated-sprint-loop-orchestrator/40-planner-role-reference.excalidraw) | [`40-planner-role-reference.png`](component-cards/role-separated-sprint-loop-orchestrator/40-planner-role-reference.png) |
 | [Axis Scoring Guide](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/41-axis-scoring-guide.md) | pending | — |
 | [Role Spawn Prompt Set](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/42-role-spawn-prompt-set.md) | pending | — |
 | [Worked Loop Walkthroughs](../component-cards/skills/role-separated-sprint-loop-orchestrator/references/43-worked-loop-walkthroughs.md) | pending | — |
