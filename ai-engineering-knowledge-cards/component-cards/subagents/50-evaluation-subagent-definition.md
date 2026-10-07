@@ -17,6 +17,10 @@ related:
 > The grader's role as a standalone subagent file — forbidden to modify any file, listed no write
 > tool, and so handed the shell to write its review, which writes anything.
 
+![Evaluation Subagent Definition: the grader's route from inputs through five steps to a review file, and where read-only is only a sentence](../../diagrams/component-cards/subagents/50-evaluation-subagent-definition.png)
+
+<sub>Source: [`50-evaluation-subagent-definition.excalidraw`](../../diagrams/component-cards/subagents/50-evaluation-subagent-definition.excalidraw).</sub>
+
 ## What it is
 
 A subagent definition bundled with the sprint-loop skill
