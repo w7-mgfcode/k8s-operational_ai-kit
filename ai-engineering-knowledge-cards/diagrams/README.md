@@ -28,11 +28,11 @@ Embedded in each card under `component-cards/skills/infrastructure-issue-investi
 | [Keyword-Narrowed Repository Search](../component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md) | [`05-keyword-narrowed-repo-search.excalidraw`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.excalidraw) | [`05-keyword-narrowed-repo-search.png`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.png) |
 | [Remediation Plan Template](../component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md) | [`06-remediation-plan-template.excalidraw`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.excalidraw) | [`06-remediation-plan-template.png`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.png) |
 
-## Component cards — workstream hardening orchestrator (20 of 24 drawn)
+## Component cards — workstream hardening orchestrator (24 of 24 drawn)
 
-Cards 08–27 are drawn and embedded in their cards; the rest are still pending. One row per
-card, so the gap is visible; sources go in `component-cards/workstream-hardening-orchestrator/`
-(subagents in `component-cards/`).
+Every card of the bundle, 08–31, is drawn and embedded in its card. Sources for the skill's own
+cards are in `component-cards/workstream-hardening-orchestrator/`, the two subagents' in
+`component-cards/subagents/`.
 
 | Card | Source | Render |
 |---|---|---|
@@ -56,10 +56,10 @@ card, so the gap is visible; sources go in `component-cards/workstream-hardening
 | [Static Rollback Planner](../component-cards/skills/workstream-hardening-orchestrator/scripts/25-static-rollback-planner.md) | [`25-static-rollback-planner.excalidraw`](component-cards/workstream-hardening-orchestrator/25-static-rollback-planner.excalidraw) | [`25-static-rollback-planner.png`](component-cards/workstream-hardening-orchestrator/25-static-rollback-planner.png) |
 | [Repository Scope Detector](../component-cards/skills/workstream-hardening-orchestrator/scripts/26-repo-scope-detector.md) | [`26-repo-scope-detector.excalidraw`](component-cards/workstream-hardening-orchestrator/26-repo-scope-detector.excalidraw) | [`26-repo-scope-detector.png`](component-cards/workstream-hardening-orchestrator/26-repo-scope-detector.png) |
 | [Sprint State Reporter](../component-cards/skills/workstream-hardening-orchestrator/scripts/27-sprint-state-reporter.md) | [`27-sprint-state-reporter.excalidraw`](component-cards/workstream-hardening-orchestrator/27-sprint-state-reporter.excalidraw) | [`27-sprint-state-reporter.png`](component-cards/workstream-hardening-orchestrator/27-sprint-state-reporter.png) |
-| [Workstream Gate Runner](../component-cards/skills/workstream-hardening-orchestrator/scripts/28-workstream-gate-runner.md) | pending | — |
-| [Seal-State Health Checker](../component-cards/skills/workstream-hardening-orchestrator/scripts/29-seal-state-health-check.md) | pending | — |
-| [Parallel Gap-Scan Subagent](../component-cards/subagents/30-parallel-gap-scan-subagent.md) | pending | — |
-| [Benchmark Triage Subagent](../component-cards/subagents/31-benchmark-triage-subagent.md) | pending | — |
+| [Workstream Gate Runner](../component-cards/skills/workstream-hardening-orchestrator/scripts/28-workstream-gate-runner.md) | [`28-workstream-gate-runner.excalidraw`](component-cards/workstream-hardening-orchestrator/28-workstream-gate-runner.excalidraw) | [`28-workstream-gate-runner.png`](component-cards/workstream-hardening-orchestrator/28-workstream-gate-runner.png) |
+| [Seal-State Health Checker](../component-cards/skills/workstream-hardening-orchestrator/scripts/29-seal-state-health-check.md) | [`29-seal-state-health-check.excalidraw`](component-cards/workstream-hardening-orchestrator/29-seal-state-health-check.excalidraw) | [`29-seal-state-health-check.png`](component-cards/workstream-hardening-orchestrator/29-seal-state-health-check.png) |
+| [Parallel Gap-Scan Subagent](../component-cards/subagents/30-parallel-gap-scan-subagent.md) | [`30-parallel-gap-scan-subagent.excalidraw`](component-cards/subagents/30-parallel-gap-scan-subagent.excalidraw) | [`30-parallel-gap-scan-subagent.png`](component-cards/subagents/30-parallel-gap-scan-subagent.png) |
+| [Benchmark Triage Subagent](../component-cards/subagents/31-benchmark-triage-subagent.md) | [`31-benchmark-triage-subagent.excalidraw`](component-cards/subagents/31-benchmark-triage-subagent.excalidraw) | [`31-benchmark-triage-subagent.png`](component-cards/subagents/31-benchmark-triage-subagent.png) |
 
 ## Teaching cards (12)
 
