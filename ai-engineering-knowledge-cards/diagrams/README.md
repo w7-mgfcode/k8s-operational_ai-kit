@@ -28,9 +28,9 @@ Embedded in each card under `component-cards/skills/infrastructure-issue-investi
 | [Keyword-Narrowed Repository Search](../component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md) | [`05-keyword-narrowed-repo-search.excalidraw`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.excalidraw) | [`05-keyword-narrowed-repo-search.png`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.png) |
 | [Remediation Plan Template](../component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md) | [`06-remediation-plan-template.excalidraw`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.excalidraw) | [`06-remediation-plan-template.png`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.png) |
 
-## Component cards — workstream hardening orchestrator (10 of 24 drawn)
+## Component cards — workstream hardening orchestrator (15 of 24 drawn)
 
-Cards 08–17 are drawn and embedded in their cards; the rest are still pending. One row per
+Cards 08–22 are drawn and embedded in their cards; the rest are still pending. One row per
 card, so the gap is visible; sources go in `component-cards/workstream-hardening-orchestrator/`
 (subagents in `component-cards/`).
 
@@ -46,11 +46,11 @@ card, so the gap is visible; sources go in `component-cards/workstream-hardening
 | [Dry-Run-First Invocation Contract](../component-cards/skills/workstream-hardening-orchestrator/references/15-dry-run-invocation-contract.md) | [`15-dry-run-invocation-contract.excalidraw`](component-cards/workstream-hardening-orchestrator/15-dry-run-invocation-contract.excalidraw) | [`15-dry-run-invocation-contract.png`](component-cards/workstream-hardening-orchestrator/15-dry-run-invocation-contract.png) |
 | [Recovery Runbook Set](../component-cards/skills/workstream-hardening-orchestrator/references/16-recovery-runbook-set.md) | [`16-recovery-runbook-set.excalidraw`](component-cards/workstream-hardening-orchestrator/16-recovery-runbook-set.excalidraw) | [`16-recovery-runbook-set.png`](component-cards/workstream-hardening-orchestrator/16-recovery-runbook-set.png) |
 | [Owned-Scope Policy Remediation Guide](../component-cards/skills/workstream-hardening-orchestrator/references/17-owned-scope-policy-remediation.md) | [`17-owned-scope-policy-remediation.excalidraw`](component-cards/workstream-hardening-orchestrator/17-owned-scope-policy-remediation.excalidraw) | [`17-owned-scope-policy-remediation.png`](component-cards/workstream-hardening-orchestrator/17-owned-scope-policy-remediation.png) |
-| [Installation Glossary](../component-cards/skills/workstream-hardening-orchestrator/references/18-installation-glossary.md) | pending | — |
-| [Workstream Gate Catalogue](../component-cards/skills/workstream-hardening-orchestrator/references/19-workstream-gate-catalogue.md) | pending | — |
-| [Secrets-Store TLS and Auto-Unseal Guide](../component-cards/skills/workstream-hardening-orchestrator/references/20-secrets-store-tls-unseal-guide.md) | pending | — |
-| [Tier Lookup Gate](../component-cards/skills/workstream-hardening-orchestrator/scripts/21-tier-lookup-gate.md) | pending | — |
-| [Triage Table Renderer](../component-cards/skills/workstream-hardening-orchestrator/scripts/22-triage-table-renderer.md) | pending | — |
+| [Installation Glossary](../component-cards/skills/workstream-hardening-orchestrator/references/18-installation-glossary.md) | [`18-installation-glossary.excalidraw`](component-cards/workstream-hardening-orchestrator/18-installation-glossary.excalidraw) | [`18-installation-glossary.png`](component-cards/workstream-hardening-orchestrator/18-installation-glossary.png) |
+| [Workstream Gate Catalogue](../component-cards/skills/workstream-hardening-orchestrator/references/19-workstream-gate-catalogue.md) | [`19-workstream-gate-catalogue.excalidraw`](component-cards/workstream-hardening-orchestrator/19-workstream-gate-catalogue.excalidraw) | [`19-workstream-gate-catalogue.png`](component-cards/workstream-hardening-orchestrator/19-workstream-gate-catalogue.png) |
+| [Secrets-Store TLS and Auto-Unseal Guide](../component-cards/skills/workstream-hardening-orchestrator/references/20-secrets-store-tls-unseal-guide.md) | [`20-secrets-store-tls-unseal-guide.excalidraw`](component-cards/workstream-hardening-orchestrator/20-secrets-store-tls-unseal-guide.excalidraw) | [`20-secrets-store-tls-unseal-guide.png`](component-cards/workstream-hardening-orchestrator/20-secrets-store-tls-unseal-guide.png) |
+| [Tier Lookup Gate](../component-cards/skills/workstream-hardening-orchestrator/scripts/21-tier-lookup-gate.md) | [`21-tier-lookup-gate.excalidraw`](component-cards/workstream-hardening-orchestrator/21-tier-lookup-gate.excalidraw) | [`21-tier-lookup-gate.png`](component-cards/workstream-hardening-orchestrator/21-tier-lookup-gate.png) |
+| [Triage Table Renderer](../component-cards/skills/workstream-hardening-orchestrator/scripts/22-triage-table-renderer.md) | [`22-triage-table-renderer.excalidraw`](component-cards/workstream-hardening-orchestrator/22-triage-table-renderer.excalidraw) | [`22-triage-table-renderer.png`](component-cards/workstream-hardening-orchestrator/22-triage-table-renderer.png) |
 | [Hardening Field Scanner](../component-cards/skills/workstream-hardening-orchestrator/scripts/23-hardening-field-scanner.md) | pending | — |
 | [Benchmark Report Parser](../component-cards/skills/workstream-hardening-orchestrator/scripts/24-benchmark-report-parser.md) | pending | — |
 | [Static Rollback Planner](../component-cards/skills/workstream-hardening-orchestrator/scripts/25-static-rollback-planner.md) | pending | — |
