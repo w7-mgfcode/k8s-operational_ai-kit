@@ -17,6 +17,10 @@ related:
 > The script that writes the loop's phase, sprint and iteration into one append-only history —
 > and records whatever it is told, from any state to any state.
 
+![Loop State Recorder: three subcommands load, mutate and atomically rewrite one state file, which checks only a list of seven phase names and records any phase move, a reopened escalation and an asserted pass](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/45-loop-state-recorder.png)
+
+<sub>Source: [`45-loop-state-recorder.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/45-loop-state-recorder.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script with three subcommands over the loop's JSON state file:
