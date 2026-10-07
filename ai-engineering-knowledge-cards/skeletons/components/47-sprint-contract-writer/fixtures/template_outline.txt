@@ -1,0 +1,3 @@
+sections: Sprint Scope | Evaluation Axes | Scoring Scale | Out of Scope | Contract Rules
+axes table columns: Axis | Threshold | Weight | Description
+status values: active | superseded | archived
