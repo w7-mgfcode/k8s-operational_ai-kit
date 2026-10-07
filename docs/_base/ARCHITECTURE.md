@@ -47,7 +47,7 @@ k8s-operational_ai-kit/
     ├── skeletons/       20 prototypes + pipelines/ + components/
     ├── templates/       CARD_TEMPLATE.md, COMPONENT_CARD_TEMPLATE.md
     ├── diagrams/        every .excalidraw source and the .png renders that exist
-    │                    (34 of 47), mirroring cards/, component-cards/ and
+    │                    (43 of 56), mirroring cards/, component-cards/ and
     │                    teaching/; README.md indexes them
     ├── teaching/        condensed teaching cards (12 of 20) — format set by the
     │                    knowledge-card-summarizer skill, not checked by check.py
