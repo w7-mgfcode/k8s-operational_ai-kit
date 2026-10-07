@@ -28,9 +28,9 @@ Embedded in each card under `component-cards/skills/infrastructure-issue-investi
 | [Keyword-Narrowed Repository Search](../component-cards/skills/infrastructure-issue-investigator/references/05-keyword-narrowed-repo-search.md) | [`05-keyword-narrowed-repo-search.excalidraw`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.excalidraw) | [`05-keyword-narrowed-repo-search.png`](component-cards/infrastructure-issue-investigator/05-keyword-narrowed-repo-search.png) |
 | [Remediation Plan Template](../component-cards/skills/infrastructure-issue-investigator/assets/06-remediation-plan-template.md) | [`06-remediation-plan-template.excalidraw`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.excalidraw) | [`06-remediation-plan-template.png`](component-cards/infrastructure-issue-investigator/06-remediation-plan-template.png) |
 
-## Component cards — workstream hardening orchestrator (15 of 24 drawn)
+## Component cards — workstream hardening orchestrator (20 of 24 drawn)
 
-Cards 08–22 are drawn and embedded in their cards; the rest are still pending. One row per
+Cards 08–27 are drawn and embedded in their cards; the rest are still pending. One row per
 card, so the gap is visible; sources go in `component-cards/workstream-hardening-orchestrator/`
 (subagents in `component-cards/`).
 
@@ -51,11 +51,11 @@ card, so the gap is visible; sources go in `component-cards/workstream-hardening
 | [Secrets-Store TLS and Auto-Unseal Guide](../component-cards/skills/workstream-hardening-orchestrator/references/20-secrets-store-tls-unseal-guide.md) | [`20-secrets-store-tls-unseal-guide.excalidraw`](component-cards/workstream-hardening-orchestrator/20-secrets-store-tls-unseal-guide.excalidraw) | [`20-secrets-store-tls-unseal-guide.png`](component-cards/workstream-hardening-orchestrator/20-secrets-store-tls-unseal-guide.png) |
 | [Tier Lookup Gate](../component-cards/skills/workstream-hardening-orchestrator/scripts/21-tier-lookup-gate.md) | [`21-tier-lookup-gate.excalidraw`](component-cards/workstream-hardening-orchestrator/21-tier-lookup-gate.excalidraw) | [`21-tier-lookup-gate.png`](component-cards/workstream-hardening-orchestrator/21-tier-lookup-gate.png) |
 | [Triage Table Renderer](../component-cards/skills/workstream-hardening-orchestrator/scripts/22-triage-table-renderer.md) | [`22-triage-table-renderer.excalidraw`](component-cards/workstream-hardening-orchestrator/22-triage-table-renderer.excalidraw) | [`22-triage-table-renderer.png`](component-cards/workstream-hardening-orchestrator/22-triage-table-renderer.png) |
-| [Hardening Field Scanner](../component-cards/skills/workstream-hardening-orchestrator/scripts/23-hardening-field-scanner.md) | pending | — |
-| [Benchmark Report Parser](../component-cards/skills/workstream-hardening-orchestrator/scripts/24-benchmark-report-parser.md) | pending | — |
-| [Static Rollback Planner](../component-cards/skills/workstream-hardening-orchestrator/scripts/25-static-rollback-planner.md) | pending | — |
-| [Repository Scope Detector](../component-cards/skills/workstream-hardening-orchestrator/scripts/26-repo-scope-detector.md) | pending | — |
-| [Sprint State Reporter](../component-cards/skills/workstream-hardening-orchestrator/scripts/27-sprint-state-reporter.md) | pending | — |
+| [Hardening Field Scanner](../component-cards/skills/workstream-hardening-orchestrator/scripts/23-hardening-field-scanner.md) | [`23-hardening-field-scanner.excalidraw`](component-cards/workstream-hardening-orchestrator/23-hardening-field-scanner.excalidraw) | [`23-hardening-field-scanner.png`](component-cards/workstream-hardening-orchestrator/23-hardening-field-scanner.png) |
+| [Benchmark Report Parser](../component-cards/skills/workstream-hardening-orchestrator/scripts/24-benchmark-report-parser.md) | [`24-benchmark-report-parser.excalidraw`](component-cards/workstream-hardening-orchestrator/24-benchmark-report-parser.excalidraw) | [`24-benchmark-report-parser.png`](component-cards/workstream-hardening-orchestrator/24-benchmark-report-parser.png) |
+| [Static Rollback Planner](../component-cards/skills/workstream-hardening-orchestrator/scripts/25-static-rollback-planner.md) | [`25-static-rollback-planner.excalidraw`](component-cards/workstream-hardening-orchestrator/25-static-rollback-planner.excalidraw) | [`25-static-rollback-planner.png`](component-cards/workstream-hardening-orchestrator/25-static-rollback-planner.png) |
+| [Repository Scope Detector](../component-cards/skills/workstream-hardening-orchestrator/scripts/26-repo-scope-detector.md) | [`26-repo-scope-detector.excalidraw`](component-cards/workstream-hardening-orchestrator/26-repo-scope-detector.excalidraw) | [`26-repo-scope-detector.png`](component-cards/workstream-hardening-orchestrator/26-repo-scope-detector.png) |
+| [Sprint State Reporter](../component-cards/skills/workstream-hardening-orchestrator/scripts/27-sprint-state-reporter.md) | [`27-sprint-state-reporter.excalidraw`](component-cards/workstream-hardening-orchestrator/27-sprint-state-reporter.excalidraw) | [`27-sprint-state-reporter.png`](component-cards/workstream-hardening-orchestrator/27-sprint-state-reporter.png) |
 | [Workstream Gate Runner](../component-cards/skills/workstream-hardening-orchestrator/scripts/28-workstream-gate-runner.md) | pending | — |
 | [Seal-State Health Checker](../component-cards/skills/workstream-hardening-orchestrator/scripts/29-seal-state-health-check.md) | pending | — |
 | [Parallel Gap-Scan Subagent](../component-cards/subagents/30-parallel-gap-scan-subagent.md) | pending | — |
