@@ -19,6 +19,10 @@ related:
 > command form the skill's own body does not use, with a gate output the code cannot print
 > and a failure path that never reaches the gate.
 
+![Worked Loop Walkthroughs: a reader copies two runs of the sprint loop through four scripts, and six places the copy breaks](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/43-worked-loop-walkthroughs.png)
+
+<sub>Source: [`43-worked-loop-walkthroughs.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/43-worked-loop-walkthroughs.excalidraw).</sub>
+
 ## What it is
 
 A reference file of about 195 lines holding two walkthroughs: a one-sprint run that passes
