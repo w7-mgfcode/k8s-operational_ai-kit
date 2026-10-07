@@ -16,6 +16,10 @@ related:
 > signals "confirm" through its exit code — and signals "proceed" for a name it has
 > never heard of.
 
+![Tier Lookup Gate: the lookup from normalised name to exit code, the typo that exits 0, the model as the only reader of the exit code, and the table that is written twice](../../../../diagrams/component-cards/workstream-hardening-orchestrator/21-tier-lookup-gate.png)
+
+<sub>Source: [`21-tier-lookup-gate.excalidraw`](../../../../diagrams/component-cards/workstream-hardening-orchestrator/21-tier-lookup-gate.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script the hardening orchestrator
