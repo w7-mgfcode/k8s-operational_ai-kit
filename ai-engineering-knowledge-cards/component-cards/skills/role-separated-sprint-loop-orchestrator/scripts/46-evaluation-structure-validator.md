@@ -20,6 +20,10 @@ related:
 > The script that checks an evaluation's shape against its contract — every axis scored,
 > every label consistent with its threshold — and cannot tell a finding from a form.
 
+![Evaluation Structure Validator: two files pass through seven structural checks to a JSON document and an exit code, with eight failure modes and the substance the script never sees](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/46-evaluation-structure-validator.png)
+
+<sub>Source: [`46-evaluation-structure-validator.excalidraw`](../../../../diagrams/component-cards/role-separated-sprint-loop-orchestrator/46-evaluation-structure-validator.excalidraw).</sub>
+
 ## What it is
 
 A standard-library Python script that reads a contract and an evaluation, both Markdown, and
